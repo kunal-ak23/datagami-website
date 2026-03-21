@@ -7,9 +7,9 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-sans);
+  --font-sans: var(--font-plus-jakarta), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono);
-  --font-heading: var(--font-sans);
+  --font-heading: var(--font-plus-jakarta), ui-sans-serif, system-ui, sans-serif;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -46,6 +46,24 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+
+  /* Datagami brand colors */
+  --color-brand: #F5B731;
+  --color-brand-dark: #D4991F;
+  --color-dark: #1A1A1A;
+  --color-body: #333333;
+  --color-muted-brand: #666666;
+  --color-surface: #FFFFFF;
+  --color-border-custom: #E5E5E5;
+  --color-success: #059669;
+
+  /* Track accent colors */
+  --color-cloud: #0369A1;
+  --color-metaverse: #7C3AED;
+  --color-blockchain: #EA580C;
+  --color-chipdesign: #0D9488;
+  --color-ibm: #0F62FE;
+  --color-clinomic: #059669;
 }
 
 :root {
@@ -121,10 +139,22 @@
   * {
     @apply border-border outline-ring/50;
   }
-  body {
-    @apply bg-background text-foreground;
-  }
   html {
-    @apply font-sans;
+    @apply scroll-smooth font-sans;
+  }
+  body {
+    @apply bg-background text-body text-base leading-relaxed antialiased;
+  }
+  h1 {
+    @apply text-5xl font-bold leading-tight text-dark;
+  }
+  h2 {
+    @apply text-4xl font-bold leading-tight text-dark;
+  }
+  h3 {
+    @apply text-2xl font-semibold leading-snug text-dark;
+  }
+  small {
+    @apply text-sm leading-5;
   }
 }
