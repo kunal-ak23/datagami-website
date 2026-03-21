@@ -1,0 +1,167 @@
+import type { Metadata } from "next"
+import Breadcrumbs from "@/components/layout/breadcrumbs"
+import { HeroDark } from "@/components/sections/hero-dark"
+import { SectionHeader } from "@/components/sections/section-header"
+import { FAQSection } from "@/components/sections/faq-section"
+import { CTASection } from "@/components/sections/cta-section"
+import { techlearn } from "@/lib/data/programs"
+import { generateCourseSchema } from "@/lib/schemas/course"
+import { CheckCircle2, Briefcase } from "lucide-react"
+
+const track = techlearn.tracks.find((t) => t.accentColor === "blockchain")!
+
+export const metadata: Metadata = {
+  title: `${track.name} - TechLEARN`,
+  description: track.description,
+}
+
+const courseSchema = generateCourseSchema({
+  name: track.name,
+  description: track.description,
+  duration: track.duration,
+  url: track.href!,
+})
+
+const modules = [
+  { name: "Blockchain Fundamentals", description: "Distributed ledger technology, consensus mechanisms, cryptography, and blockchain architecture." },
+  { name: "Solidity & Smart Contracts", description: "Write, test, and deploy smart contracts on Ethereum using Solidity, Hardhat, and Remix." },
+  { name: "Decentralized Applications (DApps)", description: "Build full-stack DApps with Web3.js, Ethers.js, and frontend frameworks." },
+  { name: "Web3 & DeFi Ecosystem", description: "Explore DeFi protocols, tokenomics, NFTs, DAOs, and the broader Web3 landscape." },
+  { name: "Capstone Project", description: "Design and deploy a real-world blockchain solution from ideation to mainnet." },
+]
+
+const careerOutcomes = [
+  { title: "Blockchain Developer", description: "Build smart contracts and decentralized applications for Web3 startups and enterprises." },
+  { title: "Web3 Full-Stack Engineer", description: "Develop end-to-end decentralized solutions combining on-chain and off-chain components." },
+  { title: "DeFi / Smart Contract Auditor", description: "Analyze and audit smart contracts for security vulnerabilities in the DeFi ecosystem." },
+]
+
+export default function BlockchainPage() {
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(courseSchema) }}
+      />
+
+      {/* Breadcrumbs */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Breadcrumbs
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Services", href: "/services" },
+            { label: "Education", href: "/services#education" },
+            { label: "TechLEARN", href: "/services/education/techlearn" },
+            { label: "Blockchain" },
+          ]}
+        />
+      </div>
+
+      {/* Hero */}
+      <HeroDark
+        heading={track.name}
+        subtitle={track.description}
+        accentColor="text-blockchain"
+        badgeText={track.duration}
+        ctaText="Apply Now"
+        ctaHref="/contact"
+      />
+
+      {/* Module Breakdown */}
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeader
+            title="Module Breakdown"
+            description={`${track.modules} focused modules from blockchain basics to production DApps.`}
+          />
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {modules.map((mod, i) => (
+              <div
+                key={mod.name}
+                className="border border-border-custom rounded-xl p-6 hover:border-blockchain/50 hover:shadow-md transition-all"
+              >
+                <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-blockchain/10 text-blockchain text-sm font-bold mb-3">
+                  {i + 1}
+                </span>
+                <h3 className="text-base font-semibold text-dark mb-2">
+                  {mod.name}
+                </h3>
+                <p className="text-sm text-muted-brand">{mod.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Skills Gained */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeader
+            title="Skills You Will Gain"
+            description="In-demand blockchain and Web3 development skills."
+          />
+          <div className="flex flex-wrap justify-center gap-3">
+            {track.skills?.map((skill) => (
+              <span
+                key={skill}
+                className="flex items-center gap-2 bg-blockchain/10 text-blockchain border border-blockchain/20 px-4 py-2 rounded-full text-sm font-medium"
+              >
+                <CheckCircle2 className="size-4" />
+                {skill}
+              </span>
+            ))}
+            {["Ethereum", "Hardhat", "Ethers.js", "IPFS", "Tokenomics", "NFTs"].map(
+              (skill) => (
+                <span
+                  key={skill}
+                  className="flex items-center gap-2 bg-blockchain/10 text-blockchain border border-blockchain/20 px-4 py-2 rounded-full text-sm font-medium"
+                >
+                  <CheckCircle2 className="size-4" />
+                  {skill}
+                </span>
+              )
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* Career Outcomes */}
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeader
+            title="Career Outcomes"
+            description="Roles you will be prepared for after completing this track."
+          />
+          <div className="grid md:grid-cols-3 gap-8">
+            {careerOutcomes.map((career) => (
+              <div
+                key={career.title}
+                className="border-l-4 border-blockchain pl-6 py-2"
+              >
+                <div className="flex items-center gap-2 mb-2">
+                  <Briefcase className="size-5 text-blockchain" />
+                  <h3 className="text-lg font-semibold text-dark">
+                    {career.title}
+                  </h3>
+                </div>
+                <p className="text-sm text-muted-brand">{career.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQs */}
+      <FAQSection faqs={techlearn.faqs} />
+
+      {/* CTA */}
+      <CTASection
+        title="Start Your Blockchain Career"
+        description="Enroll in the Blockchain track and become a Web3 developer in 6 months."
+        buttonText="Apply Now"
+        buttonHref="/contact"
+        variant="dark"
+      />
+    </>
+  )
+}
