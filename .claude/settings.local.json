@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:my-site-46mycdno-kunalsharmaks13.wix-vibe.com)",
+      "WebFetch(domain:kunalsharmaks13.wixsite.com)",
+      "WebFetch(domain:webcache.googleusercontent.com)",
+      "WebFetch(domain:r.jina.ai)",
+      "Bash(curl -s -L -A \"Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/120.0.0.0 Safari/537.36\" https://my-site-46mycdno-kunalsharmaks13.wix-vibe.com/)",
+      "Bash(curl -s -L -A Mozilla/5.0 https://my-site-46mycdno-kunalsharmaks13.wix-vibe.com/services/education/finlearn)",
+      "Bash(curl -s -L -A Mozilla/5.0 https://my-site-46mycdno-kunalsharmaks13.wix-vibe.com/services/education/techlearn)",
+      "Bash(curl -s -L -A Mozilla/5.0 https://my-site-46mycdno-kunalsharmaks13.wix-vibe.com/contact)",
+      "Read(//Users/kunalsharma/.claude/plugins/cache/ui-ux-pro-max-skill/ui-ux-pro-max/2.0.1/**)",
+      "Bash(python3 skills/ui-ux-pro-max/scripts/search.py \"education technology edtech SaaS B2B professional\" --design-system -p \"Datagami\")",
+      "Bash(python3 src/ui-ux-pro-max/scripts/search.py \"education technology edtech SaaS B2B professional\" --design-system -p \"Datagami\")",
+      "Bash(python3 src/ui-ux-pro-max/scripts/search.py \"SSR routing images SEO\" --stack nextjs)",
+      "Bash(python3 src/ui-ux-pro-max/scripts/search.py \"hero social-proof testimonial trust features pricing\" --domain landing)",
+      "Bash(python3 src/ui-ux-pro-max/scripts/search.py \"education technology edtech B2B professional\" --design-system --persist -p \"Datagami\")",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(curl -s -L https://my-site-46mycdno-kunalsharmaks13.wix-vibe.com/)",
+      "Bash(git init:*)",
+      "Bash(curl:*)",
+      "Bash(sips -g pixelWidth -g pixelHeight /Users/kunalsharma/datagami/datagami-website/public/images/logo/datagami-logo-alt.png)",
+      "Bash(python3:*)",
+      "Bash(ls:*)",
+      "Bash(npx:*)",
+      "Bash(cd:*)",
+      "Bash(npm install:*)"
+    ]
+  }
+}
