@@ -191,24 +191,48 @@ export default function IBMICEPage() {
                 <FadeIn key={category.name}>
                   <div>
                     {/* Category Header */}
-                    <div className="flex items-center gap-4 mb-6">
-                      <div className="w-14 h-14 rounded-xl bg-ibm/10 text-ibm flex items-center justify-center shrink-0">
-                        {meta?.icon}
-                      </div>
-                      <div>
-                        <div className="flex items-center gap-3">
-                          <h3 className="text-2xl font-bold text-dark">
-                            {category.name}
-                          </h3>
-                          <span className="inline-flex items-center justify-center text-xs font-bold text-white bg-ibm px-3 py-1 rounded-full">
-                            {category.trackCount} tracks
-                          </span>
+                    {category.cardImage ? (
+                      <div className="relative rounded-xl overflow-hidden mb-6">
+                        <img
+                          src={category.cardImage}
+                          alt={category.name}
+                          className="w-full h-48 object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+                        <div className="absolute bottom-0 left-0 right-0 p-5">
+                          <div className="flex items-center gap-3 mb-1">
+                            <h3 className="text-2xl font-bold text-white">
+                              {category.name}
+                            </h3>
+                            <span className="inline-flex items-center justify-center text-xs font-bold text-white bg-ibm px-3 py-1 rounded-full">
+                              {category.trackCount} tracks
+                            </span>
+                          </div>
+                          <p className="text-sm text-white/80">
+                            {meta?.description}
+                          </p>
                         </div>
-                        <p className="text-sm text-muted-brand mt-1">
-                          {meta?.description}
-                        </p>
                       </div>
-                    </div>
+                    ) : (
+                      <div className="flex items-center gap-4 mb-6">
+                        <div className="w-14 h-14 rounded-xl bg-ibm/10 text-ibm flex items-center justify-center shrink-0">
+                          {meta?.icon}
+                        </div>
+                        <div>
+                          <div className="flex items-center gap-3">
+                            <h3 className="text-2xl font-bold text-dark">
+                              {category.name}
+                            </h3>
+                            <span className="inline-flex items-center justify-center text-xs font-bold text-white bg-ibm px-3 py-1 rounded-full">
+                              {category.trackCount} tracks
+                            </span>
+                          </div>
+                          <p className="text-sm text-muted-brand mt-1">
+                            {meta?.description}
+                          </p>
+                        </div>
+                      </div>
+                    )}
 
                     {/* Individual Track Cards */}
                     <StaggerChildren className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">

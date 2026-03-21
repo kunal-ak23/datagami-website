@@ -66,6 +66,7 @@ export default function ServicesPage() {
                 description={programs.finlearn.tagline + " — " + programs.finlearn.description}
                 href={programs.finlearn.href}
                 icon={<GraduationCap className="size-6" />}
+                backgroundImage="/images/cards/finlearn-card.png"
               />
             </StaggerItem>
             <StaggerItem>
@@ -74,6 +75,7 @@ export default function ServicesPage() {
                 description={programs.techlearn.tagline + " — Hands-on training in Cloud Computing, Metaverse, Blockchain, and Chip Design."}
                 href={programs.techlearn.href}
                 icon={<Monitor className="size-6" />}
+                backgroundImage="/images/cards/techlearn-card.png"
               />
             </StaggerItem>
             <StaggerItem>
@@ -82,6 +84,7 @@ export default function ServicesPage() {
                 description={programs.ibmIce.tagline + " — Industry-recognized IBM badge certifications across technology, industry skills, and deep technical domains."}
                 href={programs.ibmIce.href}
                 icon={<Award className="size-6" />}
+                backgroundImage="/images/cards/ibm-ice-card.png"
               />
             </StaggerItem>
             <StaggerItem>
@@ -91,6 +94,7 @@ export default function ServicesPage() {
                 href={programs.clinomic.href}
                 duration={programs.clinomic.duration}
                 icon={<FlaskConical className="size-6" />}
+                backgroundImage="/images/cards/clinomic-card.png"
               />
             </StaggerItem>
             <StaggerItem>
@@ -99,6 +103,7 @@ export default function ServicesPage() {
                 description={programs.upiStudy.tagline + " — " + programs.upiStudy.description}
                 href={programs.upiStudy.href}
                 icon={<Smartphone className="size-6" />}
+                backgroundImage="/images/cards/upi-card.png"
               />
             </StaggerItem>
           </StaggerChildren>
@@ -121,6 +126,7 @@ export default function ServicesPage() {
                   description={product.description}
                   features={[...product.features]}
                   href={product.href}
+                  backgroundImage={product.cardImage}
                 />
               </StaggerItem>
             ))}

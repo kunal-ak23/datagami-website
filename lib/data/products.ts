@@ -8,6 +8,7 @@ export interface Product {
   href: string
   description: string
   features: string[]
+  cardImage?: string
 }
 
 export const sineapLms: Product = {
@@ -24,6 +25,7 @@ export const sineapLms: Product = {
     'Analytics Dashboard',
     'Multi-institution Support',
   ],
+  cardImage: '/images/cards/sineap-lms-card.png',
 }
 
 export const totalErp: Product = {
@@ -40,6 +42,7 @@ export const totalErp: Product = {
     'Reporting & Analytics',
     'Integration APIs',
   ],
+  cardImage: '/images/cards/total-erp-card.png',
 }
 
 export const products = [sineapLms, totalErp] as const

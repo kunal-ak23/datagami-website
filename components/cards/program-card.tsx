@@ -7,6 +7,7 @@ interface ProgramCardProps {
   duration?: string
   href: string
   icon: ReactNode
+  backgroundImage?: string
 }
 
 export function ProgramCard({
@@ -15,7 +16,44 @@ export function ProgramCard({
   duration,
   href,
   icon,
+  backgroundImage,
 }: ProgramCardProps) {
+  if (backgroundImage) {
+    return (
+      <Link
+        href={href}
+        className="block border border-border-custom rounded-xl overflow-hidden hover:shadow-lg transition-shadow duration-200 cursor-pointer group"
+      >
+        {/* Image header */}
+        <div className="relative aspect-[16/9] overflow-hidden">
+          <img
+            src={backgroundImage}
+            alt={title}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+          <div className="absolute bottom-0 left-0 right-0 p-4">
+            {duration && (
+              <span className="inline-flex items-center px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-white text-xs font-medium mb-2">
+                {duration}
+              </span>
+            )}
+            <h3 className="text-lg font-semibold text-white">{title}</h3>
+          </div>
+        </div>
+        {/* Content below image */}
+        <div className="p-5">
+          <p className="text-sm text-muted-brand mb-4 line-clamp-3">
+            {description}
+          </p>
+          <span className="text-brand font-medium text-sm hover:text-brand-dark">
+            Learn More &rarr;
+          </span>
+        </div>
+      </Link>
+    )
+  }
+
   return (
     <Link
       href={href}

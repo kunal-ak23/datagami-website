@@ -102,6 +102,7 @@ export default function Home() {
                   description={finlearn.tagline}
                   href={finlearn.href}
                   icon={<GraduationCap className="size-6" />}
+                  backgroundImage="/images/cards/finlearn-card.png"
                 />
               </StaggerItem>
               <StaggerItem>
@@ -110,6 +111,7 @@ export default function Home() {
                   description={techlearn.tagline}
                   href={techlearn.href}
                   icon={<Code className="size-6" />}
+                  backgroundImage="/images/cards/techlearn-card.png"
                 />
               </StaggerItem>
               <StaggerItem>
@@ -118,6 +120,7 @@ export default function Home() {
                   description={ibmIce.tagline}
                   href={ibmIce.href}
                   icon={<Award className="size-6" />}
+                  backgroundImage="/images/cards/ibm-ice-card.png"
                 />
               </StaggerItem>
               <StaggerItem>
@@ -126,6 +129,7 @@ export default function Home() {
                   description={clinomic.tagline}
                   href={clinomic.href}
                   icon={<Beaker className="size-6" />}
+                  backgroundImage="/images/cards/clinomic-card.png"
                 />
               </StaggerItem>
               <StaggerItem>
@@ -134,6 +138,7 @@ export default function Home() {
                   description={upiStudy.tagline}
                   href={upiStudy.href}
                   icon={<Wallet className="size-6" />}
+                  backgroundImage="/images/cards/upi-card.png"
                 />
               </StaggerItem>
             </StaggerChildren>
@@ -152,6 +157,7 @@ export default function Home() {
                     description={product.description}
                     features={[...product.features]}
                     href={product.href}
+                    backgroundImage={product.cardImage}
                   />
                 </StaggerItem>
               ))}

@@ -26,6 +26,7 @@ export interface TrackCategory {
   name: string
   trackCount: number | string
   tracks: string[]
+  cardImage?: string
 }
 
 // ---------------------------------------------------------------------------
@@ -37,6 +38,7 @@ export interface FinLEARNProgram {
   tagline: string
   description: string
   href: string
+  cardImage?: string
   tracks: ProgramTrack[]
   stats: {
     placementRate: string
@@ -53,6 +55,7 @@ export const finlearn: FinLEARNProgram = {
   description:
     'FinLEARN is Datagami\'s flagship education platform focused on Banking, Financial Services and Insurance (BFSI). Through industry-aligned curricula, hands-on training and strong placement support, FinLEARN transforms graduates into job-ready professionals for the financial sector.',
   href: '/services/education/finlearn',
+  cardImage: '/images/cards/finlearn-card.png',
   tracks: [
     {
       name: 'CP-BFSI',
@@ -129,6 +132,7 @@ export interface TechLEARNProgram {
   name: string
   tagline: string
   href: string
+  cardImage?: string
   tracks: ProgramTrack[]
   faqs: FAQ[]
 }
@@ -137,6 +141,7 @@ export const techlearn: TechLEARNProgram = {
   name: 'TechLEARN',
   tagline: 'Technology Training Programs',
   href: '/services/education/techlearn',
+  cardImage: '/images/cards/techlearn-card.png',
   tracks: [
     {
       name: 'Cloud Computing with AI',
@@ -217,6 +222,7 @@ export interface IBMICEProgram {
   fullName: string
   tagline: string
   href: string
+  cardImage?: string
   stats: {
     badgePrograms: string
     studentsCertified: string
@@ -230,6 +236,7 @@ export const ibmIce: IBMICEProgram = {
   fullName: 'IBM Innovation Centre of Excellence',
   tagline: 'Badge Programs',
   href: '/services/education/ibm-ice',
+  cardImage: '/images/cards/ibm-ice-card.png',
   stats: {
     badgePrograms: '15+',
     studentsCertified: '10000+',
@@ -239,6 +246,7 @@ export const ibmIce: IBMICEProgram = {
     {
       name: 'Technology',
       trackCount: 11,
+      cardImage: '/images/cards/ibm-tech-card.png',
       tracks: [
         'Artificial Intelligence',
         'Cloud Computing',
@@ -256,6 +264,7 @@ export const ibmIce: IBMICEProgram = {
     {
       name: 'Industry',
       trackCount: 6,
+      cardImage: '/images/cards/ibm-industry-card.png',
       tracks: [
         'Banking & Financial Services',
         'Healthcare & Life Sciences',
@@ -268,6 +277,7 @@ export const ibmIce: IBMICEProgram = {
     {
       name: 'Deep Technical Skills',
       trackCount: 8,
+      cardImage: '/images/cards/ibm-deeptech-card.png',
       tracks: [
         'Quantum Computing',
         'Mainframe Development',
@@ -282,6 +292,7 @@ export const ibmIce: IBMICEProgram = {
     {
       name: 'Short-term Certificates',
       trackCount: 60,
+      cardImage: '/images/cards/ibm-certs-card.png',
       tracks: [
         'Python for Data Science',
         'SQL & Database Fundamentals',
@@ -304,6 +315,7 @@ export interface ClinomicProgram {
   name: string
   tagline: string
   href: string
+  cardImage?: string
   duration: string
   coreAreas: string[]
   stats: {
@@ -318,6 +330,7 @@ export const clinomic: ClinomicProgram = {
   name: 'Clinomic',
   tagline: 'Clinical Research Education Centre',
   href: '/services/education/clinomic',
+  cardImage: '/images/cards/clinomic-card.png',
   duration: '6 months',
   coreAreas: [
     'Clinical Research Methodology',
@@ -367,6 +380,7 @@ export interface UPIStudyProgram {
   name: string
   tagline: string
   href: string
+  cardImage?: string
   description: string
 }
 
@@ -374,6 +388,7 @@ export const upiStudy: UPIStudyProgram = {
   name: 'UPI Study',
   tagline: 'Digital Payments Education',
   href: '/services/education/upi-study',
+  cardImage: '/images/cards/upi-card.png',
   description:
     'UPI Study is Datagami\'s focused education initiative on India\'s Unified Payments Interface and the broader digital payments ecosystem. The program covers UPI architecture, merchant onboarding, regulatory frameworks, fraud prevention and the emerging trends shaping cashless transactions. Designed for banking professionals, fintech aspirants and students, UPI Study bridges the knowledge gap in one of the world\'s fastest-growing digital payment markets.',
 }
