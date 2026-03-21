@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import { organizationSchema, localBusinessSchemas } from '@/lib/schemas/organization'
 import { Navbar } from '@/components/layout/navbar'
+import { Footer } from '@/components/layout/footer'
 
 export const metadata: Metadata = {
   title: {
@@ -47,7 +48,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="font-sans antialiased">
         <Navbar />
         <main>{children}</main>
-        {/* Footer will be added in Task 5 */}
+        <Footer />
       </body>
     </html>
   )
