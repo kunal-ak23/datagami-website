@@ -36,6 +36,7 @@ import { products } from "@/lib/data/products"
 import { services } from "@/lib/data/services"
 import { company } from "@/lib/data/company"
 import { websiteSchema } from "@/lib/schemas/website"
+import { TestimonialCarousel } from "@/components/sections/testimonial-carousel"
 
 export const metadata: Metadata = {
   title:
@@ -278,7 +279,10 @@ export default function Home() {
         />
       </section>
 
-      {/* 8. Final CTA */}
+      {/* 8. Testimonials */}
+      <TestimonialCarousel />
+
+      {/* 9. Final CTA */}
       <CTASection
         title="Partner With Us Today"
         buttonText="Get in Touch"
