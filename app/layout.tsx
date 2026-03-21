@@ -2,6 +2,7 @@ import { plusJakartaSans } from '@/lib/fonts'
 import type { Metadata } from 'next'
 import './globals.css'
 import { organizationSchema, localBusinessSchemas } from '@/lib/schemas/organization'
+import { Navbar } from '@/components/layout/navbar'
 
 export const metadata: Metadata = {
   title: {
@@ -44,7 +45,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         ))}
       </head>
       <body className="font-sans antialiased">
-        {/* Navbar will be added in Task 4 */}
+        <Navbar />
         <main>{children}</main>
         {/* Footer will be added in Task 5 */}
       </body>
