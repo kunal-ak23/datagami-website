@@ -29,6 +29,7 @@ const blogPosts = [
       "The UPI revolution isn't just about payments — it's creating an unprecedented opportunity to build financial literacy from the ground up.",
     date: "February 28, 2026",
     slug: "#",
+    imageSrc: "/images/blog/upi-fintech.png",
   },
   {
     title: "Building Industry-Ready Graduates",
@@ -37,6 +38,7 @@ const blogPosts = [
       "Universities that align curricula with employer expectations see dramatically better placement rates. Here's the playbook.",
     date: "February 15, 2026",
     slug: "#",
+    imageSrc: "/images/blog/career-readiness.png",
   },
   {
     title: "Cloud Computing Career Paths in 2026",
@@ -45,6 +47,7 @@ const blogPosts = [
       "From cloud architect to DevOps engineer — the most in-demand cloud roles and the certifications that matter.",
     date: "January 30, 2026",
     slug: "#",
+    imageSrc: "/images/blog/cloud-computing-careers.png",
   },
   {
     title: "Why LMS Adoption Fails (And How to Fix It)",
@@ -104,11 +107,14 @@ export default function BlogPage() {
             href={`/blog/${featuredPost.slug}`}
             className="block rounded-xl border border-border-custom overflow-hidden hover:shadow-lg transition-shadow duration-200 md:flex"
           >
-            {/* Placeholder image */}
-            <div className="md:w-1/2 bg-gray-200 flex items-center justify-center aspect-video md:aspect-auto md:min-h-[280px]">
-              <span className="text-sm text-gray-400 font-medium">
-                Featured Image
-              </span>
+            <div className="md:w-1/2">
+              <img
+                src="/images/blog/future-edtech.png"
+                alt={featuredPost.title}
+                width={640}
+                height={360}
+                className="w-full h-full object-cover aspect-video md:aspect-auto md:min-h-[280px]"
+              />
             </div>
 
             <div className="p-8 md:w-1/2 flex flex-col justify-center">
@@ -139,6 +145,7 @@ export default function BlogPage() {
                 excerpt={post.excerpt}
                 date={post.date}
                 slug={post.slug}
+                imageSrc={post.imageSrc}
               />
             ))}
           </div>

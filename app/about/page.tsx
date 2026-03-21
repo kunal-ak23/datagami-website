@@ -19,10 +19,10 @@ const milestones = [
 ]
 
 const team = [
-  { name: "Kunal Sharma", title: "Founder & CEO" },
-  { name: "Priya Mehta", title: "Chief Operating Officer" },
-  { name: "Rahul Desai", title: "VP, Partnerships" },
-  { name: "Ananya Iyer", title: "Head of Technology" },
+  { name: "Kunal Sharma", title: "Founder & CEO", image: "/images/team/ceo.png" },
+  { name: "Priya Mehta", title: "Chief Operating Officer", image: "/images/team/coo.png" },
+  { name: "Rahul Desai", title: "VP, Partnerships", image: "/images/team/education-director.png" },
+  { name: "Ananya Iyer", title: "Head of Technology", image: "/images/team/cto.png" },
 ]
 
 export default function AboutPage() {
@@ -116,12 +116,14 @@ export default function AboutPage() {
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {team.map((member) => (
               <div key={member.name} className="text-center">
-                {/* Placeholder avatar */}
-                <div className="mx-auto mb-4 size-28 rounded-full bg-gray-200 flex items-center justify-center">
-                  <span className="text-3xl font-bold text-gray-400">
-                    {member.name.split(" ").map((n) => n[0]).join("")}
-                  </span>
-                </div>
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  width={112}
+                  height={112}
+                  loading="lazy"
+                  className="mx-auto mb-4 size-28 rounded-full object-cover"
+                />
                 <h3 className="text-lg font-bold text-dark">{member.name}</h3>
                 <p className="text-sm text-body">{member.title}</p>
               </div>

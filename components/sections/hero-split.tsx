@@ -34,7 +34,7 @@ export function HeroSplit({
           <div className="max-w-xl">
             {showLogo && (
               <img
-                src="/images/logo.png"
+                src="/images/logo/datagami-logo.webp"
                 alt="Datagami logo"
                 className="mb-8 h-10 w-auto"
               />

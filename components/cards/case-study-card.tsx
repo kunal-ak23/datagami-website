@@ -24,6 +24,9 @@ export function CaseStudyCard({
         <img
           src={imageSrc}
           alt={title}
+          width={640}
+          height={192}
+          loading="lazy"
           className="w-full h-48 object-cover"
         />
       )}

@@ -26,6 +26,9 @@ export function BlogCard({
         <img
           src={imageSrc}
           alt={title}
+          width={640}
+          height={360}
+          loading="lazy"
           className="w-full aspect-video object-cover"
         />
       )}

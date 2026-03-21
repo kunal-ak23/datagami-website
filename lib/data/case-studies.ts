@@ -14,6 +14,7 @@ export interface CaseStudy {
   summary: string
   problem: string
   solution: string
+  imageSrc?: string
   results: {
     headline: string
     metrics: CaseStudyMetric[]
@@ -25,6 +26,7 @@ export const caseStudies: CaseStudy[] = [
     title: 'State University System Digital Transformation',
     slug: 'state-university-digital-transformation',
     industry: 'Higher Education',
+    imageSrc: '/images/case-studies/state-university-transformation.png',
     summary:
       'A state university system partnered with Datagami to modernize its curriculum, implement industry-aligned training and dramatically improve graduate employability.',
     problem:
@@ -45,6 +47,7 @@ export const caseStudies: CaseStudy[] = [
     title: 'Industry Partnership Network',
     slug: 'industry-partnership-network',
     industry: 'Workforce Development',
+    imageSrc: '/images/case-studies/industry-partnership.png',
     summary:
       'Datagami built a nationwide industry partnership network connecting educational institutions with employers across banking, technology and clinical research.',
     problem:
@@ -65,6 +68,7 @@ export const caseStudies: CaseStudy[] = [
     title: 'Policy Implementation Acceleration',
     slug: 'policy-implementation-acceleration',
     industry: 'Government & Policy',
+    imageSrc: '/images/case-studies/policy-implementation.png',
     summary:
       'A government education body engaged Datagami to accelerate the rollout of a new skills-development policy across state-run institutions.',
     problem:

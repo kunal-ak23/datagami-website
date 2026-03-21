@@ -26,7 +26,11 @@
       "Bash(npx:*)",
       "Bash(cd:*)",
       "Bash(npm install:*)",
-      "Bash(timeout 15 npm run dev)"
+      "Bash(timeout 15 npm run dev)",
+      "Bash(npm ls:*)",
+      "Bash(npm run:*)",
+      "WebFetch(domain:ai.google.dev)",
+      "Bash(GEMINI_API_KEY=\"AIzaSyBu84KTaN90F57_IYMzQ6jAmk0Iw_jjU5s\" bash scripts/generate-assets.sh 2>&1)"
     ]
   }
 }

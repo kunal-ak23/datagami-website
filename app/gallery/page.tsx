@@ -11,18 +11,18 @@ export const metadata: Metadata = {
 const categories = ["All", "Events", "Campus", "Workshops"] as const
 
 const galleryItems = [
-  { title: "Annual Tech Summit 2025", category: "Events", aspect: "4/3" },
-  { title: "Mumbai Office Campus", category: "Campus", aspect: "16/9" },
-  { title: "FinLEARN Workshop Session", category: "Workshops", aspect: "4/3" },
-  { title: "Industry Partner Meet", category: "Events", aspect: "16/9" },
-  { title: "Bengaluru Campus Tour", category: "Campus", aspect: "4/3" },
-  { title: "TechLEARN Hands-on Lab", category: "Workshops", aspect: "16/9" },
-  { title: "Graduation Ceremony 2025", category: "Events", aspect: "4/3" },
-  { title: "Student Common Area", category: "Campus", aspect: "16/9" },
-  { title: "Cloud Computing Bootcamp", category: "Workshops", aspect: "4/3" },
-  { title: "University Partnership Signing", category: "Events", aspect: "16/9" },
-  { title: "Training Lab Setup", category: "Campus", aspect: "4/3" },
-  { title: "IBM ICE Badge Ceremony", category: "Workshops", aspect: "16/9" },
+  { title: "Annual Tech Summit 2025", category: "Events", aspect: "4/3", image: "/images/gallery/event-conference.png" },
+  { title: "Mumbai Office Campus", category: "Campus", aspect: "16/9", image: "/images/gallery/campus-building.png" },
+  { title: "FinLEARN Workshop Session", category: "Workshops", aspect: "4/3", image: "/images/gallery/workshop-coding.png" },
+  { title: "Industry Partner Meet", category: "Events", aspect: "16/9", image: "/images/gallery/event-guest-lecture.png" },
+  { title: "Bengaluru Campus Tour", category: "Campus", aspect: "4/3", image: "/images/gallery/campus-courtyard.png" },
+  { title: "TechLEARN Hands-on Lab", category: "Workshops", aspect: "16/9", image: "/images/gallery/workshop-electronics.png" },
+  { title: "Graduation Ceremony 2025", category: "Events", aspect: "4/3", image: "/images/gallery/event-graduation.png" },
+  { title: "Student Common Area", category: "Campus", aspect: "16/9", image: "/images/gallery/campus-library.png" },
+  { title: "Cloud Computing Bootcamp", category: "Workshops", aspect: "4/3", image: "/images/gallery/workshop-cloud.png" },
+  { title: "University Partnership Signing", category: "Events", aspect: "16/9", image: "/images/gallery/event-hackathon.png" },
+  { title: "Training Lab Setup", category: "Campus", aspect: "4/3", image: "/images/gallery/campus-computer-lab.png" },
+  { title: "IBM ICE Badge Ceremony", category: "Workshops", aspect: "16/9", image: "/images/gallery/workshop-training.png" },
 ]
 
 export default function GalleryPage() {
@@ -67,15 +67,15 @@ export default function GalleryPage() {
                 key={i}
                 className="relative rounded-xl overflow-hidden border border-border-custom group"
               >
-                {/* Placeholder image */}
-                <div
-                  className="bg-gray-200 flex items-center justify-center"
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  width={600}
+                  height={400}
+                  loading="lazy"
+                  className="w-full object-cover"
                   style={{ aspectRatio: item.aspect }}
-                >
-                  <span className="text-sm text-gray-400 font-medium">
-                    Image Placeholder
-                  </span>
-                </div>
+                />
 
                 {/* Category badge overlay */}
                 <span className="absolute top-3 left-3 inline-flex px-3 py-1 rounded-full bg-white/90 text-xs font-medium text-dark shadow-sm">

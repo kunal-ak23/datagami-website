@@ -36,6 +36,7 @@ export default function CaseStudiesPage() {
                 industry={cs.industry}
                 summary={cs.summary}
                 slug={cs.slug}
+                imageSrc={cs.imageSrc}
               />
             ))}
           </div>
