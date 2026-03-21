@@ -1,0 +1,89 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Role {
+  ADMIN
+}
+
+enum PostStatus {
+  DRAFT
+  PUBLISHED
+}
+
+enum MediaType {
+  IMAGE
+  VIDEO
+}
+
+model User {
+  id        String     @id @default(uuid())
+  name      String
+  email     String     @unique
+  password  String
+  role      Role       @default(ADMIN)
+  posts     BlogPost[]
+  createdAt DateTime   @default(now()) @map("created_at")
+  updatedAt DateTime   @updatedAt @map("updated_at")
+
+  @@map("users")
+}
+
+model BlogPost {
+  id              String     @id @default(uuid())
+  title           String
+  slug            String     @unique
+  content         String     @db.Text
+  excerpt         String?    @db.VarChar(500)
+  category        String?    @db.VarChar(100)
+  featuredImage   String?    @map("featured_image") @db.VarChar(500)
+  author          User       @relation(fields: [authorId], references: [id])
+  authorId        String     @map("author_id")
+  status          PostStatus @default(DRAFT)
+  publishedAt     DateTime?  @map("published_at")
+  metaTitle       String?    @map("meta_title") @db.VarChar(70)
+  metaDescription String?    @map("meta_description") @db.VarChar(160)
+  ogImage         String?    @map("og_image") @db.VarChar(500)
+  keywords        String[]   @default([])
+  schemaType      String?    @map("schema_type") @db.VarChar(50)
+  createdAt       DateTime   @default(now()) @map("created_at")
+  updatedAt       DateTime   @updatedAt @map("updated_at")
+
+  @@map("blog_posts")
+}
+
+model GalleryItem {
+  id           String    @id @default(uuid())
+  title        String
+  description  String?   @db.Text
+  category     String    @db.VarChar(100)
+  mediaType    MediaType @default(IMAGE) @map("media_type")
+  mediaUrl     String    @map("media_url") @db.VarChar(500)
+  thumbnailUrl String?   @map("thumbnail_url") @db.VarChar(500)
+  altText      String?   @map("alt_text") @db.VarChar(255)
+  sortOrder    Int       @default(0) @map("sort_order")
+  createdAt    DateTime  @default(now()) @map("created_at")
+  updatedAt    DateTime  @updatedAt @map("updated_at")
+
+  @@map("gallery_items")
+}
+
+model Testimonial {
+  id          String   @id @default(uuid())
+  studentName String   @map("student_name")
+  program     String   @db.VarChar(100)
+  quote       String   @db.Text
+  photoUrl    String?  @map("photo_url") @db.VarChar(500)
+  videoUrl    String?  @map("video_url") @db.VarChar(500)
+  rating      Int      @default(5)
+  isFeatured  Boolean  @default(false) @map("is_featured")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  @@map("testimonials")
+}
