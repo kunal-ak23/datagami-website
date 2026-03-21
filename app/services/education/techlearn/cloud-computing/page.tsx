@@ -73,7 +73,7 @@ export default function CloudComputingPage() {
       <HeroDark
         heading={track.name}
         subtitle={track.description}
-        accentColor="text-cloud"
+        accentColor="text-brand"
         badgeText={track.duration}
         ctaText="Apply Now"
         ctaHref="/contact"
@@ -83,9 +83,9 @@ export default function CloudComputingPage() {
       <section className="py-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
-            <div className="flex items-center justify-center gap-3 bg-cloud/10 border border-cloud/30 rounded-xl px-6 py-4">
-              <Shield className="size-6 text-cloud" />
-              <span className="text-lg font-semibold text-cloud">
+            <div className="flex items-center justify-center gap-3 bg-brand/10 border border-brand/30 rounded-xl px-6 py-4">
+              <Shield className="size-6 text-brand" />
+              <span className="text-lg font-semibold text-brand">
                 100% Placement Guarantee
               </span>
             </div>
@@ -106,15 +106,19 @@ export default function CloudComputingPage() {
             {modules.map((mod, i) => (
               <StaggerItem key={mod.name}>
                 <div
-                  className="border border-border-custom rounded-xl p-6 hover:border-cloud/50 hover:shadow-md transition-all"
+                  className="border border-border-custom border-l-4 border-l-brand rounded-xl p-6 hover:shadow-lg transition-all bg-white"
                 >
-                  <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-cloud/10 text-cloud text-sm font-bold mb-3">
-                    {i + 1}
-                  </span>
-                  <h3 className="text-base font-semibold text-dark mb-2">
-                    {mod.name}
-                  </h3>
-                  <p className="text-sm text-muted-brand">{mod.description}</p>
+                  <div className="flex items-start gap-4">
+                    <span className="bg-brand text-dark rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold shrink-0">
+                      {i + 1}
+                    </span>
+                    <div>
+                      <h3 className="text-base font-bold text-dark mb-2">
+                        {mod.name}
+                      </h3>
+                      <p className="text-sm text-muted-brand">{mod.description}</p>
+                    </div>
+                  </div>
                 </div>
               </StaggerItem>
             ))}
@@ -136,7 +140,7 @@ export default function CloudComputingPage() {
               {track.skills?.map((skill) => (
                 <span
                   key={skill}
-                  className="flex items-center gap-2 bg-cloud/10 text-cloud border border-cloud/20 px-4 py-2 rounded-full text-sm font-medium"
+                  className="flex items-center gap-2 bg-brand/10 text-brand border border-brand/20 px-4 py-2 rounded-full text-sm font-medium"
                 >
                   <CheckCircle2 className="size-4" />
                   {skill}
@@ -146,7 +150,7 @@ export default function CloudComputingPage() {
                 (skill) => (
                   <span
                     key={skill}
-                    className="flex items-center gap-2 bg-cloud/10 text-cloud border border-cloud/20 px-4 py-2 rounded-full text-sm font-medium"
+                    className="flex items-center gap-2 bg-brand/10 text-brand border border-brand/20 px-4 py-2 rounded-full text-sm font-medium"
                   >
                     <CheckCircle2 className="size-4" />
                     {skill}
@@ -171,14 +175,14 @@ export default function CloudComputingPage() {
             {careerOutcomes.map((career) => (
               <StaggerItem key={career.title}>
                 <div
-                  className="border-l-4 border-cloud pl-6 py-2"
+                  className="border border-border-custom rounded-xl p-6 hover:shadow-lg transition-all bg-white"
                 >
-                  <div className="flex items-center gap-2 mb-2">
-                    <Briefcase className="size-5 text-cloud" />
-                    <h3 className="text-lg font-semibold text-dark">
-                      {career.title}
-                    </h3>
+                  <div className="flex items-center justify-center w-12 h-12 rounded-full bg-brand/10 mb-4">
+                    <Briefcase className="size-6 text-brand" />
                   </div>
+                  <h3 className="text-lg font-bold text-dark mb-2">
+                    {career.title}
+                  </h3>
                   <p className="text-sm text-muted-brand">{career.description}</p>
                 </div>
               </StaggerItem>

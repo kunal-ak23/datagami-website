@@ -18,24 +18,24 @@ export const metadata: Metadata = {
 
 const accentClasses: Record<string, { border: string; bg: string; text: string }> = {
   cloud: {
-    border: "border-cloud",
-    bg: "bg-cloud/10",
-    text: "text-cloud",
+    border: "border-brand",
+    bg: "bg-brand/10",
+    text: "text-brand",
   },
   metaverse: {
-    border: "border-metaverse",
-    bg: "bg-metaverse/10",
-    text: "text-metaverse",
+    border: "border-brand",
+    bg: "bg-brand/10",
+    text: "text-brand",
   },
   blockchain: {
-    border: "border-blockchain",
-    bg: "bg-blockchain/10",
-    text: "text-blockchain",
+    border: "border-brand",
+    bg: "bg-brand/10",
+    text: "text-brand",
   },
   chipdesign: {
-    border: "border-chipdesign",
-    bg: "bg-chipdesign/10",
-    text: "text-chipdesign",
+    border: "border-brand",
+    bg: "bg-brand/10",
+    text: "text-brand",
   },
 }
 

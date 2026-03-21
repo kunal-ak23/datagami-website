@@ -63,7 +63,7 @@ export default function ChipDesignPage() {
       <HeroDark
         heading={track.name}
         subtitle={track.description}
-        accentColor="text-chipdesign"
+        accentColor="text-brand"
         badgeText={track.duration}
         ctaText="Apply Now"
         ctaHref="/contact"
@@ -82,15 +82,19 @@ export default function ChipDesignPage() {
             {modules.map((mod, i) => (
               <StaggerItem key={mod.name}>
                 <div
-                  className="border border-border-custom rounded-xl p-6 hover:border-chipdesign/50 hover:shadow-md transition-all"
+                  className="border border-border-custom border-l-4 border-l-brand rounded-xl p-6 hover:shadow-lg transition-all bg-white"
                 >
-                  <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-chipdesign/10 text-chipdesign text-sm font-bold mb-3">
-                    {i + 1}
-                  </span>
-                  <h3 className="text-base font-semibold text-dark mb-2">
-                    {mod.name}
-                  </h3>
-                  <p className="text-sm text-muted-brand">{mod.description}</p>
+                  <div className="flex items-start gap-4">
+                    <span className="bg-brand text-dark rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold shrink-0">
+                      {i + 1}
+                    </span>
+                    <div>
+                      <h3 className="text-base font-bold text-dark mb-2">
+                        {mod.name}
+                      </h3>
+                      <p className="text-sm text-muted-brand">{mod.description}</p>
+                    </div>
+                  </div>
                 </div>
               </StaggerItem>
             ))}
@@ -112,7 +116,7 @@ export default function ChipDesignPage() {
               {track.skills?.map((skill) => (
                 <span
                   key={skill}
-                  className="flex items-center gap-2 bg-chipdesign/10 text-chipdesign border border-chipdesign/20 px-4 py-2 rounded-full text-sm font-medium"
+                  className="flex items-center gap-2 bg-brand/10 text-brand border border-brand/20 px-4 py-2 rounded-full text-sm font-medium"
                 >
                   <CheckCircle2 className="size-4" />
                   {skill}
@@ -122,7 +126,7 @@ export default function ChipDesignPage() {
                 (skill) => (
                   <span
                     key={skill}
-                    className="flex items-center gap-2 bg-chipdesign/10 text-chipdesign border border-chipdesign/20 px-4 py-2 rounded-full text-sm font-medium"
+                    className="flex items-center gap-2 bg-brand/10 text-brand border border-brand/20 px-4 py-2 rounded-full text-sm font-medium"
                   >
                     <CheckCircle2 className="size-4" />
                     {skill}
@@ -147,14 +151,14 @@ export default function ChipDesignPage() {
             {careerOutcomes.map((career) => (
               <StaggerItem key={career.title}>
                 <div
-                  className="border-l-4 border-chipdesign pl-6 py-2"
+                  className="border border-border-custom rounded-xl p-6 hover:shadow-lg transition-all bg-white"
                 >
-                  <div className="flex items-center gap-2 mb-2">
-                    <Briefcase className="size-5 text-chipdesign" />
-                    <h3 className="text-lg font-semibold text-dark">
-                      {career.title}
-                    </h3>
+                  <div className="flex items-center justify-center w-12 h-12 rounded-full bg-brand/10 mb-4">
+                    <Briefcase className="size-6 text-brand" />
                   </div>
+                  <h3 className="text-lg font-bold text-dark mb-2">
+                    {career.title}
+                  </h3>
                   <p className="text-sm text-muted-brand">{career.description}</p>
                 </div>
               </StaggerItem>
