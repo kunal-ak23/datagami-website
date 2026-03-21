@@ -1,0 +1,85 @@
+import Link from "next/link"
+import { ArrowRight } from "lucide-react"
+
+interface HeroSplitProps {
+  heading: string
+  subtitle: string
+  ctaText: string
+  ctaHref: string
+  imageSrc: string
+  imageAlt: string
+  showLogo?: boolean
+  floatingCard?: {
+    heading: string
+    ctaText: string
+    ctaHref: string
+  }
+}
+
+export function HeroSplit({
+  heading,
+  subtitle,
+  ctaText,
+  ctaHref,
+  imageSrc,
+  imageAlt,
+  showLogo,
+  floatingCard,
+}: HeroSplitProps) {
+  return (
+    <section className="relative">
+      <div className="grid lg:grid-cols-2 min-h-[600px]">
+        {/* Left panel */}
+        <div className="bg-brand flex flex-col justify-center px-6 py-16 sm:px-10 lg:px-16 xl:px-20">
+          <div className="max-w-xl">
+            {showLogo && (
+              <img
+                src="/images/logo.png"
+                alt="Datagami logo"
+                className="mb-8 h-10 w-auto"
+              />
+            )}
+            <h1 className="text-4xl sm:text-5xl font-bold leading-tight text-dark mb-6">
+              {heading}
+            </h1>
+            <p className="text-body text-lg leading-relaxed mb-8">
+              {subtitle}
+            </p>
+            <Link
+              href={ctaHref}
+              className="inline-flex items-center gap-2 bg-dark text-white px-8 py-3 rounded-full font-semibold cursor-pointer hover:bg-dark/90 transition-colors"
+            >
+              {ctaText}
+              <ArrowRight className="size-5" />
+            </Link>
+          </div>
+        </div>
+
+        {/* Right panel */}
+        <div className="relative min-h-[300px] lg:min-h-0">
+          <img
+            src={imageSrc}
+            alt={imageAlt}
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+
+          {/* Floating card overlay */}
+          {floatingCard && (
+            <div className="absolute bottom-6 right-6 left-6 sm:left-auto sm:max-w-sm bg-white rounded-xl shadow-lg p-6">
+              <h3 className="text-lg font-semibold text-dark mb-4">
+                {floatingCard.heading}
+              </h3>
+              <Link
+                href={floatingCard.ctaHref}
+                className="inline-flex items-center gap-2 bg-dark text-white px-6 py-2.5 rounded-full text-sm font-semibold cursor-pointer hover:bg-dark/90 transition-colors"
+              >
+                {floatingCard.ctaText}
+                <ArrowRight className="size-4" />
+              </Link>
+            </div>
+          )}
+        </div>
+      </div>
+    </section>
+  )
+}
