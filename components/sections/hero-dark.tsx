@@ -9,6 +9,7 @@ interface HeroDarkProps {
   badgeText?: string
   ctaText?: string
   ctaHref?: string
+  backgroundImage?: string
 }
 
 export function HeroDark({
@@ -19,10 +20,20 @@ export function HeroDark({
   badgeText,
   ctaText,
   ctaHref,
+  backgroundImage,
 }: HeroDarkProps) {
   return (
-    <section className="bg-dark">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+    <section className="relative bg-dark overflow-hidden">
+      {backgroundImage && (
+        <img
+          src={backgroundImage}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover opacity-10"
+          loading="lazy"
+        />
+      )}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
         <div className="max-w-3xl">
           {badgeText && (
             <span

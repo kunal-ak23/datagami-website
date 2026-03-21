@@ -121,6 +121,7 @@ export default function FinLEARNPage() {
         stats={stats}
         ctaText="Apply Now"
         ctaHref="/contact"
+        backgroundImage="/images/hero/hero-finlearn.png"
       />
 
       {/* About */}

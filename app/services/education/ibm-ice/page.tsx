@@ -99,6 +99,7 @@ export default function IBMICEPage() {
         accentColor="text-ibm"
         badgeText="IBM Partnership"
         stats={stats}
+        backgroundImage="/images/hero/hero-ibm-ice.png"
       />
 
       {/* About */}

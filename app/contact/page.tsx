@@ -43,10 +43,21 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero */}
-      <HeroMinimal
-        heading="Get in Touch"
-        subtitle="We'd love to hear from you. Reach out for partnerships, inquiries, or support."
-      />
+      <div className="relative overflow-hidden">
+        <img
+          src="/images/hero/hero-contact.png"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover opacity-10"
+          loading="lazy"
+        />
+        <div className="relative z-10">
+          <HeroMinimal
+            heading="Get in Touch"
+            subtitle="We'd love to hear from you. Reach out for partnerships, inquiries, or support."
+          />
+        </div>
+      </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Breadcrumbs */}

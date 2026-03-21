@@ -60,6 +60,7 @@ export default function TechLEARNPage() {
         subtitle="Technology Training Programs — Master the technologies shaping the future"
         accentColor="text-brand"
         badgeText="Technology Education"
+        backgroundImage="/images/hero/hero-techlearn.png"
       />
 
       {/* Track Cards */}

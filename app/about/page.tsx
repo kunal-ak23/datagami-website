@@ -36,7 +36,7 @@ export default function AboutPage() {
       <HeroFull
         heading="About Datagami"
         subtitle="Empowering Institutions, Universities & Businesses Through Technology, Partnerships & Innovation"
-        backgroundColor="bg-brand"
+        backgroundImage="/images/hero/hero-about.png"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

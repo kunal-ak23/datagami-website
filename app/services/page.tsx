@@ -38,7 +38,7 @@ export default function ServicesPage() {
       <HeroFull
         heading="Our Solutions"
         subtitle="Explore our comprehensive range of education programs, enterprise products, and professional services"
-        backgroundColor="bg-brand"
+        backgroundImage="/images/hero/hero-services.png"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

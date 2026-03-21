@@ -123,6 +123,7 @@ export default function ClinomicPage() {
         accentColor="text-clinomic"
         badgeText="6-Month Program"
         stats={stats}
+        backgroundImage="/images/hero/hero-clinomic.png"
       />
 
       {/* About */}
