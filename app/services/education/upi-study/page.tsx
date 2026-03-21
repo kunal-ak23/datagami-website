@@ -21,6 +21,10 @@ import {
   BarChart3,
 } from "lucide-react"
 
+import { FadeIn } from "@/components/motion/fade-in"
+import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
+import { Counter } from "@/components/motion/counter"
+
 export const metadata: Metadata = {
   title: 'UPI Study - Digital Payments Education',
   description:
@@ -157,69 +161,86 @@ export default function UPIStudyPage() {
       {/* About */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-lg text-muted-brand max-w-3xl mx-auto text-center leading-relaxed">
-            {upiStudy.description}
-          </p>
+          <FadeIn>
+            <p className="text-lg text-muted-brand max-w-3xl mx-auto text-center leading-relaxed">
+              {upiStudy.description}
+            </p>
+          </FadeIn>
         </div>
       </section>
 
       {/* Program Overview */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            title="What You Will Learn"
-            description="A comprehensive curriculum covering every facet of India's digital payments revolution."
-          />
-          <FeatureGrid features={programModules} />
+          <FadeIn>
+            <SectionHeader
+              title="What You Will Learn"
+              description="A comprehensive curriculum covering every facet of India's digital payments revolution."
+            />
+          </FadeIn>
+          <FadeIn delay={0.2}>
+            <FeatureGrid features={programModules} />
+          </FadeIn>
         </div>
       </section>
 
       {/* Why UPI Matters */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            title="Why UPI Matters"
-            description="India's UPI is the fastest-growing digital payment system in the world — and the demand for skilled professionals is soaring."
-          />
-          <div className="grid md:grid-cols-3 gap-8">
+          <FadeIn>
+            <SectionHeader
+              title="Why UPI Matters"
+              description="India's UPI is the fastest-growing digital payment system in the world — and the demand for skilled professionals is soaring."
+            />
+          </FadeIn>
+          <StaggerChildren className="grid md:grid-cols-3 gap-8">
             {upiGrowthStats.map((stat) => (
-              <div
-                key={stat.label}
-                className="border border-border-custom rounded-xl p-8 text-center hover:shadow-lg transition-shadow"
-              >
-                <div className="w-16 h-16 rounded-full bg-brand/10 flex items-center justify-center mx-auto mb-4 text-brand">
-                  {stat.icon}
+              <StaggerItem key={stat.label}>
+                <div
+                  className="border border-border-custom rounded-xl p-8 text-center hover:shadow-lg transition-shadow"
+                >
+                  <div className="w-16 h-16 rounded-full bg-brand/10 flex items-center justify-center mx-auto mb-4 text-brand">
+                    {stat.icon}
+                  </div>
+                  <p className="text-3xl font-bold text-brand mb-1">
+                    <Counter target={stat.value} className="text-3xl font-bold text-brand" />
+                  </p>
+                  <p className="text-sm font-semibold text-dark mb-3">{stat.label}</p>
+                  <p className="text-sm text-muted-brand leading-relaxed">
+                    {stat.description}
+                  </p>
                 </div>
-                <p className="text-3xl font-bold text-brand mb-1">{stat.value}</p>
-                <p className="text-sm font-semibold text-dark mb-3">{stat.label}</p>
-                <p className="text-sm text-muted-brand leading-relaxed">
-                  {stat.description}
-                </p>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerChildren>
         </div>
       </section>
 
       {/* Career Outcomes */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            title="Career Outcomes"
-            description="UPI Study prepares you for high-growth roles across banks, fintechs, and payment companies."
-          />
-          <FeatureGrid features={careerPaths} />
+          <FadeIn>
+            <SectionHeader
+              title="Career Outcomes"
+              description="UPI Study prepares you for high-growth roles across banks, fintechs, and payment companies."
+            />
+          </FadeIn>
+          <FadeIn delay={0.2}>
+            <FeatureGrid features={careerPaths} />
+          </FadeIn>
         </div>
       </section>
 
       {/* CTA */}
-      <CTASection
-        title="Explore Digital Payments Education"
-        description="Be part of the digital payments revolution. Enroll in UPI Study and build your career in fintech."
-        buttonText="Get Started"
-        buttonHref="/contact"
-        variant="primary"
-      />
+      <FadeIn>
+        <CTASection
+          title="Explore Digital Payments Education"
+          description="Be part of the digital payments revolution. Enroll in UPI Study and build your career in fintech."
+          buttonText="Get Started"
+          buttonHref="/contact"
+          variant="primary"
+        />
+      </FadeIn>
     </>
   )
 }

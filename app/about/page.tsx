@@ -5,6 +5,9 @@ import Breadcrumbs from "@/components/layout/breadcrumbs"
 import { CTASection } from "@/components/sections/cta-section"
 import { company } from "@/lib/data/company"
 
+import { FadeIn } from "@/components/motion/fade-in"
+import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
+
 export const metadata: Metadata = {
   title: 'About Us',
   description: 'Datagami Technology Services — empowering institutions and businesses through technology, partnerships, and innovation. Offices in Mumbai and Bengaluru.',
@@ -46,136 +49,155 @@ export default function AboutPage() {
 
         {/* ── Mission & Vision ── */}
         <section className="py-16">
-          <div className="grid gap-8 md:grid-cols-2">
+          <StaggerChildren className="grid gap-8 md:grid-cols-2">
             {/* Mission */}
-            <div className="rounded-2xl border border-border-custom bg-white p-8">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="flex items-center justify-center size-12 rounded-full bg-brand/20">
-                  <Target className="size-6 text-dark" />
+            <StaggerItem>
+              <div className="rounded-2xl border border-border-custom bg-white p-8">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="flex items-center justify-center size-12 rounded-full bg-brand/20">
+                    <Target className="size-6 text-dark" />
+                  </div>
+                  <h2 className="text-2xl font-bold text-dark">Our Mission</h2>
                 </div>
-                <h2 className="text-2xl font-bold text-dark">Our Mission</h2>
+                <p className="text-body leading-relaxed">{company.mission}</p>
               </div>
-              <p className="text-body leading-relaxed">{company.mission}</p>
-            </div>
+            </StaggerItem>
 
             {/* Vision */}
-            <div className="rounded-2xl border border-border-custom bg-white p-8">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="flex items-center justify-center size-12 rounded-full bg-brand/20">
-                  <Eye className="size-6 text-dark" />
+            <StaggerItem>
+              <div className="rounded-2xl border border-border-custom bg-white p-8">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="flex items-center justify-center size-12 rounded-full bg-brand/20">
+                    <Eye className="size-6 text-dark" />
+                  </div>
+                  <h2 className="text-2xl font-bold text-dark">Our Vision</h2>
                 </div>
-                <h2 className="text-2xl font-bold text-dark">Our Vision</h2>
+                <p className="text-body leading-relaxed">{company.vision}</p>
               </div>
-              <p className="text-body leading-relaxed">{company.vision}</p>
-            </div>
-          </div>
+            </StaggerItem>
+          </StaggerChildren>
         </section>
 
         {/* ── Company Timeline ── */}
         <section className="py-16 border-t border-border-custom">
-          <h2 className="text-3xl font-bold text-dark mb-12 text-center">Our Journey</h2>
+          <FadeIn>
+            <h2 className="text-3xl font-bold text-dark mb-12 text-center">Our Journey</h2>
+          </FadeIn>
           <div className="relative">
             {/* Vertical line */}
             <div className="absolute left-4 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-0.5 bg-brand/30" />
 
-            <div className="space-y-12">
+            <StaggerChildren className="space-y-12">
               {milestones.map((milestone, i) => {
                 const isLeft = i % 2 === 0
                 return (
-                  <div
-                    key={milestone.year}
-                    className={`relative flex items-start gap-6 md:gap-0 ${
-                      isLeft ? "md:flex-row" : "md:flex-row-reverse"
-                    }`}
-                  >
-                    {/* Dot */}
-                    <div className="absolute left-4 md:left-1/2 -translate-x-1/2 size-4 rounded-full bg-brand border-4 border-white ring-2 ring-brand/30 z-10" />
-
-                    {/* Content */}
+                  <StaggerItem key={milestone.year}>
                     <div
-                      className={`ml-12 md:ml-0 md:w-1/2 ${
-                        isLeft ? "md:pr-12 md:text-right" : "md:pl-12"
+                      className={`relative flex items-start gap-6 md:gap-0 ${
+                        isLeft ? "md:flex-row" : "md:flex-row-reverse"
                       }`}
                     >
-                      <span className="inline-block text-sm font-bold text-brand bg-brand/10 px-3 py-1 rounded-full mb-2">
-                        {milestone.year}
-                      </span>
-                      <h3 className="text-xl font-bold text-dark mb-1">{milestone.title}</h3>
-                      <p className="text-body leading-relaxed">{milestone.description}</p>
+                      {/* Dot */}
+                      <div className="absolute left-4 md:left-1/2 -translate-x-1/2 size-4 rounded-full bg-brand border-4 border-white ring-2 ring-brand/30 z-10" />
+
+                      {/* Content */}
+                      <div
+                        className={`ml-12 md:ml-0 md:w-1/2 ${
+                          isLeft ? "md:pr-12 md:text-right" : "md:pl-12"
+                        }`}
+                      >
+                        <span className="inline-block text-sm font-bold text-brand bg-brand/10 px-3 py-1 rounded-full mb-2">
+                          {milestone.year}
+                        </span>
+                        <h3 className="text-xl font-bold text-dark mb-1">{milestone.title}</h3>
+                        <p className="text-body leading-relaxed">{milestone.description}</p>
+                      </div>
                     </div>
-                  </div>
+                  </StaggerItem>
                 )
               })}
-            </div>
+            </StaggerChildren>
           </div>
         </section>
 
         {/* ── Team Section ── */}
         <section className="py-16 border-t border-border-custom">
-          <h2 className="text-3xl font-bold text-dark mb-10 text-center">Our Leadership Team</h2>
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <FadeIn>
+            <h2 className="text-3xl font-bold text-dark mb-10 text-center">Our Leadership Team</h2>
+          </FadeIn>
+          <StaggerChildren className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {team.map((member) => (
-              <div key={member.name} className="text-center">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  width={112}
-                  height={112}
-                  loading="lazy"
-                  className="mx-auto mb-4 size-28 rounded-full object-cover"
-                />
-                <h3 className="text-lg font-bold text-dark">{member.name}</h3>
-                <p className="text-sm text-body">{member.title}</p>
-              </div>
+              <StaggerItem key={member.name}>
+                <div className="text-center">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    width={112}
+                    height={112}
+                    loading="lazy"
+                    className="mx-auto mb-4 size-28 rounded-full object-cover"
+                  />
+                  <h3 className="text-lg font-bold text-dark">{member.name}</h3>
+                  <p className="text-sm text-body">{member.title}</p>
+                </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerChildren>
         </section>
 
         {/* ── Partners & Clients ── */}
         <section className="py-16 border-t border-border-custom">
-          <h2 className="text-3xl font-bold text-dark mb-10 text-center">Trusted By</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+          <FadeIn>
+            <h2 className="text-3xl font-bold text-dark mb-10 text-center">Trusted By</h2>
+          </FadeIn>
+          <StaggerChildren className="grid grid-cols-2 sm:grid-cols-4 gap-6">
             {Array.from({ length: 8 }).map((_, i) => (
-              <div
-                key={i}
-                className="h-20 rounded-xl bg-gray-100 border border-border-custom flex items-center justify-center"
-              >
-                <span className="text-sm text-gray-400 font-medium">Partner Logo</span>
-              </div>
+              <StaggerItem key={i}>
+                <div
+                  className="h-20 rounded-xl bg-gray-100 border border-border-custom flex items-center justify-center"
+                >
+                  <span className="text-sm text-gray-400 font-medium">Partner Logo</span>
+                </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerChildren>
         </section>
 
         {/* ── Office Locations ── */}
         <section className="py-16 border-t border-border-custom">
-          <h2 className="text-3xl font-bold text-dark mb-10 text-center">Our Offices</h2>
-          <div className="grid gap-8 md:grid-cols-2">
+          <FadeIn>
+            <h2 className="text-3xl font-bold text-dark mb-10 text-center">Our Offices</h2>
+          </FadeIn>
+          <StaggerChildren className="grid gap-8 md:grid-cols-2">
             {company.offices.map((office) => (
-              <div
-                key={office.city}
-                className="rounded-2xl border border-border-custom bg-white p-8"
-              >
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="flex items-center justify-center size-10 rounded-full bg-brand/20">
-                    <MapPin className="size-5 text-dark" />
+              <StaggerItem key={office.city}>
+                <div
+                  className="rounded-2xl border border-border-custom bg-white p-8"
+                >
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="flex items-center justify-center size-10 rounded-full bg-brand/20">
+                      <MapPin className="size-5 text-dark" />
+                    </div>
+                    <h3 className="text-xl font-bold text-dark">{office.city}</h3>
                   </div>
-                  <h3 className="text-xl font-bold text-dark">{office.city}</h3>
+                  <p className="text-body leading-relaxed">{office.address}</p>
                 </div>
-                <p className="text-body leading-relaxed">{office.address}</p>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerChildren>
         </section>
       </div>
 
       {/* CTA */}
-      <CTASection
-        title="Partner With Us"
-        description="Let's work together to create impactful education and technology solutions."
-        buttonText="Get in Touch"
-        buttonHref="/contact"
-        variant="dark"
-      />
+      <FadeIn>
+        <CTASection
+          title="Partner With Us"
+          description="Let's work together to create impactful education and technology solutions."
+          buttonText="Get in Touch"
+          buttonHref="/contact"
+          variant="dark"
+        />
+      </FadeIn>
     </>
   )
 }

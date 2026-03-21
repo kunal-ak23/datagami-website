@@ -14,6 +14,9 @@ import {
   Building2,
 } from "lucide-react"
 
+import { FadeIn } from "@/components/motion/fade-in"
+import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
+
 export const metadata: Metadata = {
   title: "Sineap LMS - Learning Management System",
   description:
@@ -105,57 +108,68 @@ export default function SineapLmsPage() {
       {/* Product Overview */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-lg text-muted-brand max-w-3xl mx-auto text-center leading-relaxed">
-            {sineapLms.description}
-          </p>
+          <FadeIn>
+            <p className="text-lg text-muted-brand max-w-3xl mx-auto text-center leading-relaxed">
+              {sineapLms.description}
+            </p>
+          </FadeIn>
         </div>
       </section>
 
       {/* Key Features */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            title="Key Features"
-            description="Everything you need to deliver world-class learning experiences."
-          />
-          <FeatureGrid features={features} />
+          <FadeIn>
+            <SectionHeader
+              title="Key Features"
+              description="Everything you need to deliver world-class learning experiences."
+            />
+          </FadeIn>
+          <FadeIn delay={0.2}>
+            <FeatureGrid features={features} />
+          </FadeIn>
         </div>
       </section>
 
       {/* How It Works */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            title="How It Works"
-            description="Get up and running in three straightforward steps."
-          />
-          <div className="grid md:grid-cols-3 gap-8">
+          <FadeIn>
+            <SectionHeader
+              title="How It Works"
+              description="Get up and running in three straightforward steps."
+            />
+          </FadeIn>
+          <StaggerChildren className="grid md:grid-cols-3 gap-8">
             {steps.map((s) => (
-              <div
-                key={s.step}
-                className="relative p-6 rounded-xl border border-border-custom hover:shadow-md transition-shadow"
-              >
-                <div className="w-10 h-10 rounded-full bg-brand text-dark font-bold flex items-center justify-center mb-4 text-lg">
-                  {s.step}
+              <StaggerItem key={s.step}>
+                <div
+                  className="relative p-6 rounded-xl border border-border-custom hover:shadow-md transition-shadow"
+                >
+                  <div className="w-10 h-10 rounded-full bg-brand text-dark font-bold flex items-center justify-center mb-4 text-lg">
+                    {s.step}
+                  </div>
+                  <h3 className="text-lg font-semibold text-dark mb-2">
+                    {s.title}
+                  </h3>
+                  <p className="text-sm text-muted-brand">{s.description}</p>
                 </div>
-                <h3 className="text-lg font-semibold text-dark mb-2">
-                  {s.title}
-                </h3>
-                <p className="text-sm text-muted-brand">{s.description}</p>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerChildren>
         </div>
       </section>
 
       {/* CTA */}
-      <CTASection
-        title="Request a Demo"
-        description="See how Sineap LMS can transform learning at your institution."
-        buttonText="Request a Demo"
-        buttonHref="/contact"
-        variant="dark"
-      />
+      <FadeIn>
+        <CTASection
+          title="Request a Demo"
+          description="See how Sineap LMS can transform learning at your institution."
+          buttonText="Request a Demo"
+          buttonHref="/contact"
+          variant="dark"
+        />
+      </FadeIn>
     </>
   )
 }

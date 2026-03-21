@@ -4,6 +4,8 @@ import Breadcrumbs from "@/components/layout/breadcrumbs"
 import { CaseStudyCard } from "@/components/cards/case-study-card"
 import { caseStudies } from "@/lib/data/case-studies"
 
+import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
+
 export const metadata: Metadata = {
   title: "Case Studies",
   description:
@@ -28,18 +30,19 @@ export default function CaseStudiesPage() {
 
         {/* Case Study Grid */}
         <section className="py-16">
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <StaggerChildren className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {caseStudies.map((cs) => (
-              <CaseStudyCard
-                key={cs.slug}
-                title={cs.title}
-                industry={cs.industry}
-                summary={cs.summary}
-                slug={cs.slug}
-                imageSrc={cs.imageSrc}
-              />
+              <StaggerItem key={cs.slug}>
+                <CaseStudyCard
+                  title={cs.title}
+                  industry={cs.industry}
+                  summary={cs.summary}
+                  slug={cs.slug}
+                  imageSrc={cs.imageSrc}
+                />
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerChildren>
         </section>
       </div>
     </>

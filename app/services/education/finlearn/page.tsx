@@ -9,6 +9,9 @@ import { finlearn } from "@/lib/data/programs"
 import { generateCourseSchema } from "@/lib/schemas/course"
 import { GraduationCap, Award, BookOpen, Users, Building2 } from "lucide-react"
 
+import { FadeIn } from "@/components/motion/fade-in"
+import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
+
 export const metadata: Metadata = {
   title: 'FinLEARN - BFSI Education Programs',
   description:
@@ -123,107 +126,120 @@ export default function FinLEARNPage() {
       {/* About */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-lg text-muted-brand max-w-3xl mx-auto text-center leading-relaxed">
-            {finlearn.description}
-          </p>
+          <FadeIn>
+            <p className="text-lg text-muted-brand max-w-3xl mx-auto text-center leading-relaxed">
+              {finlearn.description}
+            </p>
+          </FadeIn>
         </div>
       </section>
 
       {/* Program Tracks */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            title="Program Tracks"
-            description="Industry-aligned curricula designed for every stage of your academic journey."
-          />
+          <FadeIn>
+            <SectionHeader
+              title="Program Tracks"
+              description="Industry-aligned curricula designed for every stage of your academic journey."
+            />
+          </FadeIn>
 
           {/* Undergraduate Programs */}
           {ugTracks.length > 0 && (
             <div className="mb-12">
-              <h3 className="text-2xl font-bold text-dark mb-6 flex items-center gap-3">
-                <span className="w-10 h-10 rounded-lg bg-brand/10 flex items-center justify-center text-brand">
-                  {levelIcon.UG}
-                </span>
-                Undergraduate Programs
-              </h3>
-              <div className="grid md:grid-cols-2 gap-6">
+              <FadeIn>
+                <h3 className="text-2xl font-bold text-dark mb-6 flex items-center gap-3">
+                  <span className="w-10 h-10 rounded-lg bg-brand/10 flex items-center justify-center text-brand">
+                    {levelIcon.UG}
+                  </span>
+                  Undergraduate Programs
+                </h3>
+              </FadeIn>
+              <StaggerChildren className="grid md:grid-cols-2 gap-6">
                 {ugTracks.map((track) => (
-                  <div
-                    key={track.name}
-                    className="bg-white border border-border-custom rounded-xl p-6 hover:shadow-lg transition-shadow"
-                  >
-                    <span className="inline-block text-xs font-semibold uppercase tracking-wider text-brand bg-brand/10 px-3 py-1 rounded-full mb-3">
-                      UG
-                    </span>
-                    <h4 className="text-lg font-semibold text-dark mb-2">
-                      {track.name}
-                    </h4>
-                    <p className="text-sm text-muted-brand">
-                      {track.description}
-                    </p>
-                  </div>
+                  <StaggerItem key={track.name}>
+                    <div
+                      className="bg-white border border-border-custom rounded-xl p-6 hover:shadow-lg transition-shadow"
+                    >
+                      <span className="inline-block text-xs font-semibold uppercase tracking-wider text-brand bg-brand/10 px-3 py-1 rounded-full mb-3">
+                        UG
+                      </span>
+                      <h4 className="text-lg font-semibold text-dark mb-2">
+                        {track.name}
+                      </h4>
+                      <p className="text-sm text-muted-brand">
+                        {track.description}
+                      </p>
+                    </div>
+                  </StaggerItem>
                 ))}
-              </div>
+              </StaggerChildren>
             </div>
           )}
 
           {/* Postgraduate Programs */}
           {pgTracks.length > 0 && (
             <div className="mb-12">
-              <h3 className="text-2xl font-bold text-dark mb-6 flex items-center gap-3">
-                <span className="w-10 h-10 rounded-lg bg-brand/10 flex items-center justify-center text-brand">
-                  {levelIcon.PG}
-                </span>
-                Postgraduate Programs
-              </h3>
-              <div className="grid md:grid-cols-2 gap-6">
+              <FadeIn>
+                <h3 className="text-2xl font-bold text-dark mb-6 flex items-center gap-3">
+                  <span className="w-10 h-10 rounded-lg bg-brand/10 flex items-center justify-center text-brand">
+                    {levelIcon.PG}
+                  </span>
+                  Postgraduate Programs
+                </h3>
+              </FadeIn>
+              <StaggerChildren className="grid md:grid-cols-2 gap-6">
                 {pgTracks.map((track) => (
-                  <div
-                    key={track.name}
-                    className="bg-white border border-border-custom rounded-xl p-6 hover:shadow-lg transition-shadow"
-                  >
-                    <span className="inline-block text-xs font-semibold uppercase tracking-wider text-brand bg-brand/10 px-3 py-1 rounded-full mb-3">
-                      PG
-                    </span>
-                    <h4 className="text-lg font-semibold text-dark mb-2">
-                      {track.name}
-                    </h4>
-                    <p className="text-sm text-muted-brand">
-                      {track.description}
-                    </p>
-                  </div>
+                  <StaggerItem key={track.name}>
+                    <div
+                      className="bg-white border border-border-custom rounded-xl p-6 hover:shadow-lg transition-shadow"
+                    >
+                      <span className="inline-block text-xs font-semibold uppercase tracking-wider text-brand bg-brand/10 px-3 py-1 rounded-full mb-3">
+                        PG
+                      </span>
+                      <h4 className="text-lg font-semibold text-dark mb-2">
+                        {track.name}
+                      </h4>
+                      <p className="text-sm text-muted-brand">
+                        {track.description}
+                      </p>
+                    </div>
+                  </StaggerItem>
                 ))}
-              </div>
+              </StaggerChildren>
             </div>
           )}
 
           {/* Certifications */}
           {certTracks.length > 0 && (
             <div>
-              <h3 className="text-2xl font-bold text-dark mb-6 flex items-center gap-3">
-                <span className="w-10 h-10 rounded-lg bg-brand/10 flex items-center justify-center text-brand">
-                  {levelIcon.Certificate}
-                </span>
-                Certifications
-              </h3>
-              <div className="grid md:grid-cols-2 gap-6">
+              <FadeIn>
+                <h3 className="text-2xl font-bold text-dark mb-6 flex items-center gap-3">
+                  <span className="w-10 h-10 rounded-lg bg-brand/10 flex items-center justify-center text-brand">
+                    {levelIcon.Certificate}
+                  </span>
+                  Certifications
+                </h3>
+              </FadeIn>
+              <StaggerChildren className="grid md:grid-cols-2 gap-6">
                 {certTracks.map((track) => (
-                  <div
-                    key={track.name}
-                    className="bg-white border border-border-custom rounded-xl p-6 hover:shadow-lg transition-shadow"
-                  >
-                    <span className="inline-block text-xs font-semibold uppercase tracking-wider text-brand bg-brand/10 px-3 py-1 rounded-full mb-3">
-                      Certificate
-                    </span>
-                    <h4 className="text-lg font-semibold text-dark mb-2">
-                      {track.name}
-                    </h4>
-                    <p className="text-sm text-muted-brand">
-                      {track.description}
-                    </p>
-                  </div>
+                  <StaggerItem key={track.name}>
+                    <div
+                      className="bg-white border border-border-custom rounded-xl p-6 hover:shadow-lg transition-shadow"
+                    >
+                      <span className="inline-block text-xs font-semibold uppercase tracking-wider text-brand bg-brand/10 px-3 py-1 rounded-full mb-3">
+                        Certificate
+                      </span>
+                      <h4 className="text-lg font-semibold text-dark mb-2">
+                        {track.name}
+                      </h4>
+                      <p className="text-sm text-muted-brand">
+                        {track.description}
+                      </p>
+                    </div>
+                  </StaggerItem>
                 ))}
-              </div>
+              </StaggerChildren>
             </div>
           )}
         </div>
@@ -232,99 +248,114 @@ export default function FinLEARNPage() {
       {/* Industry Certifications Gallery */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            title="Industry Certifications"
-            description="Prepare for globally recognized certifications that enhance your employability."
-          />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <FadeIn>
+            <SectionHeader
+              title="Industry Certifications"
+              description="Prepare for globally recognized certifications that enhance your employability."
+            />
+          </FadeIn>
+          <StaggerChildren className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {certifications.map((cert) => (
-              <div
-                key={cert.name}
-                className="border border-border-custom rounded-xl p-6 text-center hover:shadow-lg transition-shadow"
-              >
-                <div className="w-16 h-16 rounded-full bg-brand/10 flex items-center justify-center mx-auto mb-4">
-                  <Award className="size-8 text-brand" />
+              <StaggerItem key={cert.name}>
+                <div
+                  className="border border-border-custom rounded-xl p-6 text-center hover:shadow-lg transition-shadow"
+                >
+                  <div className="w-16 h-16 rounded-full bg-brand/10 flex items-center justify-center mx-auto mb-4">
+                    <Award className="size-8 text-brand" />
+                  </div>
+                  <h3 className="text-base font-semibold text-dark mb-2">
+                    {cert.name}
+                  </h3>
+                  <p className="text-sm text-muted-brand">{cert.description}</p>
                 </div>
-                <h3 className="text-base font-semibold text-dark mb-2">
-                  {cert.name}
-                </h3>
-                <p className="text-sm text-muted-brand">{cert.description}</p>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerChildren>
         </div>
       </section>
 
       {/* Stats Bar */}
-      <StatsBar stats={stats} variant="dark" />
+      <FadeIn>
+        <StatsBar stats={stats} variant="dark" />
+      </FadeIn>
 
       {/* Expert Instructors */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            title="Meet Our Expert Instructors"
-            description="Learn from industry veterans with decades of experience in banking and finance."
-          />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <FadeIn>
+            <SectionHeader
+              title="Meet Our Expert Instructors"
+              description="Learn from industry veterans with decades of experience in banking and finance."
+            />
+          </FadeIn>
+          <StaggerChildren className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {instructors.map((instructor) => (
-              <div
-                key={instructor.name}
-                className="border border-border-custom rounded-xl p-6 text-center hover:shadow-lg transition-shadow"
-              >
-                <div className="w-24 h-24 rounded-full bg-gray-200 flex items-center justify-center mx-auto mb-4">
-                  <Users className="size-10 text-gray-400" />
+              <StaggerItem key={instructor.name}>
+                <div
+                  className="border border-border-custom rounded-xl p-6 text-center hover:shadow-lg transition-shadow"
+                >
+                  <div className="w-24 h-24 rounded-full bg-gray-200 flex items-center justify-center mx-auto mb-4">
+                    <Users className="size-10 text-gray-400" />
+                  </div>
+                  <h3 className="text-base font-semibold text-dark">
+                    {instructor.name}
+                  </h3>
+                  <p className="text-sm text-brand font-medium mt-1">
+                    {instructor.title}
+                  </p>
+                  <p className="text-xs text-muted-brand mt-2">
+                    {instructor.specialization}
+                  </p>
                 </div>
-                <h3 className="text-base font-semibold text-dark">
-                  {instructor.name}
-                </h3>
-                <p className="text-sm text-brand font-medium mt-1">
-                  {instructor.title}
-                </p>
-                <p className="text-xs text-muted-brand mt-2">
-                  {instructor.specialization}
-                </p>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerChildren>
         </div>
       </section>
 
       {/* Where Our Alumni Work */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            title="Where Our Alumni Work"
-            description="Our graduates are employed at leading banks and financial institutions across India."
-          />
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
+          <FadeIn>
+            <SectionHeader
+              title="Where Our Alumni Work"
+              description="Our graduates are employed at leading banks and financial institutions across India."
+            />
+          </FadeIn>
+          <StaggerChildren className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
             {alumniCompanies.map((company) => (
-              <div
-                key={company}
-                className="bg-white border border-border-custom rounded-xl h-24 flex items-center justify-center"
-              >
-                <div className="flex flex-col items-center gap-1">
-                  <Building2 className="size-6 text-gray-300" />
-                  <span className="text-xs text-muted-brand font-medium text-center px-2">
-                    {company}
-                  </span>
+              <StaggerItem key={company}>
+                <div
+                  className="bg-white border border-border-custom rounded-xl h-24 flex items-center justify-center"
+                >
+                  <div className="flex flex-col items-center gap-1">
+                    <Building2 className="size-6 text-gray-300" />
+                    <span className="text-xs text-muted-brand font-medium text-center px-2">
+                      {company}
+                    </span>
+                  </div>
                 </div>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerChildren>
         </div>
       </section>
 
       {/* FAQs */}
-      <FAQSection faqs={finlearn.faqs} />
+      <FadeIn>
+        <FAQSection faqs={finlearn.faqs} />
+      </FadeIn>
 
       {/* CTA */}
-      <CTASection
-        title="Start Your Career in Banking & Finance"
-        description="Join FinLEARN and take the first step toward a rewarding career in the BFSI sector."
-        buttonText="Apply Now"
-        buttonHref="/contact"
-        variant="primary"
-      />
+      <FadeIn>
+        <CTASection
+          title="Start Your Career in Banking & Finance"
+          description="Join FinLEARN and take the first step toward a rewarding career in the BFSI sector."
+          buttonText="Apply Now"
+          buttonHref="/contact"
+          variant="primary"
+        />
+      </FadeIn>
     </>
   )
 }

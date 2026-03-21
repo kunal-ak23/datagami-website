@@ -20,6 +20,9 @@ import {
   Phone,
 } from "lucide-react"
 
+import { FadeIn } from "@/components/motion/fade-in"
+import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
+
 export const metadata: Metadata = {
   title: 'Clinomic - Clinical Research Education',
   description:
@@ -125,114 +128,134 @@ export default function ClinomicPage() {
       {/* About */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-lg text-muted-brand max-w-3xl mx-auto text-center leading-relaxed">
-            Clinomic is Datagami&apos;s dedicated clinical research education
-            centre, offering a comprehensive 6-month program that prepares
-            graduates for rewarding careers in the clinical research industry.
-            With a strong focus on practical training and industry readiness,
-            Clinomic has placed over 500 professionals across leading CROs and
-            pharmaceutical companies.
-          </p>
+          <FadeIn>
+            <p className="text-lg text-muted-brand max-w-3xl mx-auto text-center leading-relaxed">
+              Clinomic is Datagami&apos;s dedicated clinical research education
+              centre, offering a comprehensive 6-month program that prepares
+              graduates for rewarding careers in the clinical research industry.
+              With a strong focus on practical training and industry readiness,
+              Clinomic has placed over 500 professionals across leading CROs and
+              pharmaceutical companies.
+            </p>
+          </FadeIn>
         </div>
       </section>
 
       {/* Core Areas */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            title="Core Areas of Study"
-            description="Our curriculum covers the four pillars of clinical research, ensuring you graduate job-ready."
-          />
-          <FeatureGrid features={coreAreaFeatures} />
+          <FadeIn>
+            <SectionHeader
+              title="Core Areas of Study"
+              description="Our curriculum covers the four pillars of clinical research, ensuring you graduate job-ready."
+            />
+          </FadeIn>
+          <FadeIn delay={0.2}>
+            <FeatureGrid features={coreAreaFeatures} />
+          </FadeIn>
         </div>
       </section>
 
       {/* Application Process — Vertical Timeline */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            title="Application Process"
-            description="Four straightforward steps to begin your clinical research career."
-          />
+          <FadeIn>
+            <SectionHeader
+              title="Application Process"
+              description="Four straightforward steps to begin your clinical research career."
+            />
+          </FadeIn>
 
           <div className="max-w-2xl mx-auto">
-            {applicationSteps.map((item, index) => (
-              <div key={item.step} className="relative flex gap-6 pb-10 last:pb-0">
-                {/* Vertical line */}
-                {index < applicationSteps.length - 1 && (
-                  <div className="absolute left-[23px] top-12 w-0.5 h-[calc(100%-32px)] bg-clinomic/20" />
-                )}
+            <StaggerChildren className="space-y-0">
+              {applicationSteps.map((item, index) => (
+                <StaggerItem key={item.step}>
+                  <div className="relative flex gap-6 pb-10 last:pb-0">
+                    {/* Vertical line */}
+                    {index < applicationSteps.length - 1 && (
+                      <div className="absolute left-[23px] top-12 w-0.5 h-[calc(100%-32px)] bg-clinomic/20" />
+                    )}
 
-                {/* Step circle */}
-                <div className="relative z-10 flex items-center justify-center w-12 h-12 rounded-full bg-clinomic/10 text-clinomic border-2 border-clinomic shrink-0">
-                  {item.icon}
-                </div>
+                    {/* Step circle */}
+                    <div className="relative z-10 flex items-center justify-center w-12 h-12 rounded-full bg-clinomic/10 text-clinomic border-2 border-clinomic shrink-0">
+                      {item.icon}
+                    </div>
 
-                {/* Content */}
-                <div className="pt-1">
-                  <p className="text-xs font-semibold uppercase tracking-wider text-clinomic mb-1">
-                    Step {item.step}
-                  </p>
-                  <h3 className="text-lg font-bold text-dark mb-1">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm text-muted-brand leading-relaxed">
-                    {item.description}
-                  </p>
-                </div>
-              </div>
-            ))}
+                    {/* Content */}
+                    <div className="pt-1">
+                      <p className="text-xs font-semibold uppercase tracking-wider text-clinomic mb-1">
+                        Step {item.step}
+                      </p>
+                      <h3 className="text-lg font-bold text-dark mb-1">
+                        {item.title}
+                      </h3>
+                      <p className="text-sm text-muted-brand leading-relaxed">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+                </StaggerItem>
+              ))}
+            </StaggerChildren>
           </div>
         </div>
       </section>
 
       {/* FAQs */}
-      <FAQSection faqs={clinomic.faqs} />
+      <FadeIn>
+        <FAQSection faqs={clinomic.faqs} />
+      </FadeIn>
 
       {/* Contact Info */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            title="Get in Touch"
-            description="Have questions about the Clinomic program? Reach out to our admissions team."
-          />
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
-            <a
-              href="mailto:query@datagami.in"
-              className="flex items-center gap-3 text-dark hover:text-clinomic transition-colors"
-            >
-              <div className="w-12 h-12 rounded-full bg-clinomic/10 flex items-center justify-center text-clinomic">
-                <Mail className="size-5" />
-              </div>
-              <div>
-                <p className="text-sm text-muted-brand">Email</p>
-                <p className="font-semibold">query@datagami.in</p>
-              </div>
-            </a>
-            <a
-              href="tel:+911234567890"
-              className="flex items-center gap-3 text-dark hover:text-clinomic transition-colors"
-            >
-              <div className="w-12 h-12 rounded-full bg-clinomic/10 flex items-center justify-center text-clinomic">
-                <Phone className="size-5" />
-              </div>
-              <div>
-                <p className="text-sm text-muted-brand">Phone</p>
-                <p className="font-semibold">Contact Admissions</p>
-              </div>
-            </a>
-          </div>
+          <FadeIn>
+            <SectionHeader
+              title="Get in Touch"
+              description="Have questions about the Clinomic program? Reach out to our admissions team."
+            />
+          </FadeIn>
+          <FadeIn delay={0.2}>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
+              <a
+                href="mailto:query@datagami.in"
+                className="flex items-center gap-3 text-dark hover:text-clinomic transition-colors"
+              >
+                <div className="w-12 h-12 rounded-full bg-clinomic/10 flex items-center justify-center text-clinomic">
+                  <Mail className="size-5" />
+                </div>
+                <div>
+                  <p className="text-sm text-muted-brand">Email</p>
+                  <p className="font-semibold">query@datagami.in</p>
+                </div>
+              </a>
+              <a
+                href="tel:+911234567890"
+                className="flex items-center gap-3 text-dark hover:text-clinomic transition-colors"
+              >
+                <div className="w-12 h-12 rounded-full bg-clinomic/10 flex items-center justify-center text-clinomic">
+                  <Phone className="size-5" />
+                </div>
+                <div>
+                  <p className="text-sm text-muted-brand">Phone</p>
+                  <p className="font-semibold">Contact Admissions</p>
+                </div>
+              </a>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
       {/* CTA */}
-      <CTASection
-        title="Start Your Clinical Research Career"
-        description="Join Clinomic and become part of a growing community of clinical research professionals."
-        buttonText="Apply Now"
-        buttonHref="/contact"
-        variant="primary"
-      />
+      <FadeIn>
+        <CTASection
+          title="Start Your Clinical Research Career"
+          description="Join Clinomic and become part of a growing community of clinical research professionals."
+          buttonText="Apply Now"
+          buttonHref="/contact"
+          variant="primary"
+        />
+      </FadeIn>
     </>
   )
 }

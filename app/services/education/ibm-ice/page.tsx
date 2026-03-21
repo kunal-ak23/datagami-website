@@ -7,6 +7,9 @@ import { ibmIce } from "@/lib/data/programs"
 import { generateCourseSchema } from "@/lib/schemas/course"
 import { Cpu, Factory, Wrench, Award, Building2 } from "lucide-react"
 
+import { FadeIn } from "@/components/motion/fade-in"
+import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
+
 export const metadata: Metadata = {
   title: 'IBM ICE - Innovation Centre of Excellence Badge Programs',
   description:
@@ -101,91 +104,101 @@ export default function IBMICEPage() {
       {/* About */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-lg text-muted-brand max-w-3xl mx-auto text-center leading-relaxed">
-            The IBM Innovation Centre of Excellence (ICE) is a strategic
-            partnership between Datagami and IBM, delivering industry-recognized
-            badge programs that equip students with in-demand skills across
-            technology, industry domains, and deep technical specializations.
-          </p>
+          <FadeIn>
+            <p className="text-lg text-muted-brand max-w-3xl mx-auto text-center leading-relaxed">
+              The IBM Innovation Centre of Excellence (ICE) is a strategic
+              partnership between Datagami and IBM, delivering industry-recognized
+              badge programs that equip students with in-demand skills across
+              technology, industry domains, and deep technical specializations.
+            </p>
+          </FadeIn>
         </div>
       </section>
 
       {/* Track Categories */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            title="Track Categories"
-            description="Choose from four comprehensive categories spanning technology, industry, and specialized skills."
-          />
+          <FadeIn>
+            <SectionHeader
+              title="Track Categories"
+              description="Choose from four comprehensive categories spanning technology, industry, and specialized skills."
+            />
+          </FadeIn>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <StaggerChildren className="grid md:grid-cols-2 gap-8">
             {ibmIce.trackCategories.map((category) => {
               const meta = categoryMeta[category.name]
               return (
-                <div
-                  key={category.name}
-                  className="bg-white border border-border-custom rounded-xl p-8 hover:shadow-lg transition-shadow"
-                >
-                  <div className="flex items-start gap-4">
-                    <div
-                      className={`w-14 h-14 rounded-xl flex items-center justify-center shrink-0 ${meta?.color ?? "bg-ibm/10 text-ibm"}`}
-                    >
-                      {meta?.icon}
-                    </div>
-                    <div className="flex-1">
-                      <div className="flex items-center gap-3 mb-2">
-                        <h3 className="text-xl font-bold text-dark">
-                          {category.name}
-                        </h3>
-                        <span className="inline-flex items-center justify-center text-xs font-bold text-white bg-ibm px-3 py-1 rounded-full">
-                          {category.trackCount} tracks
-                        </span>
+                <StaggerItem key={category.name}>
+                  <div
+                    className="bg-white border border-border-custom rounded-xl p-8 hover:shadow-lg transition-shadow"
+                  >
+                    <div className="flex items-start gap-4">
+                      <div
+                        className={`w-14 h-14 rounded-xl flex items-center justify-center shrink-0 ${meta?.color ?? "bg-ibm/10 text-ibm"}`}
+                      >
+                        {meta?.icon}
                       </div>
-                      <p className="text-sm text-muted-brand leading-relaxed">
-                        {meta?.description}
-                      </p>
+                      <div className="flex-1">
+                        <div className="flex items-center gap-3 mb-2">
+                          <h3 className="text-xl font-bold text-dark">
+                            {category.name}
+                          </h3>
+                          <span className="inline-flex items-center justify-center text-xs font-bold text-white bg-ibm px-3 py-1 rounded-full">
+                            {category.trackCount} tracks
+                          </span>
+                        </div>
+                        <p className="text-sm text-muted-brand leading-relaxed">
+                          {meta?.description}
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </StaggerItem>
               )
             })}
-          </div>
+          </StaggerChildren>
         </div>
       </section>
 
       {/* Partner Institutes */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            title="Partner Institutes"
-            description="IBM ICE programs are delivered through our network of premier educational institutions."
-          />
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+          <FadeIn>
+            <SectionHeader
+              title="Partner Institutes"
+              description="IBM ICE programs are delivered through our network of premier educational institutions."
+            />
+          </FadeIn>
+          <StaggerChildren className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
             {partnerInstitutes.map((institute) => (
-              <div
-                key={institute}
-                className="bg-white border border-border-custom rounded-xl h-24 flex items-center justify-center hover:shadow-md transition-shadow"
-              >
-                <div className="flex flex-col items-center gap-1">
-                  <Building2 className="size-6 text-gray-300" />
-                  <span className="text-xs text-muted-brand font-medium text-center px-2">
-                    {institute}
-                  </span>
+              <StaggerItem key={institute}>
+                <div
+                  className="bg-white border border-border-custom rounded-xl h-24 flex items-center justify-center hover:shadow-md transition-shadow"
+                >
+                  <div className="flex flex-col items-center gap-1">
+                    <Building2 className="size-6 text-gray-300" />
+                    <span className="text-xs text-muted-brand font-medium text-center px-2">
+                      {institute}
+                    </span>
+                  </div>
                 </div>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerChildren>
         </div>
       </section>
 
       {/* CTA */}
-      <CTASection
-        title="Schedule a Consultation"
-        description="Learn how IBM ICE badge programs can transform your institution's technology curriculum."
-        buttonText="Schedule Consultation"
-        buttonHref="/contact"
-        variant="dark"
-      />
+      <FadeIn>
+        <CTASection
+          title="Schedule a Consultation"
+          description="Learn how IBM ICE badge programs can transform your institution's technology curriculum."
+          buttonText="Schedule Consultation"
+          buttonHref="/contact"
+          variant="dark"
+        />
+      </FadeIn>
     </>
   )
 }

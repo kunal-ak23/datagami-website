@@ -7,6 +7,9 @@ import { CTASection } from "@/components/sections/cta-section"
 import { studentPlacement } from "@/lib/data/services"
 import { GraduationCap, Building2, Briefcase } from "lucide-react"
 
+import { FadeIn } from "@/components/motion/fade-in"
+import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
+
 export const metadata: Metadata = {
   title: "Student Placement",
   description:
@@ -65,66 +68,76 @@ export default function StudentPlacementPage() {
       {/* What We Do */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            title="What We Do"
-            description="Bridging the gap between academic achievement and career success."
-          />
-          <div className="grid md:grid-cols-3 gap-8">
+          <FadeIn>
+            <SectionHeader
+              title="What We Do"
+              description="Bridging the gap between academic achievement and career success."
+            />
+          </FadeIn>
+          <StaggerChildren className="grid md:grid-cols-3 gap-8">
             {focusAreas.map((area, index) => (
-              <div
-                key={index}
-                className="p-6 rounded-xl border border-border-custom hover:shadow-md transition-shadow"
-              >
-                <div className="w-12 h-12 rounded-lg bg-brand/10 flex items-center justify-center mb-4 text-brand">
-                  {area.icon}
+              <StaggerItem key={index}>
+                <div
+                  className="p-6 rounded-xl border border-border-custom hover:shadow-md transition-shadow"
+                >
+                  <div className="w-12 h-12 rounded-lg bg-brand/10 flex items-center justify-center mb-4 text-brand">
+                    {area.icon}
+                  </div>
+                  <h3 className="text-lg font-semibold text-dark mb-2">
+                    {area.title}
+                  </h3>
+                  <p className="text-sm text-muted-brand">{area.description}</p>
                 </div>
-                <h3 className="text-lg font-semibold text-dark mb-2">
-                  {area.title}
-                </h3>
-                <p className="text-sm text-muted-brand">{area.description}</p>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerChildren>
         </div>
       </section>
 
       {/* Our Process */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            title="Our Process"
-            description="From profile building to successful placement."
-          />
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <FadeIn>
+            <SectionHeader
+              title="Our Process"
+              description="From profile building to successful placement."
+            />
+          </FadeIn>
+          <StaggerChildren className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {studentPlacement.processSteps.map((s) => (
-              <div
-                key={s.step}
-                className="relative p-6 rounded-xl border border-border-custom hover:shadow-md transition-shadow"
-              >
-                <div className="w-10 h-10 rounded-full bg-brand text-dark font-bold flex items-center justify-center mb-4 text-lg">
-                  {s.step}
+              <StaggerItem key={s.step}>
+                <div
+                  className="relative p-6 rounded-xl border border-border-custom hover:shadow-md transition-shadow"
+                >
+                  <div className="w-10 h-10 rounded-full bg-brand text-dark font-bold flex items-center justify-center mb-4 text-lg">
+                    {s.step}
+                  </div>
+                  <h3 className="text-lg font-semibold text-dark mb-2">
+                    {s.title}
+                  </h3>
+                  <p className="text-sm text-muted-brand">{s.description}</p>
                 </div>
-                <h3 className="text-lg font-semibold text-dark mb-2">
-                  {s.title}
-                </h3>
-                <p className="text-sm text-muted-brand">{s.description}</p>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerChildren>
         </div>
       </section>
 
       {/* Impact Stats */}
-      <StatsBar stats={stats} variant="dark" />
+      <FadeIn>
+        <StatsBar stats={stats} variant="dark" />
+      </FadeIn>
 
       {/* CTA */}
-      <CTASection
-        title="Get Started"
-        description="Partner with us to give your students the career launchpad they deserve."
-        buttonText="Get Started"
-        buttonHref="/contact"
-        variant="primary"
-      />
+      <FadeIn>
+        <CTASection
+          title="Get Started"
+          description="Partner with us to give your students the career launchpad they deserve."
+          buttonText="Get Started"
+          buttonHref="/contact"
+          variant="primary"
+        />
+      </FadeIn>
     </>
   )
 }
