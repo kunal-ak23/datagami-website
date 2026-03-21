@@ -1,0 +1,149 @@
+import type { Metadata } from "next"
+import Link from "next/link"
+import { HeroMinimal } from "@/components/sections/hero-minimal"
+import Breadcrumbs from "@/components/layout/breadcrumbs"
+import { BlogCard } from "@/components/cards/blog-card"
+
+export const metadata: Metadata = {
+  title: "Blog",
+  description:
+    "Insights on education technology, digital transformation, and industry trends from Datagami.",
+}
+
+const categories = ["All", "Technology", "Education", "Finance", "Careers"] as const
+
+const featuredPost = {
+  title: "The Future of EdTech in India",
+  category: "Technology",
+  excerpt:
+    "How artificial intelligence, cloud computing, and digital-first curricula are reshaping higher education across India — and what institutions need to do to stay ahead.",
+  date: "March 10, 2026",
+  slug: "#",
+}
+
+const blogPosts = [
+  {
+    title: "How UPI is Transforming Financial Literacy",
+    category: "Finance",
+    excerpt:
+      "The UPI revolution isn't just about payments — it's creating an unprecedented opportunity to build financial literacy from the ground up.",
+    date: "February 28, 2026",
+    slug: "#",
+  },
+  {
+    title: "Building Industry-Ready Graduates",
+    category: "Education",
+    excerpt:
+      "Universities that align curricula with employer expectations see dramatically better placement rates. Here's the playbook.",
+    date: "February 15, 2026",
+    slug: "#",
+  },
+  {
+    title: "Cloud Computing Career Paths in 2026",
+    category: "Careers",
+    excerpt:
+      "From cloud architect to DevOps engineer — the most in-demand cloud roles and the certifications that matter.",
+    date: "January 30, 2026",
+    slug: "#",
+  },
+  {
+    title: "Why LMS Adoption Fails (And How to Fix It)",
+    category: "Technology",
+    excerpt:
+      "Most learning management system rollouts fall short. We break down the five root causes and proven strategies for successful adoption.",
+    date: "January 18, 2026",
+    slug: "#",
+  },
+  {
+    title: "Clinical Research as a Career: A Complete Guide",
+    category: "Careers",
+    excerpt:
+      "Clinical research is one of the fastest-growing career paths in India. Here's everything you need to know to get started.",
+    date: "January 5, 2026",
+    slug: "#",
+  },
+]
+
+export default function BlogPage() {
+  return (
+    <>
+      <HeroMinimal
+        heading="Blog"
+        subtitle="Insights on education technology and digital transformation"
+      />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Breadcrumbs
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Blog" },
+          ]}
+        />
+
+        {/* Category Filters */}
+        <section className="py-8">
+          <div className="flex flex-wrap gap-3">
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                className={`px-5 py-2 rounded-full text-sm font-medium transition-colors ${
+                  cat === "All"
+                    ? "bg-brand text-dark"
+                    : "bg-gray-100 text-muted-brand hover:bg-gray-200"
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+        </section>
+
+        {/* Featured Post */}
+        <section className="pb-12">
+          <Link
+            href={`/blog/${featuredPost.slug}`}
+            className="block rounded-xl border border-border-custom overflow-hidden hover:shadow-lg transition-shadow duration-200 md:flex"
+          >
+            {/* Placeholder image */}
+            <div className="md:w-1/2 bg-gray-200 flex items-center justify-center aspect-video md:aspect-auto md:min-h-[280px]">
+              <span className="text-sm text-gray-400 font-medium">
+                Featured Image
+              </span>
+            </div>
+
+            <div className="p-8 md:w-1/2 flex flex-col justify-center">
+              <div className="flex items-center gap-3 mb-3">
+                <span className="inline-flex px-3 py-1 rounded-full bg-brand/10 text-brand text-xs font-medium">
+                  {featuredPost.category}
+                </span>
+                <span className="text-xs text-muted-brand">
+                  {featuredPost.date}
+                </span>
+              </div>
+              <h2 className="text-2xl font-bold text-dark mb-3">
+                {featuredPost.title}
+              </h2>
+              <p className="text-body leading-relaxed">{featuredPost.excerpt}</p>
+            </div>
+          </Link>
+        </section>
+
+        {/* Blog Grid */}
+        <section className="pb-16">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {blogPosts.map((post) => (
+              <BlogCard
+                key={post.title}
+                title={post.title}
+                category={post.category}
+                excerpt={post.excerpt}
+                date={post.date}
+                slug={post.slug}
+              />
+            ))}
+          </div>
+        </section>
+      </div>
+    </>
+  )
+}
