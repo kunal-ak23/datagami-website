@@ -25,6 +25,7 @@ export interface ProgramStats {
 export interface TrackCategory {
   name: string
   trackCount: number | string
+  tracks: string[]
 }
 
 // ---------------------------------------------------------------------------
@@ -235,10 +236,63 @@ export const ibmIce: IBMICEProgram = {
     partnerInstitutes: '12+',
   },
   trackCategories: [
-    { name: 'Technology', trackCount: 11 },
-    { name: 'Industry', trackCount: 6 },
-    { name: 'Deep Technical Skills', trackCount: 8 },
-    { name: 'Short-term Certificates', trackCount: '60+' },
+    {
+      name: 'Technology',
+      trackCount: 11,
+      tracks: [
+        'Artificial Intelligence',
+        'Cloud Computing',
+        'Cybersecurity',
+        'Data Science',
+        'Internet of Things (IoT)',
+        'Blockchain',
+        'Machine Learning',
+        'DevOps',
+        'Full Stack Development',
+        'Mobile App Development',
+        'Robotic Process Automation',
+      ],
+    },
+    {
+      name: 'Industry',
+      trackCount: 6,
+      tracks: [
+        'Banking & Financial Services',
+        'Healthcare & Life Sciences',
+        'Retail & Consumer Products',
+        'Supply Chain & Logistics',
+        'Telecommunications',
+        'Energy & Utilities',
+      ],
+    },
+    {
+      name: 'Deep Technical Skills',
+      trackCount: 8,
+      tracks: [
+        'Quantum Computing',
+        'Mainframe Development',
+        'Enterprise Architecture',
+        'API & Microservices',
+        'Container Orchestration',
+        'Database Administration',
+        'Network Engineering',
+        'Systems Integration',
+      ],
+    },
+    {
+      name: 'Short-term Certificates',
+      trackCount: 60,
+      tracks: [
+        'Python for Data Science',
+        'SQL & Database Fundamentals',
+        'Cloud Foundations',
+        'AI Chatbot Development',
+        'Web Development Essentials',
+        'Project Management',
+        'Agile Methodology',
+        'Business Analytics',
+      ],
+    },
   ],
 }
 
