@@ -120,7 +120,7 @@ export default function ClinomicPage() {
       <HeroDark
         heading="Clinomic"
         subtitle="Clinical Research Education Centre"
-        accentColor="text-clinomic"
+        accentColor="text-brand"
         badgeText="6-Month Program"
         stats={stats}
         backgroundImage="/images/hero/hero-clinomic.png"
@@ -174,17 +174,17 @@ export default function ClinomicPage() {
                   <div className="relative flex gap-6 pb-10 last:pb-0">
                     {/* Vertical line */}
                     {index < applicationSteps.length - 1 && (
-                      <div className="absolute left-[23px] top-12 w-0.5 h-[calc(100%-32px)] bg-clinomic/20" />
+                      <div className="absolute left-[23px] top-12 w-0.5 h-[calc(100%-32px)] bg-brand/20" />
                     )}
 
                     {/* Step circle */}
-                    <div className="relative z-10 flex items-center justify-center w-12 h-12 rounded-full bg-clinomic/10 text-clinomic border-2 border-clinomic shrink-0">
+                    <div className="relative z-10 flex items-center justify-center w-12 h-12 rounded-full bg-brand/10 text-brand border-2 border-brand shrink-0">
                       {item.icon}
                     </div>
 
                     {/* Content */}
                     <div className="pt-1">
-                      <p className="text-xs font-semibold uppercase tracking-wider text-clinomic mb-1">
+                      <p className="text-xs font-semibold uppercase tracking-wider text-brand mb-1">
                         Step {item.step}
                       </p>
                       <h3 className="text-lg font-bold text-dark mb-1">
@@ -220,9 +220,9 @@ export default function ClinomicPage() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
               <a
                 href="mailto:query@datagami.in"
-                className="flex items-center gap-3 text-dark hover:text-clinomic transition-colors"
+                className="flex items-center gap-3 text-dark hover:text-brand transition-colors"
               >
-                <div className="w-12 h-12 rounded-full bg-clinomic/10 flex items-center justify-center text-clinomic">
+                <div className="w-12 h-12 rounded-full bg-brand/10 flex items-center justify-center text-brand">
                   <Mail className="size-5" />
                 </div>
                 <div>
@@ -232,9 +232,9 @@ export default function ClinomicPage() {
               </a>
               <a
                 href="tel:+911234567890"
-                className="flex items-center gap-3 text-dark hover:text-clinomic transition-colors"
+                className="flex items-center gap-3 text-dark hover:text-brand transition-colors"
               >
-                <div className="w-12 h-12 rounded-full bg-clinomic/10 flex items-center justify-center text-clinomic">
+                <div className="w-12 h-12 rounded-full bg-brand/10 flex items-center justify-center text-brand">
                   <Phone className="size-5" />
                 </div>
                 <div>

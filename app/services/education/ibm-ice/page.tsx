@@ -87,7 +87,7 @@ export default function IBMICEPage() {
       <HeroDark
         heading="IBM ICE"
         subtitle="IBM Innovation Centre of Excellence — Badge Programs"
-        accentColor="text-ibm"
+        accentColor="text-brand"
         badgeText="IBM Partnership"
         backgroundImage="/images/hero/hero-ibm-ice.png"
         ctaText="Explore Programs"
@@ -128,7 +128,7 @@ export default function IBMICEPage() {
                 <div className="text-center bg-white/5 border border-white/10 rounded-2xl p-8">
                   <Counter
                     target={stat.value}
-                    className="text-5xl font-bold text-ibm"
+                    className="text-5xl font-bold text-brand"
                   />
                   <p className="text-white/70 mt-2 text-sm font-medium uppercase tracking-wider">
                     {stat.label}
@@ -204,7 +204,7 @@ export default function IBMICEPage() {
                             <h3 className="text-2xl font-bold text-white">
                               {category.name}
                             </h3>
-                            <span className="inline-flex items-center justify-center text-xs font-bold text-white bg-ibm px-3 py-1 rounded-full">
+                            <span className="inline-flex items-center justify-center text-xs font-bold text-white bg-brand px-3 py-1 rounded-full">
                               {category.trackCount} tracks
                             </span>
                           </div>
@@ -215,7 +215,7 @@ export default function IBMICEPage() {
                       </div>
                     ) : (
                       <div className="flex items-center gap-4 mb-6">
-                        <div className="w-14 h-14 rounded-xl bg-ibm/10 text-ibm flex items-center justify-center shrink-0">
+                        <div className="w-14 h-14 rounded-xl bg-brand/10 text-brand flex items-center justify-center shrink-0">
                           {meta?.icon}
                         </div>
                         <div>
@@ -223,7 +223,7 @@ export default function IBMICEPage() {
                             <h3 className="text-2xl font-bold text-dark">
                               {category.name}
                             </h3>
-                            <span className="inline-flex items-center justify-center text-xs font-bold text-white bg-ibm px-3 py-1 rounded-full">
+                            <span className="inline-flex items-center justify-center text-xs font-bold text-white bg-brand px-3 py-1 rounded-full">
                               {category.trackCount} tracks
                             </span>
                           </div>
@@ -238,9 +238,9 @@ export default function IBMICEPage() {
                     <StaggerChildren className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
                       {category.tracks.map((track) => (
                         <StaggerItem key={track}>
-                          <div className="bg-white border border-border-custom rounded-lg p-4 border-l-4 border-l-ibm hover:bg-ibm/5 hover:shadow-md transition-all">
+                          <div className="bg-white border border-border-custom rounded-lg p-4 border-l-4 border-l-brand hover:bg-brand/5 hover:shadow-md transition-all">
                             <div className="flex items-center gap-3">
-                              <BadgeCheck className="size-5 text-ibm shrink-0" />
+                              <BadgeCheck className="size-5 text-brand shrink-0" />
                               <span className="text-sm font-medium text-dark">
                                 {track}
                               </span>
@@ -299,9 +299,9 @@ export default function IBMICEPage() {
           <StaggerChildren className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
             {partnerInstitutes.map((institute) => (
               <StaggerItem key={institute}>
-                <div className="bg-white border border-border-custom rounded-xl h-24 flex items-center justify-center hover:shadow-md hover:border-ibm/30 transition-all border-l-4 border-l-ibm">
+                <div className="bg-white border border-border-custom rounded-xl h-24 flex items-center justify-center hover:shadow-md hover:border-brand/30 transition-all border-l-4 border-l-brand">
                   <div className="flex flex-col items-center gap-1">
-                    <Building2 className="size-6 text-ibm/40" />
+                    <Building2 className="size-6 text-brand/40" />
                     <span className="text-xs text-muted-brand font-medium text-center px-2">
                       {institute}
                     </span>
