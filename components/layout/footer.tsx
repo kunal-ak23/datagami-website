@@ -1,4 +1,7 @@
+'use client'
+
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { Linkedin, Twitter, Youtube } from 'lucide-react'
 
 const quickLinks = [
@@ -26,6 +29,11 @@ const socialLinks = [
 ]
 
 export function Footer() {
+  const pathname = usePathname()
+
+  // Hide footer on admin routes
+  if (pathname.startsWith('/admin')) return null
+
   return (
     <footer className="bg-dark py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

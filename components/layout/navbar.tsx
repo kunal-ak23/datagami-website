@@ -75,6 +75,9 @@ export function Navbar() {
     [pathname]
   )
 
+  // Hide navbar on admin routes
+  if (pathname.startsWith('/admin')) return null
+
   return (
     <nav
       className={`sticky top-0 z-50 w-full bg-surface transition-shadow duration-300 ${
