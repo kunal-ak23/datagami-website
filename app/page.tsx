@@ -40,6 +40,7 @@ import { TestimonialCarousel } from "@/components/sections/testimonial-carousel"
 
 import { FadeIn } from "@/components/motion/fade-in"
 import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
+import { LogoTicker } from "@/components/carousels/logo-ticker"
 
 export const metadata: Metadata = {
   title:
@@ -263,6 +264,22 @@ export default function Home() {
             ]}
           />
         </FadeIn>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+          <FadeIn delay={0.3}>
+            <LogoTicker
+              logos={[
+                { name: 'Mumbai University' },
+                { name: 'Delhi University' },
+                { name: 'IIT Bombay' },
+                { name: 'BITS Pilani' },
+                { name: 'Symbiosis' },
+                { name: 'Christ University' },
+                { name: 'Manipal University' },
+                { name: 'VIT University' },
+              ]}
+            />
+          </FadeIn>
+        </div>
       </section>
 
       {/* 6. Digital Education Solutions */}

@@ -7,6 +7,7 @@ import { company } from "@/lib/data/company"
 
 import { FadeIn } from "@/components/motion/fade-in"
 import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
+import { LogoTicker } from "@/components/carousels/logo-ticker"
 
 export const metadata: Metadata = {
   title: 'About Us',
@@ -150,17 +151,20 @@ export default function AboutPage() {
           <FadeIn>
             <h2 className="text-3xl font-bold text-dark mb-10 text-center">Trusted By</h2>
           </FadeIn>
-          <StaggerChildren className="grid grid-cols-2 sm:grid-cols-4 gap-6">
-            {Array.from({ length: 8 }).map((_, i) => (
-              <StaggerItem key={i}>
-                <div
-                  className="h-20 rounded-xl bg-gray-100 border border-border-custom flex items-center justify-center"
-                >
-                  <span className="text-sm text-gray-400 font-medium">Partner Logo</span>
-                </div>
-              </StaggerItem>
-            ))}
-          </StaggerChildren>
+          <FadeIn delay={0.2}>
+            <LogoTicker
+              logos={[
+                { name: 'Mumbai University' },
+                { name: 'Delhi University' },
+                { name: 'IIT Bombay' },
+                { name: 'BITS Pilani' },
+                { name: 'Symbiosis' },
+                { name: 'Christ University' },
+                { name: 'Manipal University' },
+                { name: 'VIT University' },
+              ]}
+            />
+          </FadeIn>
         </section>
 
         {/* ── Office Locations ── */}
