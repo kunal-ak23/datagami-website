@@ -1,65 +1,290 @@
-import Image from "next/image";
+import type { Metadata } from "next"
+import Link from "next/link"
+import {
+  Layers,
+  Target,
+  Scale,
+  Clock,
+  Users,
+  BarChart3,
+  GraduationCap,
+  Code,
+  Award,
+  Beaker,
+  Wallet,
+  Monitor,
+  Server,
+  Briefcase,
+  UserCheck,
+  MessageSquare,
+  Wrench,
+  CheckCircle,
+  ArrowRight,
+} from "lucide-react"
+
+import { HeroSplit } from "@/components/sections/hero-split"
+import { SectionHeader } from "@/components/sections/section-header"
+import { StatsBar } from "@/components/sections/stats-bar"
+import { FeatureGrid } from "@/components/sections/feature-grid"
+import { CTASection } from "@/components/sections/cta-section"
+import { ProgramCard } from "@/components/cards/program-card"
+import { ProductCard } from "@/components/cards/product-card"
+import { ServiceCard } from "@/components/cards/service-card"
+
+import { programs } from "@/lib/data/programs"
+import { products } from "@/lib/data/products"
+import { services } from "@/lib/data/services"
+import { company } from "@/lib/data/company"
+import { websiteSchema } from "@/lib/schemas/website"
+
+export const metadata: Metadata = {
+  title:
+    "Datagami - Lead Digital Technology | EdTech Solutions for Universities & Businesses",
+  description:
+    "Empowering Institutions, Universities & Businesses Through Technology, Partnerships & Innovation. 50+ Partner Universities, 10K+ Students Impacted, 200+ Programs Delivered.",
+  openGraph: {
+    images: ["/images/hero/hero-students-collaborating.png"],
+  },
+}
 
 export default function Home() {
+  const { finlearn, techlearn, ibmIce, clinomic, upiStudy } = programs
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
+
+      {/* 1. Hero Split */}
+      <HeroSplit
+        heading="Empowering Institutions, Universities & Businesses Through Technology, Partnerships & Innovation"
+        subtitle="Design next-gen programs for future-ready learners."
+        ctaText="Explore Solutions"
+        ctaHref="/services"
+        imageSrc="/images/hero/hero-students-collaborating.png"
+        imageAlt="University students collaborating with technology"
+        showLogo
+        floatingCard={{
+          heading: "Partner in Shaping the Future of Education",
+          ctaText: "Contact Us",
+          ctaHref: "/contact",
+        }}
+      />
+
+      {/* 2. Solutions Section */}
+      <section className="py-16 md:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeader
+            title="Our Solutions"
+            description="Comprehensive business solutions designed to drive growth and enhance capabilities."
+          />
+
+          {/* Programs Offered */}
+          <div className="mb-16">
+            <h3 className="text-2xl font-bold text-dark mb-8">
+              Programs Offered
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <ProgramCard
+                title={finlearn.name}
+                description={finlearn.tagline}
+                href={finlearn.href}
+                icon={<GraduationCap className="size-6" />}
+              />
+              <ProgramCard
+                title={techlearn.name}
+                description={techlearn.tagline}
+                href={techlearn.href}
+                icon={<Code className="size-6" />}
+              />
+              <ProgramCard
+                title={ibmIce.name}
+                description={ibmIce.tagline}
+                href={ibmIce.href}
+                icon={<Award className="size-6" />}
+              />
+              <ProgramCard
+                title={clinomic.name}
+                description={clinomic.tagline}
+                href={clinomic.href}
+                icon={<Beaker className="size-6" />}
+              />
+              <ProgramCard
+                title={upiStudy.name}
+                description={upiStudy.tagline}
+                href={upiStudy.href}
+                icon={<Wallet className="size-6" />}
+              />
+            </div>
+          </div>
+
+          {/* Products */}
+          <div className="mb-16">
+            <h3 className="text-2xl font-bold text-dark mb-8">Products</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {products.map((product) => (
+                <ProductCard
+                  key={product.name}
+                  title={product.name}
+                  description={product.description}
+                  features={[...product.features]}
+                  href={product.href}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Hiring & Other Services */}
+          <div>
+            <h3 className="text-2xl font-bold text-dark mb-8">
+              Hiring &amp; Other Services
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              <ServiceCard
+                title={services[0].name}
+                description={services[0].description}
+                href={services[0].href}
+                icon={<Briefcase className="size-6" />}
+              />
+              <ServiceCard
+                title={services[1].name}
+                description={services[1].description}
+                href={services[1].href}
+                icon={<UserCheck className="size-6" />}
+              />
+              <ServiceCard
+                title={services[2].name}
+                description={services[2].description}
+                href={services[2].href}
+                icon={<MessageSquare className="size-6" />}
+              />
+              <ServiceCard
+                title={services[3].name}
+                description={services[3].description}
+                href={services[3].href}
+                icon={<Wrench className="size-6" />}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. CTA Section */}
+      <CTASection
+        title="Ready to Transform Your Business or Institution?"
+        description="Discover how our solutions can help your organization achieve its goals."
+        buttonText="Get Started"
+        buttonHref="/contact"
+        variant="primary"
+      />
+
+      {/* 4. Why Choose Us */}
+      <section className="py-16 md:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeader title="Transforming Education and Enterprise With Proven Solutions" />
+          <FeatureGrid
+            features={company.whyChooseUs.map((item, index) => ({
+              icon: [
+                <Layers key="layers" className="size-6" />,
+                <Target key="target" className="size-6" />,
+                <Scale key="scale" className="size-6" />,
+                <Clock key="clock" className="size-6" />,
+                <Users key="users" className="size-6" />,
+                <BarChart3 key="barchart" className="size-6" />,
+              ][index],
+              title: item.title,
+              description: item.description,
+            }))}
+          />
+        </div>
+      </section>
+
+      {/* 5. Trust Metrics */}
+      <section className="py-16 md:py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeader title="Trusted by Leading Universities & Institutions" />
+        </div>
+        <StatsBar
+          stats={[
+            {
+              value: company.stats.partnerUniversities,
+              label: "Partner Universities",
+            },
+            {
+              value: company.stats.studentsImpacted,
+              label: "Students Impacted",
+            },
+            {
+              value: company.stats.programsDelivered,
+              label: "Programs Delivered",
+            },
+          ]}
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+      </section>
+
+      {/* 6. Digital Education Solutions */}
+      <section className="py-16 md:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl sm:text-4xl font-bold text-dark mb-6">
+                Comprehensive Digital Education Solutions
+              </h2>
+              <ul className="space-y-4 mb-8">
+                {[
+                  "Strategic Policy Implementation",
+                  "Industry Collaboration Programs",
+                  "Digital Career Readiness Technology",
+                  "Data Analytics & Reporting",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <CheckCircle className="size-5 text-brand shrink-0 mt-0.5" />
+                    <span className="text-muted-brand">{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <Link
+                href="/services"
+                className="inline-flex items-center gap-2 bg-dark text-white px-8 py-3 rounded-full font-semibold hover:bg-dark/90 transition-colors"
+              >
+                View All Services
+                <ArrowRight className="size-5" />
+              </Link>
+            </div>
+            <div>
+              <img
+                src="/images/hero/hero-edtech-dashboard.png"
+                alt="Comprehensive digital education solutions dashboard"
+                className="rounded-xl shadow-lg w-full"
+              />
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* 7. Success Stories */}
+      <section className="py-16 md:py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeader title="Proven Success Stories" />
         </div>
-      </main>
-    </div>
-  );
+        <StatsBar
+          stats={[
+            { value: "85%", label: "Increase in Graduate Employment" },
+            { value: "200+", label: "Industry Partnerships" },
+            { value: "50%", label: "Reduction in Policy Implementation Time" },
+          ]}
+        />
+      </section>
+
+      {/* 8. Final CTA */}
+      <CTASection
+        title="Partner With Us Today"
+        buttonText="Get in Touch"
+        buttonHref="/contact"
+        variant="dark"
+      />
+    </>
+  )
 }
