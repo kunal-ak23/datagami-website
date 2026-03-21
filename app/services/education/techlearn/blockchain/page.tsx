@@ -6,7 +6,8 @@ import { FAQSection } from "@/components/sections/faq-section"
 import { CTASection } from "@/components/sections/cta-section"
 import { techlearn } from "@/lib/data/programs"
 import { generateCourseSchema } from "@/lib/schemas/course"
-import { CheckCircle2, Briefcase } from "lucide-react"
+import { Briefcase } from "lucide-react"
+import { SkillTicker } from "@/components/sections/skill-ticker"
 
 import { FadeIn } from "@/components/motion/fade-in"
 import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
@@ -113,28 +114,7 @@ export default function BlockchainPage() {
             />
           </FadeIn>
           <FadeIn delay={0.2}>
-            <div className="flex flex-wrap justify-center gap-3">
-              {track.skills?.map((skill) => (
-                <span
-                  key={skill}
-                  className="flex items-center gap-2 bg-brand/10 text-brand border border-brand/20 px-4 py-2 rounded-full text-sm font-medium"
-                >
-                  <CheckCircle2 className="size-4" />
-                  {skill}
-                </span>
-              ))}
-              {["Ethereum", "Hardhat", "Ethers.js", "IPFS", "Tokenomics", "NFTs"].map(
-                (skill) => (
-                  <span
-                    key={skill}
-                    className="flex items-center gap-2 bg-brand/10 text-brand border border-brand/20 px-4 py-2 rounded-full text-sm font-medium"
-                  >
-                    <CheckCircle2 className="size-4" />
-                    {skill}
-                  </span>
-                )
-              )}
-            </div>
+            <SkillTicker skills={[...(track.skills || []), "Ethereum", "Hardhat", "Ethers.js", "IPFS", "Tokenomics", "NFTs"]} />
           </FadeIn>
         </div>
       </section>

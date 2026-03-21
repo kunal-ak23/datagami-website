@@ -159,6 +159,27 @@
   }
 }
 
+@keyframes scroll-skills {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-scroll-skills {
+  animation: scroll-skills 25s linear infinite;
+}
+
+.animate-scroll-skills:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-scroll-skills {
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
