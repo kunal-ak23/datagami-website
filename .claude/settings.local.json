@@ -25,7 +25,8 @@
       "Bash(ls:*)",
       "Bash(npx:*)",
       "Bash(cd:*)",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "Bash(timeout 15 npm run dev)"
     ]
   }
 }
