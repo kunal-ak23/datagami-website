@@ -36,10 +36,10 @@ export function HeroSplit({
               <img
                 src="/images/logo/datagami-logo.webp"
                 alt="Datagami logo"
-                className="mb-8 h-10 w-auto"
+                className="mb-8 h-10 w-auto brightness-0 opacity-80"
               />
             )}
-            <h1 className="text-4xl sm:text-5xl font-bold leading-tight text-dark mb-6">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight text-dark mb-6">
               {heading}
             </h1>
             <p className="text-body text-lg leading-relaxed mb-8">
