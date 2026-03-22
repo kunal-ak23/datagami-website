@@ -62,7 +62,7 @@ export default function ConsultingPage() {
       <HeroFull
         heading={strategicConsulting.name}
         subtitle={strategicConsulting.description}
-        backgroundColor="bg-dark"
+        backgroundImage="/images/hero/hero-consulting.png"
       />
 
       {/* What We Do */}

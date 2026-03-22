@@ -102,7 +102,7 @@ export default function TotalErpPage() {
       <HeroFull
         heading={totalErp.name}
         subtitle={totalErp.tagline}
-        backgroundColor="bg-brand"
+        backgroundImage="/images/hero/hero-total-erp.png"
       />
 
       {/* Product Overview */}

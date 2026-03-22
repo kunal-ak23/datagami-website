@@ -62,7 +62,7 @@ export default function TechnicalSupportPage() {
       <HeroFull
         heading={technicalSupport.name}
         subtitle={technicalSupport.description}
-        backgroundColor="bg-dark"
+        backgroundImage="/images/hero/hero-technical-support.png"
       />
 
       {/* What We Do */}

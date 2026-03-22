@@ -62,7 +62,7 @@ export default function TalentAcquisitionPage() {
       <HeroFull
         heading={talentAcquisition.name}
         subtitle={talentAcquisition.description}
-        backgroundColor="bg-dark"
+        backgroundImage="/images/hero/hero-talent-acquisition.png"
       />
 
       {/* What We Do */}

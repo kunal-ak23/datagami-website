@@ -62,7 +62,7 @@ export default function StudentPlacementPage() {
       <HeroFull
         heading={studentPlacement.name}
         subtitle={studentPlacement.description}
-        backgroundColor="bg-dark"
+        backgroundImage="/images/hero/hero-student-placement.png"
       />
 
       {/* What We Do */}

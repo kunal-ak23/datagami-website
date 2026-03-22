@@ -102,7 +102,7 @@ export default function EduDronLmsPage() {
       <HeroFull
         heading={edudronLms.name}
         subtitle={edudronLms.tagline}
-        backgroundColor="bg-brand"
+        backgroundImage="/images/hero/hero-edudron-lms.png"
       />
 
       {/* Product Overview */}
