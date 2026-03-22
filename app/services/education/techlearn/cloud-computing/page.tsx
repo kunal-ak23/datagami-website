@@ -142,6 +142,27 @@ export default function CloudComputingPage() {
         </div>
       </section>
 
+      {/* Tools You'll Master */}
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <SectionHeader
+              title="Tools You'll Master"
+              description="Gain hands-on experience with industry-standard tools used by leading organizations."
+            />
+          </FadeIn>
+          <FadeIn delay={0.2}>
+            <SkillTicker skills={[
+              "CPU-Z", "NPM", "Microsoft Outlook", "Microsoft Office 365",
+              "Amazon Web Services (AWS)", "Jira", "ServiceNow",
+              "Remote Desktop Protocol", "TeamViewer", "Zoho Desk",
+              "PuTTY", "Wireshark", "Splunk", "Rescue by LogMeIn",
+              "Rubrik", "Copilot", "ChatGPT"
+            ]} />
+          </FadeIn>
+        </div>
+      </section>
+
       {/* Career Outcomes */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

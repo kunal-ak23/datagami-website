@@ -46,34 +46,31 @@ const certifications = [
 
 const instructors = [
   {
-    name: "Dr. Rajesh Mehta",
-    title: "Head of Programs",
-    specialization: "Banking Operations & Risk Management",
+    name: "Dr. Prof. Joseph Ponmany",
+    title: "Dean of Financial Courses",
+    specialization: "With over 31 years of global experience in financial education and academic leadership.",
   },
   {
-    name: "Prof. Anita Sharma",
-    title: "Senior Faculty",
-    specialization: "Wealth Management & Financial Planning",
+    name: "Prof. Smita Agarwal",
+    title: "Int. Corporate Trainer",
+    specialization: "With over 15 years of global experience in corporate training and financial education.",
   },
   {
-    name: "Mr. Suresh Iyer",
-    title: "Industry Expert",
-    specialization: "Insurance & Regulatory Compliance",
-  },
-  {
-    name: "Dr. Priya Nair",
-    title: "Academic Director",
-    specialization: "Financial Markets & Investment Analysis",
+    name: "Alwyn Dsouza",
+    title: "Learning & Development",
+    specialization: "Learning & Development specialist focused on BFSI training programs.",
   },
 ]
 
 const alumniCompanies = [
+  "Citi Bank",
   "HDFC Bank",
   "ICICI Bank",
-  "SBI",
-  "Kotak Mahindra",
+  "Kotak Bank",
+  "Motilal Oswal",
+  "Muthoot Finance",
   "Axis Bank",
-  "Bajaj Finserv",
+  "IDFC Bank",
 ]
 
 const ugTracks = finlearn.tracks.filter((t) => t.level === "UG")
@@ -289,7 +286,7 @@ export default function FinLEARNPage() {
               description="Learn from industry veterans with decades of experience in banking and finance."
             />
           </FadeIn>
-          <StaggerChildren className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <StaggerChildren className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {instructors.map((instructor) => (
               <StaggerItem key={instructor.name}>
                 <div
@@ -323,7 +320,7 @@ export default function FinLEARNPage() {
               description="Our graduates are employed at leading banks and financial institutions across India."
             />
           </FadeIn>
-          <StaggerChildren className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
+          <StaggerChildren className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 gap-6">
             {alumniCompanies.map((company) => (
               <StaggerItem key={company}>
                 <div

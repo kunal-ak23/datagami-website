@@ -274,14 +274,21 @@ export default function Home() {
           <FadeIn delay={0.3}>
             <LogoTicker
               logos={[
-                { name: 'Mumbai University' },
-                { name: 'Delhi University' },
-                { name: 'IIT Bombay' },
-                { name: 'BITS Pilani' },
-                { name: 'Symbiosis' },
-                { name: 'Christ University' },
-                { name: 'Manipal University' },
-                { name: 'VIT University' },
+                { name: 'Bharati Vidyapeeth Deemed University' },
+                { name: 'Kalinga University' },
+                { name: 'Guru Nanak University' },
+                { name: 'Marwadi University' },
+                { name: 'Medicaps University' },
+                { name: 'MGM University' },
+                { name: 'Sri Sri University' },
+                { name: 'Sri Sai University' },
+                { name: 'TransStadia University' },
+                { name: 'University of Wollongong' },
+                { name: 'Auro University' },
+                { name: 'NSDC' },
+                { name: 'BFSI SSC' },
+                { name: 'Jetking' },
+                { name: 'IBM' },
               ]}
             />
           </FadeIn>

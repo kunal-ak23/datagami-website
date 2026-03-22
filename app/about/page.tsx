@@ -23,10 +23,10 @@ const milestones = [
 ]
 
 const team = [
-  { name: "Kunal Sharma", title: "Founder & CEO", image: "/images/team/ceo.png" },
-  { name: "Priya Mehta", title: "Chief Operating Officer", image: "/images/team/coo.png" },
-  { name: "Rahul Desai", title: "VP, Partnerships", image: "/images/team/education-director.png" },
-  { name: "Ananya Iyer", title: "Head of Technology", image: "/images/team/cto.png" },
+  { name: "Dhaval Shah", title: "Founder & Chief Executive Officer", subtitle: "Strategic Leadership, Business Development", image: "/images/team/ceo.png" },
+  { name: "Prof. Dr. Joseph David Ponmany", title: "Dean – Financial Programs", subtitle: "Financial Education, Academic Leadership", image: "/images/team/cto.png" },
+  { name: "Dr Sanjay Daga", title: "Partner & Director, Business Development", subtitle: "Partnership Development", image: "/images/team/coo.png" },
+  { name: "Dr Anoop Swaroep", title: "Partner & Advisor", subtitle: "Strategic Advisory, Education", image: "/images/team/education-director.png" },
 ]
 
 export default function AboutPage() {
@@ -140,6 +140,9 @@ export default function AboutPage() {
                   />
                   <h3 className="text-lg font-bold text-dark">{member.name}</h3>
                   <p className="text-sm text-body">{member.title}</p>
+                  {'subtitle' in member && member.subtitle && (
+                    <p className="text-xs text-muted-brand mt-1">{member.subtitle}</p>
+                  )}
                 </div>
               </StaggerItem>
             ))}
@@ -149,19 +152,26 @@ export default function AboutPage() {
         {/* ── Partners & Clients ── */}
         <section className="py-16 border-t border-border-custom">
           <FadeIn>
-            <h2 className="text-3xl font-bold text-dark mb-10 text-center">Trusted By</h2>
+            <h2 className="text-3xl font-bold text-dark mb-10 text-center">Our Partners & Collaborations</h2>
           </FadeIn>
           <FadeIn delay={0.2}>
             <LogoTicker
               logos={[
-                { name: 'Mumbai University' },
-                { name: 'Delhi University' },
-                { name: 'IIT Bombay' },
-                { name: 'BITS Pilani' },
-                { name: 'Symbiosis' },
-                { name: 'Christ University' },
-                { name: 'Manipal University' },
-                { name: 'VIT University' },
+                { name: 'Bharati Vidyapeeth Deemed University' },
+                { name: 'Kalinga University' },
+                { name: 'Guru Nanak University' },
+                { name: 'Marwadi University' },
+                { name: 'Medicaps University' },
+                { name: 'MGM University' },
+                { name: 'Sri Sri University' },
+                { name: 'Sri Sai University' },
+                { name: 'TransStadia University' },
+                { name: 'University of Wollongong' },
+                { name: 'Auro University' },
+                { name: 'NSDC' },
+                { name: 'BFSI SSC' },
+                { name: 'Jetking' },
+                { name: 'IBM' },
               ]}
             />
           </FadeIn>

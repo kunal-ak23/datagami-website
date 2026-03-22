@@ -41,18 +41,18 @@ const categoryMeta: Record<string, { icon: React.ReactNode; description: string 
 }
 
 const partnerInstitutes = [
-  "Partner University 1",
-  "Partner University 2",
-  "Partner University 3",
-  "Partner University 4",
-  "Partner University 5",
-  "Partner University 6",
-  "Partner University 7",
-  "Partner University 8",
-  "Partner University 9",
-  "Partner University 10",
-  "Partner University 11",
-  "Partner University 12",
+  "Bharati Vidyapeeth Deemed University",
+  "Kalinga University",
+  "Guru Nanak University",
+  "Marwadi University",
+  "Medicaps University",
+  "MGM University",
+  "Sri Sri University",
+  "Sri Sai University",
+  "TransStadia Institute of Management",
+  "TransStadia University",
+  "University of Wollongong (India)",
+  "Auro University",
 ]
 
 const courseSchema = generateCourseSchema({
