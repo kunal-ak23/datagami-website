@@ -22,7 +22,7 @@ export function ProgramCard({
     return (
       <Link
         href={href}
-        className="block border border-border-custom rounded-xl overflow-hidden hover:shadow-lg transition-shadow duration-200 cursor-pointer group"
+        className="block rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-200 cursor-pointer group"
       >
         {/* Image header */}
         <div className="relative aspect-[16/9] overflow-hidden">
