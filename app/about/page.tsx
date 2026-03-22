@@ -24,10 +24,10 @@ const milestones = [
 ]
 
 const team = [
-  { name: "Dhaval Shah", title: "Founder & Chief Executive Officer", subtitle: "Strategic Leadership, Business Development", image: "/images/team/ceo.png" },
-  { name: "Prof. Dr. Joseph David Ponmany", title: "Dean – Financial Programs", subtitle: "Financial Education, Academic Leadership", image: "/images/team/cto.png" },
-  { name: "Dr Sanjay Daga", title: "Partner & Director, Business Development", subtitle: "Partnership Development", image: "/images/team/coo.png" },
-  { name: "Dr Anoop Swaroep", title: "Partner & Advisor", subtitle: "Strategic Advisory, Education", image: "/images/team/education-director.png" },
+  { name: "Dhaval Shah", title: "Founder & Chief Executive Officer", subtitle: "Strategic Leadership, Business Development", image: "/images/team/dhaval-shah.png" },
+  { name: "Prof. Dr. Joseph David Ponmany", title: "Dean – Financial Programs", subtitle: "Financial Education, Academic Leadership", image: "/images/team/joseph-ponmany.png" },
+  { name: "Dr Sanjay Daga", title: "Partner & Director, Business Development", subtitle: "Partnership Development", image: "/images/team/sanjay-daga.png" },
+  { name: "Dr Anoop Swaroep", title: "Partner & Advisor", subtitle: "Strategic Advisory, Education", image: "/images/team/anoop-swaroep.png" },
 ]
 
 export default function AboutPage() {

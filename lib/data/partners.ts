@@ -12,7 +12,7 @@ export const alumniCompanies: Partner[] = [
   { name: 'Motilal Oswal', logo: '/images/logos/banks/motilal-oswal.png' },
   { name: 'Muthoot Finance', logo: '/images/logos/banks/muthoot-finance.png' },
   { name: 'Axis Bank', logo: '/images/logos/banks/axis-bank.png' },
-  { name: 'IDFC Bank', logo: '/images/logos/banks/idfc-bank.png' },
+  { name: 'IDFC Bank', logo: '/images/logos/banks/idfc-bank.jpg' },
 ]
 
 export const universityPartners: Partner[] = [
