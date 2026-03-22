@@ -4,7 +4,7 @@ import { HeroFull } from "@/components/sections/hero-full"
 import { SectionHeader } from "@/components/sections/section-header"
 import { FeatureGrid } from "@/components/sections/feature-grid"
 import { CTASection } from "@/components/sections/cta-section"
-import { sineapLms } from "@/lib/data/products"
+import { edudronLms } from "@/lib/data/products"
 import {
   BookOpen,
   BarChart3,
@@ -18,7 +18,7 @@ import { FadeIn } from "@/components/motion/fade-in"
 import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
 
 export const metadata: Metadata = {
-  title: "Sineap LMS - Learning Management System",
+  title: "EduDron LMS - Learning Management System",
   description:
     "Comprehensive learning management platform featuring course management, student tracking, assessments, analytics, and multi-institution support.",
 }
@@ -67,7 +67,7 @@ const steps = [
     step: 1,
     title: "Setup & Configuration",
     description:
-      "We configure Sineap LMS to match your institution's structure, branding, and academic workflows.",
+      "We configure EduDron LMS to match your institution's structure, branding, and academic workflows.",
   },
   {
     step: 2,
@@ -83,7 +83,7 @@ const steps = [
   },
 ]
 
-export default function SineapLmsPage() {
+export default function EduDronLmsPage() {
   return (
     <>
       {/* Breadcrumbs */}
@@ -93,15 +93,15 @@ export default function SineapLmsPage() {
             { label: "Home", href: "/" },
             { label: "Services", href: "/services" },
             { label: "Products", href: "/services#products" },
-            { label: "Sineap LMS" },
+            { label: "EduDron LMS" },
           ]}
         />
       </div>
 
       {/* Hero */}
       <HeroFull
-        heading={sineapLms.name}
-        subtitle={sineapLms.tagline}
+        heading={edudronLms.name}
+        subtitle={edudronLms.tagline}
         backgroundColor="bg-brand"
       />
 
@@ -110,7 +110,7 @@ export default function SineapLmsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <p className="text-lg text-muted-brand max-w-3xl mx-auto text-center leading-relaxed">
-              {sineapLms.description}
+              {edudronLms.description}
             </p>
           </FadeIn>
         </div>
@@ -164,7 +164,7 @@ export default function SineapLmsPage() {
       <FadeIn>
         <CTASection
           title="Request a Demo"
-          description="See how Sineap LMS can transform learning at your institution."
+          description="See how EduDron LMS can transform learning at your institution."
           buttonText="Request a Demo"
           buttonHref="/contact"
           variant="dark"

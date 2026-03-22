@@ -11,12 +11,12 @@ export interface Product {
   cardImage?: string
 }
 
-export const sineapLms: Product = {
-  name: 'Sineap LMS',
+export const edudronLms: Product = {
+  name: 'EduDron LMS',
   tagline: 'Learning Management System',
-  href: '/services/products/sineap-lms',
+  href: '/services/products/edudron-lms',
   description:
-    'Comprehensive learning management platform for educational institutions. Sineap LMS empowers universities and training centres with tools to create, deliver and track learning experiences at scale.',
+    'Comprehensive learning management platform for educational institutions. EduDron LMS empowers universities and training centres with tools to create, deliver and track learning experiences at scale.',
   features: [
     'Course Management',
     'Student Progress Tracking',
@@ -25,7 +25,7 @@ export const sineapLms: Product = {
     'Analytics Dashboard',
     'Multi-institution Support',
   ],
-  cardImage: '/images/cards/sineap-lms-card.png',
+  cardImage: '/images/cards/edudron-lms-card.png',
 }
 
 export const totalErp: Product = {
@@ -45,4 +45,4 @@ export const totalErp: Product = {
   cardImage: '/images/cards/total-erp-card.png',
 }
 
-export const products = [sineapLms, totalErp] as const
+export const products = [edudronLms, totalErp] as const

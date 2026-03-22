@@ -70,7 +70,7 @@ export const company: CompanyData = {
     {
       title: 'Scalable Systems',
       description:
-        'Purpose-built platforms like Sineap LMS and Total ERP are designed to scale from a single campus to a statewide university system.',
+        'Purpose-built platforms like EduDron LMS and Total ERP are designed to scale from a single campus to a statewide university system.',
     },
     {
       title: 'Reliable Delivery',

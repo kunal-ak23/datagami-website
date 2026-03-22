@@ -40,7 +40,7 @@ export const mainNav: NavItem[] = [
     label: 'Products',
     href: '/services/products',
     children: [
-      { label: 'Sineap LMS', href: '/services/products/sineap-lms', description: 'Learning management system' },
+      { label: 'EduDron LMS', href: '/services/products/edudron-lms', description: 'Learning management system' },
       { label: 'Total ERP', href: '/services/products/total-erp', description: 'Enterprise resource planning' },
     ],
   },
@@ -78,6 +78,6 @@ export const footerPrograms: FooterLink[] = [
   { label: 'IBM ICE', href: '/services/education/ibm-ice' },
   { label: 'Clinomic', href: '/services/education/clinomic' },
   { label: 'UPI Study', href: '/services/education/upi-study' },
-  { label: 'Sineap LMS', href: '/services/products/sineap-lms' },
+  { label: 'EduDron LMS', href: '/services/products/edudron-lms' },
   { label: 'Total ERP', href: '/services/products/total-erp' },
 ]

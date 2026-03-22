@@ -37,7 +37,7 @@ const servicesDropdown = [
   {
     category: "Products",
     items: [
-      { label: "Sineap LMS", href: "/services/products/sineap-lms" },
+      { label: "EduDron LMS", href: "/services/products/edudron-lms" },
       { label: "Total ERP", href: "/services/products/total-erp" },
     ],
   },

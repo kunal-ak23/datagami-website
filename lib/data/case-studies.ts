@@ -32,7 +32,7 @@ export const caseStudies: CaseStudy[] = [
     problem:
       'The university was facing declining placement rates and a widening gap between academic curricula and employer expectations. Graduates lacked practical skills demanded by the BFSI and IT sectors, resulting in low campus recruitment numbers.',
     solution:
-      'Datagami deployed its FinLEARN and TechLEARN programs across multiple campuses, integrated the Sineap LMS for blended learning delivery, and established direct recruitment pipelines with industry partners. Faculty training workshops ensured the institution could sustain the programs independently.',
+      'Datagami deployed its FinLEARN and TechLEARN programs across multiple campuses, integrated the EduDron LMS for blended learning delivery, and established direct recruitment pipelines with industry partners. Faculty training workshops ensured the institution could sustain the programs independently.',
     results: {
       headline: '85% increase in graduate employment within one year',
       metrics: [
@@ -74,7 +74,7 @@ export const caseStudies: CaseStudy[] = [
     problem:
       'The policy required rapid deployment of new training programs across dozens of institutions, but existing administrative systems were slow, fragmented and lacked the technology infrastructure to track outcomes at scale.',
     solution:
-      'Datagami provided strategic consulting to design the implementation roadmap, deployed Total ERP for centralized administration and used Sineap LMS to deliver standardized content. Real-time analytics dashboards gave policy makers visibility into adoption and outcomes.',
+      'Datagami provided strategic consulting to design the implementation roadmap, deployed Total ERP for centralized administration and used EduDron LMS to deliver standardized content. Real-time analytics dashboards gave policy makers visibility into adoption and outcomes.',
     results: {
       headline: '50% reduction in implementation time vs. original timeline',
       metrics: [

@@ -27,9 +27,9 @@ export const images = {
   universityCampus: '/images/about/university-campus.png',
 
   // Product images
-  sineapLmsDashboard: '/images/products/sineap-lms-dashboard.png',
-  sineapLmsSecurity: '/images/products/sineap-lms-security.png',
-  sineapLmsAnalytics: '/images/products/sineap-lms-analytics.png',
+  edudronLmsDashboard: '/images/products/edudron-lms-dashboard.png',
+  edudronLmsSecurity: '/images/products/edudron-lms-security.png',
+  edudronLmsAnalytics: '/images/products/edudron-lms-analytics.png',
   totalErpBg: '/images/products/total-erp-bg.png',
   totalErpDashboard: '/images/products/total-erp-dashboard.png',
   totalErpPreview: '/images/products/total-erp-preview.png',
@@ -58,9 +58,9 @@ export const imageAltText: Record<keyof typeof images, string> = {
   teamCollaboration: 'Team collaboration and strategic planning',
   universityCampus: 'University campus and students',
 
-  sineapLmsDashboard: 'Sineap LMS Dashboard Interface',
-  sineapLmsSecurity: 'Security and Permissions Dashboard',
-  sineapLmsAnalytics: 'AI Learning Analytics Dashboard',
+  edudronLmsDashboard: 'EduDron LMS Dashboard Interface',
+  edudronLmsSecurity: 'Security and Permissions Dashboard',
+  edudronLmsAnalytics: 'AI Learning Analytics Dashboard',
   totalErpBg: 'Total ERP Background',
   totalErpDashboard: 'Total ERP Dashboard Interface',
   totalErpPreview: 'Total ERP Dashboard Preview',
