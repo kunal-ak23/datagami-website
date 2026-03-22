@@ -2,10 +2,8 @@
 
 import { useState, type FormEvent } from 'react'
 import { signIn } from 'next-auth/react'
-import { useRouter } from 'next/navigation'
 
 export default function AdminLoginPage() {
-  const router = useRouter()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
@@ -26,7 +24,8 @@ export default function AdminLoginPage() {
       if (result?.error) {
         setError('Invalid email or password')
       } else {
-        router.push('/admin')
+        // Full page reload so the server layout re-renders with the session
+        window.location.href = '/admin'
       }
     } catch {
       setError('Something went wrong. Please try again.')
