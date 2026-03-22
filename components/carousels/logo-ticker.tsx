@@ -10,21 +10,30 @@ export function LogoTicker({ logos }: LogoTickerProps) {
 
   return (
     <div className="overflow-hidden">
-      <div className="flex animate-scroll gap-12 items-center">
+      <div className="flex animate-scroll gap-8 items-center">
         {allLogos.map((logo, i) => (
           <div
             key={i}
             className="flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300"
           >
             {logo.src ? (
-              <img
-                src={logo.src}
-                alt={logo.name}
-                className="h-12 w-auto object-contain"
-              />
+              <div className="bg-white border border-border-custom rounded-xl p-4 min-w-[140px] flex flex-col items-center justify-center gap-2 hover:shadow-md transition-shadow">
+                <img
+                  src={logo.src}
+                  alt={logo.name}
+                  className="h-10 w-auto object-contain"
+                />
+                <span className="text-xs text-muted-brand font-medium text-center whitespace-nowrap">
+                  {logo.name}
+                </span>
+              </div>
             ) : (
-              <div className="h-12 px-6 bg-gray-100 rounded-lg flex items-center justify-center text-sm text-muted-brand font-medium whitespace-nowrap">
-                {logo.name}
+              <div className="bg-white border border-border-custom rounded-xl p-4 min-w-[140px] flex flex-col items-center justify-center gap-2 hover:shadow-md transition-shadow">
+                <div className="h-10 flex items-center justify-center">
+                  <span className="text-sm text-muted-brand font-medium whitespace-nowrap">
+                    {logo.name}
+                  </span>
+                </div>
               </div>
             )}
           </div>

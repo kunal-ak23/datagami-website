@@ -41,6 +41,7 @@ import { TestimonialCarousel } from "@/components/sections/testimonial-carousel"
 import { FadeIn } from "@/components/motion/fade-in"
 import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
 import { LogoTicker } from "@/components/carousels/logo-ticker"
+import { allPartners } from "@/lib/data/partners"
 
 export const metadata: Metadata = {
   title:
@@ -273,23 +274,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
           <FadeIn delay={0.3}>
             <LogoTicker
-              logos={[
-                { name: 'Bharati Vidyapeeth Deemed University' },
-                { name: 'Kalinga University' },
-                { name: 'Guru Nanak University' },
-                { name: 'Marwadi University' },
-                { name: 'Medicaps University' },
-                { name: 'MGM University' },
-                { name: 'Sri Sri University' },
-                { name: 'Sri Sai University' },
-                { name: 'TransStadia University' },
-                { name: 'University of Wollongong' },
-                { name: 'Auro University' },
-                { name: 'NSDC' },
-                { name: 'BFSI SSC' },
-                { name: 'Jetking' },
-                { name: 'IBM' },
-              ]}
+              logos={allPartners.map((p) => ({ name: p.name, src: p.logo }))}
             />
           </FadeIn>
         </div>

@@ -5,11 +5,12 @@ import { SectionHeader } from "@/components/sections/section-header"
 import { CTASection } from "@/components/sections/cta-section"
 import { ibmIce } from "@/lib/data/programs"
 import { generateCourseSchema } from "@/lib/schemas/course"
-import { Cpu, Factory, Wrench, Award, Building2, BadgeCheck } from "lucide-react"
+import { Cpu, Factory, Wrench, Award, BadgeCheck } from "lucide-react"
 
 import { FadeIn } from "@/components/motion/fade-in"
 import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
 import { Counter } from "@/components/motion/counter"
+import { universityPartners } from "@/lib/data/partners"
 
 export const metadata: Metadata = {
   title: 'IBM ICE - Innovation Centre of Excellence Badge Programs',
@@ -40,20 +41,7 @@ const categoryMeta: Record<string, { icon: React.ReactNode; description: string 
   },
 }
 
-const partnerInstitutes = [
-  "Bharati Vidyapeeth Deemed University",
-  "Kalinga University",
-  "Guru Nanak University",
-  "Marwadi University",
-  "Medicaps University",
-  "MGM University",
-  "Sri Sri University",
-  "Sri Sai University",
-  "TransStadia Institute of Management",
-  "TransStadia University",
-  "University of Wollongong (India)",
-  "Auro University",
-]
+const partnerInstitutes = universityPartners
 
 const courseSchema = generateCourseSchema({
   name: "IBM ICE - Innovation Centre of Excellence Badge Programs",
@@ -298,14 +286,22 @@ export default function IBMICEPage() {
           </FadeIn>
           <StaggerChildren className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
             {partnerInstitutes.map((institute) => (
-              <StaggerItem key={institute}>
-                <div className="bg-white border border-border-custom rounded-xl h-24 flex items-center justify-center hover:shadow-md hover:border-brand/30 transition-all border-l-4 border-l-brand">
-                  <div className="flex flex-col items-center gap-1">
-                    <Building2 className="size-6 text-brand/40" />
-                    <span className="text-xs text-muted-brand font-medium text-center px-2">
-                      {institute}
-                    </span>
-                  </div>
+              <StaggerItem key={institute.name}>
+                <div className="bg-white border border-border-custom rounded-xl p-4 flex flex-col items-center justify-center gap-2 hover:shadow-md hover:border-brand/30 transition-all border-l-4 border-l-brand">
+                  {institute.logo ? (
+                    <img
+                      src={institute.logo}
+                      alt={institute.name}
+                      className="h-10 w-auto object-contain"
+                    />
+                  ) : (
+                    <div className="h-10 flex items-center justify-center">
+                      <span className="text-sm text-muted-brand font-medium">{institute.name}</span>
+                    </div>
+                  )}
+                  <span className="text-xs text-muted-brand font-medium text-center">
+                    {institute.name}
+                  </span>
                 </div>
               </StaggerItem>
             ))}

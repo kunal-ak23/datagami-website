@@ -7,10 +7,11 @@ import { FAQSection } from "@/components/sections/faq-section"
 import { CTASection } from "@/components/sections/cta-section"
 import { finlearn } from "@/lib/data/programs"
 import { generateCourseSchema } from "@/lib/schemas/course"
-import { GraduationCap, Award, BookOpen, Users, Building2 } from "lucide-react"
+import { GraduationCap, Award, BookOpen, Users } from "lucide-react"
 
 import { FadeIn } from "@/components/motion/fade-in"
 import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
+import { alumniCompanies as alumniCompaniesData } from "@/lib/data/partners"
 
 export const metadata: Metadata = {
   title: 'FinLEARN - BFSI Education Programs',
@@ -62,16 +63,7 @@ const instructors = [
   },
 ]
 
-const alumniCompanies = [
-  "Citi Bank",
-  "HDFC Bank",
-  "ICICI Bank",
-  "Kotak Bank",
-  "Motilal Oswal",
-  "Muthoot Finance",
-  "Axis Bank",
-  "IDFC Bank",
-]
+const alumniCompanies = alumniCompaniesData
 
 const ugTracks = finlearn.tracks.filter((t) => t.level === "UG")
 const pgTracks = finlearn.tracks.filter((t) => t.level === "PG")
@@ -322,16 +314,24 @@ export default function FinLEARNPage() {
           </FadeIn>
           <StaggerChildren className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 gap-6">
             {alumniCompanies.map((company) => (
-              <StaggerItem key={company}>
+              <StaggerItem key={company.name}>
                 <div
-                  className="bg-white border border-border-custom rounded-xl h-24 flex items-center justify-center"
+                  className="bg-white border border-border-custom rounded-xl p-4 flex flex-col items-center justify-center gap-2 hover:shadow-md transition-shadow"
                 >
-                  <div className="flex flex-col items-center gap-1">
-                    <Building2 className="size-6 text-gray-300" />
-                    <span className="text-xs text-muted-brand font-medium text-center px-2">
-                      {company}
-                    </span>
-                  </div>
+                  {company.logo ? (
+                    <img
+                      src={company.logo}
+                      alt={company.name}
+                      className="h-10 w-auto object-contain"
+                    />
+                  ) : (
+                    <div className="h-10 flex items-center justify-center">
+                      <span className="text-sm text-muted-brand font-medium">{company.name}</span>
+                    </div>
+                  )}
+                  <span className="text-xs text-muted-brand font-medium text-center">
+                    {company.name}
+                  </span>
                 </div>
               </StaggerItem>
             ))}

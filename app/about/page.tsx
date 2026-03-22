@@ -8,6 +8,7 @@ import { company } from "@/lib/data/company"
 import { FadeIn } from "@/components/motion/fade-in"
 import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
 import { LogoTicker } from "@/components/carousels/logo-ticker"
+import { allPartners } from "@/lib/data/partners"
 
 export const metadata: Metadata = {
   title: 'About Us',
@@ -156,23 +157,7 @@ export default function AboutPage() {
           </FadeIn>
           <FadeIn delay={0.2}>
             <LogoTicker
-              logos={[
-                { name: 'Bharati Vidyapeeth Deemed University' },
-                { name: 'Kalinga University' },
-                { name: 'Guru Nanak University' },
-                { name: 'Marwadi University' },
-                { name: 'Medicaps University' },
-                { name: 'MGM University' },
-                { name: 'Sri Sri University' },
-                { name: 'Sri Sai University' },
-                { name: 'TransStadia University' },
-                { name: 'University of Wollongong' },
-                { name: 'Auro University' },
-                { name: 'NSDC' },
-                { name: 'BFSI SSC' },
-                { name: 'Jetking' },
-                { name: 'IBM' },
-              ]}
+              logos={allPartners.map((p) => ({ name: p.name, src: p.logo }))}
             />
           </FadeIn>
         </section>
