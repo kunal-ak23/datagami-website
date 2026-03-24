@@ -73,7 +73,7 @@ export default function Home() {
         imageSrc="/images/hero/hero-students-collaborating.png"
         imageAlt="University students collaborating with technology"
         showLogo
-        splineUrl="https://my.spline.design/interactiveaiwebsite-1EaaiKZxfkOOM1ZYFaZW9E2C/"
+        useInfinityScene
         floatingCard={{
           heading: "Partner in Shaping the Future of Education",
           ctaText: "Contact Us",

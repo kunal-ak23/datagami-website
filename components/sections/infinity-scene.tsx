@@ -1,11 +1,11 @@
 'use client'
 
-import { useRef, useMemo, useCallback } from 'react'
-import { Canvas, useFrame, useThree, ThreeEvent } from '@react-three/fiber'
-import { Float, Environment, MeshTransmissionMaterial } from '@react-three/drei'
+import { useRef, useMemo, useEffect, useCallback } from 'react'
+import { Canvas, useFrame, useThree } from '@react-three/fiber'
+import { Float, Environment } from '@react-three/drei'
 import * as THREE from 'three'
 
-// Generate points along an infinity/lemniscate curve
+// Lemniscate of Bernoulli (infinity curve)
 function getInfinityPoints(count: number, scale: number = 2.8): THREE.Vector3[] {
   const points: THREE.Vector3[] = []
   for (let i = 0; i < count; i++) {
@@ -13,142 +13,206 @@ function getInfinityPoints(count: number, scale: number = 2.8): THREE.Vector3[] 
     const denom = 1 + Math.sin(t) * Math.sin(t)
     const x = (scale * Math.cos(t)) / denom
     const y = (scale * Math.sin(t) * Math.cos(t)) / denom
-    const z = Math.sin(t * 3) * 0.3
+    const z = Math.sin(t * 3) * 0.25
     points.push(new THREE.Vector3(x, y, z))
   }
   return points
 }
 
-// Individual interactive cube
-function InfinityCube({
-  position,
+// Single interactive cube with golden glass material
+function GoldenCube({
+  basePosition,
   index,
   total,
-  pointer,
+  mouseWorld,
+  isDragging,
+  dragIndex,
+  onDragStart,
 }: {
-  position: THREE.Vector3
+  basePosition: THREE.Vector3
   index: number
   total: number
-  pointer: React.MutableRefObject<THREE.Vector3>
+  mouseWorld: React.MutableRefObject<THREE.Vector3>
+  isDragging: React.MutableRefObject<boolean>
+  dragIndex: React.MutableRefObject<number>
+  onDragStart: (index: number) => void
 }) {
-  const meshRef = useRef<THREE.Mesh>(null)
-  const basePos = useMemo(() => position.clone(), [position])
-  const phaseOffset = (index / total) * Math.PI * 2
-  const hovered = useRef(false)
+  const ref = useRef<THREE.Mesh>(null)
+  const phase = (index / total) * Math.PI * 2
+  const vel = useRef(new THREE.Vector3())
 
-  useFrame((state) => {
-    if (!meshRef.current) return
-    const time = state.clock.elapsedTime
+  useFrame(({ clock }) => {
+    if (!ref.current) return
+    const t = clock.elapsedTime
+    const mesh = ref.current
 
-    // Base floating animation
-    const floatX = Math.sin(time * 0.3 + phaseOffset) * 0.04
-    const floatY = Math.cos(time * 0.25 + phaseOffset) * 0.04
-    const floatZ = Math.sin(time * 0.2 + phaseOffset) * 0.06
-
-    // Mouse repulsion in 3D space
-    const px = pointer.current.x
-    const py = pointer.current.y
-    const dx = basePos.x + floatX - px
-    const dy = basePos.y + floatY - py
-    const dist = Math.sqrt(dx * dx + dy * dy)
-
-    let pushX = 0, pushY = 0, pushZ = 0
-    if (dist < 1.2) {
-      const force = (1.2 - dist) * 0.4
-      pushX = dx / dist * force
-      pushY = dy / dist * force
-      pushZ = force * 0.5
+    // If this cube is being dragged, follow mouse
+    if (isDragging.current && dragIndex.current === index) {
+      mesh.position.lerp(
+        new THREE.Vector3(mouseWorld.current.x, mouseWorld.current.y, 0.5),
+        0.2
+      )
+      mesh.rotation.x += 0.05
+      mesh.rotation.y += 0.05
+      mesh.scale.setScalar(1.5)
+      return
     }
 
-    // Smooth lerp to target position
-    const targetX = basePos.x + floatX + pushX
-    const targetY = basePos.y + floatY + pushY
-    const targetZ = basePos.z + floatZ + pushZ
+    // Target = base position + gentle float
+    const tx = basePosition.x + Math.sin(t * 0.4 + phase) * 0.04
+    const ty = basePosition.y + Math.cos(t * 0.35 + phase) * 0.04
+    const tz = basePosition.z + Math.sin(t * 0.25 + phase) * 0.06
 
-    meshRef.current.position.x += (targetX - meshRef.current.position.x) * 0.08
-    meshRef.current.position.y += (targetY - meshRef.current.position.y) * 0.08
-    meshRef.current.position.z += (targetZ - meshRef.current.position.z) * 0.08
+    // Mouse repulsion
+    const mx = mouseWorld.current.x
+    const my = mouseWorld.current.y
+    const dx = tx - mx
+    const dy = ty - my
+    const dist = Math.sqrt(dx * dx + dy * dy)
+
+    let rx = 0, ry = 0, rz = 0
+    if (dist < 1.5 && dist > 0.01) {
+      const strength = Math.pow(1 - dist / 1.5, 2) * 0.6
+      rx = (dx / dist) * strength
+      ry = (dy / dist) * strength
+      rz = strength * 0.4
+    }
+
+    // Spring physics
+    const targetX = tx + rx
+    const targetY = ty + ry
+    const targetZ = tz + rz
+
+    vel.current.x += (targetX - mesh.position.x) * 0.06
+    vel.current.y += (targetY - mesh.position.y) * 0.06
+    vel.current.z += (targetZ - mesh.position.z) * 0.06
+    vel.current.multiplyScalar(0.85) // damping
+
+    mesh.position.add(vel.current)
 
     // Rotation
-    meshRef.current.rotation.x = Math.sin(time * 0.3 + phaseOffset) * 0.4
-    meshRef.current.rotation.y = time * 0.15 + phaseOffset
-    meshRef.current.rotation.z = Math.cos(time * 0.2 + phaseOffset) * 0.2
+    mesh.rotation.x = Math.sin(t * 0.3 + phase) * 0.3
+    mesh.rotation.y = t * 0.15 + phase
+    mesh.rotation.z = Math.cos(t * 0.2 + phase) * 0.15
 
-    // Scale pulse on proximity
-    const s = dist < 1.2 ? 1 + (1.2 - dist) * 0.15 : 1
-    const targetScale = hovered.current ? 1.4 : s
-    const currentScale = meshRef.current.scale.x
-    meshRef.current.scale.setScalar(currentScale + (targetScale - currentScale) * 0.1)
+    // Scale based on proximity
+    const targetScale = dist < 1.5 ? 1 + (1.5 - dist) * 0.12 : 1
+    mesh.scale.setScalar(mesh.scale.x + (targetScale - mesh.scale.x) * 0.1)
   })
 
   return (
     <mesh
-      ref={meshRef}
-      position={position}
-      onPointerOver={() => { hovered.current = true; document.body.style.cursor = 'grab' }}
-      onPointerOut={() => { hovered.current = false; document.body.style.cursor = 'default' }}
+      ref={ref}
+      position={basePosition}
+      onPointerDown={(e) => {
+        e.stopPropagation()
+        onDragStart(index)
+      }}
+      onPointerOver={() => { document.body.style.cursor = 'grab' }}
+      onPointerOut={() => { if (!isDragging.current) document.body.style.cursor = 'default' }}
     >
-      <boxGeometry args={[0.17, 0.17, 0.17]} />
+      <boxGeometry args={[0.18, 0.18, 0.18]} />
       <meshPhysicalMaterial
         color="#F5B731"
-        metalness={0.9}
-        roughness={0.1}
+        metalness={0.95}
+        roughness={0.05}
         clearcoat={1}
-        clearcoatRoughness={0.1}
+        clearcoatRoughness={0.05}
         reflectivity={1}
-        envMapIntensity={1.5}
-        emissive="#D4991F"
-        emissiveIntensity={0.15}
+        envMapIntensity={2}
+        emissive="#B8860B"
+        emissiveIntensity={0.1}
+        ior={2.4}
+        thickness={0.5}
+        transmission={0.1}
+        sheen={1}
+        sheenColor={new THREE.Color('#FFD700')}
+        sheenRoughness={0.2}
+        iridescence={0.3}
+        iridescenceIOR={1.5}
       />
     </mesh>
   )
 }
 
-// Tracks mouse position in 3D world space
-function PointerTracker({ pointer }: { pointer: React.MutableRefObject<THREE.Vector3> }) {
-  const { viewport } = useThree()
+// Mouse position tracker using raycasting onto a plane
+function MousePlane({
+  mouseWorld,
+  isDragging,
+  dragIndex,
+}: {
+  mouseWorld: React.MutableRefObject<THREE.Vector3>
+  isDragging: React.MutableRefObject<boolean>
+  dragIndex: React.MutableRefObject<number>
+}) {
   const plane = useMemo(() => new THREE.Plane(new THREE.Vector3(0, 0, 1), 0), [])
-  const raycaster = useMemo(() => new THREE.Raycaster(), [])
-  const intersectPoint = useMemo(() => new THREE.Vector3(), [])
+  const intersect = useMemo(() => new THREE.Vector3(), [])
 
-  useFrame(({ camera, pointer: p }) => {
-    raycaster.setFromCamera(new THREE.Vector2(p.x, p.y), camera)
-    raycaster.ray.intersectPlane(plane, intersectPoint)
-    if (intersectPoint) {
-      pointer.current.x += (intersectPoint.x - pointer.current.x) * 0.15
-      pointer.current.y += (intersectPoint.y - pointer.current.y) * 0.15
+  useFrame(({ raycaster, camera, pointer }) => {
+    raycaster.setFromCamera(pointer, camera)
+    raycaster.ray.intersectPlane(plane, intersect)
+    if (intersect) {
+      mouseWorld.current.lerp(intersect, 0.15)
     }
   })
 
-  return null
+  // Invisible plane for drag detection
+  return (
+    <mesh
+      visible={false}
+      onPointerUp={() => {
+        isDragging.current = false
+        dragIndex.current = -1
+        document.body.style.cursor = 'default'
+      }}
+      onPointerMove={() => {
+        if (isDragging.current) {
+          document.body.style.cursor = 'grabbing'
+        }
+      }}
+    >
+      <planeGeometry args={[20, 20]} />
+      <meshBasicMaterial transparent opacity={0} />
+    </mesh>
+  )
 }
 
-// Main infinity group
 function InfinityGroup() {
   const groupRef = useRef<THREE.Group>(null)
-  const pointer = useRef(new THREE.Vector3(100, 100, 0)) // Start offscreen
+  const mouseWorld = useRef(new THREE.Vector3(50, 50, 0))
+  const isDragging = useRef(false)
+  const dragIndex = useRef(-1)
   const cubeCount = 80
 
-  const points = useMemo(() => getInfinityPoints(cubeCount, 2.8), [cubeCount])
+  const points = useMemo(() => getInfinityPoints(cubeCount, 2.8), [])
 
-  useFrame((state) => {
+  const handleDragStart = useCallback((index: number) => {
+    isDragging.current = true
+    dragIndex.current = index
+    document.body.style.cursor = 'grabbing'
+  }, [])
+
+  useFrame(({ clock }) => {
     if (groupRef.current) {
-      groupRef.current.rotation.z = Math.sin(state.clock.elapsedTime * 0.08) * 0.03
+      groupRef.current.rotation.z = Math.sin(clock.elapsedTime * 0.08) * 0.03
     }
   })
 
   return (
     <>
-      <PointerTracker pointer={pointer} />
-      <Float speed={0.8} rotationIntensity={0.05} floatIntensity={0.2}>
+      <MousePlane mouseWorld={mouseWorld} isDragging={isDragging} dragIndex={dragIndex} />
+      <Float speed={0.6} rotationIntensity={0.03} floatIntensity={0.15}>
         <group ref={groupRef}>
           {points.map((point, i) => (
-            <InfinityCube
+            <GoldenCube
               key={i}
-              position={point}
+              basePosition={point}
               index={i}
               total={cubeCount}
-              pointer={pointer}
+              mouseWorld={mouseWorld}
+              isDragging={isDragging}
+              dragIndex={dragIndex}
+              onDragStart={handleDragStart}
             />
           ))}
         </group>
@@ -163,20 +227,16 @@ export function InfinityScene({ className }: { className?: string }) {
       <Canvas
         camera={{ position: [0, 0, 6], fov: 50 }}
         dpr={[1, 2]}
-        gl={{ antialias: true, alpha: true }}
+        gl={{ antialias: true, alpha: true, powerPreference: 'high-performance' }}
         style={{ background: 'transparent' }}
-        eventSource={typeof document !== 'undefined' ? document.documentElement : undefined}
-        eventPrefix="client"
       >
-        {/* Rich lighting for reflective materials */}
         <ambientLight intensity={0.3} />
-        <directionalLight position={[5, 5, 5]} intensity={1} color="#FFF5E0" />
-        <directionalLight position={[-5, -3, 3]} intensity={0.4} color="#F5B731" />
-        <pointLight position={[0, 0, 4]} intensity={0.6} color="#F5C84C" />
-        <pointLight position={[3, 2, 2]} intensity={0.3} color="#FFFFFF" />
+        <directionalLight position={[5, 5, 5]} intensity={1.2} color="#FFF8E7" />
+        <directionalLight position={[-4, -2, 3]} intensity={0.5} color="#F5B731" />
+        <pointLight position={[0, 0, 4]} intensity={0.8} color="#FFD700" />
+        <spotLight position={[3, 3, 5]} angle={0.5} penumbra={1} intensity={0.5} color="#F5C84C" />
 
-        {/* Environment map for realistic reflections */}
-        <Environment preset="city" />
+        <Environment preset="studio" />
 
         <InfinityGroup />
       </Canvas>
