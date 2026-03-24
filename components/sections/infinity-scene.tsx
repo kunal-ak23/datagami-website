@@ -5,16 +5,24 @@ import { Canvas, useFrame } from '@react-three/fiber'
 import { Float, Environment, RoundedBox } from '@react-three/drei'
 import * as THREE from 'three'
 
-// Lemniscate of Bernoulli — infinity shape with proper spacing
-function getInfinityPoints(count: number, scale: number): THREE.Vector3[] {
+// Lemniscate of Bernoulli — infinity shape, multiple layers for thickness
+function getInfinityPoints(countPerLayer: number, scale: number, layers: number = 3): THREE.Vector3[] {
   const points: THREE.Vector3[] = []
-  for (let i = 0; i < count; i++) {
-    const t = (i / count) * Math.PI * 2
-    const denom = 1 + Math.sin(t) * Math.sin(t)
-    const x = (scale * Math.cos(t)) / denom
-    const y = (scale * Math.sin(t) * Math.cos(t)) / denom
-    const z = Math.sin(t * 2) * 0.2
-    points.push(new THREE.Vector3(x, y, z))
+  const layerSpacing = 0.4
+
+  for (let layer = 0; layer < layers; layer++) {
+    const zOffset = (layer - (layers - 1) / 2) * layerSpacing
+    // Slightly offset each layer in scale for a 3D ribbon effect
+    const layerScale = scale - layer * 0.15
+
+    for (let i = 0; i < countPerLayer; i++) {
+      const t = (i / countPerLayer) * Math.PI * 2
+      const denom = 1 + Math.sin(t) * Math.sin(t)
+      const x = (layerScale * Math.cos(t)) / denom
+      const y = (layerScale * Math.sin(t) * Math.cos(t)) / denom
+      const z = zOffset + Math.sin(t * 2) * 0.1
+      points.push(new THREE.Vector3(x, y, z))
+    }
   }
   return points
 }
@@ -100,8 +108,8 @@ function GoldenCube({
   return (
     <RoundedBox
       ref={ref}
-      args={[0.35, 0.35, 0.35]}
-      radius={0.06}
+      args={[0.3, 0.3, 0.3]}
+      radius={0.05}
       smoothness={4}
       position={basePosition}
       onPointerDown={(e) => {
@@ -191,8 +199,8 @@ function InfinityGroup() {
   const isDragging = useRef(false)
   const dragIndex = useRef(-1)
 
-  // 40 cubes on infinity curve with scale 3.5 = good spacing for 0.35 size cubes
-  const points = useMemo(() => getInfinityPoints(40, 3.5), [])
+  // 30 cubes per layer × 3 layers = 90 cubes total
+  const points = useMemo(() => getInfinityPoints(30, 3.5, 3), [])
 
   const handleDragStart = useCallback((index: number) => {
     isDragging.current = true
