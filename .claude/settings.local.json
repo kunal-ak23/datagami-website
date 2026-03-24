@@ -30,7 +30,23 @@
       "Bash(npm ls:*)",
       "Bash(npm run:*)",
       "WebFetch(domain:ai.google.dev)",
-      "Bash(GEMINI_API_KEY=\"AIzaSyBu84KTaN90F57_IYMzQ6jAmk0Iw_jjU5s\" bash scripts/generate-assets.sh 2>&1)"
+      "Bash(GEMINI_API_KEY=\"AIzaSyBu84KTaN90F57_IYMzQ6jAmk0Iw_jjU5s\" bash scripts/generate-assets.sh 2>&1)",
+      "Bash(pkill -f 'next start')",
+      "Bash(psql -d datagami-website -c \"SELECT 1\")",
+      "Bash(az --version)",
+      "Bash(az account:*)",
+      "Bash(psql:*)",
+      "Bash(node:*)",
+      "Bash(grep -r \"tailwind\" /Users/kunalsharma/datagami/datagami-website/tailwind.config.*)",
+      "Bash(npm list:*)",
+      "Bash(curl -s -X POST \"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-image:generateContent\" -H \"x-goog-api-key: AIzaSyBu84KTaN90F57_IYMzQ6jAmk0Iw_jjU5s\" -H \"Content-Type: application/json\" -d '{:*)",
+      "Bash(grep -v '^$')",
+      "Bash(find /Users/kunalsharma/datagami/datagami-website -maxdepth 2 -name *.md -path */docs/*)",
+      "WebFetch(domain:www.phemesoft.com)",
+      "WebSearch",
+      "Bash(pkill -f 'next dev')",
+      "Bash(pkill -f 'next start' 2)",
+      "Bash(/dev/null sleep:*)"
     ]
   }
 }
