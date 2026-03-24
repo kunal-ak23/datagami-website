@@ -42,6 +42,7 @@ import { FadeIn } from "@/components/motion/fade-in"
 import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
 import { LogoTicker } from "@/components/carousels/logo-ticker"
 import { allPartners } from "@/lib/data/partners"
+import { IndustriesGrid } from "@/components/sections/industries-grid"
 
 export const metadata: Metadata = {
   title:
@@ -243,6 +244,22 @@ export default function Home() {
                 description: item.description,
               }))}
             />
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* 4b. Industries We Serve */}
+      <section className="py-16 md:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <SectionHeader
+              title="Industries We Serve"
+              description="Powering digital transformation across sectors"
+              gradient
+            />
+          </FadeIn>
+          <FadeIn delay={0.2}>
+            <IndustriesGrid />
           </FadeIn>
         </div>
       </section>

@@ -12,7 +12,7 @@ export default async function AdminLayout({
   children: React.ReactNode
 }) {
   // Try to get the session
-  let session = await auth()
+  const session = await auth()
 
   // Fallback: check if session cookie exists (middleware already verified auth)
   if (!session?.user) {

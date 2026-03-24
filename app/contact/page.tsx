@@ -15,6 +15,7 @@ import { company } from "@/lib/data/company"
 
 import { FadeIn } from "@/components/motion/fade-in"
 import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
+import { OfficeMap } from "@/components/sections/office-map"
 
 export const metadata: Metadata = {
   title: 'Contact Us',
@@ -221,6 +222,14 @@ export default function ContactPage() {
             </FadeIn>
           </div>
         </section>
+
+        {/* ── Office Map ── */}
+        <FadeIn>
+          <div className="mt-12">
+            <h2 className="text-2xl font-bold text-dark mb-6 text-center">Our Offices</h2>
+            <OfficeMap />
+          </div>
+        </FadeIn>
 
         {/* ── Process Steps ── */}
         <section className="py-16 border-t border-border-custom">
