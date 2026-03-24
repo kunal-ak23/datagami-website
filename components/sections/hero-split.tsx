@@ -2,6 +2,7 @@ import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { AuroraBackground } from "@/components/sections/aurora-background"
 import { SplineScene } from "@/components/sections/spline-scene"
+import { InfinityScene } from "@/components/sections/infinity-scene"
 
 interface HeroSplitProps {
   heading: string
@@ -12,6 +13,7 @@ interface HeroSplitProps {
   imageAlt: string
   showLogo?: boolean
   splineUrl?: string
+  useInfinityScene?: boolean
   floatingCard?: {
     heading: string
     ctaText: string
@@ -28,6 +30,7 @@ export function HeroSplit({
   imageAlt,
   showLogo,
   splineUrl,
+  useInfinityScene,
   floatingCard,
 }: HeroSplitProps) {
   return (
@@ -61,7 +64,9 @@ export function HeroSplit({
 
         {/* Right panel */}
         <div className="relative min-h-[300px] lg:min-h-0 bg-gray-100 dark:bg-gray-900">
-          {splineUrl ? (
+          {useInfinityScene ? (
+            <InfinityScene className="absolute inset-0 h-full w-full" />
+          ) : splineUrl ? (
             <SplineScene
               sceneUrl={splineUrl}
               className="absolute inset-0 h-full w-full"
