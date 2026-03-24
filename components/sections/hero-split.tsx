@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { AuroraBackground } from "@/components/sections/aurora-background"
+import { SplineScene } from "@/components/sections/spline-scene"
 
 interface HeroSplitProps {
   heading: string
@@ -10,6 +11,7 @@ interface HeroSplitProps {
   imageSrc: string
   imageAlt: string
   showLogo?: boolean
+  splineUrl?: string
   floatingCard?: {
     heading: string
     ctaText: string
@@ -25,6 +27,7 @@ export function HeroSplit({
   imageSrc,
   imageAlt,
   showLogo,
+  splineUrl,
   floatingCard,
 }: HeroSplitProps) {
   return (
@@ -57,16 +60,23 @@ export function HeroSplit({
         </AuroraBackground>
 
         {/* Right panel */}
-        <div className="relative min-h-[300px] lg:min-h-0">
-          <img
-            src={imageSrc}
-            alt={imageAlt}
-            className="absolute inset-0 h-full w-full object-cover"
-          />
+        <div className="relative min-h-[300px] lg:min-h-0 bg-gray-100 dark:bg-gray-900">
+          {splineUrl ? (
+            <SplineScene
+              sceneUrl={splineUrl}
+              className="absolute inset-0 h-full w-full"
+            />
+          ) : (
+            <img
+              src={imageSrc}
+              alt={imageAlt}
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+          )}
 
           {/* Floating card overlay */}
           {floatingCard && (
-            <div className="absolute bottom-6 right-6 left-6 sm:left-auto sm:max-w-sm bg-white dark:bg-gray-950 rounded-xl shadow-lg p-6">
+            <div className="absolute bottom-6 right-6 left-6 sm:left-auto sm:max-w-sm bg-white dark:bg-gray-950 rounded-xl shadow-lg p-6 z-10">
               <h3 className="text-lg font-semibold text-[#1A1A1A] dark:text-white mb-4">
                 {floatingCard.heading}
               </h3>
