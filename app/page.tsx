@@ -223,7 +223,7 @@ export default function Home() {
       </FadeIn>
 
       {/* 4. Why Choose Us */}
-      <section className="py-16 md:py-20">
+      <section className="py-16 md:py-20 bg-pattern">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <SectionHeader title="Transforming Education and Enterprise With Proven Solutions" gradient />
@@ -248,7 +248,7 @@ export default function Home() {
       </section>
 
       {/* 5. Trust Metrics */}
-      <section className="py-16 md:py-20 bg-gray-50">
+      <section className="py-16 md:py-20 bg-gray-50 bg-dots">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <SectionHeader title="Trusted by Leading Universities & Institutions" />
@@ -349,8 +349,8 @@ export default function Home() {
       {/* 9. Final CTA */}
       <FadeIn>
         <CTASection
-          title="Partner With Us Today"
-          buttonText="Get in Touch"
+          title="Let's Build the Future Together"
+          buttonText="Start Your Journey"
           buttonHref="/contact"
           variant="dark"
         />

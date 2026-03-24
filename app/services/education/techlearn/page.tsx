@@ -188,9 +188,9 @@ export default function TechLEARNPage() {
       {/* CTA */}
       <FadeIn>
         <CTASection
-          title="Ready to Master Future Technologies?"
+          title="Start Your Tech Journey"
           description="Choose your track and start building the skills that industry demands."
-          buttonText="Apply Now"
+          buttonText="Explore Programs"
           buttonHref="/contact"
           variant="dark"
         />

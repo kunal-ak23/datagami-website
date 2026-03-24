@@ -155,7 +155,7 @@ export default function ChipDesignPage() {
       {/* CTA */}
       <FadeIn>
         <CTASection
-          title="Start Your Chip Design Career"
+          title="Design the Next Generation of Chips"
           description="Enroll in the Chip Design track and enter the booming semiconductor industry."
           buttonText="Apply Now"
           buttonHref="/contact"

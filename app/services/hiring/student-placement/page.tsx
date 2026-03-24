@@ -131,9 +131,9 @@ export default function StudentPlacementPage() {
       {/* CTA */}
       <FadeIn>
         <CTASection
-          title="Get Started"
+          title="Connect Students with Careers"
           description="Partner with us to give your students the career launchpad they deserve."
-          buttonText="Get Started"
+          buttonText="Partner With Us"
           buttonHref="/contact"
           variant="primary"
         />

@@ -200,7 +200,7 @@ export default function CloudComputingPage() {
       {/* CTA */}
       <FadeIn>
         <CTASection
-          title="Start Your Cloud Computing Career"
+          title="Launch Your Cloud Career"
           description="Enroll in the Cloud Computing with AI track and become a certified cloud professional."
           buttonText="Apply Now"
           buttonHref="/contact"

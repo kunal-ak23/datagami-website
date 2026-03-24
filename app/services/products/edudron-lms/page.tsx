@@ -163,7 +163,7 @@ export default function EduDronLmsPage() {
       {/* CTA */}
       <FadeIn>
         <CTASection
-          title="Request a Demo"
+          title="See EduDron LMS in Action"
           description="See how EduDron LMS can transform learning at your institution."
           buttonText="Request a Demo"
           buttonHref="/contact"

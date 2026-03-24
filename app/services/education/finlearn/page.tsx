@@ -347,9 +347,9 @@ export default function FinLEARNPage() {
       {/* CTA */}
       <FadeIn>
         <CTASection
-          title="Start Your Career in Banking & Finance"
+          title="Launch Your Finance Career"
           description="Join FinLEARN and take the first step toward a rewarding career in the BFSI sector."
-          buttonText="Apply Now"
+          buttonText="Apply to FinLEARN"
           buttonHref="/contact"
           variant="primary"
         />

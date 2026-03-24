@@ -131,9 +131,9 @@ export default function TalentAcquisitionPage() {
       {/* CTA */}
       <FadeIn>
         <CTASection
-          title="Get Started"
+          title="Find the Right Talent"
           description="Let us help you build the team your organization deserves."
-          buttonText="Get Started"
+          buttonText="Let's Connect"
           buttonHref="/contact"
           variant="primary"
         />

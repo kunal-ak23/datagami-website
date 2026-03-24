@@ -131,9 +131,9 @@ export default function ConsultingPage() {
       {/* CTA */}
       <FadeIn>
         <CTASection
-          title="Get Started"
+          title="Accelerate Your Growth"
           description="Let us help you design and execute your next strategic initiative."
-          buttonText="Get Started"
+          buttonText="Book a Consultation"
           buttonHref="/contact"
           variant="primary"
         />

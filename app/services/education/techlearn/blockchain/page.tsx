@@ -156,9 +156,9 @@ export default function BlockchainPage() {
       {/* CTA */}
       <FadeIn>
         <CTASection
-          title="Start Your Blockchain Career"
+          title="Build on the Blockchain"
           description="Enroll in the Blockchain track and become a Web3 developer in 6 months."
-          buttonText="Apply Now"
+          buttonText="Get Started"
           buttonHref="/contact"
           variant="dark"
         />

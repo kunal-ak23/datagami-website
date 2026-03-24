@@ -312,9 +312,9 @@ export default function IBMICEPage() {
       {/* CTA */}
       <FadeIn>
         <CTASection
-          title="Transform Your Institution with IBM ICE"
+          title="Explore IBM Badge Programs"
           description="Partner with IBM and Datagami to bring world-class badge programs to your campus and empower the next generation of tech professionals."
-          buttonText="Schedule Consultation"
+          buttonText="Get Started"
           buttonHref="/contact"
           variant="dark"
         />

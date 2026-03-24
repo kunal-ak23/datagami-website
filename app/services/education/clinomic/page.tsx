@@ -250,7 +250,7 @@ export default function ClinomicPage() {
       {/* CTA */}
       <FadeIn>
         <CTASection
-          title="Start Your Clinical Research Career"
+          title="Begin Your Research Career"
           description="Join Clinomic and become part of a growing community of clinical research professionals."
           buttonText="Apply Now"
           buttonHref="/contact"

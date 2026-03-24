@@ -182,9 +182,9 @@ export default function ServicesPage() {
       {/* CTA */}
       <FadeIn>
         <CTASection
-          title="Ready to Get Started?"
+          title="Find Your Perfect Solution"
           description="Connect with our team to find the right solution for your organization."
-          buttonText="Contact Us"
+          buttonText="Discuss Your Needs"
           buttonHref="/contact"
           variant="dark"
         />

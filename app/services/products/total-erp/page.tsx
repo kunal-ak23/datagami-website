@@ -163,7 +163,7 @@ export default function TotalErpPage() {
       {/* CTA */}
       <FadeIn>
         <CTASection
-          title="Request a Demo"
+          title="Streamline Your Operations"
           description="Discover how Total ERP can streamline your operations."
           buttonText="Request a Demo"
           buttonHref="/contact"

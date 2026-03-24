@@ -131,9 +131,9 @@ export default function TechnicalSupportPage() {
       {/* CTA */}
       <FadeIn>
         <CTASection
-          title="Get Started"
+          title="Reliable Support, Always"
           description="Get reliable technical support for your systems and infrastructure."
-          buttonText="Get Started"
+          buttonText="Get Support"
           buttonHref="/contact"
           variant="primary"
         />

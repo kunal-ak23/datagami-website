@@ -157,9 +157,9 @@ export default function MetaversePage() {
       {/* CTA */}
       <FadeIn>
         <CTASection
-          title="Start Your Metaverse Career"
+          title="Create the Future of XR"
           description="Enroll in the Metaverse track and become a creator of immersive digital experiences."
-          buttonText="Apply Now"
+          buttonText="Join the Program"
           buttonHref="/contact"
           variant="dark"
         />

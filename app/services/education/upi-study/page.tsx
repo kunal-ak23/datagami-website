@@ -234,9 +234,9 @@ export default function UPIStudyPage() {
       {/* CTA */}
       <FadeIn>
         <CTASection
-          title="Explore Digital Payments Education"
+          title="Master Digital Payments"
           description="Be part of the digital payments revolution. Enroll in UPI Study and build your career in fintech."
-          buttonText="Get Started"
+          buttonText="Enroll Today"
           buttonHref="/contact"
           variant="primary"
         />
