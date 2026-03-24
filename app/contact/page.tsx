@@ -86,7 +86,7 @@ export default function ContactPage() {
                       id="name"
                       name="name"
                       required
-                      className="w-full rounded-lg border border-border-custom px-4 py-3 text-dark placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand/50 focus:border-brand"
+                      className="w-full rounded-lg border border-border-custom dark:border-gray-800 bg-white dark:bg-gray-900 px-4 py-3 text-dark placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-brand/50 focus:border-brand"
                       placeholder="Your full name"
                     />
                   </div>
@@ -99,7 +99,7 @@ export default function ContactPage() {
                       id="email"
                       name="email"
                       required
-                      className="w-full rounded-lg border border-border-custom px-4 py-3 text-dark placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand/50 focus:border-brand"
+                      className="w-full rounded-lg border border-border-custom dark:border-gray-800 bg-white dark:bg-gray-900 px-4 py-3 text-dark placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-brand/50 focus:border-brand"
                       placeholder="you@example.com"
                     />
                   </div>
@@ -111,7 +111,7 @@ export default function ContactPage() {
                       type="tel"
                       id="phone"
                       name="phone"
-                      className="w-full rounded-lg border border-border-custom px-4 py-3 text-dark placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand/50 focus:border-brand"
+                      className="w-full rounded-lg border border-border-custom dark:border-gray-800 bg-white dark:bg-gray-900 px-4 py-3 text-dark placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-brand/50 focus:border-brand"
                       placeholder="+91 98765 43210"
                     />
                   </div>
@@ -123,7 +123,7 @@ export default function ContactPage() {
                       type="text"
                       id="organization"
                       name="organization"
-                      className="w-full rounded-lg border border-border-custom px-4 py-3 text-dark placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand/50 focus:border-brand"
+                      className="w-full rounded-lg border border-border-custom dark:border-gray-800 bg-white dark:bg-gray-900 px-4 py-3 text-dark placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-brand/50 focus:border-brand"
                       placeholder="Your organization name"
                     />
                   </div>
@@ -136,7 +136,7 @@ export default function ContactPage() {
                       name="message"
                       rows={5}
                       required
-                      className="w-full rounded-lg border border-border-custom px-4 py-3 text-dark placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand/50 focus:border-brand resize-none"
+                      className="w-full rounded-lg border border-border-custom dark:border-gray-800 bg-white dark:bg-gray-900 px-4 py-3 text-dark placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-brand/50 focus:border-brand resize-none"
                       placeholder="Tell us how we can help..."
                     />
                   </div>

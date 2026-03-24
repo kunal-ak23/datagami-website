@@ -125,7 +125,7 @@ export default function FinLEARNPage() {
       </section>
 
       {/* Program Tracks */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50 dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <SectionHeader
@@ -149,7 +149,7 @@ export default function FinLEARNPage() {
                 {ugTracks.map((track) => (
                   <StaggerItem key={track.name}>
                     <div
-                      className="bg-white border border-border-custom rounded-xl p-6 hover:shadow-lg transition-shadow"
+                      className="bg-white dark:bg-gray-950 border border-border-custom rounded-xl p-6 hover:shadow-lg transition-shadow"
                     >
                       <span className="inline-block text-xs font-semibold uppercase tracking-wider text-brand bg-brand/10 px-3 py-1 rounded-full mb-3">
                         UG
@@ -182,7 +182,7 @@ export default function FinLEARNPage() {
                 {pgTracks.map((track) => (
                   <StaggerItem key={track.name}>
                     <div
-                      className="bg-white border border-border-custom rounded-xl p-6 hover:shadow-lg transition-shadow"
+                      className="bg-white dark:bg-gray-950 border border-border-custom rounded-xl p-6 hover:shadow-lg transition-shadow"
                     >
                       <span className="inline-block text-xs font-semibold uppercase tracking-wider text-brand bg-brand/10 px-3 py-1 rounded-full mb-3">
                         PG
@@ -215,7 +215,7 @@ export default function FinLEARNPage() {
                 {certTracks.map((track) => (
                   <StaggerItem key={track.name}>
                     <div
-                      className="bg-white border border-border-custom rounded-xl p-6 hover:shadow-lg transition-shadow"
+                      className="bg-white dark:bg-gray-950 border border-border-custom rounded-xl p-6 hover:shadow-lg transition-shadow"
                     >
                       <span className="inline-block text-xs font-semibold uppercase tracking-wider text-brand bg-brand/10 px-3 py-1 rounded-full mb-3">
                         Certificate
@@ -284,7 +284,7 @@ export default function FinLEARNPage() {
                 <div
                   className="border border-border-custom rounded-xl p-6 text-center hover:shadow-lg transition-shadow"
                 >
-                  <div className="w-24 h-24 rounded-full bg-gray-200 flex items-center justify-center mx-auto mb-4">
+                  <div className="w-24 h-24 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center mx-auto mb-4">
                     <Users className="size-10 text-gray-400" />
                   </div>
                   <h3 className="text-base font-semibold text-dark">
@@ -304,7 +304,7 @@ export default function FinLEARNPage() {
       </section>
 
       {/* Where Our Alumni Work */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50 dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <SectionHeader
@@ -316,7 +316,7 @@ export default function FinLEARNPage() {
             {alumniCompanies.map((company) => (
               <StaggerItem key={company.name}>
                 <div
-                  className="bg-white border border-border-custom rounded-xl p-4 flex flex-col items-center justify-center gap-2 hover:shadow-md transition-shadow"
+                  className="bg-white dark:bg-gray-950 border border-border-custom rounded-xl p-4 flex flex-col items-center justify-center gap-2 hover:shadow-md transition-shadow"
                 >
                   {company.logo ? (
                     <img

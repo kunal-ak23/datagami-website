@@ -83,7 +83,7 @@ export default function ChipDesignPage() {
             {modules.map((mod, i) => (
               <StaggerItem key={mod.name}>
                 <div
-                  className="border border-border-custom border-l-4 border-l-brand rounded-xl p-6 hover:shadow-lg transition-all bg-white"
+                  className="border border-border-custom border-l-4 border-l-brand rounded-xl p-6 hover:shadow-lg transition-all bg-white dark:bg-gray-950"
                 >
                   <div className="flex items-start gap-4">
                     <span className="bg-brand text-dark rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold shrink-0">
@@ -104,7 +104,7 @@ export default function ChipDesignPage() {
       </section>
 
       {/* Skills Gained */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50 dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <SectionHeader
@@ -131,7 +131,7 @@ export default function ChipDesignPage() {
             {careerOutcomes.map((career) => (
               <StaggerItem key={career.title}>
                 <div
-                  className="border border-border-custom rounded-xl p-6 hover:shadow-lg transition-all bg-white"
+                  className="border border-border-custom rounded-xl p-6 hover:shadow-lg transition-all bg-white dark:bg-gray-950"
                 >
                   <div className="flex items-center justify-center w-12 h-12 rounded-full bg-brand/10 mb-4">
                     <Briefcase className="size-6 text-brand" />

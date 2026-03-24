@@ -28,7 +28,7 @@ export function HeroFull({
 
   return (
     <section
-      className={`relative ${!backgroundImage ? backgroundColor : "bg-dark"}`}
+      className={`relative ${!backgroundImage ? backgroundColor : "bg-[#1A1A1A]"}`}
     >
       {backgroundImage && (
         <img
@@ -56,8 +56,8 @@ export function HeroFull({
                 href={ctaHref}
                 className={`inline-flex items-center gap-2 px-8 py-3 rounded-full font-semibold cursor-pointer transition-colors ${
                   isLight
-                    ? "bg-dark text-white hover:bg-dark/90"
-                    : "bg-brand text-dark hover:bg-brand-dark"
+                    ? "bg-[#1A1A1A] text-white hover:bg-[#1A1A1A]/90"
+                    : "bg-brand text-[#1A1A1A] hover:bg-brand-dark"
                 }`}
               >
                 {ctaText}

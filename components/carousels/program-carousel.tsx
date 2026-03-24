@@ -32,7 +32,7 @@ export function ProgramCarousel({ children, className = '' }: ProgramCarouselPro
       <button
         type="button"
         onClick={scrollPrev}
-        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 size-10 rounded-full bg-white shadow-md border border-border-custom flex items-center justify-center hover:bg-gray-50 transition-colors"
+        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 size-10 rounded-full bg-white dark:bg-gray-950 shadow-md border border-border-custom flex items-center justify-center hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors"
         aria-label="Previous slide"
       >
         <ChevronLeft className="size-5 text-dark" />
@@ -40,7 +40,7 @@ export function ProgramCarousel({ children, className = '' }: ProgramCarouselPro
       <button
         type="button"
         onClick={scrollNext}
-        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 size-10 rounded-full bg-white shadow-md border border-border-custom flex items-center justify-center hover:bg-gray-50 transition-colors"
+        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 size-10 rounded-full bg-white dark:bg-gray-950 shadow-md border border-border-custom flex items-center justify-center hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors"
         aria-label="Next slide"
       >
         <ChevronRight className="size-5 text-dark" />

@@ -265,7 +265,7 @@ export default function Home() {
       </section>
 
       {/* 5. Trust Metrics */}
-      <section className="py-16 md:py-20 bg-gray-50 bg-dots">
+      <section className="py-16 md:py-20 bg-gray-50 dark:bg-gray-900 bg-dots">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <SectionHeader title="Trusted by Leading Universities & Institutions" />
@@ -322,7 +322,7 @@ export default function Home() {
                 </ul>
                 <Link
                   href="/services"
-                  className="inline-flex items-center gap-2 bg-dark text-white px-8 py-3 rounded-full font-semibold hover:bg-dark/90 transition-colors"
+                  className="inline-flex items-center gap-2 bg-[#1A1A1A] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#1A1A1A]/90 transition-colors"
                 >
                   View All Services
                   <ArrowRight className="size-5" />
@@ -343,7 +343,7 @@ export default function Home() {
       </section>
 
       {/* 7. Success Stories */}
-      <section className="py-16 md:py-20 bg-gray-50">
+      <section className="py-16 md:py-20 bg-gray-50 dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <SectionHeader title="Proven Success Stories" gradient />

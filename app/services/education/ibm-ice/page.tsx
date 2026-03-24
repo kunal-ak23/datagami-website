@@ -104,7 +104,7 @@ export default function IBMICEPage() {
       </section>
 
       {/* Stats */}
-      <section className="py-16 bg-dark">
+      <section className="py-16 bg-[#1A1A1A]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <StaggerChildren className="grid md:grid-cols-3 gap-8">
             {[
@@ -113,7 +113,7 @@ export default function IBMICEPage() {
               { value: ibmIce.stats.partnerInstitutes, label: "Partner Institutes" },
             ].map((stat) => (
               <StaggerItem key={stat.label}>
-                <div className="text-center bg-white/5 border border-white/10 rounded-2xl p-8">
+                <div className="text-center bg-white dark:bg-gray-950/5 border border-white/10 rounded-2xl p-8">
                   <Counter
                     target={stat.value}
                     className="text-5xl font-bold text-brand"
@@ -163,7 +163,7 @@ export default function IBMICEPage() {
       </section>
 
       {/* Track Categories with Individual Tracks */}
-      <section id="track-categories" className="py-20 bg-gray-50">
+      <section id="track-categories" className="py-20 bg-gray-50 dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <SectionHeader
@@ -226,7 +226,7 @@ export default function IBMICEPage() {
                     <StaggerChildren className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
                       {category.tracks.map((track) => (
                         <StaggerItem key={track}>
-                          <div className="bg-white border border-border-custom rounded-lg p-4 border-l-4 border-l-brand hover:bg-brand/5 hover:shadow-md transition-all">
+                          <div className="bg-white dark:bg-gray-950 border border-border-custom rounded-lg p-4 border-l-4 border-l-brand hover:bg-brand/5 hover:shadow-md transition-all">
                             <div className="flex items-center gap-3">
                               <BadgeCheck className="size-5 text-brand shrink-0" />
                               <span className="text-sm font-medium text-dark">
@@ -260,7 +260,7 @@ export default function IBMICEPage() {
             alt="IBM ICE Innovation Lab"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-dark/70 flex items-center justify-center">
+          <div className="absolute inset-0 bg-[#1A1A1A]/70 flex items-center justify-center">
             <FadeIn>
               <div className="text-center px-4">
                 <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
@@ -287,7 +287,7 @@ export default function IBMICEPage() {
           <StaggerChildren className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
             {partnerInstitutes.map((institute) => (
               <StaggerItem key={institute.name}>
-                <div className="bg-white border border-border-custom rounded-xl p-4 flex flex-col items-center justify-center gap-2 hover:shadow-md hover:border-brand/30 transition-all border-l-4 border-l-brand">
+                <div className="bg-white dark:bg-gray-950 border border-border-custom rounded-xl p-4 flex flex-col items-center justify-center gap-2 hover:shadow-md hover:border-brand/30 transition-all border-l-4 border-l-brand">
                   {institute.logo ? (
                     <img
                       src={institute.logo}

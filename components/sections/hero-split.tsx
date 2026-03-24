@@ -48,7 +48,7 @@ export function HeroSplit({
             </p>
             <Link
               href={ctaHref}
-              className="inline-flex items-center gap-2 bg-dark text-white px-8 py-3 rounded-full font-semibold cursor-pointer hover:bg-dark/90 transition-colors"
+              className="inline-flex items-center gap-2 bg-[#1A1A1A] text-white px-8 py-3 rounded-full font-semibold cursor-pointer hover:bg-[#1A1A1A]/90 transition-colors"
             >
               {ctaText}
               <ArrowRight className="size-5" />
@@ -66,13 +66,13 @@ export function HeroSplit({
 
           {/* Floating card overlay */}
           {floatingCard && (
-            <div className="absolute bottom-6 right-6 left-6 sm:left-auto sm:max-w-sm bg-white rounded-xl shadow-lg p-6">
+            <div className="absolute bottom-6 right-6 left-6 sm:left-auto sm:max-w-sm bg-white dark:bg-gray-950 rounded-xl shadow-lg p-6">
               <h3 className="text-lg font-semibold text-dark mb-4">
                 {floatingCard.heading}
               </h3>
               <Link
                 href={floatingCard.ctaHref}
-                className="inline-flex items-center gap-2 bg-dark text-white px-6 py-2.5 rounded-full text-sm font-semibold cursor-pointer hover:bg-dark/90 transition-colors"
+                className="inline-flex items-center gap-2 bg-[#1A1A1A] text-white px-6 py-2.5 rounded-full text-sm font-semibold cursor-pointer hover:bg-[#1A1A1A]/90 transition-colors"
               >
                 {floatingCard.ctaText}
                 <ArrowRight className="size-4" />

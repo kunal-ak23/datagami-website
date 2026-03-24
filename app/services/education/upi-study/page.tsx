@@ -170,7 +170,7 @@ export default function UPIStudyPage() {
       </section>
 
       {/* Program Overview */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50 dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <SectionHeader
@@ -217,7 +217,7 @@ export default function UPIStudyPage() {
       </section>
 
       {/* Career Outcomes */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50 dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <SectionHeader

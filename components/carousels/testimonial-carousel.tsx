@@ -64,7 +64,7 @@ export function TestimonialCarouselClient({ testimonials }: TestimonialCarouselP
               key={index}
               className="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-3"
             >
-              <div className="bg-white rounded-xl shadow p-6 h-full flex flex-col">
+              <div className="bg-white dark:bg-gray-950 rounded-xl shadow p-6 h-full flex flex-col">
                 {/* Student info */}
                 <div className="flex items-center gap-4 mb-4">
                   {testimonial.photoUrl ? (
@@ -74,7 +74,7 @@ export function TestimonialCarouselClient({ testimonials }: TestimonialCarouselP
                       className="w-16 h-16 rounded-full object-cover border-2 border-brand/20"
                     />
                   ) : (
-                    <div className="w-16 h-16 rounded-full bg-gray-200 flex items-center justify-center border-2 border-brand/20">
+                    <div className="w-16 h-16 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center border-2 border-brand/20">
                       <span className="text-lg font-semibold text-muted-brand">
                         {testimonial.studentName
                           .split(' ')

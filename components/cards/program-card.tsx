@@ -42,7 +42,7 @@ export function ProgramCard({
           </div>
         </div>
         {/* Content below image */}
-        <div className="p-5">
+        <div className="p-5 dark:bg-gray-950">
           <p className="text-sm text-muted-brand mb-4 line-clamp-3">
             {description}
           </p>

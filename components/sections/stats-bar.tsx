@@ -12,7 +12,7 @@ export function StatsBar({ stats, variant = "light" }: StatsBarProps) {
   const isDark = variant === "dark"
 
   return (
-    <section className={`py-12 ${isDark ? "bg-dark" : ""}`}>
+    <section className={`py-12 ${isDark ? "bg-[#1A1A1A]" : ""}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {stats.map((stat, index) => (

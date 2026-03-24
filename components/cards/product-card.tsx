@@ -35,7 +35,7 @@ export function ProductCard({
           </div>
         </div>
         {/* Content below image */}
-        <div className="p-6">
+        <div className="p-6 dark:bg-gray-950">
           <p className="text-muted-brand mb-4">{description}</p>
           <ul className="space-y-2 mb-6">
             {features.map((feature, index) => (

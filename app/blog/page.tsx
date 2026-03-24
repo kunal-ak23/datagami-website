@@ -118,7 +118,7 @@ export default async function BlogPage() {
                   className={`px-5 py-2 rounded-full text-sm font-medium transition-colors ${
                     cat === "All"
                       ? "bg-brand text-dark"
-                      : "bg-gray-100 text-muted-brand hover:bg-gray-200"
+                      : "bg-gray-100 dark:bg-gray-800 text-muted-brand hover:bg-gray-200 dark:hover:bg-gray-700"
                   }`}
                 >
                   {cat}

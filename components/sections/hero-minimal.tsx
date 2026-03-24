@@ -5,7 +5,7 @@ interface HeroMinimalProps {
 
 export function HeroMinimal({ heading, subtitle }: HeroMinimalProps) {
   return (
-    <section className="bg-white">
+    <section className="bg-white dark:bg-gray-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
         <div className="text-center max-w-3xl mx-auto">
           <h1 className="text-4xl sm:text-5xl font-bold leading-tight text-dark mb-4">

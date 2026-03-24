@@ -23,7 +23,7 @@ export function HeroDark({
   backgroundImage,
 }: HeroDarkProps) {
   return (
-    <section className="relative bg-dark overflow-hidden bg-pattern">
+    <section className="relative bg-[#1A1A1A] overflow-hidden bg-pattern">
       {backgroundImage && (
         <img
           src={backgroundImage}

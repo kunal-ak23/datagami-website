@@ -54,7 +54,7 @@ export default function AboutPage() {
           <StaggerChildren className="grid gap-8 md:grid-cols-2">
             {/* Mission */}
             <StaggerItem>
-              <div className="rounded-2xl border border-border-custom bg-white p-8">
+              <div className="rounded-2xl border border-border-custom bg-white dark:bg-gray-950 p-8">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="flex items-center justify-center size-12 rounded-full bg-brand/20">
                     <Target className="size-6 text-dark" />
@@ -67,7 +67,7 @@ export default function AboutPage() {
 
             {/* Vision */}
             <StaggerItem>
-              <div className="rounded-2xl border border-border-custom bg-white p-8">
+              <div className="rounded-2xl border border-border-custom bg-white dark:bg-gray-950 p-8">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="flex items-center justify-center size-12 rounded-full bg-brand/20">
                     <Eye className="size-6 text-dark" />
@@ -100,7 +100,7 @@ export default function AboutPage() {
                       }`}
                     >
                       {/* Dot */}
-                      <div className="absolute left-4 md:left-1/2 -translate-x-1/2 size-4 rounded-full bg-brand border-4 border-white ring-2 ring-brand/30 z-10" />
+                      <div className="absolute left-4 md:left-1/2 -translate-x-1/2 size-4 rounded-full bg-brand border-4 border-white dark:border-gray-950 ring-2 ring-brand/30 z-10" />
 
                       {/* Content */}
                       <div
@@ -171,7 +171,7 @@ export default function AboutPage() {
             {company.offices.map((office) => (
               <StaggerItem key={office.city}>
                 <div
-                  className="rounded-2xl border border-border-custom bg-white p-8"
+                  className="rounded-2xl border border-border-custom bg-white dark:bg-gray-950 p-8"
                 >
                   <div className="flex items-center gap-3 mb-4">
                     <div className="flex items-center justify-center size-10 rounded-full bg-brand/20">

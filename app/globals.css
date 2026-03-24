@@ -136,13 +136,14 @@
   --sidebar-ring: oklch(0.556 0 0);
 
   /* Datagami brand dark vars */
-  --background: 40 20% 6%;
-  --foreground: 40 10% 95%;
+  --background: hsl(30 15% 7%);
+  --foreground: hsl(40 10% 90%);
   --color-dark: #f0e6d2;
   --color-body: #c4b89a;
   --color-muted-brand: #8a7d66;
   --color-surface: hsl(40 15% 10%);
-  --color-border-custom: hsl(40 15% 18%);
+  --color-border-custom: #2a2520;
+  --color-success: #34d399;
 }
 
 /* Brand-tinted shadow system (golden glow) */

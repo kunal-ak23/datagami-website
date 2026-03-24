@@ -35,7 +35,7 @@ export function Footer() {
   if (pathname.startsWith('/admin')) return null
 
   return (
-    <footer className="bg-dark py-16">
+    <footer className="bg-[#1A1A1A] py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Column 1: Brand */}

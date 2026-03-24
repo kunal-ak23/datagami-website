@@ -128,7 +128,7 @@ export default function TechLEARNPage() {
       </section>
 
       {/* Comparison Table */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50 dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <SectionHeader
@@ -139,9 +139,9 @@ export default function TechLEARNPage() {
 
           <FadeIn delay={0.2}>
             <div className="overflow-x-auto">
-              <table className="w-full border-collapse bg-white rounded-xl overflow-hidden shadow-sm">
+              <table className="w-full border-collapse bg-white dark:bg-gray-950 rounded-xl overflow-hidden shadow-sm">
                 <thead>
-                  <tr className="bg-dark text-white">
+                  <tr className="bg-[#1A1A1A] text-white">
                     <th className="text-left px-6 py-4 font-semibold">Feature</th>
                     {techlearn.tracks.map((track) => (
                       <th
@@ -162,7 +162,7 @@ export default function TechLEARNPage() {
                       </td>
                     ))}
                   </tr>
-                  <tr className="border-b border-border-custom bg-gray-50">
+                  <tr className="border-b border-border-custom bg-gray-50 dark:bg-gray-900">
                     <td className="px-6 py-4 font-medium text-dark">Modules</td>
                     {techlearn.tracks.map((track) => (
                       <td key={track.name} className="px-6 py-4 text-muted-brand">
