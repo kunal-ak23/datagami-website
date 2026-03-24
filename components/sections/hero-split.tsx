@@ -40,10 +40,10 @@ export function HeroSplit({
                 className="mb-8 h-10 w-auto brightness-0 opacity-80"
               />
             )}
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight text-dark mb-6">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight text-[#1A1A1A] mb-6">
               {heading}
             </h1>
-            <p className="text-body text-lg leading-relaxed mb-8">
+            <p className="text-[#333333] text-lg leading-relaxed mb-8">
               {subtitle}
             </p>
             <Link
@@ -67,7 +67,7 @@ export function HeroSplit({
           {/* Floating card overlay */}
           {floatingCard && (
             <div className="absolute bottom-6 right-6 left-6 sm:left-auto sm:max-w-sm bg-white dark:bg-gray-950 rounded-xl shadow-lg p-6">
-              <h3 className="text-lg font-semibold text-dark mb-4">
+              <h3 className="text-lg font-semibold text-[#1A1A1A] dark:text-white mb-4">
                 {floatingCard.heading}
               </h3>
               <Link
