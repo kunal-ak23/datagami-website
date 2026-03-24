@@ -2,7 +2,7 @@
 
 import { useRef, useMemo, useEffect, useCallback } from 'react'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
-import { Float, Environment } from '@react-three/drei'
+import { Float, Environment, RoundedBox } from '@react-three/drei'
 import * as THREE from 'three'
 
 // Lemniscate of Bernoulli (infinity curve)
@@ -37,7 +37,7 @@ function GoldenCube({
   dragIndex: React.MutableRefObject<number>
   onDragStart: (index: number) => void
 }) {
-  const ref = useRef<THREE.Mesh>(null)
+  const ref = useRef<any>(null)
   const phase = (index / total) * Math.PI * 2
   const vel = useRef(new THREE.Vector3())
 
@@ -101,8 +101,11 @@ function GoldenCube({
   })
 
   return (
-    <mesh
+    <RoundedBox
       ref={ref}
+      args={[0.45, 0.45, 0.45]}
+      radius={0.06}
+      smoothness={4}
       position={basePosition}
       onPointerDown={(e) => {
         e.stopPropagation()
@@ -111,27 +114,32 @@ function GoldenCube({
       onPointerOver={() => { document.body.style.cursor = 'grab' }}
       onPointerOut={() => { if (!isDragging.current) document.body.style.cursor = 'default' }}
     >
-      <boxGeometry args={[0.18, 0.18, 0.18]} />
       <meshPhysicalMaterial
         color="#F5B731"
-        metalness={0.95}
+        metalness={0.2}
         roughness={0.05}
         clearcoat={1}
-        clearcoatRoughness={0.05}
+        clearcoatRoughness={0.02}
         reflectivity={1}
-        envMapIntensity={2}
-        emissive="#B8860B"
-        emissiveIntensity={0.1}
-        ior={2.4}
-        thickness={0.5}
-        transmission={0.1}
+        envMapIntensity={3}
+        emissive="#F5B731"
+        emissiveIntensity={0.15}
+        ior={1.5}
+        thickness={2}
+        transmission={0.6}
+        transparent
+        opacity={0.9}
         sheen={1}
         sheenColor={new THREE.Color('#FFD700')}
-        sheenRoughness={0.2}
-        iridescence={0.3}
-        iridescenceIOR={1.5}
+        sheenRoughness={0.1}
+        iridescence={0.5}
+        iridescenceIOR={1.3}
+        specularIntensity={2}
+        specularColor={new THREE.Color('#FFFFFF')}
+        attenuationColor={new THREE.Color('#F5B731')}
+        attenuationDistance={0.5}
       />
-    </mesh>
+    </RoundedBox>
   )
 }
 
@@ -182,9 +190,9 @@ function InfinityGroup() {
   const mouseWorld = useRef(new THREE.Vector3(50, 50, 0))
   const isDragging = useRef(false)
   const dragIndex = useRef(-1)
-  const cubeCount = 80
+  const cubeCount = 60
 
-  const points = useMemo(() => getInfinityPoints(cubeCount, 2.8), [])
+  const points = useMemo(() => getInfinityPoints(cubeCount, 3.2), [])
 
   const handleDragStart = useCallback((index: number) => {
     isDragging.current = true
@@ -225,7 +233,7 @@ export function InfinityScene({ className }: { className?: string }) {
   return (
     <div className={className || ''}>
       <Canvas
-        camera={{ position: [0, 0, 6], fov: 50 }}
+        camera={{ position: [0, 0, 7.5], fov: 45 }}
         dpr={[1, 2]}
         gl={{ antialias: true, alpha: true, powerPreference: 'high-performance' }}
         style={{ background: 'transparent' }}
