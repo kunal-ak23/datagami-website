@@ -2,7 +2,7 @@
 
 import { useRef, useMemo, useCallback } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
-import { Float, Environment, RoundedBox } from '@react-three/drei'
+import { Float, Environment, RoundedBox, OrbitControls } from '@react-three/drei'
 import * as THREE from 'three'
 
 // Lemniscate of Bernoulli — infinity shape, multiple layers for thickness
@@ -251,6 +251,19 @@ export function InfinityScene({ className }: { className?: string }) {
         <pointLight position={[0, 0, 4]} intensity={0.6} color="#FFD700" />
         <spotLight position={[3, 3, 5]} angle={0.6} penumbra={1} intensity={0.4} color="#F5C84C" />
         <Environment preset="studio" />
+
+        {/* User can orbit/pan camera to see layers from different angles */}
+        <OrbitControls
+          enableZoom={false}
+          enablePan={false}
+          autoRotate
+          autoRotateSpeed={0.5}
+          minPolarAngle={Math.PI / 4}
+          maxPolarAngle={Math.PI * 3 / 4}
+          minAzimuthAngle={-Math.PI / 6}
+          maxAzimuthAngle={Math.PI / 6}
+        />
+
         <InfinityGroup />
       </Canvas>
     </div>
