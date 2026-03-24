@@ -22,7 +22,7 @@ export function ProgramCard({
     return (
       <Link
         href={href}
-        className="block rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-200 cursor-pointer group"
+        className="block rounded-xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-brand-glow transition-all duration-300 cursor-pointer group"
       >
         {/* Image header */}
         <div className="relative aspect-[16/9] overflow-hidden">
@@ -57,7 +57,7 @@ export function ProgramCard({
   return (
     <Link
       href={href}
-      className="block border border-border-custom rounded-xl p-6 hover:shadow-lg transition-shadow duration-200 cursor-pointer"
+      className="block bg-white dark:bg-gray-900 border border-border-custom dark:border-gray-800 rounded-xl p-6 hover:-translate-y-1 hover:shadow-brand-lg transition-all duration-300 cursor-pointer"
     >
       <div className="w-12 h-12 rounded-lg bg-brand/10 flex items-center justify-center mb-4 text-brand">
         {icon}

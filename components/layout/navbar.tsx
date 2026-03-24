@@ -81,8 +81,8 @@ export function Navbar() {
 
   return (
     <nav
-      className={`sticky top-0 z-50 w-full bg-surface transition-shadow duration-300 ${
-        scrolled ? "shadow-md" : "shadow-none"
+      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
+        scrolled ? "glass dark:glass-dark shadow-brand-sm" : "bg-transparent"
       }`}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
@@ -108,10 +108,10 @@ export function Navbar() {
               >
                 <Link
                   href={link.href}
-                  className={`cursor-pointer inline-flex items-center gap-1 px-3 py-2 text-sm font-medium transition-colors duration-200 ${
+                  className={`relative group cursor-pointer inline-flex items-center gap-1 px-3 py-2 text-sm font-medium transition-colors duration-200 ${
                     isActive(link.href)
                       ? "text-brand"
-                      : "text-dark hover:text-brand"
+                      : "text-dark dark:text-white hover:text-brand"
                   }`}
                 >
                   {link.label}
@@ -120,6 +120,7 @@ export function Navbar() {
                       servicesOpen ? "rotate-180" : ""
                     }`}
                   />
+                  <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 bg-brand rounded-full transition-all duration-300 ${isActive(link.href) ? "w-full" : "w-0 group-hover:w-full"}`} />
                 </Link>
 
                 {/* Dropdown */}
@@ -159,13 +160,14 @@ export function Navbar() {
               <Link
                 key={link.label}
                 href={link.href}
-                className={`cursor-pointer px-3 py-2 text-sm font-medium transition-colors duration-200 ${
+                className={`relative group cursor-pointer px-3 py-2 text-sm font-medium transition-colors duration-200 ${
                   isActive(link.href)
                     ? "text-brand"
-                    : "text-dark hover:text-brand"
+                    : "text-dark dark:text-white hover:text-brand"
                 }`}
               >
                 {link.label}
+                <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 bg-brand rounded-full transition-all duration-300 ${isActive(link.href) ? "w-full" : "w-0 group-hover:w-full"}`} />
               </Link>
             )
           )}

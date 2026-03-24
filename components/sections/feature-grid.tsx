@@ -16,7 +16,7 @@ export function FeatureGrid({ features }: FeatureGridProps) {
       {features.map((feature, index) => (
         <div
           key={index}
-          className="p-6 rounded-xl border border-border-custom hover:shadow-md transition-shadow duration-200 cursor-pointer"
+          className="p-6 rounded-xl bg-white dark:bg-gray-900 border border-border-custom dark:border-gray-800 hover:-translate-y-1 hover:shadow-brand-md transition-all duration-300 cursor-pointer"
         >
           <div className="w-12 h-12 rounded-lg bg-brand/10 flex items-center justify-center mb-4 text-brand">
             {feature.icon}

@@ -20,7 +20,7 @@ export function ProductCard({
     return (
       <Link
         href={href}
-        className="block rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-200 cursor-pointer group"
+        className="block rounded-xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-brand-glow transition-all duration-300 cursor-pointer group"
       >
         {/* Image header */}
         <div className="relative aspect-[16/9] overflow-hidden">
@@ -56,7 +56,7 @@ export function ProductCard({
   return (
     <Link
       href={href}
-      className="block border border-border-custom rounded-xl p-8 hover:shadow-lg transition-shadow duration-200 cursor-pointer"
+      className="block bg-white dark:bg-gray-900 border border-border-custom dark:border-gray-800 rounded-xl p-8 hover:-translate-y-1 hover:shadow-brand-lg transition-all duration-300 cursor-pointer"
     >
       <h3 className="text-xl font-bold text-dark mb-2">{title}</h3>
       <p className="text-muted-brand mb-4">{description}</p>
