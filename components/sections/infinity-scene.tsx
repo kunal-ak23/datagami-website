@@ -5,22 +5,19 @@ import { Canvas, useFrame } from '@react-three/fiber'
 import { Float, Environment, RoundedBox, OrbitControls } from '@react-three/drei'
 import * as THREE from 'three'
 
-// 3D cube cluster — like the Spline reference
+// Tight 3D cube grid — uniform, no gaps
 function getClusterPoints(): THREE.Vector3[] {
   const points: THREE.Vector3[] = []
-  const size = 4
-  const spacing = 0.55
+  const size = 5
+  const spacing = 0.48
 
   for (let x = 0; x < size; x++) {
     for (let y = 0; y < size; y++) {
-      for (let z = 0; z < size; z++) {
-        // Skip some cubes randomly for organic feel (keep ~70%)
-        if (Math.random() > 0.3) {
-          const px = (x - (size - 1) / 2) * spacing + (Math.random() - 0.5) * 0.08
-          const py = (y - (size - 1) / 2) * spacing + (Math.random() - 0.5) * 0.08
-          const pz = (z - (size - 1) / 2) * spacing + (Math.random() - 0.5) * 0.08
-          points.push(new THREE.Vector3(px, py, pz))
-        }
+      for (let z = 0; z < 3; z++) {
+        const px = (x - (size - 1) / 2) * spacing
+        const py = (y - (size - 1) / 2) * spacing
+        const pz = (z - 1) * spacing
+        points.push(new THREE.Vector3(px, py, pz))
       }
     }
   }
@@ -81,25 +78,12 @@ function GoldenCube({
       return
     }
 
-    // Default: gentle float around base position
-    const tx = basePosition.x + Math.sin(t * 0.3 + phase) * 0.03
-    const ty = basePosition.y + Math.cos(t * 0.25 + phase) * 0.03
-    const tz = basePosition.z + Math.sin(t * 0.2 + phase) * 0.02
+    // Default: gentle float around base position (no mouse repulsion)
+    const tx = basePosition.x + Math.sin(t * 0.3 + phase) * 0.02
+    const ty = basePosition.y + Math.cos(t * 0.25 + phase) * 0.02
+    const tz = basePosition.z + Math.sin(t * 0.2 + phase) * 0.01
 
-    // Mouse repulsion (only for non-dropped cubes)
-    const mx = mouseWorld.current.x
-    const my = mouseWorld.current.y
-    const dx = tx - mx
-    const dy = ty - my
-    const dist = Math.sqrt(dx * dx + dy * dy)
-    let rx = 0, ry = 0
-    if (dist < 1.5 && dist > 0.01) {
-      const strength = Math.pow(1 - dist / 1.5, 2) * 0.5
-      rx = (dx / dist) * strength
-      ry = (dy / dist) * strength
-    }
-
-    mesh.position.lerp(new THREE.Vector3(tx + rx, ty + ry, tz), 0.06)
+    mesh.position.lerp(new THREE.Vector3(tx, ty, tz), 0.06)
     mesh.rotation.x = Math.sin(t * randomRotSpeed.x + phase) * 0.2
     mesh.rotation.y = t * randomRotSpeed.y + phase
     mesh.scale.setScalar(mesh.scale.x + (1 - mesh.scale.x) * 0.1)
