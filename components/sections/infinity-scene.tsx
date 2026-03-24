@@ -1,27 +1,20 @@
 'use client'
 
 import { useRef, useMemo, useCallback } from 'react'
-import { Canvas, useFrame, useThree } from '@react-three/fiber'
+import { Canvas, useFrame } from '@react-three/fiber'
 import { Float, Environment, RoundedBox } from '@react-three/drei'
 import * as THREE from 'three'
 
-// Generate a 3D grid of cubes like the Spline scene
-function generateGridPositions(rows: number, cols: number, layers: number, spacing: number): THREE.Vector3[] {
+// Lemniscate of Bernoulli — infinity shape with proper spacing
+function getInfinityPoints(count: number, scale: number): THREE.Vector3[] {
   const points: THREE.Vector3[] = []
-  const offsetX = ((cols - 1) * spacing) / 2
-  const offsetY = ((rows - 1) * spacing) / 2
-  const offsetZ = ((layers - 1) * spacing) / 2
-
-  for (let z = 0; z < layers; z++) {
-    for (let y = 0; y < rows; y++) {
-      for (let x = 0; x < cols; x++) {
-        // Add slight randomness to position
-        const px = x * spacing - offsetX + (Math.random() - 0.5) * 0.15
-        const py = y * spacing - offsetY + (Math.random() - 0.5) * 0.15
-        const pz = z * spacing - offsetZ + (Math.random() - 0.5) * 0.15
-        points.push(new THREE.Vector3(px, py, pz))
-      }
-    }
+  for (let i = 0; i < count; i++) {
+    const t = (i / count) * Math.PI * 2
+    const denom = 1 + Math.sin(t) * Math.sin(t)
+    const x = (scale * Math.cos(t)) / denom
+    const y = (scale * Math.sin(t) * Math.cos(t)) / denom
+    const z = Math.sin(t * 2) * 0.2
+    points.push(new THREE.Vector3(x, y, z))
   }
   return points
 }
@@ -29,7 +22,6 @@ function generateGridPositions(rows: number, cols: number, layers: number, spaci
 function GoldenCube({
   basePosition,
   index,
-  total,
   mouseWorld,
   isDragging,
   dragIndex,
@@ -37,19 +29,19 @@ function GoldenCube({
 }: {
   basePosition: THREE.Vector3
   index: number
-  total: number
   mouseWorld: React.MutableRefObject<THREE.Vector3>
   isDragging: React.MutableRefObject<boolean>
   dragIndex: React.MutableRefObject<number>
   onDragStart: (index: number) => void
 }) {
   const ref = useRef<any>(null)
-  const phase = index * 0.7
-  const vel = useRef(new THREE.Vector3())
+  const phase = index * 0.8
+  // Track if this cube has been dragged — it remembers its new position
+  const hasBeenDropped = useRef(false)
+  const droppedPos = useRef(new THREE.Vector3())
   const randomRotSpeed = useMemo(() => ({
-    x: 0.1 + Math.random() * 0.15,
-    y: 0.15 + Math.random() * 0.2,
-    z: 0.05 + Math.random() * 0.1,
+    x: 0.08 + Math.random() * 0.1,
+    y: 0.12 + Math.random() * 0.15,
   }), [])
 
   useFrame(({ clock }) => {
@@ -57,11 +49,11 @@ function GoldenCube({
     const t = clock.elapsedTime
     const mesh = ref.current
 
-    // Dragging
+    // Currently being dragged — follow mouse
     if (isDragging.current && dragIndex.current === index) {
       mesh.position.lerp(
-        new THREE.Vector3(mouseWorld.current.x, mouseWorld.current.y, 1),
-        0.15
+        new THREE.Vector3(mouseWorld.current.x, mouseWorld.current.y, 0.8),
+        0.18
       )
       mesh.rotation.x += 0.06
       mesh.rotation.y += 0.06
@@ -69,57 +61,62 @@ function GoldenCube({
       return
     }
 
-    // Float target
-    const tx = basePosition.x + Math.sin(t * 0.3 + phase) * 0.06
-    const ty = basePosition.y + Math.cos(t * 0.25 + phase) * 0.06
-    const tz = basePosition.z + Math.sin(t * 0.2 + phase) * 0.04
+    // If dropped — stay at dropped position with gentle float
+    if (hasBeenDropped.current) {
+      const tx = droppedPos.current.x + Math.sin(t * 0.3 + phase) * 0.03
+      const ty = droppedPos.current.y + Math.cos(t * 0.25 + phase) * 0.03
+      const tz = droppedPos.current.z + Math.sin(t * 0.2 + phase) * 0.02
+      mesh.position.lerp(new THREE.Vector3(tx, ty, tz), 0.05)
+      mesh.rotation.x = Math.sin(t * randomRotSpeed.x + phase) * 0.2
+      mesh.rotation.y = t * randomRotSpeed.y + phase
+      mesh.scale.setScalar(mesh.scale.x + (1 - mesh.scale.x) * 0.1)
+      return
+    }
 
-    // Mouse repulsion
+    // Default: gentle float around base position
+    const tx = basePosition.x + Math.sin(t * 0.3 + phase) * 0.03
+    const ty = basePosition.y + Math.cos(t * 0.25 + phase) * 0.03
+    const tz = basePosition.z + Math.sin(t * 0.2 + phase) * 0.02
+
+    // Mouse repulsion (only for non-dropped cubes)
     const mx = mouseWorld.current.x
     const my = mouseWorld.current.y
     const dx = tx - mx
     const dy = ty - my
     const dist = Math.sqrt(dx * dx + dy * dy)
-
-    let rx = 0, ry = 0, rz = 0
-    if (dist < 2 && dist > 0.01) {
-      const strength = Math.pow(1 - dist / 2, 2) * 0.8
+    let rx = 0, ry = 0
+    if (dist < 1.5 && dist > 0.01) {
+      const strength = Math.pow(1 - dist / 1.5, 2) * 0.5
       rx = (dx / dist) * strength
       ry = (dy / dist) * strength
-      rz = strength * 0.3
     }
 
-    // Spring physics
-    const targetX = tx + rx
-    const targetY = ty + ry
-    const targetZ = tz + rz
-
-    vel.current.x += (targetX - mesh.position.x) * 0.05
-    vel.current.y += (targetY - mesh.position.y) * 0.05
-    vel.current.z += (targetZ - mesh.position.z) * 0.05
-    vel.current.multiplyScalar(0.88)
-    mesh.position.add(vel.current)
-
-    // Gentle rotation
-    mesh.rotation.x = Math.sin(t * randomRotSpeed.x + phase) * 0.25
+    mesh.position.lerp(new THREE.Vector3(tx + rx, ty + ry, tz), 0.06)
+    mesh.rotation.x = Math.sin(t * randomRotSpeed.x + phase) * 0.2
     mesh.rotation.y = t * randomRotSpeed.y + phase
-    mesh.rotation.z = Math.cos(t * randomRotSpeed.z + phase) * 0.15
-
-    // Scale based on mouse proximity
-    const targetScale = dist < 2 ? 1 + (2 - dist) * 0.08 : 1
-    mesh.scale.setScalar(mesh.scale.x + (targetScale - mesh.scale.x) * 0.1)
+    mesh.scale.setScalar(mesh.scale.x + (1 - mesh.scale.x) * 0.1)
   })
 
   return (
     <RoundedBox
       ref={ref}
-      args={[0.55, 0.55, 0.55]}
-      radius={0.08}
+      args={[0.35, 0.35, 0.35]}
+      radius={0.06}
       smoothness={4}
       position={basePosition}
       onPointerDown={(e) => {
         e.stopPropagation()
         onDragStart(index)
+      }}
+      onPointerUp={() => {
+        if (isDragging.current && dragIndex.current === index && ref.current) {
+          // Save the dropped position — cube stays here
+          hasBeenDropped.current = true
+          droppedPos.current.copy(ref.current.position)
+          isDragging.current = false
+          dragIndex.current = -1
+          document.body.style.cursor = 'default'
+        }
       }}
       onPointerOver={() => { document.body.style.cursor = 'grab' }}
       onPointerOut={() => { if (!isDragging.current) document.body.style.cursor = 'default' }}
@@ -167,18 +164,19 @@ function MousePlane({
   useFrame(({ raycaster, camera, pointer }) => {
     raycaster.setFromCamera(pointer, camera)
     raycaster.ray.intersectPlane(plane, intersect)
-    if (intersect) {
-      mouseWorld.current.lerp(intersect, 0.12)
-    }
+    if (intersect) mouseWorld.current.lerp(intersect, 0.15)
   })
 
   return (
     <mesh
       visible={false}
       onPointerUp={() => {
-        isDragging.current = false
-        dragIndex.current = -1
-        document.body.style.cursor = 'default'
+        // Global release — in case pointer leaves the cube
+        if (isDragging.current) {
+          isDragging.current = false
+          dragIndex.current = -1
+          document.body.style.cursor = 'default'
+        }
       }}
     >
       <planeGeometry args={[30, 30]} />
@@ -187,14 +185,14 @@ function MousePlane({
   )
 }
 
-function CubeCluster() {
+function InfinityGroup() {
   const groupRef = useRef<THREE.Group>(null)
   const mouseWorld = useRef(new THREE.Vector3(50, 50, 0))
   const isDragging = useRef(false)
   const dragIndex = useRef(-1)
 
-  // 5x5x2 grid = 50 cubes with 0.85 spacing
-  const points = useMemo(() => generateGridPositions(5, 5, 2, 0.85), [])
+  // 40 cubes on infinity curve with scale 3.5 = good spacing for 0.35 size cubes
+  const points = useMemo(() => getInfinityPoints(40, 3.5), [])
 
   const handleDragStart = useCallback((index: number) => {
     isDragging.current = true
@@ -204,10 +202,7 @@ function CubeCluster() {
 
   useFrame(({ clock }) => {
     if (groupRef.current) {
-      // Slow rotation of entire cluster
-      groupRef.current.rotation.x = Math.sin(clock.elapsedTime * 0.1) * 0.1
-      groupRef.current.rotation.y = clock.elapsedTime * 0.05
-      groupRef.current.rotation.z = Math.cos(clock.elapsedTime * 0.08) * 0.05
+      groupRef.current.rotation.z = Math.sin(clock.elapsedTime * 0.08) * 0.02
     }
   })
 
@@ -221,7 +216,6 @@ function CubeCluster() {
               key={i}
               basePosition={point}
               index={i}
-              total={points.length}
               mouseWorld={mouseWorld}
               isDragging={isDragging}
               dragIndex={dragIndex}
@@ -238,7 +232,7 @@ export function InfinityScene({ className }: { className?: string }) {
   return (
     <div className={className || ''}>
       <Canvas
-        camera={{ position: [0, 0, 5.5], fov: 45 }}
+        camera={{ position: [0, 0, 7], fov: 45 }}
         dpr={[1, 2]}
         gl={{ antialias: true, alpha: true, powerPreference: 'high-performance' }}
         style={{ background: 'transparent' }}
@@ -248,10 +242,8 @@ export function InfinityScene({ className }: { className?: string }) {
         <directionalLight position={[-4, -2, 3]} intensity={0.4} color="#F5B731" />
         <pointLight position={[0, 0, 4]} intensity={0.6} color="#FFD700" />
         <spotLight position={[3, 3, 5]} angle={0.6} penumbra={1} intensity={0.4} color="#F5C84C" />
-
         <Environment preset="studio" />
-
-        <CubeCluster />
+        <InfinityGroup />
       </Canvas>
     </div>
   )
