@@ -5,19 +5,23 @@ import { Canvas, useFrame } from '@react-three/fiber'
 import { Float, Environment, RoundedBox, OrbitControls } from '@react-three/drei'
 import * as THREE from 'three'
 
-// Clean infinity curve with tight depth for thickness
-function getInfinityPoints(countPerLayer: number, scale: number): THREE.Vector3[] {
+// 3D cube cluster — like the Spline reference
+function getClusterPoints(): THREE.Vector3[] {
   const points: THREE.Vector3[] = []
-  // 3 tight depth layers for a solid look
-  const depths = [-0.18, 0, 0.18]
+  const size = 4
+  const spacing = 0.55
 
-  for (const z of depths) {
-    for (let i = 0; i < countPerLayer; i++) {
-      const t = (i / countPerLayer) * Math.PI * 2
-      const denom = 1 + Math.sin(t) * Math.sin(t)
-      const x = (scale * Math.cos(t)) / denom
-      const y = (scale * Math.sin(t) * Math.cos(t)) / denom
-      points.push(new THREE.Vector3(x, y, z))
+  for (let x = 0; x < size; x++) {
+    for (let y = 0; y < size; y++) {
+      for (let z = 0; z < size; z++) {
+        // Skip some cubes randomly for organic feel (keep ~70%)
+        if (Math.random() > 0.3) {
+          const px = (x - (size - 1) / 2) * spacing + (Math.random() - 0.5) * 0.08
+          const py = (y - (size - 1) / 2) * spacing + (Math.random() - 0.5) * 0.08
+          const pz = (z - (size - 1) / 2) * spacing + (Math.random() - 0.5) * 0.08
+          points.push(new THREE.Vector3(px, py, pz))
+        }
+      }
     }
   }
   return points
@@ -104,8 +108,8 @@ function GoldenCube({
   return (
     <RoundedBox
       ref={ref}
-      args={[0.25, 0.25, 0.25]}
-      radius={0.04}
+      args={[0.4, 0.4, 0.4]}
+      radius={0.06}
       smoothness={4}
       position={basePosition}
       onPointerDown={(e) => {
@@ -195,8 +199,8 @@ function InfinityGroup() {
   const isDragging = useRef(false)
   const dragIndex = useRef(-1)
 
-  // 50 cubes per layer × 3 layers = 150 cubes — tight packing
-  const points = useMemo(() => getInfinityPoints(50, 3), [])
+  // ~45 cubes in a 4×4×4 organic cluster
+  const points = useMemo(() => getClusterPoints(), [])
 
   const handleDragStart = useCallback((index: number) => {
     isDragging.current = true
@@ -236,7 +240,7 @@ export function InfinityScene({ className }: { className?: string }) {
   return (
     <div className={className || ''}>
       <Canvas
-        camera={{ position: [0, 0, 7], fov: 45 }}
+        camera={{ position: [0, 0, 4.5], fov: 50 }}
         dpr={[1, 2]}
         gl={{ antialias: true, alpha: true, powerPreference: 'high-performance' }}
         style={{ background: 'transparent' }}
