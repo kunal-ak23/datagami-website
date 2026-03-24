@@ -5,25 +5,19 @@ import { Canvas, useFrame } from '@react-three/fiber'
 import { Float, Environment, RoundedBox, OrbitControls } from '@react-three/drei'
 import * as THREE from 'three'
 
-// Thick infinity logo — multiple concentric rings + depth layers
-function getInfinityPoints(countPerRing: number, baseScale: number): THREE.Vector3[] {
+// Clean infinity curve with tight depth for thickness
+function getInfinityPoints(countPerLayer: number, scale: number): THREE.Vector3[] {
   const points: THREE.Vector3[] = []
+  // 3 tight depth layers for a solid look
+  const depths = [-0.18, 0, 0.18]
 
-  // 3 concentric rings (inner, middle, outer) for thickness
-  const ringScales = [baseScale - 0.5, baseScale, baseScale + 0.5]
-  // 3 depth layers
-  const depthLayers = [-0.3, 0, 0.3]
-
-  for (const depth of depthLayers) {
-    for (const ringScale of ringScales) {
-      for (let i = 0; i < countPerRing; i++) {
-        const t = (i / countPerRing) * Math.PI * 2
-        const denom = 1 + Math.sin(t) * Math.sin(t)
-        const x = (ringScale * Math.cos(t)) / denom
-        const y = (ringScale * Math.sin(t) * Math.cos(t)) / denom
-        const z = depth
-        points.push(new THREE.Vector3(x, y, z))
-      }
+  for (const z of depths) {
+    for (let i = 0; i < countPerLayer; i++) {
+      const t = (i / countPerLayer) * Math.PI * 2
+      const denom = 1 + Math.sin(t) * Math.sin(t)
+      const x = (scale * Math.cos(t)) / denom
+      const y = (scale * Math.sin(t) * Math.cos(t)) / denom
+      points.push(new THREE.Vector3(x, y, z))
     }
   }
   return points
@@ -110,7 +104,7 @@ function GoldenCube({
   return (
     <RoundedBox
       ref={ref}
-      args={[0.22, 0.22, 0.22]}
+      args={[0.25, 0.25, 0.25]}
       radius={0.04}
       smoothness={4}
       position={basePosition}
@@ -201,8 +195,8 @@ function InfinityGroup() {
   const isDragging = useRef(false)
   const dragIndex = useRef(-1)
 
-  // 20 cubes per ring × 3 rings × 3 depth layers = 180 cubes
-  const points = useMemo(() => getInfinityPoints(20, 3), [])
+  // 50 cubes per layer × 3 layers = 150 cubes — tight packing
+  const points = useMemo(() => getInfinityPoints(50, 3), [])
 
   const handleDragStart = useCallback((index: number) => {
     isDragging.current = true
