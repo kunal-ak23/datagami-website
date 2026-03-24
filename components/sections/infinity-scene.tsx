@@ -5,23 +5,25 @@ import { Canvas, useFrame } from '@react-three/fiber'
 import { Float, Environment, RoundedBox, OrbitControls } from '@react-three/drei'
 import * as THREE from 'three'
 
-// Lemniscate of Bernoulli — infinity shape, multiple layers for thickness
-function getInfinityPoints(countPerLayer: number, scale: number, layers: number = 3): THREE.Vector3[] {
+// Thick infinity logo — multiple concentric rings + depth layers
+function getInfinityPoints(countPerRing: number, baseScale: number): THREE.Vector3[] {
   const points: THREE.Vector3[] = []
-  const layerSpacing = 0.4
 
-  for (let layer = 0; layer < layers; layer++) {
-    const zOffset = (layer - (layers - 1) / 2) * layerSpacing
-    // Slightly offset each layer in scale for a 3D ribbon effect
-    const layerScale = scale - layer * 0.15
+  // 3 concentric rings (inner, middle, outer) for thickness
+  const ringScales = [baseScale - 0.5, baseScale, baseScale + 0.5]
+  // 3 depth layers
+  const depthLayers = [-0.3, 0, 0.3]
 
-    for (let i = 0; i < countPerLayer; i++) {
-      const t = (i / countPerLayer) * Math.PI * 2
-      const denom = 1 + Math.sin(t) * Math.sin(t)
-      const x = (layerScale * Math.cos(t)) / denom
-      const y = (layerScale * Math.sin(t) * Math.cos(t)) / denom
-      const z = zOffset + Math.sin(t * 2) * 0.1
-      points.push(new THREE.Vector3(x, y, z))
+  for (const depth of depthLayers) {
+    for (const ringScale of ringScales) {
+      for (let i = 0; i < countPerRing; i++) {
+        const t = (i / countPerRing) * Math.PI * 2
+        const denom = 1 + Math.sin(t) * Math.sin(t)
+        const x = (ringScale * Math.cos(t)) / denom
+        const y = (ringScale * Math.sin(t) * Math.cos(t)) / denom
+        const z = depth
+        points.push(new THREE.Vector3(x, y, z))
+      }
     }
   }
   return points
@@ -108,8 +110,8 @@ function GoldenCube({
   return (
     <RoundedBox
       ref={ref}
-      args={[0.3, 0.3, 0.3]}
-      radius={0.05}
+      args={[0.22, 0.22, 0.22]}
+      radius={0.04}
       smoothness={4}
       position={basePosition}
       onPointerDown={(e) => {
@@ -199,8 +201,8 @@ function InfinityGroup() {
   const isDragging = useRef(false)
   const dragIndex = useRef(-1)
 
-  // 30 cubes per layer × 3 layers = 90 cubes total
-  const points = useMemo(() => getInfinityPoints(30, 3.5, 3), [])
+  // 20 cubes per ring × 3 rings × 3 depth layers = 180 cubes
+  const points = useMemo(() => getInfinityPoints(20, 3), [])
 
   const handleDragStart = useCallback((index: number) => {
     isDragging.current = true
@@ -257,11 +259,9 @@ export function InfinityScene({ className }: { className?: string }) {
           enableZoom={false}
           enablePan={false}
           autoRotate
-          autoRotateSpeed={0.5}
-          minPolarAngle={Math.PI / 4}
-          maxPolarAngle={Math.PI * 3 / 4}
-          minAzimuthAngle={-Math.PI / 6}
-          maxAzimuthAngle={Math.PI / 6}
+          autoRotateSpeed={2}
+          minPolarAngle={Math.PI / 3}
+          maxPolarAngle={Math.PI * 2 / 3}
         />
 
         <InfinityGroup />
