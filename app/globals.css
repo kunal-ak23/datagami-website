@@ -48,15 +48,15 @@
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
 
-  /* Datagami brand colors */
+  /* Datagami brand colors — use CSS vars so dark mode can override */
   --color-brand: #F5B731;
   --color-brand-dark: #D4991F;
-  --color-dark: #1A1A1A;
-  --color-body: #333333;
-  --color-muted-brand: #666666;
-  --color-surface: #FFFFFF;
-  --color-border-custom: #E5E5E5;
-  --color-success: #059669;
+  --color-dark: var(--brand-dark, #1A1A1A);
+  --color-body: var(--brand-body, #333333);
+  --color-muted-brand: var(--brand-muted, #666666);
+  --color-surface: var(--brand-surface, #FFFFFF);
+  --color-border-custom: var(--brand-border, #E5E5E5);
+  --color-success: var(--brand-success, #059669);
 
   /* Track accent colors */
   --color-cloud: #0369A1;
@@ -70,6 +70,13 @@
 :root {
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
+  /* Datagami brand base values */
+  --brand-dark: #1A1A1A;
+  --brand-body: #333333;
+  --brand-muted: #666666;
+  --brand-surface: #FFFFFF;
+  --brand-border: #E5E5E5;
+  --brand-success: #059669;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
@@ -135,15 +142,15 @@
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
 
-  /* Datagami brand dark vars */
+  /* Datagami brand dark overrides */
   --background: hsl(30 15% 7%);
   --foreground: hsl(40 10% 90%);
-  --color-dark: #f0e6d2;
-  --color-body: #c4b89a;
-  --color-muted-brand: #8a7d66;
-  --color-surface: hsl(40 15% 10%);
-  --color-border-custom: #2a2520;
-  --color-success: #34d399;
+  --brand-dark: #f0e6d2;
+  --brand-body: #c4b89a;
+  --brand-muted: #9a8e78;
+  --brand-surface: hsl(40 15% 10%);
+  --brand-border: #2a2520;
+  --brand-success: #34d399;
 }
 
 /* Brand-tinted shadow system (golden glow) */
