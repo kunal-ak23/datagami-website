@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
+import { AuroraBackground } from "@/components/sections/aurora-background"
 
 interface HeroSplitProps {
   heading: string
@@ -30,7 +31,7 @@ export function HeroSplit({
     <section className="relative">
       <div className="grid lg:grid-cols-2 min-h-[600px]">
         {/* Left panel */}
-        <div className="bg-brand flex flex-col justify-center px-6 py-16 sm:px-10 lg:px-16 xl:px-20">
+        <AuroraBackground className="bg-brand flex flex-col justify-center px-6 py-16 sm:px-10 lg:px-16 xl:px-20">
           <div className="max-w-xl">
             {showLogo && (
               <img
@@ -53,7 +54,7 @@ export function HeroSplit({
               <ArrowRight className="size-5" />
             </Link>
           </div>
-        </div>
+        </AuroraBackground>
 
         {/* Right panel */}
         <div className="relative min-h-[300px] lg:min-h-0">

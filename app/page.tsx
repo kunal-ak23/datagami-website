@@ -86,6 +86,7 @@ export default function Home() {
             <SectionHeader
               title="Our Solutions"
               description="Comprehensive business solutions designed to drive growth and enhance capabilities."
+              gradient
             />
           </FadeIn>
 
@@ -225,7 +226,7 @@ export default function Home() {
       <section className="py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
-            <SectionHeader title="Transforming Education and Enterprise With Proven Solutions" />
+            <SectionHeader title="Transforming Education and Enterprise With Proven Solutions" gradient />
           </FadeIn>
           <FadeIn delay={0.2}>
             <FeatureGrid
@@ -328,7 +329,7 @@ export default function Home() {
       <section className="py-16 md:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
-            <SectionHeader title="Proven Success Stories" />
+            <SectionHeader title="Proven Success Stories" gradient />
           </FadeIn>
         </div>
         <FadeIn delay={0.2}>
