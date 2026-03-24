@@ -1,4 +1,4 @@
-import { plusJakartaSans } from '@/lib/fonts'
+import { plusJakartaSans, playfairDisplay } from '@/lib/fonts'
 import type { Metadata } from 'next'
 import './globals.css'
 import { organizationSchema, localBusinessSchemas } from '@/lib/schemas/organization'
@@ -31,8 +31,17 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${plusJakartaSans.variable} scroll-smooth`}>
+    <html lang="en" className={`${plusJakartaSans.variable} ${playfairDisplay.variable} scroll-smooth`} suppressHydrationWarning>
       <head>
+        <script dangerouslySetInnerHTML={{ __html: `
+          try {
+            const theme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (theme === 'dark' || (!theme && prefersDark)) {
+              document.documentElement.classList.add('dark');
+            }
+          } catch (e) {}
+        `}} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}

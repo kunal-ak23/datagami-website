@@ -12,6 +12,7 @@ import {
   SheetTitle,
   SheetClose,
 } from "@/components/ui/sheet"
+import { ThemeToggle } from "@/components/layout/theme-toggle"
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -170,13 +171,16 @@ export function Navbar() {
           )}
         </div>
 
-        {/* Desktop CTA */}
-        <Link
-          href="/contact"
-          className="hidden md:inline-flex cursor-pointer items-center rounded-lg border-2 border-brand px-4 py-1.5 text-sm font-semibold text-dark transition-colors duration-200 hover:bg-brand hover:text-white"
-        >
-          Get Started
-        </Link>
+        {/* Desktop CTA + Theme Toggle */}
+        <div className="hidden md:flex items-center gap-2">
+          <ThemeToggle />
+          <Link
+            href="/contact"
+            className="cursor-pointer inline-flex items-center rounded-lg border-2 border-brand px-4 py-1.5 text-sm font-semibold text-dark transition-colors duration-200 hover:bg-brand hover:text-white"
+          >
+            Get Started
+          </Link>
+        </div>
 
         {/* Mobile hamburger */}
         <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
@@ -187,14 +191,17 @@ export function Navbar() {
 
           <SheetContent side="right" className="w-[300px] sm:max-w-[300px] p-0">
             <SheetHeader className="border-b border-border-custom px-4 py-3">
-              <SheetTitle>
-                <img
-                  src="/images/logo/datagami-logo.webp"
-                  alt="Datagami"
-                  width="50"
-                  height="33"
-                />
-              </SheetTitle>
+              <div className="flex items-center justify-between">
+                <SheetTitle>
+                  <img
+                    src="/images/logo/datagami-logo.webp"
+                    alt="Datagami"
+                    width="50"
+                    height="33"
+                  />
+                </SheetTitle>
+                <ThemeToggle />
+              </div>
             </SheetHeader>
 
             <div className="flex flex-col overflow-y-auto px-4 py-4">
