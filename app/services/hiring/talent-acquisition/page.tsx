@@ -11,9 +11,18 @@ import { FadeIn } from "@/components/motion/fade-in"
 import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
 
 export const metadata: Metadata = {
-  title: "Talent Acquisition",
+  title: "Talent Acquisition Services - End-to-End Recruitment Solutions",
   description:
-    "End-to-end talent acquisition services. We source, screen, and place top talent for your organization.",
+    "End-to-end recruitment solutions with 500+ placements, 50+ clients, and 90% retention rate. Targeted sourcing, screening, skill validation, and onboarding support.",
+  alternates: {
+    canonical: "https://datagami.in/services/hiring/talent-acquisition",
+  },
+  openGraph: {
+    title: "Talent Acquisition Services - End-to-End Recruitment Solutions",
+    description:
+      "End-to-end recruitment solutions with 500+ placements, 50+ clients, and 90% retention rate. Targeted sourcing, screening, skill validation, and onboarding support.",
+    images: ["/images/hero/hero-students-collaborating.png"],
+  },
 }
 
 const stats = [

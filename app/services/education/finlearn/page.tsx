@@ -17,9 +17,18 @@ import { FadeIn } from "@/components/motion/fade-in"
 import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
 
 export const metadata: Metadata = {
-  title: 'FinLEARN by Datagami - BFSI & Finance Program Excellence',
+  title: 'FinLEARN by Datagami - BFSI & Finance Programs | 95% Placement Rate',
   description:
-    'Bridge the gap between academic finance education and industry expectations. Comprehensive BFSI programs with 95% placement rate, 500+ graduates, and 50+ industry partners.',
+    'Comprehensive BFSI education with 18 program tracks, 500+ graduates, and 95% placement rate. UG, PG, and short-term certification programs in banking and finance.',
+  alternates: {
+    canonical: 'https://datagami.in/services/education/finlearn',
+  },
+  openGraph: {
+    title: 'FinLEARN by Datagami - BFSI & Finance Programs | 95% Placement Rate',
+    description:
+      'Comprehensive BFSI education with 18 program tracks, 500+ graduates, and 95% placement rate. UG, PG, and short-term certification programs in banking and finance.',
+    images: ['/images/hero/hero-finlearn.png'],
+  },
 }
 
 const heroStats = [

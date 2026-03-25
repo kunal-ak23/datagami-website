@@ -26,8 +26,16 @@ import { FadeIn } from "@/components/motion/fade-in"
 import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
 
 export const metadata: Metadata = {
-  title: 'Services',
-  description: 'Explore Datagami\'s comprehensive solutions: education programs, enterprise products, and professional services for universities and businesses.',
+  title: 'Services - Education Programs, Enterprise Products & Consulting',
+  description: "Explore Datagami's comprehensive solutions: FinLEARN BFSI programs, TechLEARN tech training, IBM ICE certifications, EduDron LMS, Total ERP, and professional services.",
+  alternates: {
+    canonical: 'https://datagami.in/services',
+  },
+  openGraph: {
+    title: 'Services - Education Programs, Enterprise Products & Consulting',
+    description: "Explore Datagami's comprehensive solutions: FinLEARN BFSI programs, TechLEARN tech training, IBM ICE certifications, EduDron LMS, Total ERP, and professional services.",
+    images: ['/images/hero/hero-students-collaborating.png'],
+  },
 }
 
 export default function ServicesPage() {

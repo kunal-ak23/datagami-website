@@ -24,9 +24,18 @@ import { FadeIn } from "@/components/motion/fade-in"
 import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
 
 export const metadata: Metadata = {
-  title: 'Clinomic - Clinical Research Education',
+  title: 'Clinomic - Clinical Research & Regulatory Affairs Training | 6 Months',
   description:
-    'Clinomic 6-month clinical research program covering methodology, GCP, data management, and regulatory affairs. 500+ successful placements, 95% placement rate.',
+    '6-month clinical research education program with 95% placement rate and 500+ placements. Covers GCP, data management, regulatory affairs, and pharmacovigilance.',
+  alternates: {
+    canonical: 'https://datagami.in/services/education/clinomic',
+  },
+  openGraph: {
+    title: 'Clinomic - Clinical Research & Regulatory Affairs Training | 6 Months',
+    description:
+      '6-month clinical research education program with 95% placement rate and 500+ placements. Covers GCP, data management, regulatory affairs, and pharmacovigilance.',
+    images: ['/images/hero/hero-students-collaborating.png'],
+  },
 }
 
 const stats = [

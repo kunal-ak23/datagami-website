@@ -26,7 +26,9 @@ export const organizationSchema = {
       addressCountry: 'IN',
     },
   ],
-  sameAs: [],
+  sameAs: [
+    'https://www.linkedin.com/company/datagami',
+  ],
 }
 
 export const localBusinessSchemas = [

@@ -11,9 +11,18 @@ import { FadeIn } from "@/components/motion/fade-in"
 import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
 
 export const metadata: Metadata = {
-  title: "Student Placement",
+  title: "Student Placement Services - 10K+ Students Placed Across India",
   description:
-    "Connecting graduates with career opportunities through university partnerships and campus recruitment programs.",
+    "Comprehensive placement support with 10K+ students placed across 200+ universities. Resume building, interview prep, industry networking, and job matching services.",
+  alternates: {
+    canonical: "https://datagami.in/services/hiring/student-placement",
+  },
+  openGraph: {
+    title: "Student Placement Services - 10K+ Students Placed Across India",
+    description:
+      "Comprehensive placement support with 10K+ students placed across 200+ universities. Resume building, interview prep, industry networking, and job matching services.",
+    images: ["/images/hero/hero-students-collaborating.png"],
+  },
 }
 
 const stats = [

@@ -3,6 +3,7 @@ import Breadcrumbs from "@/components/layout/breadcrumbs"
 import { HeroDark } from "@/components/sections/hero-dark"
 import { SectionHeader } from "@/components/sections/section-header"
 import { CTASection } from "@/components/sections/cta-section"
+import { FAQSection } from "@/components/sections/faq-section"
 import { ibmIce } from "@/lib/data/programs"
 import { generateCourseSchema } from "@/lib/schemas/course"
 import { Cpu, Factory, Wrench, Award, BadgeCheck } from "lucide-react"
@@ -13,9 +14,18 @@ import { Counter } from "@/components/motion/counter"
 import { universityPartners } from "@/lib/data/partners"
 
 export const metadata: Metadata = {
-  title: 'IBM ICE - Innovation Centre of Excellence Badge Programs',
+  title: 'IBM ICE - Innovation Centre of Excellence | 15+ Badge Programs',
   description:
-    'IBM Innovation Centre of Excellence offering 15+ badge programs across technology, industry, and deep technical skill tracks. 10000+ students certified.',
+    'IBM-certified technology programs for universities. 15+ badge programs, 10,000+ students certified across AI, Cloud, Cybersecurity, Data Science, and more.',
+  alternates: {
+    canonical: 'https://datagami.in/services/education/ibm-ice',
+  },
+  openGraph: {
+    title: 'IBM ICE - Innovation Centre of Excellence | 15+ Badge Programs',
+    description:
+      'IBM-certified technology programs for universities. 15+ badge programs, 10,000+ students certified across AI, Cloud, Cybersecurity, Data Science, and more.',
+    images: ['/images/logo/ibm-ice-logo.jpg'],
+  },
 }
 
 const categoryMeta: Record<string, { icon: React.ReactNode; description: string }> = {
@@ -50,6 +60,25 @@ const courseSchema = generateCourseSchema({
   provider: "IBM & Datagami Technology Services",
   url: ibmIce.href,
 })
+
+const ibmIceFaqs = [
+  {
+    question: "What is IBM ICE?",
+    answer: "IBM ICE (Innovation Centre for Education) is a strategic university partnership initiative that enables institutions to integrate IBM's globally recognized, industry-certified technology programs in AI, cloud computing, cybersecurity, blockchain, and data science into their academic offerings.",
+  },
+  {
+    question: "How many IBM badge programs are available?",
+    answer: "IBM ICE offers 15+ badge programs across technology, industry specialization, deep technical skills, and 60+ short-term certificate tracks covering Python, SQL, Cloud Foundations, AI, Web Development, and more.",
+  },
+  {
+    question: "How many students have been certified through IBM ICE?",
+    answer: "Over 10,000 students have been certified through IBM ICE across 12+ partner institutions in India.",
+  },
+  {
+    question: "What are the benefits of IBM ICE for universities?",
+    answer: "Universities gain access to IBM's international curriculum, faculty development support, enterprise-grade learning resources, and industry-recognized certifications that enhance student employability and institutional reputation.",
+  },
+]
 
 export default function IBMICEPage() {
   return (
@@ -308,6 +337,11 @@ export default function IBMICEPage() {
           </StaggerChildren>
         </div>
       </section>
+
+      {/* FAQs */}
+      <FadeIn>
+        <FAQSection faqs={ibmIceFaqs} />
+      </FadeIn>
 
       {/* CTA */}
       <FadeIn>

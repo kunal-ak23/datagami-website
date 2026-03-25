@@ -197,7 +197,32 @@ export const finlearn: FinLEARNProgram = {
     partners: '50+',
     avgPackage: '₹3.5L',
   },
-  faqs: [],
+  faqs: [
+    {
+      question: 'Who is eligible for FinLEARN programs?',
+      answer: 'FinLEARN offers programs for undergraduate (UG) and postgraduate (PG) students as well as working professionals. UG programs like CP-BFSI and IBOP are open to students who have completed 12th grade or equivalent. PG programs require a bachelor\'s degree, preferably in finance, economics, or business — though graduates from diverse fields are encouraged to apply.',
+    },
+    {
+      question: 'What certifications do FinLEARN graduates receive?',
+      answer: 'Graduates receive the FinLEARN certificate along with program-specific credentials — CP BFSI (certified by BFSI Sector Skill Council), IBOP (with CISI certification recognized by 70+ regulators worldwide), NISM certifications, and joint certificates from AIMA and Datagami.',
+    },
+    {
+      question: 'What is the placement support like?',
+      answer: 'FinLEARN maintains a 95% placement rate with a network of 50+ placement partners including Citi Bank, HDFC Bank, ICICI Bank, Axis Bank, Kotak Bank, Motilal Oswal, Muthoot Finance, and IDFC Bank. Students gain entry through structured career guidance, interview preparation, and industry matchmaking.',
+    },
+    {
+      question: 'What short-term certification programs are available?',
+      answer: 'FinLEARN offers 14 short-term certifications (1-3 months) covering Retail Banking Fundamentals, Banking Operations, Capital Markets, Derivatives & Strategies, Wealth Management, Insurance & Risk, Interview & Finishing School, Investment Banking Operations (Levels I-III), Chartered Wealth Management (Levels I-II), and Family Office Planning (Levels I-II).',
+    },
+    {
+      question: 'Are the programs available in hybrid or online formats?',
+      answer: 'FinLEARN programs are primarily conducted at partner university campuses across India. Select programs also offer hybrid (online + offline) learning options. All sessions are recorded and shared within 12 hours of the live session for flexible access.',
+    },
+    {
+      question: 'What is the average salary package after completing a FinLEARN program?',
+      answer: 'The average starting salary for FinLEARN graduates is ₹25,000 per month (₹3.5 lakhs per annum), with top performers securing significantly higher packages at leading multinational banks and financial institutions.',
+    },
+  ],
 }
 
 // ---------------------------------------------------------------------------

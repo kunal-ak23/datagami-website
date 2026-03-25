@@ -11,9 +11,18 @@ import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-childr
 export const dynamic = "force-dynamic"
 
 export const metadata: Metadata = {
-  title: "Blog",
+  title: "Blog - Insights on EdTech, Policy & Industry Collaboration",
   description:
-    "Insights on education technology, digital transformation, and industry trends from Datagami.",
+    "Stay informed with expert insights on education technology, policy implementation, industry collaboration, and career readiness strategies for higher education.",
+  alternates: {
+    canonical: "https://datagami.in/blog",
+  },
+  openGraph: {
+    title: "Blog - Insights on EdTech, Policy & Industry Collaboration",
+    description:
+      "Stay informed with expert insights on education technology, policy implementation, industry collaboration, and career readiness strategies for higher education.",
+    images: ["/images/hero/hero-students-collaborating.png"],
+  },
 }
 
 const categories = ["All", "Technology", "Education", "Finance", "Careers"] as const

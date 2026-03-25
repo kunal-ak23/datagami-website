@@ -4,6 +4,7 @@ import { HeroFull } from "@/components/sections/hero-full"
 import { SectionHeader } from "@/components/sections/section-header"
 import { FeatureGrid } from "@/components/sections/feature-grid"
 import { CTASection } from "@/components/sections/cta-section"
+import { FAQSection } from "@/components/sections/faq-section"
 import { totalErp } from "@/lib/data/products"
 import {
   Wallet,
@@ -18,9 +19,18 @@ import { FadeIn } from "@/components/motion/fade-in"
 import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
 
 export const metadata: Metadata = {
-  title: "Total ERP - Enterprise Resource Planning",
+  title: "Total ERP - Complete University Management System",
   description:
-    "End-to-end enterprise resource planning solution with financial management, HR, inventory, project management, and analytics.",
+    "Comprehensive ERP for higher education — admissions, academics, examinations, finance, HRMS, payroll, budgeting, and library management in one secure platform.",
+  alternates: {
+    canonical: "https://datagami.in/services/products/total-erp",
+  },
+  openGraph: {
+    title: "Total ERP - Complete University Management System",
+    description:
+      "Comprehensive ERP for higher education — admissions, academics, examinations, finance, HRMS, payroll, budgeting, and library management in one secure platform.",
+    images: ["/images/hero/hero-students-collaborating.png"],
+  },
 }
 
 const features = [
@@ -83,9 +93,40 @@ const steps = [
   },
 ]
 
+const softwareSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Total ERP",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "description": "Comprehensive university management system for academic and administrative operations",
+  "offers": { "@type": "Offer", "availability": "https://schema.org/InStock", "price": "0", "priceCurrency": "INR" },
+  "provider": { "@type": "Organization", "name": "Datagami Technology Services" }
+}
+
+const totalErpFaqs = [
+  {
+    question: "What is Total ERP?",
+    answer: "Total ERP is a comprehensive university management system that streamlines every academic and administrative process — from admissions, academics, and examinations to finance, HRMS, payroll, budgeting, and library management — in one secure, scalable platform.",
+  },
+  {
+    question: "What departments does Total ERP cover?",
+    answer: "Total ERP covers admissions, academic management, examination systems, financial management, HR & payroll, budgeting, inventory management, library management, project management, and reporting & analytics.",
+  },
+  {
+    question: "Is Total ERP suitable for large universities?",
+    answer: "Yes, Total ERP features scalable architecture with cloud-native design, supporting large multi-campus institutions with thousands of students and staff.",
+  },
+]
+
 export default function TotalErpPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
+      />
+
       {/* Breadcrumbs */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Breadcrumbs
@@ -159,6 +200,11 @@ export default function TotalErpPage() {
           </StaggerChildren>
         </div>
       </section>
+
+      {/* FAQs */}
+      <FadeIn>
+        <FAQSection faqs={totalErpFaqs} />
+      </FadeIn>
 
       {/* CTA */}
       <FadeIn>

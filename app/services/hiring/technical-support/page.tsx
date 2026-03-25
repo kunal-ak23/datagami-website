@@ -11,9 +11,18 @@ import { FadeIn } from "@/components/motion/fade-in"
 import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
 
 export const metadata: Metadata = {
-  title: "Technical Support",
+  title: "Technical Support Services - 24/7 IT Operations & Monitoring",
   description:
-    "Reliable technical support services including IT infrastructure management, helpdesk, and system maintenance.",
+    "End-to-end technical support with 99.9% uptime guarantee. Proactive monitoring, incident management, and expert assistance for Oracle ERP, NOC, and SOC systems.",
+  alternates: {
+    canonical: "https://datagami.in/services/hiring/technical-support",
+  },
+  openGraph: {
+    title: "Technical Support Services - 24/7 IT Operations & Monitoring",
+    description:
+      "End-to-end technical support with 99.9% uptime guarantee. Proactive monitoring, incident management, and expert assistance for Oracle ERP, NOC, and SOC systems.",
+    images: ["/images/hero/hero-students-collaborating.png"],
+  },
 }
 
 const stats = [

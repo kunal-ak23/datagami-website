@@ -4,6 +4,7 @@ import { HeroFull } from "@/components/sections/hero-full"
 import { SectionHeader } from "@/components/sections/section-header"
 import { FeatureGrid } from "@/components/sections/feature-grid"
 import { CTASection } from "@/components/sections/cta-section"
+import { FAQSection } from "@/components/sections/faq-section"
 import { edudronLms } from "@/lib/data/products"
 import {
   BookOpen,
@@ -18,9 +19,18 @@ import { FadeIn } from "@/components/motion/fade-in"
 import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
 
 export const metadata: Metadata = {
-  title: "EduDron LMS - Learning Management System",
+  title: "EduDron LMS - Learning Management System for Universities",
   description:
-    "Comprehensive learning management platform featuring course management, student tracking, assessments, analytics, and multi-institution support.",
+    "Intelligent learning management system for course delivery, assessments, and learner engagement. Real-time analytics, AI-powered assessments, and scalable architecture.",
+  alternates: {
+    canonical: "https://datagami.in/services/products/edudron-lms",
+  },
+  openGraph: {
+    title: "EduDron LMS - Learning Management System for Universities",
+    description:
+      "Intelligent learning management system for course delivery, assessments, and learner engagement. Real-time analytics, AI-powered assessments, and scalable architecture.",
+    images: ["/images/hero/hero-students-collaborating.png"],
+  },
 }
 
 const features = [
@@ -83,9 +93,40 @@ const steps = [
   },
 ]
 
+const softwareSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "EduDron LMS",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "Web",
+  "description": "Intelligent learning management system for course delivery, assessments, and learner engagement",
+  "offers": { "@type": "Offer", "availability": "https://schema.org/InStock", "price": "0", "priceCurrency": "INR" },
+  "provider": { "@type": "Organization", "name": "Datagami Technology Services" }
+}
+
+const edudronFaqs = [
+  {
+    question: "What is EduDron LMS?",
+    answer: "EduDron LMS is an intelligent learning management system designed to simplify course delivery, assessments, and learner engagement. It enables institutions to manage blended, virtual, and apprenticeship-based learning with real-time analytics.",
+  },
+  {
+    question: "What features does EduDron LMS include?",
+    answer: "Key features include course management, student progress tracking, AI-powered assessments, content library, analytics dashboard, multi-institution support, and seamless integration with existing systems.",
+  },
+  {
+    question: "Can EduDron LMS scale across multiple campuses?",
+    answer: "Yes, EduDron LMS is built with scalable architecture designed to grow from a single campus to a statewide university system, supporting thousands of concurrent users.",
+  },
+]
+
 export default function EduDronLmsPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
+      />
+
       {/* Breadcrumbs */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Breadcrumbs
@@ -159,6 +200,11 @@ export default function EduDronLmsPage() {
           </StaggerChildren>
         </div>
       </section>
+
+      {/* FAQs */}
+      <FadeIn>
+        <FAQSection faqs={edudronFaqs} />
+      </FadeIn>
 
       {/* CTA */}
       <FadeIn>

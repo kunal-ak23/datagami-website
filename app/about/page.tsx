@@ -3,6 +3,7 @@ import { MapPin, Target, Eye } from "lucide-react"
 import { HeroFull } from "@/components/sections/hero-full"
 import Breadcrumbs from "@/components/layout/breadcrumbs"
 import { CTASection } from "@/components/sections/cta-section"
+import { FAQSection } from "@/components/sections/faq-section"
 import { company } from "@/lib/data/company"
 
 import { FadeIn } from "@/components/motion/fade-in"
@@ -11,8 +12,16 @@ import { LogoTicker } from "@/components/carousels/logo-ticker"
 import { allPartners } from "@/lib/data/partners"
 
 export const metadata: Metadata = {
-  title: 'About Us',
-  description: 'Datagami Technology Services — empowering institutions and businesses through technology, partnerships, and innovation. Offices in Mumbai and Bengaluru.',
+  title: 'About Datagami - EdTech Company Transforming Higher Education Since 2018',
+  description: 'Datagami Technology Services — pioneering B2B education technology company with offices in Mumbai and Bengaluru. 50+ partner universities, 10K+ students impacted.',
+  alternates: {
+    canonical: 'https://datagami.in/about',
+  },
+  openGraph: {
+    title: 'About Datagami - EdTech Company Transforming Higher Education Since 2018',
+    description: 'Datagami Technology Services — pioneering B2B education technology company with offices in Mumbai and Bengaluru. 50+ partner universities, 10K+ students impacted.',
+    images: ['/images/hero/hero-about.png'],
+  },
 }
 
 const milestones = [
@@ -29,6 +38,21 @@ const team = company.leadership.map((m) => ({
   subtitle: m.bio,
   image: m.image,
 }))
+
+const aboutFaqs = [
+  {
+    question: "When was Datagami founded?",
+    answer: "Datagami Technology Services was founded in 2018 in Mumbai with a vision to bridge the gap between academia and industry through technology-driven education solutions.",
+  },
+  {
+    question: "Where are Datagami's offices located?",
+    answer: "Datagami has offices in Mumbai (309, Crescent Business Square, Saki Naka) and Bengaluru (191, Appanna Building, Jakkuru), serving universities and businesses across India.",
+  },
+  {
+    question: "What is Datagami's mission?",
+    answer: "Our mission is to transform education by creating meaningful connections between learning and real-world application, leveraging cutting-edge technology solutions that bridge the skills gap effectively, and ensuring every student graduates with the skills and confidence to thrive.",
+  },
+]
 
 export default function AboutPage() {
   return (
@@ -217,6 +241,11 @@ export default function AboutPage() {
           </StaggerChildren>
         </section>
       </div>
+
+      {/* FAQs */}
+      <FadeIn>
+        <FAQSection faqs={aboutFaqs} />
+      </FadeIn>
 
       {/* CTA */}
       <FadeIn>

@@ -26,6 +26,7 @@ import { SectionHeader } from "@/components/sections/section-header"
 import { StatsBar } from "@/components/sections/stats-bar"
 import { FeatureGrid } from "@/components/sections/feature-grid"
 import { CTASection } from "@/components/sections/cta-section"
+import { FAQSection } from "@/components/sections/faq-section"
 import { ProgramCard } from "@/components/cards/program-card"
 import { ProductCard } from "@/components/cards/product-card"
 import { ServiceCard } from "@/components/cards/service-card"
@@ -46,14 +47,38 @@ import { IndustriesGrid } from "@/components/sections/industries-grid"
 export const dynamic = "force-dynamic"
 
 export const metadata: Metadata = {
-  title:
-    "Datagami - Lead Digital Technology | EdTech Solutions for Universities & Businesses",
+  title: "Datagami - EdTech Solutions for Universities & Businesses",
   description:
-    "Empowering Institutions, Universities & Businesses Through Technology, Partnerships & Innovation. 50+ Partner Universities, 10K+ Students Impacted, 200+ Programs Delivered.",
+    "Empowering 50+ universities and 10K+ students through industry-aligned education programs, enterprise products, and workforce solutions. Partner with Datagami.",
+  alternates: {
+    canonical: "https://datagami.in",
+  },
   openGraph: {
+    title: "Datagami - EdTech Solutions for Universities & Businesses",
+    description:
+      "Empowering 50+ universities and 10K+ students through industry-aligned education programs, enterprise products, and workforce solutions. Partner with Datagami.",
     images: ["/images/hero/hero-students-collaborating.png"],
   },
 }
+
+const homeFaqs = [
+  {
+    question: "What is Datagami?",
+    answer: "Datagami Technology Services is a B2B education technology and consulting company that empowers universities, institutions, and businesses to bridge the gap between academia and industry through technology-driven solutions, industry-aligned programs, and workforce transformation services.",
+  },
+  {
+    question: "What services does Datagami offer?",
+    answer: "Datagami offers education programs (FinLEARN, TechLEARN, IBM ICE, Clinomic), enterprise products (EduDron LMS, Total ERP), and professional services (talent acquisition, student placement, strategic consulting, and technical support).",
+  },
+  {
+    question: "How many universities does Datagami partner with?",
+    answer: "Datagami partners with 50+ universities across India, impacting over 10,000 students through 200+ programs delivered in BFSI, technology, clinical research, and more.",
+  },
+  {
+    question: "How can my institution partner with Datagami?",
+    answer: "You can reach out through our contact page or email query@datagami.in. We offer a free initial consultation to understand your institution's challenges, followed by a customized proposal and dedicated implementation support.",
+  },
+]
 
 export default function Home() {
   const { finlearn, techlearn, ibmIce, clinomic } = programs
@@ -355,7 +380,12 @@ export default function Home() {
       {/* 8. Testimonials */}
       <TestimonialCarousel />
 
-      {/* 9. Final CTA */}
+      {/* 9. FAQs */}
+      <FadeIn>
+        <FAQSection faqs={homeFaqs} />
+      </FadeIn>
+
+      {/* 10. Final CTA */}
       <FadeIn>
         <CTASection
           title="Let's Build the Future Together"

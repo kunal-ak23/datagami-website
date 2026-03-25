@@ -7,9 +7,18 @@ import { caseStudies } from "@/lib/data/case-studies"
 import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
 
 export const metadata: Metadata = {
-  title: "Case Studies",
+  title: "Case Studies - 85% Employment Increase & 200+ Industry Partnerships",
   description:
-    "Proven success stories from Datagami's partnerships with universities and businesses.",
+    "Real results from real partnerships. See how Datagami helped universities achieve 85% employment increase, 200+ industry partnerships, and 50% faster policy implementation.",
+  alternates: {
+    canonical: "https://datagami.in/case-studies",
+  },
+  openGraph: {
+    title: "Case Studies - 85% Employment Increase & 200+ Industry Partnerships",
+    description:
+      "Real results from real partnerships. See how Datagami helped universities achieve 85% employment increase, 200+ industry partnerships, and 50% faster policy implementation.",
+    images: ["/images/hero/hero-students-collaborating.png"],
+  },
 }
 
 export default function CaseStudiesPage() {

@@ -10,9 +10,18 @@ import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-childr
 export const dynamic = "force-dynamic"
 
 export const metadata: Metadata = {
-  title: "Gallery",
+  title: "Gallery - Events, Partnerships & Campus Life at Datagami",
   description:
-    "Explore Datagami's events, campus facilities, and workshop moments.",
+    "Explore photos and videos from Datagami's university partnerships, IBM ICE collaborations, student events, corporate training sessions, and industry celebrations.",
+  alternates: {
+    canonical: "https://datagami.in/gallery",
+  },
+  openGraph: {
+    title: "Gallery - Events, Partnerships & Campus Life at Datagami",
+    description:
+      "Explore photos and videos from Datagami's university partnerships, IBM ICE collaborations, student events, corporate training sessions, and industry celebrations.",
+    images: ["/images/hero/hero-students-collaborating.png"],
+  },
 }
 
 const categories = ["All", "Events", "Campus", "Workshops"] as const

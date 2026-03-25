@@ -10,6 +10,7 @@ import {
   ArrowRight,
 } from "lucide-react"
 import { HeroMinimal } from "@/components/sections/hero-minimal"
+import { FAQSection } from "@/components/sections/faq-section"
 import Breadcrumbs from "@/components/layout/breadcrumbs"
 import { company } from "@/lib/data/company"
 
@@ -18,8 +19,16 @@ import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-childr
 import { OfficeMap } from "@/components/sections/office-map"
 
 export const metadata: Metadata = {
-  title: 'Contact Us',
-  description: 'Get in touch with Datagami. Mumbai and Bengaluru offices. Email: query@datagami.in, Phone: +91 97029 34397. Mon-Fri, 9 AM - 6 PM IST.',
+  title: 'Contact Datagami - Mumbai & Bengaluru Offices',
+  description: 'Get in touch with Datagami for education programs, enterprise products, and consulting services. Offices in Mumbai and Bengaluru. Response within 24 hours.',
+  alternates: {
+    canonical: 'https://datagami.in/contact',
+  },
+  openGraph: {
+    title: 'Contact Datagami - Mumbai & Bengaluru Offices',
+    description: 'Get in touch with Datagami for education programs, enterprise products, and consulting services. Offices in Mumbai and Bengaluru. Response within 24 hours.',
+    images: ['/images/hero/hero-students-collaborating.png'],
+  },
 }
 
 const processSteps = [
@@ -37,6 +46,21 @@ const processSteps = [
     icon: Rocket,
     title: "Partnership Launch",
     description: "We kick off execution together — from onboarding to delivery — ensuring a seamless experience.",
+  },
+]
+
+const contactFaqs = [
+  {
+    question: "How can I contact Datagami?",
+    answer: "You can email us at query@datagami.in, call +91 97029 34397 or +91 77381 70621 (Monday to Friday, 9 AM – 6 PM IST), or visit our offices in Mumbai or Bengaluru.",
+  },
+  {
+    question: "What is the response time for inquiries?",
+    answer: "We respond to all inquiries within 24 hours. For urgent matters, please call our phone numbers directly.",
+  },
+  {
+    question: "What happens after I submit a contact form?",
+    answer: "After submission, we schedule a free 30-minute consultation to understand your needs, then develop a customized proposal with specific recommendations, and launch the partnership with dedicated support.",
   },
 ]
 
@@ -256,6 +280,11 @@ export default function ContactPage() {
             })}
           </StaggerChildren>
         </section>
+
+        {/* FAQs */}
+        <FadeIn>
+          <FAQSection faqs={contactFaqs} />
+        </FadeIn>
       </div>
     </>
   )

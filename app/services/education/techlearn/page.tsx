@@ -4,16 +4,27 @@ import Breadcrumbs from "@/components/layout/breadcrumbs"
 import { HeroDark } from "@/components/sections/hero-dark"
 import { SectionHeader } from "@/components/sections/section-header"
 import { CTASection } from "@/components/sections/cta-section"
+import { FAQSection } from "@/components/sections/faq-section"
 import { techlearn } from "@/lib/data/programs"
+import { generateCourseSchema } from "@/lib/schemas/course"
 import { ArrowRight, Clock, Layers } from "lucide-react"
 
 import { FadeIn } from "@/components/motion/fade-in"
 import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
 
 export const metadata: Metadata = {
-  title: 'TechLEARN - Technology Training Programs',
+  title: 'TechLEARN - Cloud, AI, Blockchain & Chip Design Training Programs',
   description:
-    'Master Cloud Computing, Metaverse, Blockchain, and Chip Design with TechLEARN. 6-12 month programs with industry certifications.',
+    'Industry-focused technology programs in Cloud Computing with AI, Metaverse, Blockchain, and Chip Design. Hands-on labs, certifications, and 100% placement assistance.',
+  alternates: {
+    canonical: 'https://datagami.in/services/education/techlearn',
+  },
+  openGraph: {
+    title: 'TechLEARN - Cloud, AI, Blockchain & Chip Design Training Programs',
+    description:
+      'Industry-focused technology programs in Cloud Computing with AI, Metaverse, Blockchain, and Chip Design. Hands-on labs, certifications, and 100% placement assistance.',
+    images: ['/images/hero/hero-students-collaborating.png'],
+  },
 }
 
 const accentClasses: Record<string, { border: string; bg: string; text: string }> = {
@@ -39,9 +50,20 @@ const accentClasses: Record<string, { border: string; bg: string; text: string }
   },
 }
 
+const courseSchema = generateCourseSchema({
+  name: "TechLEARN by Datagami - Cloud, AI, Blockchain & Chip Design Training",
+  description: "Industry-focused technology programs in Cloud Computing with AI, Metaverse, Blockchain, and Chip Design. Hands-on labs, certifications, and 100% placement assistance.",
+  url: "/services/education/techlearn",
+})
+
 export default function TechLEARNPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(courseSchema) }}
+      />
+
       {/* Breadcrumbs */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Breadcrumbs
@@ -184,6 +206,11 @@ export default function TechLEARNPage() {
           </FadeIn>
         </div>
       </section>
+
+      {/* FAQs */}
+      <FadeIn>
+        <FAQSection faqs={techlearn.faqs} />
+      </FadeIn>
 
       {/* CTA */}
       <FadeIn>

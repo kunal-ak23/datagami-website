@@ -11,9 +11,18 @@ import { FadeIn } from "@/components/motion/fade-in"
 import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
 
 export const metadata: Metadata = {
-  title: "Strategic Consulting",
+  title: "Strategic Consulting for Education & Enterprise Growth",
   description:
-    "Strategic consulting for digital transformation, education technology, and institutional growth strategies.",
+    "Expert advisory services with 100+ projects delivered and 95% client satisfaction. Insight-driven strategies for institutional transformation and operational excellence.",
+  alternates: {
+    canonical: "https://datagami.in/services/hiring/consulting",
+  },
+  openGraph: {
+    title: "Strategic Consulting for Education & Enterprise Growth",
+    description:
+      "Expert advisory services with 100+ projects delivered and 95% client satisfaction. Insight-driven strategies for institutional transformation and operational excellence.",
+    images: ["/images/hero/hero-students-collaborating.png"],
+  },
 }
 
 const stats = [
