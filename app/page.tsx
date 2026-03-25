@@ -43,6 +43,8 @@ import { LogoTicker } from "@/components/carousels/logo-ticker"
 import { allPartners } from "@/lib/data/partners"
 import { IndustriesGrid } from "@/components/sections/industries-grid"
 
+export const dynamic = "force-dynamic"
+
 export const metadata: Metadata = {
   title:
     "Datagami - Lead Digital Technology | EdTech Solutions for Universities & Businesses",
