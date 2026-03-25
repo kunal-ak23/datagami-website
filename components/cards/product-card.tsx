@@ -35,7 +35,7 @@ export function ProductCard({
           </div>
         </div>
         {/* Content below image */}
-        <div className="p-6 dark:bg-gray-950">
+        <div className="p-6 glass-card dark:liquid-glass">
           <p className="text-muted-brand mb-4">{description}</p>
           <ul className="space-y-2 mb-6">
             {features.map((feature, index) => (
@@ -56,7 +56,7 @@ export function ProductCard({
   return (
     <Link
       href={href}
-      className="block bg-white dark:bg-gray-900 border border-border-custom dark:border-gray-800 rounded-xl p-8 hover:-translate-y-1 hover:shadow-brand-lg transition-all duration-300 cursor-pointer"
+      className="block glass-card dark:liquid-glass rounded-xl p-8 hover:-translate-y-1 hover:shadow-brand-lg transition-all duration-300 cursor-pointer"
     >
       <h3 className="text-xl font-bold text-dark mb-2">{title}</h3>
       <p className="text-muted-brand mb-4">{description}</p>

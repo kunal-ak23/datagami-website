@@ -42,7 +42,7 @@ export function ProgramCard({
           </div>
         </div>
         {/* Content below image */}
-        <div className="p-5 dark:bg-gray-950">
+        <div className="p-5 glass-card dark:liquid-glass">
           <p className="text-sm text-muted-brand mb-4 line-clamp-3">
             {description}
           </p>
@@ -57,7 +57,7 @@ export function ProgramCard({
   return (
     <Link
       href={href}
-      className="block bg-white dark:bg-gray-900 border border-border-custom dark:border-gray-800 rounded-xl p-6 hover:-translate-y-1 hover:shadow-brand-lg transition-all duration-300 cursor-pointer"
+      className="block glass-card dark:liquid-glass rounded-xl p-6 hover:-translate-y-1 hover:shadow-brand-lg transition-all duration-300 cursor-pointer"
     >
       <div className="w-12 h-12 rounded-lg bg-brand/10 flex items-center justify-center mb-4 text-brand">
         {icon}

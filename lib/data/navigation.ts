@@ -33,7 +33,6 @@ export const mainNav: NavItem[] = [
       { label: 'TechLEARN', href: '/services/education/techlearn', description: 'Technology training programs' },
       { label: 'IBM ICE', href: '/services/education/ibm-ice', description: 'IBM badge programs' },
       { label: 'Clinomic', href: '/services/education/clinomic', description: 'Clinical research education' },
-      { label: 'UPI Study', href: '/services/education/upi-study', description: 'Digital payments education' },
     ],
   },
   {
@@ -77,7 +76,6 @@ export const footerPrograms: FooterLink[] = [
   { label: 'TechLEARN', href: '/services/education/techlearn' },
   { label: 'IBM ICE', href: '/services/education/ibm-ice' },
   { label: 'Clinomic', href: '/services/education/clinomic' },
-  { label: 'UPI Study', href: '/services/education/upi-study' },
   { label: 'EduDron LMS', href: '/services/products/edudron-lms' },
   { label: 'Total ERP', href: '/services/products/total-erp' },
 ]

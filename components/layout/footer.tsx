@@ -19,7 +19,6 @@ const programs = [
   { label: 'TechLEARN', href: '/services/education/techlearn' },
   { label: 'IBM ICE', href: '/services/education/ibm-ice' },
   { label: 'Clinomic', href: '/services/education/clinomic' },
-  { label: 'UPI Study', href: '/services/education/upi-study' },
 ]
 
 const socialLinks = [

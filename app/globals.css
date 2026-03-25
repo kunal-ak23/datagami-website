@@ -167,7 +167,7 @@
   box-shadow: 0 0 40px hsl(43 90% 55% / 0.3);
 }
 
-/* Glass morphism */
+/* Glass morphism — light mode */
 @utility glass {
   background: hsl(0 0% 100% / 0.8);
   backdrop-filter: blur(12px);
@@ -177,6 +177,104 @@
   background: hsl(0 0% 0% / 0.6);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+}
+
+/* Glass card — semi-transparent with visible border */
+@utility glass-card {
+  background: hsl(0 0% 100% / 0.65);
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  border: 1px solid hsl(43 40% 70% / 0.4);
+  box-shadow: 0 2px 12px -4px hsl(43 50% 50% / 0.1);
+
+  /* Firefox: skip backdrop-filter for performance */
+  @supports (-moz-appearance: none) {
+    background: hsl(0 0% 100% / 0.88);
+    backdrop-filter: none;
+  }
+}
+
+/* Liquid glass card — dark mode override */
+@utility liquid-glass {
+  background: hsl(30 20% 12% / 0.55) !important;
+  backdrop-filter: blur(20px) saturate(1.6) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(1.6) !important;
+  border: 1px solid hsl(43 50% 50% / 0.12) !important;
+  box-shadow:
+    inset 0 1px 0 0 hsl(43 80% 70% / 0.08),
+    inset 0 -1px 0 0 hsl(0 0% 0% / 0.15),
+    0 8px 32px -8px hsl(0 0% 0% / 0.35);
+
+  /* Firefox: skip backdrop-filter for performance */
+  @supports (-moz-appearance: none) {
+    background: hsl(30 15% 14% / 0.92) !important;
+    backdrop-filter: none !important;
+  }
+}
+
+/* Noise texture overlay */
+@utility noise-overlay {
+  position: relative;
+  &::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 256px 256px;
+  }
+}
+
+/* Radial glow orbs */
+.glow-orb {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(80px);
+  will-change: transform;
+}
+
+/* Light mode glow colors */
+.glow-orb-1 {
+  width: 600px;
+  height: 600px;
+  top: -10%;
+  right: -5%;
+  background: radial-gradient(circle, hsl(43 90% 65% / 0.18) 0%, transparent 70%);
+}
+.glow-orb-2 {
+  width: 500px;
+  height: 500px;
+  top: 40%;
+  left: -8%;
+  background: radial-gradient(circle, hsl(43 80% 55% / 0.12) 0%, transparent 70%);
+}
+.glow-orb-3 {
+  width: 450px;
+  height: 450px;
+  bottom: 5%;
+  right: 10%;
+  background: radial-gradient(circle, hsl(35 70% 60% / 0.1) 0%, transparent 70%);
+}
+
+/* Dark mode glow colors — deeper, more atmospheric */
+.dark .glow-orb-1 {
+  background: radial-gradient(circle, hsl(43 90% 50% / 0.08) 0%, transparent 70%);
+}
+.dark .glow-orb-2 {
+  background: radial-gradient(circle, hsl(30 80% 40% / 0.06) 0%, transparent 70%);
+}
+.dark .glow-orb-3 {
+  background: radial-gradient(circle, hsl(43 70% 45% / 0.05) 0%, transparent 70%);
+}
+
+.dark .noise-overlay::before,
+.noise-overlay.dark::before {
+  opacity: 0.04;
 }
 
 /* Gradient text */

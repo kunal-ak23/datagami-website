@@ -81,7 +81,7 @@ export function SkillTicker({ skills }: SkillTickerProps) {
         {allSkills.map((skill, i) => (
           <div
             key={`${skill}-${i}`}
-            className="flex-shrink-0 flex items-center gap-2 bg-white dark:bg-gray-950 border border-brand/30 shadow-sm px-5 py-3 rounded-full text-sm font-medium text-dark hover:border-brand hover:shadow-md transition-all cursor-default"
+            className="flex-shrink-0 flex items-center gap-2 glass-card dark:liquid-glass border-brand/30 shadow-sm px-5 py-3 rounded-full text-sm font-medium text-dark hover:border-brand hover:shadow-md transition-all cursor-default"
           >
             <span className="text-brand">{getSkillIcon(skill)}</span>
             {skill}

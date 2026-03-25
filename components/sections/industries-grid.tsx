@@ -60,7 +60,7 @@ export function IndustriesGrid() {
         return (
           <div
             key={industry.name}
-            className="bg-white dark:bg-gray-900 border border-border-custom dark:border-gray-800 rounded-xl p-6 hover:-translate-y-1 hover:shadow-brand-md transition-all duration-300"
+            className="glass-card dark:liquid-glass rounded-xl p-6 hover:-translate-y-1 hover:shadow-brand-md transition-all duration-300"
           >
             <div className="flex items-center justify-center bg-brand/10 text-brand rounded-xl w-14 h-14 mb-4">
               <Icon className="size-7" />

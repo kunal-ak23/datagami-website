@@ -20,7 +20,7 @@ export function BlogCard({
   return (
     <Link
       href={`/blog/${slug}`}
-      className="block bg-white dark:bg-gray-900 border border-border-custom dark:border-gray-800 rounded-xl overflow-hidden hover:-translate-y-1 hover:shadow-brand-lg transition-all duration-300 cursor-pointer"
+      className="block glass-card dark:liquid-glass rounded-xl overflow-hidden hover:-translate-y-1 hover:shadow-brand-lg transition-all duration-300 cursor-pointer"
     >
       {imageSrc && (
         <img

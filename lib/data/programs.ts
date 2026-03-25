@@ -51,37 +51,144 @@ export interface FinLEARNProgram {
 
 export const finlearn: FinLEARNProgram = {
   name: 'FinLEARN',
-  tagline: 'Comprehensive BFSI Education Platform',
+  tagline: 'BFSI & Finance Program Excellence',
   description:
-    'FinLEARN is Datagami\'s flagship education platform focused on Banking, Financial Services and Insurance (BFSI). Through industry-aligned curricula, hands-on training and strong placement support, FinLEARN transforms graduates into job-ready professionals for the financial sector.',
+    'FinLEARN by Datagami is a comprehensive Banking, Financial Services & Insurance (BFSI) program designed to help universities close the gap between academic instruction and real-world financial industry expectations. Developed in collaboration with leading financial institutions, the curriculum is continuously updated to reflect evolving market needs, regulatory changes, and emerging sector trends.\n\nThrough hands-on apprenticeships, real-world projects, and expert mentorship from industry veterans, we prepare students for successful careers in the dynamic world of finance and banking. Our graduates don\'t just find jobs — they launch careers with confidence and competence.',
   href: '/services/education/finlearn',
   cardImage: '/images/cards/finlearn-card.png',
   tracks: [
+    // Undergraduate Programs
     {
-      name: 'CP-BFSI',
+      name: 'CP-BFSI Integrated Undergraduate Program with Apprenticeship',
       level: 'UG',
+      duration: '3 Years',
       description:
-        'Certificate Program in Banking, Financial Services and Insurance',
+        'A structured BFSI-focused undergraduate pathway covering capital markets, wealth management, retail banking, banking operations, corporate readiness, and interview preparation. Designed to integrate academic learning with applied finance skills and hands-on assessments across 6 semesters.',
+      skills: ['Paid Apprenticeship', 'Industry Mentorship', 'Practical Training', 'Placement Assistance'],
     },
     {
-      name: 'IBOP',
+      name: 'IBOP Integrated Undergraduate Program with Apprenticeship',
       level: 'UG',
-      description: 'Integrated Banking Operations Program',
+      duration: '3 Years',
+      description:
+        'A focused undergraduate program combining core business fundamentals with specialized training in BFSI and Investment Banking Operations (IBOP), preparing students with practical finance skills and strong placement readiness.',
+      skills: ['Applied BFSI & IBOP Training', 'Industry-Aligned Curriculum', 'Skill Development', 'Placement Assistance'],
     },
+    // Postgraduate Programs
     {
-      name: 'MBA in IBOP',
+      name: 'MBA in Investment Banking Operations (IBOP)',
       level: 'PG',
-      description: 'MBA in Integrated Banking Operations',
+      duration: '2 Years',
+      description:
+        'A specialized postgraduate program designed to build advanced capabilities in Investment Banking Operations. Delivered through a blend of offline foundation modules, online IBOP training levels, NISM certifications, and paid on-the-job training (OJT) that leads to full-time roles in leading financial organizations.',
+      skills: ['Advanced IBOP', 'Paid OJT', 'NISM Certifications', 'Market Skills', 'Operational Expertise', 'Placement Assistance'],
     },
     {
       name: 'MBA in Wealth Management',
       level: 'PG',
-      description: 'MBA specializing in Wealth Management',
+      duration: '2 Years',
+      description:
+        'A specialized postgraduate program designed to build advanced expertise in Wealth Management, Capital Markets, Insurance Planning, and Financial Advisory. Delivered through a blended model with WM Level-1 & Level-2 modules, CP-BFSI training, NISM certifications, and paid OJT opportunities that lead to full-time roles in the finance sector.',
+      skills: ['Advanced Training', 'Wealth Expertise', 'Paid OJT', 'NISM Certified', 'Career Progression', 'Placement Assistance'],
+    },
+    // Short-Term Certification Programs
+    {
+      name: 'Retail Banking Fundamentals',
+      level: 'Certificate',
+      duration: '3 Months',
+      description: 'Overview of Indian banking systems, RBI policy, customer onboarding, lending products, and digital banking.',
+      skills: ['Customer Focus', 'Banking Basics', 'Digital Ready'],
     },
     {
-      name: 'Short-term Certifications',
+      name: 'Banking Operations Essentials',
       level: 'Certificate',
-      description: 'Industry-recognized certification programs',
+      duration: '3 Months',
+      description: 'Core transaction processes, KYC/AML, cash management, trade finance, and operational risk controls.',
+      skills: ['Process Skills', 'Risk Control', 'Compliance Basics'],
+    },
+    {
+      name: 'Capital Markets Foundation',
+      level: 'Certificate',
+      duration: '3 Months',
+      description: 'Introduction to capital markets, indices, financial instruments, and fundamental/technical analysis.',
+      skills: ['Market Basics', 'Analysis Skills', 'Trading Concepts'],
+    },
+    {
+      name: 'Derivatives & Strategies',
+      level: 'Certificate',
+      duration: '3 Months',
+      description: 'Fundamentals of derivatives, options payoffs, Greeks, and directional & non-directional trading strategies.',
+      skills: ['Options Basics', 'Strategy Design', 'Risk Hedging'],
+    },
+    {
+      name: 'Wealth Management Basics',
+      level: 'Certificate',
+      duration: '3 Months',
+      description: 'Client profiling, asset allocation, mutual funds, investment strategies, and retirement & estate planning.',
+      skills: ['Client Focus', 'Asset Mix', 'Goal Planning'],
+    },
+    {
+      name: 'Insurance & Risk Basics',
+      level: 'Certificate',
+      duration: '3 Months',
+      description: 'Principles of insurance, IRDA framework, policy types, claims, and distribution channels.',
+      skills: ['Risk Cover', 'Policy Types', 'Claims Know-how'],
+    },
+    {
+      name: 'Interview & Finishing School',
+      level: 'Certificate',
+      duration: '1 Month',
+      description: 'Resume and LinkedIn optimisation, interview Q&A, professional etiquette, MS Office, and mock interviews.',
+      skills: ['Resume Ready', 'Interview Skills', 'Workplace Etiquette'],
+    },
+    {
+      name: 'Investment Banking Operations - Level I',
+      level: 'Certificate',
+      duration: '2 Months',
+      description: 'Global financial landscape, FX, equity, debt, mutual funds, and cross-border regulations and ethics.',
+      skills: ['Global Markets', 'Product Basics', 'Regulatory View'],
+    },
+    {
+      name: 'Investment Banking Operations - Level II',
+      level: 'Certificate',
+      duration: '2 Months',
+      description: 'Securities lifecycle, custody and reconciliation, clearing & settlement, corporate actions, and taxation.',
+      skills: ['Trade Lifecycle', 'Settlement Flow', 'Tax Basics'],
+    },
+    {
+      name: 'Investment Banking Operations - Level III',
+      level: 'Certificate',
+      duration: '2 Months',
+      description: 'Enterprise risk management, market & liquidity risk, regulatory frameworks, and global risk case studies.',
+      skills: ['Risk Management', 'Regulatory Insight', 'Case Studies'],
+    },
+    {
+      name: 'Chartered Wealth Management Advance - Level I',
+      level: 'Certificate',
+      duration: '3 Months',
+      description: 'Concepts of wealth management, investment vehicles, risk–return, insurance, legalities, and intergenerational planning.',
+      skills: ['Wealth Concepts', 'Legal Framework', 'Risk Return'],
+    },
+    {
+      name: 'Chartered Wealth Management Advance - Level II',
+      level: 'Certificate',
+      duration: '3 Months',
+      description: 'Equity analysis, alternatives, real-estate valuation, behavioural finance, portfolio strategies, tax and wealth tech.',
+      skills: ['Equity Insight', 'Portfolio Design', 'Tax Strategy'],
+    },
+    {
+      name: 'Family Office Planning - Level I',
+      level: 'Certificate',
+      duration: '3 Months',
+      description: 'Family governance, legal structures, investment policy, asset allocation, accounting, and risk management.',
+      skills: ['Family Governance', 'Policy Design', 'Risk Oversight'],
+    },
+    {
+      name: 'Family Office Planning - Level II',
+      level: 'Certificate',
+      duration: '3 Months',
+      description: 'Direct investment strategies, tax planning, philanthropy, succession, and vendor management.',
+      skills: ['Direct Deals', 'Tax Planning', 'Succession Plan'],
     },
   ],
   stats: {
@@ -90,38 +197,7 @@ export const finlearn: FinLEARNProgram = {
     partners: '50+',
     avgPackage: '₹3.5L',
   },
-  faqs: [
-    {
-      question: 'Who is eligible for FinLEARN programs?',
-      answer:
-        'FinLEARN offers programs for undergraduate (UG) and postgraduate (PG) students as well as working professionals. UG programs like CP-BFSI and IBOP are open to students who have completed 12th grade or equivalent, while PG programs require a bachelor\'s degree.',
-    },
-    {
-      question: 'Are FinLEARN certifications recognized by the industry?',
-      answer:
-        'Yes. FinLEARN certifications are developed in collaboration with leading banks and financial institutions. Graduates receive credentials that are widely recognized across the BFSI sector in India.',
-    },
-    {
-      question: 'What is the placement support like?',
-      answer:
-        'FinLEARN maintains a 95% placement rate. Our dedicated placement cell works closely with 50+ banking and financial services partners to arrange interviews, internships and final placements for every eligible student.',
-    },
-    {
-      question: 'Can working professionals enroll in short-term certification courses?',
-      answer:
-        'Absolutely. Our short-term certification programs are designed for working professionals who want to upskill or transition into the BFSI sector. Flexible schedules and weekend batches are available.',
-    },
-    {
-      question: 'What is the average salary package after completing a FinLEARN program?',
-      answer:
-        'The average starting package for FinLEARN graduates is ₹3.5 lakhs per annum, with top performers securing packages significantly higher depending on the role and institution.',
-    },
-    {
-      question: 'Where are FinLEARN classes conducted?',
-      answer:
-        'FinLEARN programs are conducted at partner university campuses across India. Select programs also offer hybrid (online + offline) learning options for greater accessibility.',
-    },
-  ],
+  faqs: [],
 }
 
 // ---------------------------------------------------------------------------
@@ -373,27 +449,6 @@ export const clinomic: ClinomicProgram = {
 }
 
 // ---------------------------------------------------------------------------
-// UPI Study
-// ---------------------------------------------------------------------------
-
-export interface UPIStudyProgram {
-  name: string
-  tagline: string
-  href: string
-  cardImage?: string
-  description: string
-}
-
-export const upiStudy: UPIStudyProgram = {
-  name: 'UPI Study',
-  tagline: 'Digital Payments Education',
-  href: '/services/education/upi-study',
-  cardImage: '/images/cards/upi-card.png',
-  description:
-    'UPI Study is Datagami\'s focused education initiative on India\'s Unified Payments Interface and the broader digital payments ecosystem. The program covers UPI architecture, merchant onboarding, regulatory frameworks, fraud prevention and the emerging trends shaping cashless transactions. Designed for banking professionals, fintech aspirants and students, UPI Study bridges the knowledge gap in one of the world\'s fastest-growing digital payment markets.',
-}
-
-// ---------------------------------------------------------------------------
 // Aggregate export
 // ---------------------------------------------------------------------------
 
@@ -402,5 +457,4 @@ export const programs = {
   techlearn,
   ibmIce,
   clinomic,
-  upiStudy,
 } as const

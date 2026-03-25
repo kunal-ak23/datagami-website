@@ -54,9 +54,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           />
         ))}
       </head>
-      <body className="font-sans antialiased">
+      <body className="font-sans antialiased noise-overlay">
+        {/* Radial gradient glow orbs */}
+        <div className="glow-orb glow-orb-1" aria-hidden="true" />
+        <div className="glow-orb glow-orb-2" aria-hidden="true" />
+        <div className="glow-orb glow-orb-3" aria-hidden="true" />
+
         <Navbar />
-        <main>{children}</main>
+        <main className="relative z-[1]">{children}</main>
         <Footer />
       </body>
     </html>

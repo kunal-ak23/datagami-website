@@ -11,7 +11,6 @@ import {
   Code,
   Award,
   Beaker,
-  Wallet,
   Monitor,
   Server,
   Briefcase,
@@ -55,7 +54,7 @@ export const metadata: Metadata = {
 }
 
 export default function Home() {
-  const { finlearn, techlearn, ibmIce, clinomic, upiStudy } = programs
+  const { finlearn, techlearn, ibmIce, clinomic } = programs
 
   return (
     <>
@@ -73,7 +72,6 @@ export default function Home() {
         imageSrc="/images/hero/hero-students-collaborating.png"
         imageAlt="University students collaborating with technology"
         showLogo
-        useInfinityScene
         floatingCard={{
           heading: "Partner in Shaping the Future of Education",
           ctaText: "Contact Us",
@@ -134,15 +132,6 @@ export default function Home() {
                   href={clinomic.href}
                   icon={<Beaker className="size-6" />}
                   backgroundImage="/images/cards/clinomic-card.png"
-                />
-              </StaggerItem>
-              <StaggerItem>
-                <ProgramCard
-                  title={upiStudy.name}
-                  description={upiStudy.tagline}
-                  href={upiStudy.href}
-                  icon={<Wallet className="size-6" />}
-                  backgroundImage="/images/cards/upi-card.png"
                 />
               </StaggerItem>
             </StaggerChildren>

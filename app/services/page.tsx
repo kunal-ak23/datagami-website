@@ -4,7 +4,6 @@ import {
   Monitor,
   Award,
   FlaskConical,
-  Smartphone,
   Server,
   LayoutDashboard,
   Users,
@@ -95,15 +94,6 @@ export default function ServicesPage() {
                 duration={programs.clinomic.duration}
                 icon={<FlaskConical className="size-6" />}
                 backgroundImage="/images/cards/clinomic-card.png"
-              />
-            </StaggerItem>
-            <StaggerItem>
-              <ProgramCard
-                title={programs.upiStudy.name}
-                description={programs.upiStudy.tagline + " — " + programs.upiStudy.description}
-                href={programs.upiStudy.href}
-                icon={<Smartphone className="size-6" />}
-                backgroundImage="/images/cards/upi-card.png"
               />
             </StaggerItem>
           </StaggerChildren>

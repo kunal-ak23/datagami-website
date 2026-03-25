@@ -23,20 +23,20 @@ const milestones = [
   { year: "2025", title: "10,000+ Students Impacted", description: "Reached over 10,000 students impacted across 50+ partner universities and 200+ programs delivered." },
 ]
 
-const team = [
-  { name: "Dhaval Shah", title: "Founder & Chief Executive Officer", subtitle: "Strategic Leadership, Business Development", image: "/images/team/dhaval-shah.png" },
-  { name: "Prof. Dr. Joseph David Ponmany", title: "Dean – Financial Programs", subtitle: "Financial Education, Academic Leadership", image: "/images/team/joseph-ponmany.png" },
-  { name: "Dr Sanjay Daga", title: "Partner & Director, Business Development", subtitle: "Partnership Development", image: "/images/team/sanjay-daga.png" },
-  { name: "Dr Anoop Swaroep", title: "Partner & Advisor", subtitle: "Strategic Advisory, Education", image: "/images/team/anoop-swaroep.png" },
-]
+const team = company.leadership.map((m) => ({
+  name: m.name,
+  title: m.title,
+  subtitle: m.bio,
+  image: m.image,
+}))
 
 export default function AboutPage() {
   return (
     <>
       {/* Hero */}
       <HeroFull
-        heading="About Datagami"
-        subtitle="Empowering Institutions, Universities & Businesses Through Technology, Partnerships & Innovation"
+        heading="Transforming Higher Education Through Innovation"
+        subtitle="Datagami Technology Services Private Limited is a pioneering B2B education technology and consulting company dedicated to helping universities, institutions, and businesses navigate complex policy implementations, strengthen industry partnerships, and enhance student career readiness."
         backgroundImage="/images/hero/hero-about.png"
       />
 
@@ -54,7 +54,7 @@ export default function AboutPage() {
           <StaggerChildren className="grid gap-8 md:grid-cols-2">
             {/* Mission */}
             <StaggerItem>
-              <div className="rounded-2xl border border-border-custom bg-white dark:bg-gray-950 p-8">
+              <div className="rounded-2xl glass-card dark:liquid-glass p-8">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="flex items-center justify-center size-12 rounded-full bg-brand/20">
                     <Target className="size-6 text-dark" />
@@ -67,7 +67,7 @@ export default function AboutPage() {
 
             {/* Vision */}
             <StaggerItem>
-              <div className="rounded-2xl border border-border-custom bg-white dark:bg-gray-950 p-8">
+              <div className="rounded-2xl glass-card dark:liquid-glass p-8">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="flex items-center justify-center size-12 rounded-full bg-brand/20">
                     <Eye className="size-6 text-dark" />
@@ -77,6 +77,37 @@ export default function AboutPage() {
                 <p className="text-body leading-relaxed">{company.vision}</p>
               </div>
             </StaggerItem>
+          </StaggerChildren>
+        </section>
+
+        {/* ── Our Story ── */}
+        <section className="py-16 border-t border-border-custom">
+          <FadeIn>
+            <h2 className="text-3xl font-bold text-dark mb-8 text-center">Our Story</h2>
+          </FadeIn>
+          <FadeIn>
+            <div className="max-w-3xl mx-auto space-y-4">
+              {company.story.split('\n\n').map((paragraph, i) => (
+                <p key={i} className="text-body leading-relaxed">{paragraph}</p>
+              ))}
+            </div>
+          </FadeIn>
+        </section>
+
+        {/* ── Core Values ── */}
+        <section className="py-16 border-t border-border-custom">
+          <FadeIn>
+            <h2 className="text-3xl font-bold text-dark mb-10 text-center">Our Core Values</h2>
+          </FadeIn>
+          <StaggerChildren className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {company.coreValues.map((value) => (
+              <StaggerItem key={value.title}>
+                <div className="glass-card dark:liquid-glass rounded-xl p-6 hover:shadow-brand-md transition-all h-full">
+                  <h3 className="text-lg font-bold text-dark mb-2">{value.title}</h3>
+                  <p className="text-sm text-muted-brand">{value.description}</p>
+                </div>
+              </StaggerItem>
+            ))}
           </StaggerChildren>
         </section>
 
@@ -171,7 +202,7 @@ export default function AboutPage() {
             {company.offices.map((office) => (
               <StaggerItem key={office.city}>
                 <div
-                  className="rounded-2xl border border-border-custom bg-white dark:bg-gray-950 p-8"
+                  className="rounded-2xl glass-card dark:liquid-glass p-8"
                 >
                   <div className="flex items-center gap-3 mb-4">
                     <div className="flex items-center justify-center size-10 rounded-full bg-brand/20">
