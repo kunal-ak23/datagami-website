@@ -106,6 +106,113 @@ export default function Home() {
         }}
       />
 
+      {/* About Datagami */}
+      <section className="py-16 md:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            {/* Left: Image + Stats */}
+            <FadeIn>
+              <div>
+                <img
+                  src="/images/hero/hero-students-collaborating.png"
+                  alt="Datagami team collaborating on education solutions"
+                  className="rounded-xl w-full object-cover aspect-[4/3]"
+                />
+                <div className="grid grid-cols-2 gap-4 mt-6">
+                  <div className="glass-card dark:liquid-glass rounded-xl p-5 text-center">
+                    <span className="text-2xl font-bold text-brand">50+</span>
+                    <p className="text-sm text-muted-brand mt-1">Universities</p>
+                  </div>
+                  <div className="glass-card dark:liquid-glass rounded-xl p-5 text-center">
+                    <span className="text-2xl font-bold text-brand">10K+</span>
+                    <p className="text-sm text-muted-brand mt-1">Students Impacted</p>
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
+
+            {/* Right: Content */}
+            <FadeIn>
+              <div>
+                <h2 className="font-display text-3xl md:text-4xl font-bold text-dark mb-2">About Datagami</h2>
+                <div className="w-16 h-1 bg-brand mb-6" />
+                <p className="text-body leading-relaxed mb-4">
+                  Datagami is a trusted education and enterprise solutions partner. We empower universities, institutions, businesses, and corporates to bridge the gap between academia and industry.
+                </p>
+                <p className="text-body leading-relaxed mb-4 font-medium">
+                  We provide comprehensive education technology and consulting services:
+                </p>
+                <div className="grid grid-cols-2 gap-3 mb-6">
+                  {[
+                    'LMS and ERP implementation',
+                    'Industry-aligned training programs',
+                    'Recruitment and placement assistance',
+                    'Strategic consulting for measurable success',
+                  ].map((item) => (
+                    <div key={item} className="flex items-start gap-2">
+                      <span className="w-2 h-2 rounded-full bg-brand mt-2 shrink-0" />
+                      <span className="text-sm text-body">{item}</span>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-muted-brand text-sm leading-relaxed mb-8">
+                  With expertise across multiple sectors — BFSI, information technology, healthcare, agriculture, management, cybersecurity, cloud computing, manufacturing, and data analytics — we help organizations deliver future-ready, skill-based education that meets global standards and drives workforce transformation.
+                </p>
+
+                {/* Mission */}
+                <div className="border-l-4 border-brand rounded-r-xl bg-brand/5 p-5 mb-6">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="w-3 h-3 rounded-full bg-brand" />
+                    <h3 className="text-lg font-bold text-dark">Our Mission</h3>
+                  </div>
+                  <p className="text-sm text-muted-brand leading-relaxed">
+                    To transform education by creating meaningful connections between learning and real-world application, leveraging cutting-edge technology solutions that bridge the skills gap effectively, and ensuring every student graduates with the skills and confidence to thrive in tomorrow&apos;s economy.
+                  </p>
+                </div>
+
+                {/* Core Values */}
+                <div className="border-l-4 border-dark rounded-r-xl bg-gray-100 dark:bg-gray-800/30 p-5 mb-8">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="w-3 h-3 rounded-full bg-dark" />
+                    <h3 className="text-lg font-bold text-dark">Our Core Values</h3>
+                  </div>
+                  <div className="grid grid-cols-2 gap-3">
+                    {[
+                      { title: 'Innovation', desc: 'Pioneering cutting-edge solutions' },
+                      { title: 'Partnership', desc: 'Building lasting relationships' },
+                      { title: 'Excellence', desc: 'Delivering measurable results' },
+                      { title: 'Impact', desc: 'Creating meaningful change' },
+                    ].map((v) => (
+                      <div key={v.title} className="glass-card dark:liquid-glass rounded-lg p-3 text-center">
+                        <p className="text-sm font-semibold text-dark">{v.title}</p>
+                        <p className="text-xs text-muted-brand mt-0.5">{v.desc}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* CTAs */}
+                <div className="flex flex-wrap gap-3">
+                  <Link
+                    href="/about"
+                    className="inline-flex items-center gap-2 bg-[#1A1A1A] text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-[#1A1A1A]/90 transition-colors"
+                  >
+                    Learn More About Us
+                    <ArrowRight className="size-4" />
+                  </Link>
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center gap-2 border border-border-custom text-dark px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+                  >
+                    Contact Datagami
+                  </Link>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
       {/* 2. Solutions Section */}
       <section className="py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
