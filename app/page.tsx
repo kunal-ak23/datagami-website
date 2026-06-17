@@ -68,7 +68,7 @@ const homeFaqs = [
   },
   {
     question: "What services does Datagami offer?",
-    answer: "Datagami offers education programs (FinLEARN, TechLEARN, IBM ICE, Clinomic), enterprise products (EduDron LMS, Total ERP), and professional services (talent acquisition, student placement, strategic consulting, and technical support).",
+    answer: "Datagami offers education programs (FinLEARN, TechLEARN, IBM ICE, Clinomic), enterprise products (EduDron LMS, Total ERP), and professional services (recruitment & staffing, student placement, strategic consulting, and technical support).",
   },
   {
     question: "How many universities does Datagami partner with?",

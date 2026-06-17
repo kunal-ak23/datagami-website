@@ -16,15 +16,15 @@ export interface Service {
 }
 
 export const talentAcquisition: Service = {
-  name: 'Talent Acquisition',
+  name: 'Recruitment & Staffing',
   href: '/services/hiring/talent-acquisition',
   description:
-    'End-to-end talent acquisition services that help organizations find, assess and onboard the right candidates. We leverage our network of 50+ partner universities and industry connections to source skilled professionals across technology, finance and operations.',
+    'Recruitment & Staffing delivered as a service (RaaS). We connect organisations with high-caliber professionals across technology, life sciences, engineering, finance and more — handling everything from sourcing and screening to onboarding, so you hire faster, smarter and with greater confidence.',
   processSteps: [
-    { step: 1, title: 'Requirement Analysis', description: 'We work closely with your team to understand role requirements, culture fit and growth expectations.' },
-    { step: 2, title: 'Talent Sourcing', description: 'Candidates are sourced from our trained talent pool, partner campuses and professional networks.' },
-    { step: 3, title: 'Screening & Assessment', description: 'Multi-stage screening including skill tests, aptitude evaluation and panel interviews.' },
-    { step: 4, title: 'Onboarding Support', description: 'Seamless onboarding assistance to ensure new hires integrate quickly and start contributing from day one.' },
+    { step: 1, title: 'Requirement Analysis', description: 'We work closely with your team to understand business objectives, role requirements, workforce needs and organisational culture.' },
+    { step: 2, title: 'Talent Sourcing', description: 'Targeted sourcing from our network of qualified professionals across niche and high-demand technology and business roles.' },
+    { step: 3, title: 'Screening & Assessment', description: 'Rigorous technical screening and structured candidate assessment for both capability and cultural fit.' },
+    { step: 4, title: 'Onboarding Support', description: 'End-to-end support through offer and onboarding so new hires integrate quickly and contribute from day one.' },
   ],
 }
 

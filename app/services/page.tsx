@@ -144,7 +144,7 @@ export default function ServicesPage() {
           <FadeIn>
             <SectionHeader
               title="Professional Services"
-              description="Talent acquisition, placement support, strategic consulting, and technical assistance to power your workforce goals."
+              description="Recruitment & staffing, placement support, strategic consulting, and technical assistance to power your workforce goals."
               align="left"
             />
           </FadeIn>
