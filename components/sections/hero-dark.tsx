@@ -10,6 +10,9 @@ interface HeroDarkProps {
   ctaText?: string
   ctaHref?: string
   backgroundImage?: string
+  align?: "left" | "center"
+  logoSrc?: string
+  logoAlt?: string
 }
 
 export function HeroDark({
@@ -21,7 +24,11 @@ export function HeroDark({
   ctaText,
   ctaHref,
   backgroundImage,
+  align = "left",
+  logoSrc,
+  logoAlt,
 }: HeroDarkProps) {
+  const centered = align === "center"
   return (
     <section className="relative bg-[#1A1A1A] overflow-hidden bg-pattern">
       {backgroundImage && (
@@ -34,7 +41,18 @@ export function HeroDark({
         />
       )}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
-        <div className="max-w-3xl">
+        <div className={centered ? "max-w-3xl mx-auto text-center" : "max-w-3xl"}>
+          {logoSrc && (
+            <div className={`mb-6 ${centered ? "flex justify-center" : ""}`}>
+              <div className="inline-block bg-white rounded-2xl p-3 shadow-lg">
+                <img
+                  src={logoSrc}
+                  alt={logoAlt || ""}
+                  className="h-16 w-auto block"
+                />
+              </div>
+            </div>
+          )}
           {badgeText && (
             <span
               className={`inline-block ${accentColor} border border-current/30 text-sm font-semibold px-4 py-1.5 rounded-full mb-6 tracking-wide uppercase`}
@@ -64,7 +82,7 @@ export function HeroDark({
         {/* Stats row */}
         {stats && stats.length > 0 && (
           <div className="mt-16 pt-8 border-t border-white/10">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className={`grid grid-cols-2 md:grid-cols-4 gap-8 ${centered ? "text-center" : ""}`}>
               {stats.map((stat) => (
                 <div key={stat.label}>
                   <p className={`text-3xl md:text-4xl font-bold ${accentColor}`}>

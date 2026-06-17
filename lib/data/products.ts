@@ -13,17 +13,17 @@ export interface Product {
 
 export const edudronLms: Product = {
   name: 'EduDron LMS',
-  tagline: 'Learning Management System',
+  tagline: 'AI-powered learning, assessment & placement platform',
   href: '/services/products/edudron-lms',
   description:
-    'Comprehensive learning management platform for educational institutions. EduDron LMS empowers universities and training centres with tools to create, deliver and track learning experiences at scale.',
+    'One AI-powered platform for the entire learner journey — AI-assisted course authoring, proctored exams with instructor or AI evaluation, verified digital credentials, business simulations, psychometric career mapping, deep reports & analytics, and an integrated jobs portal. Seven tailored login types over a single, securely isolated multi-tenant platform.',
   features: [
-    'Course Management',
-    'Student Progress Tracking',
-    'Assessment Tools',
-    'Content Library',
-    'Analytics Dashboard',
-    'Multi-institution Support',
+    'AI-Assisted Course Authoring',
+    'Proctored Exams (Instructor or AI Evaluation)',
+    'Reports & Analytics',
+    'Verified Digital Credentials',
+    'Business Simulations & Career Mapping',
+    'White-Label Multi-Tenancy',
   ],
   cardImage: '/images/cards/edudron-lms-card.png',
 }
