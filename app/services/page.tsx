@@ -104,6 +104,14 @@ export default function ServicesPage() {
                 backgroundImage="/images/cards/clinomic-card.png"
               />
             </StaggerItem>
+            <StaggerItem>
+              <ProgramCard
+                title="Short-Term Courses"
+                description="Industry-aligned certification programs for UG & PG students — 10+ domains, 45-hour structured learning, and verifiable, NEP 2020-aligned credentials."
+                href="/services/education/short-term-courses"
+                icon={<Award className="size-6" />}
+              />
+            </StaggerItem>
           </StaggerChildren>
         </section>
 

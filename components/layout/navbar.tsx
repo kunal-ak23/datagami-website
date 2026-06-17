@@ -32,6 +32,7 @@ const servicesDropdown = [
       { label: "TechLEARN", href: "/services/education/techlearn" },
       { label: "IBM ICE", href: "/services/education/ibm-ice" },
       { label: "Clinomic", href: "/services/education/clinomic" },
+      { label: "Short-Term Courses", href: "/services/education/short-term-courses" },
     ],
   },
   {
