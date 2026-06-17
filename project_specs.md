@@ -130,3 +130,53 @@ None new. (Existing: Prisma/Postgres, NextAuth, Azure Blob.)
 - New page renders at `/services/education/short-term-courses` with all sections, matching site styling in light & dark mode.
 - Linked from the Services dropdown (desktop + mobile) and the `/services` page.
 - `npm run build` / dev compiles with no type or lint errors; page returns HTTP 200.
+
+---
+
+# Done — EduDron LMS page rebuild (merged, PR #2)
+
+---
+
+# Current Task — Rebuild Talent Acquisition into a Recruitment & Staffing service page
+
+## Goal
+Rebuild the thin `/services/hiring/talent-acquisition` page into a full **Recruitment & Staffing
+(Recruitment-as-a-Service / RaaS)** service page from `recruitement services/Datagami Staffing
+Services.docx`. **Same URL** (no broken links). Reposition the label to **"Recruitment & Staffing"**.
+
+## Decisions (confirmed)
+- Keep URL; reposition content + rename the nav label / services card to "Recruitment & Staffing".
+- Stats are **doc-backed only**: 15+ Years Leadership · 8 Industries · 7 Staffing Models · End-to-End. (No invented placement/retention numbers.)
+
+## Location & wiring
+- **File:** `app/services/hiring/talent-acquisition/page.tsx` (rewritten; route unchanged)
+- **Rename label "Talent Acquisition" → "Recruitment & Staffing"** in: `components/layout/navbar.tsx`,
+  `lib/data/services.ts` (talentAcquisition.name), `lib/data/navigation.ts` (footer). The `/services`
+  card uses `services[0].name`, so it updates automatically.
+
+## Reused components / conventions
+`HeroDark` (with stats), `Breadcrumbs`, `SectionHeader`, `CTASection`, `FadeIn`,
+`StaggerChildren/StaggerItem`, glass cards, brand tokens. No images in the folder → reuse an
+existing hero image + icon-based cards (no new screenshots).
+
+## Page sections (from the doc)
+1. **Hero** — "Recruitment & Staffing" / RaaS positioning + 4 doc-backed stats. CTA: Let's Connect.
+2. **Overview** — Recruitment as a Service intro (future-ready teams; 15+ yrs led; tech + cultural fit)
+3. **Staffing Capabilities** — 7 cards: Permanent Hiring · Contract & Temporary · Project-Based ·
+   Executive & Leadership Search · Tech & Digital Talent Acquisition · Talent Sourcing & Assessment ·
+   End-to-End Recruitment Support
+4. **Industries We Hire For** — 8: IT, Life Sciences, Engineering, Professional Services, Government,
+   Accounting & Finance, Telecommunications, Sales
+5. **Technology Domains** — AI, ML, Big Data, Cloud, Cybersecurity, enterprise platforms
+6. **Why Partner With Datagami** — 6 reasons (network, emerging-tech expertise, structured process,
+   multi-industry, cultural fit, experienced leadership)
+7. **Our Process** — refreshed 4-step RaaS flow (Requirement → Source → Assess → Onboard)
+8. **CTA** → Let's Connect
+
+## Data
+Page content inline (FinLEARN/EduDron pattern). Refresh the `talentAcquisition` entry in
+`lib/data/services.ts` (name → "Recruitment & Staffing", RaaS description, process steps). No DB changes.
+
+## "Done" looks like
+Rewritten page renders at `/services/hiring/talent-acquisition` with all sections; nav + footer +
+`/services` card show "Recruitment & Staffing"; light & dark mode consistent; dev compiles clean; HTTP 200.
