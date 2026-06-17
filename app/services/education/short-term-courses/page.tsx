@@ -531,6 +531,7 @@ export default function ShortTermCoursesPage() {
                   src="/images/short-term-courses/sample-certificate.jpg"
                   alt="Sample Datagami Certificate of Completion, co-branded with IBM Gold Partner, featuring a verifiable certificate number and QR code"
                   className="w-full rounded-xl"
+                  loading="lazy"
                 />
                 <figcaption className="text-center text-xs text-muted-brand mt-3 mb-1">
                   Sample certificate — co-branded &amp; QR-verifiable
@@ -600,6 +601,7 @@ export default function ShortTermCoursesPage() {
                 src="/images/short-term-courses/program-in-action.png"
                 alt="Datagami short-term course delivery on campus — classroom training, lectures, and bootcamp sessions"
                 className="w-full rounded-xl object-cover"
+                loading="lazy"
               />
             </div>
           </FadeIn>
@@ -623,6 +625,7 @@ export default function ShortTermCoursesPage() {
                     src={person.image}
                     alt={`LinkedIn testimonial from ${person.name}, ${person.role}`}
                     className="w-full object-contain bg-white"
+                    loading="lazy"
                   />
                   <div className="p-5">
                     <h3 className="text-base font-semibold text-dark">{person.name}</h3>
