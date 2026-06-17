@@ -24,16 +24,68 @@ in `lib/data/*.ts`.
 
 ---
 
-# Current Task — Short-Term Courses page
+# Done — Short-Term Courses page
+Shipped & merged (PR #1): new page at `/services/education/short-term-courses` under
+Services → Programs, with deck content, testimonials, sample certificate, and nav wiring.
+
+---
+
+# Current Task — Rebuild the EduDron LMS page
 
 ## Goal
-Add a new public page dedicated to Datagami's **Short-Term Certification Programs** (for
-universities), linked under the **Services → Programs** navigation heading. Content is sourced
-from `Short term course/Datagami Short Term Course Presentation.pptx`. The page must look and
-feel **uniform** with existing program pages (e.g. FinLEARN).
+**Completely replace** the existing thin EduDron LMS page with a comprehensive, image-rich
+product page that reflects what EduDron actually is: a **multi-tenant, white-label LMS** that
+spans the whole learner journey — content, AI authoring, proctored exams, verified credentials,
+business simulations, psychometric career mapping, and an integrated jobs portal. Content from
+`LMS/EduDron LMS-Deck.pptx`; UI screenshots from the `LMS/` folder. Must stay **uniform** with
+the rest of the site.
+
+## Location
+- **Route/file:** `app/services/products/edudron-lms/page.tsx` → `/services/products/edudron-lms` (existing route, rewritten)
+- Already linked from navbar (Products) and `/services` — no nav change needed.
 
 ## Who uses it
-Universities / faculty evaluating a partnership; prospective students.
+University leadership, corporate L&D, and institutional partners evaluating the platform.
+
+## Images (copied from `LMS/` into `public/images/edudron-lms/`, kebab-cased)
+dashboard · ai-course-generation · job-simulation · leaderboard · psychometric-test ·
+integrated-job-portal (+2) · verified-credentials (+2) · white-label-tenant-1 (+2) ·
+mobile-app · exam-proctoring · logo
+
+## Reused components / conventions
+`HeroDark` (with stats), `Breadcrumbs`, `SectionHeader`, `StatsBar`, `FeatureGrid`,
+`CTASection`, `FAQSection`, `FadeIn`, `StaggerChildren/StaggerItem`, glass cards, brand tokens,
+SoftwareApplication JSON-LD. Screenshots shown in framed "browser" cards.
+
+## Explicitly NOT on this page
+No testimonials. No "Program in Action". No teaching methodology — those belong to the
+short-term *course* page. This is a **product**: lead with capabilities and the roles offered.
+
+## Page sections (from the deck)
+1. **Hero** — "EduDron — one platform, the entire learner journey" + stats: 1 Platform · 7 Login Types · 10× Faster Build · 100% Branded. CTA: **Request a Demo**.
+2. **Executive summary** — intro + admin **dashboard** screenshot
+3. **What makes EduDron different** — 6 alternating image/text showcase rows, each with 3 sub-points + a real screenshot:
+   Business Simulations (job-simulation, leaderboard) · AI-Assisted Authoring (ai-course-generation) ·
+   Psychometric Career Mapping (psychometric-test) · Integrated Jobs Portal (integrated-job-portal) ·
+   Verified Digital Credentials (verified-credentials ×2) · White-Label Multi-Tenancy (white-label-tenant ×2)
+4. **Built for how institutions are organised** — the academic **branching**: Institutes → Classes → Sections → Batches, with bulk import and cohort transfers (NEW, per request)
+5. **Exams & Evaluation** — **proctored exams** (4 proctoring modes, tab-switch/identity), and evaluation that is **instructor-led OR AI-reviewed** (instructor keeps final authority); **exam-proctoring** screenshot (NEW, per request)
+6. **Reports & Analytics** — cross-cutting dashboards, engagement/completion metrics, results export, tamper-evident audit trail (NEW, per request)
+7. **Who uses EduDron** — 7 role cards, each with a 1–2 line description (System Admin, Tenant Admin, Content Manager, Instructor, Support, Student, Employer)
+8. **Mobile & offline** — **mobile-app** screenshot + native app / offline / jobs-portal points
+9. **Platform at scale & security** — scale stats (10,000s learners/tenant, 1,000s concurrent exam, auto-scale) + data-isolation / RBAC / audit / encryption cards
+10. **Premium modules** — grid of 8 opt-in modules (what it delivers · who it's for)
+11. **FAQs** (refreshed) + a prominent **Request a Demo** CTA (also a mid-page demo CTA)
+
+## Data
+Page content defined inline in the page file (FinLEARN pattern). Also refresh the `edudronLms`
+entry in `lib/data/products.ts` (tagline, description, features) so the `/services` product card
+reflects the real product. No DB changes.
+
+## "Done" looks like
+Rewritten page renders at `/services/products/edudron-lms` with all sections + screenshots
+(incl. reports/analytics, academic branching, proctored exams + instructor/AI evaluation),
+matching site styling in light & dark mode; `/services` card updated; dev compiles clean; HTTP 200.
 
 ## Location & navigation
 - **Route/file:** `app/services/education/short-term-courses/page.tsx` → `/services/education/short-term-courses`
