@@ -9,7 +9,6 @@ import {
   Users,
   Briefcase,
   MessageSquare,
-  Wrench,
 } from "lucide-react"
 import { HeroFull } from "@/components/sections/hero-full"
 import Breadcrumbs from "@/components/layout/breadcrumbs"
@@ -144,11 +143,11 @@ export default function ServicesPage() {
           <FadeIn>
             <SectionHeader
               title="Professional Services"
-              description="Recruitment & staffing, placement support, strategic consulting, and technical assistance to power your workforce goals."
+              description="Recruitment & staffing, placement support, and strategic consulting to power your workforce goals."
               align="left"
             />
           </FadeIn>
-          <StaggerChildren className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <StaggerChildren className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             <StaggerItem>
               <ServiceCard
                 title={services[0].name}
@@ -171,14 +170,6 @@ export default function ServicesPage() {
                 description={services[2].description}
                 href={services[2].href}
                 icon={<MessageSquare className="size-6" />}
-              />
-            </StaggerItem>
-            <StaggerItem>
-              <ServiceCard
-                title={services[3].name}
-                description={services[3].description}
-                href={services[3].href}
-                icon={<Wrench className="size-6" />}
               />
             </StaggerItem>
           </StaggerChildren>

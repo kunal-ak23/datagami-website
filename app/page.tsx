@@ -16,7 +16,6 @@ import {
   Briefcase,
   UserCheck,
   MessageSquare,
-  Wrench,
   CheckCircle,
   ArrowRight,
 } from "lucide-react"
@@ -68,7 +67,7 @@ const homeFaqs = [
   },
   {
     question: "What services does Datagami offer?",
-    answer: "Datagami offers education programs (FinLEARN, TechLEARN, IBM ICE, Clinomic), enterprise products (EduDron LMS, Total ERP), and professional services (recruitment & staffing, student placement, strategic consulting, and technical support).",
+    answer: "Datagami offers education programs (FinLEARN, TechLEARN, IBM ICE, Clinomic), enterprise products (EduDron LMS, Total ERP), and professional services (recruitment & staffing, student placement, and strategic consulting).",
   },
   {
     question: "How many universities does Datagami partner with?",
@@ -298,7 +297,7 @@ export default function Home() {
                 Hiring &amp; Other Services
               </h3>
             </FadeIn>
-            <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               <StaggerItem>
                 <ServiceCard
                   title={services[0].name}
@@ -321,14 +320,6 @@ export default function Home() {
                   description={services[2].description}
                   href={services[2].href}
                   icon={<MessageSquare className="size-6" />}
-                />
-              </StaggerItem>
-              <StaggerItem>
-                <ServiceCard
-                  title={services[3].name}
-                  description={services[3].description}
-                  href={services[3].href}
-                  icon={<Wrench className="size-6" />}
                 />
               </StaggerItem>
             </StaggerChildren>
