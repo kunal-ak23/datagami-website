@@ -53,6 +53,13 @@ export const mainNav: NavItem[] = [
       { label: 'Technical Support', href: '/services/hiring/technical-support' },
     ],
   },
+  {
+    label: 'Enterprise Solutions',
+    href: '/services/software/enterprise-solutions',
+    children: [
+      { label: 'Enterprise Software & Digital Solutions', href: '/services/software/enterprise-solutions', description: 'Custom software, infrastructure & AI' },
+    ],
+  },
   { label: 'Case Studies', href: '/case-studies' },
   { label: 'About', href: '/about' },
   { label: 'Contact', href: '/contact' },
