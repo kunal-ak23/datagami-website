@@ -180,3 +180,52 @@ Page content inline (FinLEARN/EduDron pattern). Refresh the `talentAcquisition` 
 ## "Done" looks like
 Rewritten page renders at `/services/hiring/talent-acquisition` with all sections; nav + footer +
 `/services` card show "Recruitment & Staffing"; light & dark mode consistent; dev compiles clean; HTTP 200.
+
+---
+
+# Done — Skill-Based Short-Term Courses (merged, PR #4)
+
+---
+
+# Current Task — Enterprise Software & Digital Solutions page
+
+## Goal
+Add a new **services** page for Datagami LLP's custom software / enterprise engineering arm,
+sourced from `Software services/Datagami_LLP_Capabilities_Deck_3.pptx`. Must stay uniform with
+the rest of the site.
+
+## Decisions (confirmed)
+- Placement: a **new "Enterprise Solutions" group** in the Services dropdown, with **one**
+  comprehensive page.
+- Page title: **"Enterprise Software & Digital Solutions"**. URL: **`/services/software/enterprise-solutions`**.
+
+## Wiring
+- New file: `app/services/software/enterprise-solutions/page.tsx`
+- Add "Enterprise Solutions" group to `components/layout/navbar.tsx` (dropdown grows 3 → 4 columns;
+  widen the panel) and to `lib/data/navigation.ts` (footer).
+- Add a discovery card on `/services` (`app/services/page.tsx`).
+
+## Reused components / conventions
+`HeroDark` (stats, optional align), `Breadcrumbs`, `SectionHeader`, `StatsBar`, `CTASection`,
+`FadeIn`, `StaggerChildren/StaggerItem`, glass cards, brand tokens, Service JSON-LD. No images in
+the folder → existing hero image (`hero-team-innovation.png`) + icon cards (no screenshots).
+
+## Page sections (from the capabilities deck)
+1. **Hero** — "Enterprise Software & Digital Solutions" + "We architect systems — we don't deploy templates" + stats (5,000+ learners · 5+ years · 4 capability pillars · 2 BFSI marquee clients)
+2. **Philosophy** — solution architects, not product resellers (common approach vs Datagami approach)
+3. **Four Capability Pillars** — Custom Enterprise Software · Education Technology · Enterprise Infrastructure · AI & Advanced Analytics
+4. **Custom Software — Case Studies** — OPSY (HRMS) · RentAxis (contract/asset, Dubai) · Trackie (admission intelligence)
+5. **Enterprise Infrastructure** — NOC & SOC services + marquee clients (SBIMF, BDO)
+6. **AI & Advanced Analytics** — 6 capabilities
+7. **Architecture & Design Principles** — modern stack (microservices, multi-tenant, API-first, cloud-native, CI/CD…) + 5 design principles
+8. **Engagement Models** — 5 (Fixed Scope · Dedicated Teams · SaaS Licensing · Managed Services · BOT)
+9. **Delivery Lifecycle** — 7-stage process (Discovery → Operate)
+10. **Governance, Security & Compliance** — audit-ready, NDA-compliant
+11. **Industries Served** — Higher Ed · BFSI · Hospitality/Retail · Institutional · International
+12. **Why Datagami** — 6 differentiators + proof points
+13. **CTA** — Book a consultation
+
+## "Done" looks like
+Page renders at `/services/software/enterprise-solutions` with all sections; linked from the
+Services dropdown (desktop + mobile), footer, and `/services`; light & dark mode consistent;
+dev compiles clean; HTTP 200.

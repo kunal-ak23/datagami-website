@@ -183,6 +183,27 @@ export default function ServicesPage() {
             </StaggerItem>
           </StaggerChildren>
         </section>
+
+        {/* ── Enterprise Solutions ── */}
+        <section id="enterprise-solutions" className="py-16 border-t border-border-custom scroll-mt-24">
+          <FadeIn>
+            <SectionHeader
+              title="Enterprise Solutions"
+              description="Custom software engineering, AI-enabled platforms, and enterprise infrastructure for institutions that demand control."
+              align="left"
+            />
+          </FadeIn>
+          <StaggerChildren className="grid gap-6 sm:grid-cols-2">
+            <StaggerItem>
+              <ServiceCard
+                title="Enterprise Software & Digital Solutions"
+                description="Custom enterprise software, NOC/SOC infrastructure, multi-tenant SaaS, and architecture-level AI — engineered around your workflows, not templates."
+                href="/services/software/enterprise-solutions"
+                icon={<Server className="size-6" />}
+              />
+            </StaggerItem>
+          </StaggerChildren>
+        </section>
       </div>
 
       {/* CTA */}

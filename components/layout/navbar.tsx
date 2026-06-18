@@ -51,6 +51,12 @@ const servicesDropdown = [
       { label: "Technical Support", href: "/services/hiring/technical-support" },
     ],
   },
+  {
+    category: "Enterprise Solutions",
+    items: [
+      { label: "Enterprise Software & Digital Solutions", href: "/services/software/enterprise-solutions" },
+    ],
+  },
 ]
 
 export function Navbar() {
@@ -125,9 +131,9 @@ export function Navbar() {
 
                 {/* Dropdown */}
                 {servicesOpen && (
-                  <div className="absolute left-1/2 top-full -translate-x-1/2 pt-2">
-                    <div className="w-[600px] rounded-lg border border-border-custom bg-surface p-6 shadow-lg">
-                      <div className="grid grid-cols-3 gap-6">
+                  <div className="absolute left-0 top-full pt-2 w-[760px] max-w-[calc(100vw-2rem)]">
+                    <div className="rounded-lg border border-border-custom bg-surface p-6 shadow-lg">
+                      <div className="grid grid-cols-4 gap-x-6 gap-y-6">
                         {servicesDropdown.map((group) => (
                           <div key={group.category}>
                             <h4 className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-brand">
