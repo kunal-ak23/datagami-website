@@ -16,14 +16,14 @@ import { FadeIn } from "@/components/motion/fade-in"
 import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
 
 export const metadata: Metadata = {
-  title: 'Short-Term Certification Programs by Datagami | University Partnerships',
+  title: 'Skill-Based Short-Term Courses by Datagami | UGC & NEP 2020 Aligned',
   description:
     'Industry-aligned short-term certification programs for UG & PG students. 10+ domains, 45-hour structured learning, 3-stage assessment, Train-the-Trainer model, and verifiable, NEP 2020-aligned credentials.',
   alternates: {
     canonical: 'https://datagami.in/services/education/short-term-courses',
   },
   openGraph: {
-    title: 'Short-Term Certification Programs by Datagami | University Partnerships',
+    title: 'Skill-Based Short-Term Courses by Datagami | UGC & NEP 2020 Aligned',
     description:
       'Industry-aligned short-term certification programs for UG & PG students. 10+ domains, 45-hour structured learning, 3-stage assessment, and verifiable, NEP 2020-aligned credentials.',
     images: ['/images/short-term-courses/program-in-action.png'],
@@ -252,10 +252,43 @@ const whyDatagami = [
   },
 ]
 
+const whySkillBased = [
+  {
+    icon: <GraduationCap className="size-8 text-brand" />,
+    title: "NEP 2020 & UGC Aligned",
+    description: "Built around the UGC's 2024 Guidelines for Skill-Based Courses & Micro-Credentials — the official framework realising NEP 2020's shift to holistic, skill-oriented education.",
+  },
+  {
+    icon: <Layers3 className="size-8 text-brand" />,
+    title: "Credit-Linked (NCrF)",
+    description: "Structured for the National Credit Framework, where students can earn up to 50% of their degree credits through skill-based courses — bankable in the Academic Bank of Credits.",
+  },
+  {
+    icon: <Briefcase className="size-8 text-brand" />,
+    title: "Job-Ready Employability",
+    description: "Exactly the outcome the guidelines target: practical, industry-relevant competencies that close skill gaps and make graduates job-ready for a fast-evolving labour market.",
+  },
+  {
+    icon: <Building2 className="size-8 text-brand" />,
+    title: "Industry-Led Delivery",
+    description: "Taught by industry experts with real projects — the academia–industry collaboration model the UGC framework explicitly promotes for up-to-date, hands-on learning.",
+  },
+  {
+    icon: <Award className="size-8 text-brand" />,
+    title: "Stackable Micro-Credentials",
+    description: "Short-term, targeted and stackable — supporting the lifelong-learning, upskilling and reskilling pathways at the heart of the micro-credential model.",
+  },
+  {
+    icon: <FileCheck className="size-8 text-brand" />,
+    title: "Recognised & Verifiable",
+    description: "Verifiable certification aligned to national frameworks (NCrF / NSQF level 4.5+), giving credits genuine recognition and mobility — and strengthening every student's placement profile.",
+  },
+]
+
 const courseSchema = generateCourseSchema({
-  name: "Short-Term Certification Programs by Datagami",
+  name: "Skill-Based Short-Term Courses by Datagami",
   description:
-    "Industry-aligned short-term certification programs for UG & PG students across 10+ domains, with a 3-stage assessment framework and verifiable, NEP 2020-aligned credentials.",
+    "UGC & NEP 2020-aligned, credit-linked skill-based short-term courses for UG & PG students across 10+ domains, with a 3-stage assessment framework and verifiable credentials.",
   duration: "PT45H",
   url: "/services/education/short-term-courses",
 })
@@ -275,15 +308,15 @@ export default function ShortTermCoursesPage() {
             { label: "Home", href: "/" },
             { label: "Services", href: "/services" },
             { label: "Education", href: "/services#education" },
-            { label: "Short-Term Courses" },
+            { label: "Skill-Based Short-Term Courses" },
           ]}
         />
       </div>
 
       {/* Hero */}
       <HeroDark
-        heading="Short-Term Certification Programs"
-        subtitle="Industry-aligned, applied certification programs for undergraduate and postgraduate students — layered on top of your curriculum to produce career-ready graduates with verifiable credentials."
+        heading="Skill-Based Short-Term Courses"
+        subtitle="UGC & NEP 2020-aligned, credit-linked skill-based courses for undergraduate and postgraduate students — layered on top of your curriculum to produce career-ready graduates with verifiable credentials."
         accentColor="text-brand"
         badgeText="University Partnership Proposal"
         stats={heroStats}
@@ -291,6 +324,36 @@ export default function ShortTermCoursesPage() {
         ctaHref="/contact"
         backgroundImage="/images/hero/hero-students-collaborating.png"
       />
+
+      {/* Why Take Datagami's Skill-Based Short-Term Courses (UGC-aligned) */}
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <SectionHeader
+              title="Why Take Datagami's Skill-Based Short-Term Courses"
+              description="Our programs are built to the University Grants Commission's 2024 Guidelines for Skill-Based Courses & Micro-Credentials — so the skills students gain come with real academic recognition."
+            />
+          </FadeIn>
+          <StaggerChildren className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {whySkillBased.map((item) => (
+              <StaggerItem key={item.title}>
+                <div className="glass-card dark:liquid-glass rounded-xl p-6 hover:shadow-brand-md transition-all h-full">
+                  <div className="w-14 h-14 rounded-xl bg-brand/10 flex items-center justify-center mb-4">
+                    {item.icon}
+                  </div>
+                  <h3 className="text-lg font-semibold text-dark mb-2">{item.title}</h3>
+                  <p className="text-sm text-muted-brand">{item.description}</p>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerChildren>
+          <FadeIn>
+            <p className="text-center text-xs text-muted-brand mt-8 max-w-3xl mx-auto">
+              Aligned with the UGC &ldquo;Guidelines for the Introduction of Skill-Based Courses and Micro-Credentials in HEIs&rdquo; (5 November 2024) and the National Education Policy 2020.
+            </p>
+          </FadeIn>
+        </div>
+      </section>
 
       {/* The Gap */}
       <section className="py-16">

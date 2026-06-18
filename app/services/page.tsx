@@ -106,8 +106,8 @@ export default function ServicesPage() {
             </StaggerItem>
             <StaggerItem>
               <ProgramCard
-                title="Short-Term Courses"
-                description="Industry-aligned certification programs for UG & PG students — 10+ domains, 45-hour structured learning, and verifiable, NEP 2020-aligned credentials."
+                title="Skill-Based Short-Term Courses"
+                description="UGC & NEP 2020-aligned, credit-linked skill-based courses for UG & PG students — 10+ domains, 45-hour structured learning, and verifiable credentials."
                 href="/services/education/short-term-courses"
                 icon={<Award className="size-6" />}
               />
