@@ -48,7 +48,6 @@ const servicesDropdown = [
       { label: "Recruitment & Staffing", href: "/services/hiring/talent-acquisition" },
       { label: "Student Placement", href: "/services/hiring/student-placement" },
       { label: "Consulting", href: "/services/hiring/consulting" },
-      { label: "Technical Support", href: "/services/hiring/technical-support" },
     ],
   },
   {

@@ -54,22 +54,8 @@ export const strategicConsulting: Service = {
   ],
 }
 
-export const technicalSupport: Service = {
-  name: 'Technical Support',
-  href: '/services/hiring/technical-support',
-  description:
-    'Reliable technical support services for institutions running Datagami products and programs. Our support team ensures minimal downtime and smooth operation of LMS platforms, ERP systems and training infrastructure.',
-  processSteps: [
-    { step: 1, title: 'Issue Reporting', description: 'Submit a support ticket through our portal, email or dedicated helpline for immediate acknowledgment.' },
-    { step: 2, title: 'Diagnosis', description: 'Our technical team investigates the issue and identifies the root cause within defined SLA timelines.' },
-    { step: 3, title: 'Resolution', description: 'Fixes are implemented, tested and deployed. You are kept informed at every stage of the process.' },
-    { step: 4, title: 'Follow-up', description: 'Post-resolution check-in to confirm the issue is fully resolved and capture lessons learned for prevention.' },
-  ],
-}
-
 export const services = [
   talentAcquisition,
   studentPlacement,
   strategicConsulting,
-  technicalSupport,
 ] as const
