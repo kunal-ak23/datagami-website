@@ -254,42 +254,12 @@ export const techlearn: TechLEARNProgram = {
       description:
         'Master cloud platforms and AI-driven infrastructure management across AWS, Azure and Google Cloud.',
     },
-    {
-      name: 'Metaverse',
-      duration: '11 months',
-      modules: 6,
-      href: '/services/education/techlearn/metaverse',
-      accentColor: 'metaverse',
-      skills: ['3D Design', 'XR', 'Animation', 'Motion Graphics', 'VFX', 'UI/UX'],
-      description:
-        'Create immersive experiences with 3D design, extended reality and motion graphics for the metaverse.',
-    },
-    {
-      name: 'Blockchain',
-      duration: '6 months',
-      modules: 5,
-      href: '/services/education/techlearn/blockchain',
-      accentColor: 'blockchain',
-      skills: ['Solidity', 'Smart Contracts', 'DApps', 'Web3'],
-      description:
-        'Build decentralized applications and smart contracts on leading blockchain platforms.',
-    },
-    {
-      name: 'Chip Design',
-      duration: '12 months',
-      modules: 4,
-      href: '/services/education/techlearn/chip-design',
-      accentColor: 'chipdesign',
-      skills: ['VLSI', 'FPGA', 'C/C++', 'EDA Tools'],
-      description:
-        'Design and verify semiconductor chips using industry-standard VLSI and FPGA workflows.',
-    },
   ],
   faqs: [
     {
       question: 'Do I need prior programming experience to join TechLEARN?',
       answer:
-        'Not necessarily. While some tracks (e.g., Blockchain, Chip Design) benefit from programming basics, each program starts with foundational modules that bring all students up to speed.',
+        'Not necessarily. Each specialisation starts with foundational modules — Linux, programming and networking basics — that bring all students up to speed before the advanced cloud, security, AI and data topics.',
     },
     {
       question: 'Are TechLEARN certifications industry-recognized?',
@@ -302,9 +272,9 @@ export const techlearn: TechLEARNProgram = {
         'Every TechLEARN student receives resume building workshops, mock interviews, and access to our hiring partner network. Internship opportunities are integrated into longer programs.',
     },
     {
-      question: 'Can I take more than one TechLEARN track?',
+      question: 'Can these specialisations be integrated into any degree?',
       answer:
-        'Yes, students who complete one track can enroll in additional tracks at a discounted fee. Many students combine Cloud Computing with Blockchain for a well-rounded skill set.',
+        'Yes. Each TechLEARN specialisation is designed to be embedded into any IT-related degree — BSc, BCA, B.Tech, MCA or similar — as an integrated, credit-aligned track, or taken as a standalone program.',
     },
     {
       question: 'What is the mode of delivery for TechLEARN programs?',

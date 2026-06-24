@@ -4,7 +4,6 @@ import { HeroDark } from "@/components/sections/hero-dark"
 import { SectionHeader } from "@/components/sections/section-header"
 import { FAQSection } from "@/components/sections/faq-section"
 import { CTASection } from "@/components/sections/cta-section"
-import { techlearn } from "@/lib/data/programs"
 import { generateCourseSchema } from "@/lib/schemas/course"
 import { Briefcase } from "lucide-react"
 import { SkillTicker } from "@/components/sections/skill-ticker"
@@ -12,7 +11,16 @@ import { SkillTicker } from "@/components/sections/skill-ticker"
 import { FadeIn } from "@/components/motion/fade-in"
 import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
 
-const track = techlearn.tracks.find((t) => t.accentColor === "metaverse")!
+const track = {
+  name: 'Chip Design',
+  duration: '12 months',
+  modules: 4,
+  href: '/services/education/techlearn/chip-design',
+  accentColor: 'chipdesign',
+  skills: ['VLSI', 'FPGA', 'C/C++', 'EDA Tools'],
+  description:
+    'Design and verify semiconductor chips using industry-standard VLSI and FPGA workflows.',
+}
 
 export const metadata: Metadata = {
   title: `${track.name} - TechLEARN`,
@@ -27,21 +35,19 @@ const courseSchema = generateCourseSchema({
 })
 
 const modules = [
-  { name: "3D Design & Modeling", description: "Master Blender and Maya for creating 3D assets, environments, and characters for immersive experiences." },
-  { name: "Extended Reality (XR)", description: "Build AR, VR, and MR applications using Unity and Unreal Engine for interactive virtual worlds." },
-  { name: "Animation", description: "Learn 2D and 3D animation principles, rigging, keyframing, and character animation workflows." },
-  { name: "Motion Graphics", description: "Create dynamic motion graphics using After Effects, Cinema 4D, and procedural techniques." },
-  { name: "Visual Effects (VFX)", description: "Compositing, particle systems, simulations, and post-production pipelines for film and interactive media." },
-  { name: "UI/UX for Immersive Media", description: "Design spatial interfaces and user experiences for VR, AR, and metaverse platforms." },
+  { name: "Digital Electronics & C/C++ Programming", description: "Logic design fundamentals, combinational and sequential circuits, and C/C++ programming for embedded systems." },
+  { name: "VLSI Design & Verification", description: "RTL design with Verilog/SystemVerilog, simulation, synthesis, and functional verification methodologies." },
+  { name: "FPGA Design & Prototyping", description: "FPGA architecture, Xilinx/Intel tools, IP integration, and hardware prototyping workflows." },
+  { name: "EDA Tools & Tape-Out Flow", description: "Industry-standard EDA tools (Cadence, Synopsys), physical design, timing closure, and the chip tape-out process." },
 ]
 
 const careerOutcomes = [
-  { title: "XR Developer", description: "Build virtual and augmented reality experiences for entertainment, education, and enterprise." },
-  { title: "3D Artist / Motion Designer", description: "Create high-quality 3D assets and motion graphics for studios and agencies." },
-  { title: "Metaverse Experience Designer", description: "Design and prototype immersive environments for the next generation of digital interaction." },
+  { title: "VLSI Design Engineer", description: "Design and verify digital circuits for semiconductor companies and fabless design houses." },
+  { title: "FPGA Engineer", description: "Develop and optimize FPGA-based solutions for defense, telecom, and embedded systems." },
+  { title: "Physical Design / DFT Engineer", description: "Handle chip layout, timing analysis, and design-for-test in the semiconductor tape-out flow." },
 ]
 
-export default function MetaversePage() {
+export default function ChipDesignPage() {
   return (
     <>
       <script
@@ -57,7 +63,7 @@ export default function MetaversePage() {
             { label: "Services", href: "/services" },
             { label: "Education", href: "/services#education" },
             { label: "TechLEARN", href: "/services/education/techlearn" },
-            { label: "Metaverse" },
+            { label: "Chip Design" },
           ]}
         />
       </div>
@@ -78,10 +84,10 @@ export default function MetaversePage() {
           <FadeIn>
             <SectionHeader
               title="Module Breakdown"
-              description={`${track.modules} modules spanning creative design and immersive technology.`}
+              description={`${track.modules} intensive modules covering the complete semiconductor design pipeline.`}
             />
           </FadeIn>
-          <StaggerChildren className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <StaggerChildren className="grid sm:grid-cols-2 gap-6">
             {modules.map((mod, i) => (
               <StaggerItem key={mod.name}>
                 <div
@@ -111,11 +117,11 @@ export default function MetaversePage() {
           <FadeIn>
             <SectionHeader
               title="Skills You Will Gain"
-              description="Creative and technical skills for the immersive media industry."
+              description="Core semiconductor and hardware design competencies."
             />
           </FadeIn>
           <FadeIn delay={0.2}>
-            <SkillTicker skills={[...(track.skills || []), "Blender", "Unity", "Unreal Engine", "After Effects", "Cinema 4D", "Spatial Design"]} />
+            <SkillTicker skills={[...(track.skills || []), "Verilog", "SystemVerilog", "Cadence", "Synopsys", "Timing Analysis", "RTL Design"]} />
           </FadeIn>
         </div>
       </section>
@@ -157,9 +163,9 @@ export default function MetaversePage() {
       {/* CTA */}
       <FadeIn>
         <CTASection
-          title="Create the Future of XR"
-          description="Enroll in the Metaverse track and become a creator of immersive digital experiences."
-          buttonText="Join the Program"
+          title="Design the Next Generation of Chips"
+          description="Enroll in the Chip Design track and enter the booming semiconductor industry."
+          buttonText="Apply Now"
           buttonHref="/contact"
           variant="dark"
         />

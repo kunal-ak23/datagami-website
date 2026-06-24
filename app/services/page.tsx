@@ -78,7 +78,7 @@ export default function ServicesPage() {
             <StaggerItem>
               <ProgramCard
                 title={programs.techlearn.name}
-                description={programs.techlearn.tagline + " — Hands-on training in Cloud Computing, Metaverse, Blockchain, and Chip Design."}
+                description={programs.techlearn.tagline + " — Integrated specialisations in Cloud & Cyber Security, AI & Financial Engineering, and AI & Data Science, plus short-term courses."}
                 href={programs.techlearn.href}
                 icon={<Monitor className="size-6" />}
                 backgroundImage="/images/cards/techlearn-card.png"
