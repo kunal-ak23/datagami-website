@@ -4,7 +4,6 @@ import { HeroDark } from "@/components/sections/hero-dark"
 import { SectionHeader } from "@/components/sections/section-header"
 import { FAQSection } from "@/components/sections/faq-section"
 import { CTASection } from "@/components/sections/cta-section"
-import { techlearn } from "@/lib/data/programs"
 import { generateCourseSchema } from "@/lib/schemas/course"
 import { Briefcase } from "lucide-react"
 import { SkillTicker } from "@/components/sections/skill-ticker"
@@ -12,7 +11,16 @@ import { SkillTicker } from "@/components/sections/skill-ticker"
 import { FadeIn } from "@/components/motion/fade-in"
 import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
 
-const track = techlearn.tracks.find((t) => t.accentColor === "blockchain")!
+const track = {
+  name: 'Metaverse',
+  duration: '11 months',
+  modules: 6,
+  href: '/services/education/techlearn/metaverse',
+  accentColor: 'metaverse',
+  skills: ['3D Design', 'XR', 'Animation', 'Motion Graphics', 'VFX', 'UI/UX'],
+  description:
+    'Create immersive experiences with 3D design, extended reality and motion graphics for the metaverse.',
+}
 
 export const metadata: Metadata = {
   title: `${track.name} - TechLEARN`,
@@ -27,20 +35,21 @@ const courseSchema = generateCourseSchema({
 })
 
 const modules = [
-  { name: "Blockchain Fundamentals", description: "Distributed ledger technology, consensus mechanisms, cryptography, and blockchain architecture." },
-  { name: "Solidity & Smart Contracts", description: "Write, test, and deploy smart contracts on Ethereum using Solidity, Hardhat, and Remix." },
-  { name: "Decentralized Applications (DApps)", description: "Build full-stack DApps with Web3.js, Ethers.js, and frontend frameworks." },
-  { name: "Web3 & DeFi Ecosystem", description: "Explore DeFi protocols, tokenomics, NFTs, DAOs, and the broader Web3 landscape." },
-  { name: "Capstone Project", description: "Design and deploy a real-world blockchain solution from ideation to mainnet." },
+  { name: "3D Design & Modeling", description: "Master Blender and Maya for creating 3D assets, environments, and characters for immersive experiences." },
+  { name: "Extended Reality (XR)", description: "Build AR, VR, and MR applications using Unity and Unreal Engine for interactive virtual worlds." },
+  { name: "Animation", description: "Learn 2D and 3D animation principles, rigging, keyframing, and character animation workflows." },
+  { name: "Motion Graphics", description: "Create dynamic motion graphics using After Effects, Cinema 4D, and procedural techniques." },
+  { name: "Visual Effects (VFX)", description: "Compositing, particle systems, simulations, and post-production pipelines for film and interactive media." },
+  { name: "UI/UX for Immersive Media", description: "Design spatial interfaces and user experiences for VR, AR, and metaverse platforms." },
 ]
 
 const careerOutcomes = [
-  { title: "Blockchain Developer", description: "Build smart contracts and decentralized applications for Web3 startups and enterprises." },
-  { title: "Web3 Full-Stack Engineer", description: "Develop end-to-end decentralized solutions combining on-chain and off-chain components." },
-  { title: "DeFi / Smart Contract Auditor", description: "Analyze and audit smart contracts for security vulnerabilities in the DeFi ecosystem." },
+  { title: "XR Developer", description: "Build virtual and augmented reality experiences for entertainment, education, and enterprise." },
+  { title: "3D Artist / Motion Designer", description: "Create high-quality 3D assets and motion graphics for studios and agencies." },
+  { title: "Metaverse Experience Designer", description: "Design and prototype immersive environments for the next generation of digital interaction." },
 ]
 
-export default function BlockchainPage() {
+export default function MetaversePage() {
   return (
     <>
       <script
@@ -56,7 +65,7 @@ export default function BlockchainPage() {
             { label: "Services", href: "/services" },
             { label: "Education", href: "/services#education" },
             { label: "TechLEARN", href: "/services/education/techlearn" },
-            { label: "Blockchain" },
+            { label: "Metaverse" },
           ]}
         />
       </div>
@@ -77,7 +86,7 @@ export default function BlockchainPage() {
           <FadeIn>
             <SectionHeader
               title="Module Breakdown"
-              description={`${track.modules} focused modules from blockchain basics to production DApps.`}
+              description={`${track.modules} modules spanning creative design and immersive technology.`}
             />
           </FadeIn>
           <StaggerChildren className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -110,11 +119,11 @@ export default function BlockchainPage() {
           <FadeIn>
             <SectionHeader
               title="Skills You Will Gain"
-              description="In-demand blockchain and Web3 development skills."
+              description="Creative and technical skills for the immersive media industry."
             />
           </FadeIn>
           <FadeIn delay={0.2}>
-            <SkillTicker skills={[...(track.skills || []), "Ethereum", "Hardhat", "Ethers.js", "IPFS", "Tokenomics", "NFTs"]} />
+            <SkillTicker skills={[...(track.skills || []), "Blender", "Unity", "Unreal Engine", "After Effects", "Cinema 4D", "Spatial Design"]} />
           </FadeIn>
         </div>
       </section>
@@ -156,9 +165,9 @@ export default function BlockchainPage() {
       {/* CTA */}
       <FadeIn>
         <CTASection
-          title="Build on the Blockchain"
-          description="Enroll in the Blockchain track and become a Web3 developer in 6 months."
-          buttonText="Get Started"
+          title="Create the Future of XR"
+          description="Enroll in the Metaverse track and become a creator of immersive digital experiences."
+          buttonText="Join the Program"
           buttonHref="/contact"
           variant="dark"
         />

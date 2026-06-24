@@ -4,7 +4,6 @@ import { HeroDark } from "@/components/sections/hero-dark"
 import { SectionHeader } from "@/components/sections/section-header"
 import { FAQSection } from "@/components/sections/faq-section"
 import { CTASection } from "@/components/sections/cta-section"
-import { techlearn } from "@/lib/data/programs"
 import { generateCourseSchema } from "@/lib/schemas/course"
 import { Briefcase } from "lucide-react"
 import { SkillTicker } from "@/components/sections/skill-ticker"
@@ -12,7 +11,16 @@ import { SkillTicker } from "@/components/sections/skill-ticker"
 import { FadeIn } from "@/components/motion/fade-in"
 import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
 
-const track = techlearn.tracks.find((t) => t.accentColor === "chipdesign")!
+const track = {
+  name: 'Blockchain',
+  duration: '6 months',
+  modules: 5,
+  href: '/services/education/techlearn/blockchain',
+  accentColor: 'blockchain',
+  skills: ['Solidity', 'Smart Contracts', 'DApps', 'Web3'],
+  description:
+    'Build decentralized applications and smart contracts on leading blockchain platforms.',
+}
 
 export const metadata: Metadata = {
   title: `${track.name} - TechLEARN`,
@@ -27,19 +35,20 @@ const courseSchema = generateCourseSchema({
 })
 
 const modules = [
-  { name: "Digital Electronics & C/C++ Programming", description: "Logic design fundamentals, combinational and sequential circuits, and C/C++ programming for embedded systems." },
-  { name: "VLSI Design & Verification", description: "RTL design with Verilog/SystemVerilog, simulation, synthesis, and functional verification methodologies." },
-  { name: "FPGA Design & Prototyping", description: "FPGA architecture, Xilinx/Intel tools, IP integration, and hardware prototyping workflows." },
-  { name: "EDA Tools & Tape-Out Flow", description: "Industry-standard EDA tools (Cadence, Synopsys), physical design, timing closure, and the chip tape-out process." },
+  { name: "Blockchain Fundamentals", description: "Distributed ledger technology, consensus mechanisms, cryptography, and blockchain architecture." },
+  { name: "Solidity & Smart Contracts", description: "Write, test, and deploy smart contracts on Ethereum using Solidity, Hardhat, and Remix." },
+  { name: "Decentralized Applications (DApps)", description: "Build full-stack DApps with Web3.js, Ethers.js, and frontend frameworks." },
+  { name: "Web3 & DeFi Ecosystem", description: "Explore DeFi protocols, tokenomics, NFTs, DAOs, and the broader Web3 landscape." },
+  { name: "Capstone Project", description: "Design and deploy a real-world blockchain solution from ideation to mainnet." },
 ]
 
 const careerOutcomes = [
-  { title: "VLSI Design Engineer", description: "Design and verify digital circuits for semiconductor companies and fabless design houses." },
-  { title: "FPGA Engineer", description: "Develop and optimize FPGA-based solutions for defense, telecom, and embedded systems." },
-  { title: "Physical Design / DFT Engineer", description: "Handle chip layout, timing analysis, and design-for-test in the semiconductor tape-out flow." },
+  { title: "Blockchain Developer", description: "Build smart contracts and decentralized applications for Web3 startups and enterprises." },
+  { title: "Web3 Full-Stack Engineer", description: "Develop end-to-end decentralized solutions combining on-chain and off-chain components." },
+  { title: "DeFi / Smart Contract Auditor", description: "Analyze and audit smart contracts for security vulnerabilities in the DeFi ecosystem." },
 ]
 
-export default function ChipDesignPage() {
+export default function BlockchainPage() {
   return (
     <>
       <script
@@ -55,7 +64,7 @@ export default function ChipDesignPage() {
             { label: "Services", href: "/services" },
             { label: "Education", href: "/services#education" },
             { label: "TechLEARN", href: "/services/education/techlearn" },
-            { label: "Chip Design" },
+            { label: "Blockchain" },
           ]}
         />
       </div>
@@ -76,10 +85,10 @@ export default function ChipDesignPage() {
           <FadeIn>
             <SectionHeader
               title="Module Breakdown"
-              description={`${track.modules} intensive modules covering the complete semiconductor design pipeline.`}
+              description={`${track.modules} focused modules from blockchain basics to production DApps.`}
             />
           </FadeIn>
-          <StaggerChildren className="grid sm:grid-cols-2 gap-6">
+          <StaggerChildren className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {modules.map((mod, i) => (
               <StaggerItem key={mod.name}>
                 <div
@@ -109,11 +118,11 @@ export default function ChipDesignPage() {
           <FadeIn>
             <SectionHeader
               title="Skills You Will Gain"
-              description="Core semiconductor and hardware design competencies."
+              description="In-demand blockchain and Web3 development skills."
             />
           </FadeIn>
           <FadeIn delay={0.2}>
-            <SkillTicker skills={[...(track.skills || []), "Verilog", "SystemVerilog", "Cadence", "Synopsys", "Timing Analysis", "RTL Design"]} />
+            <SkillTicker skills={[...(track.skills || []), "Ethereum", "Hardhat", "Ethers.js", "IPFS", "Tokenomics", "NFTs"]} />
           </FadeIn>
         </div>
       </section>
@@ -155,9 +164,9 @@ export default function ChipDesignPage() {
       {/* CTA */}
       <FadeIn>
         <CTASection
-          title="Design the Next Generation of Chips"
-          description="Enroll in the Chip Design track and enter the booming semiconductor industry."
-          buttonText="Apply Now"
+          title="Build on the Blockchain"
+          description="Enroll in the Blockchain track and become a Web3 developer in 6 months."
+          buttonText="Get Started"
           buttonHref="/contact"
           variant="dark"
         />
