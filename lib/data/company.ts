@@ -57,11 +57,6 @@ export const company: CompanyData = {
       address:
         '309, Crescent Business Square, Khairani Rd, Saki Naka, Mumbai, Maharashtra 400072',
     },
-    {
-      city: 'Bengaluru',
-      address:
-        '191, 2nd Floor, Appanna Building, K V Byregowda Circle, Jakkuru, Bengaluru, Karnataka 560064',
-    },
   ],
   stats: {
     partnerUniversities: '50+',

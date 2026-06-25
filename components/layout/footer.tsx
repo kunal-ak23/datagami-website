@@ -126,11 +126,6 @@ export function Footer() {
                 309, Crescent Business Square, Khairani Rd, Saki Naka, Mumbai, Maharashtra
                 400072
               </p>
-              <p>
-                <span className="block text-white font-medium">Bengaluru Office</span>
-                191, 2nd Floor, Appanna Building, K V Byregowda Circle, Jakkuru, Bengaluru,
-                Karnataka 560064
-              </p>
             </div>
           </div>
         </div>

@@ -19,14 +19,14 @@ import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-childr
 import { OfficeMap } from "@/components/sections/office-map"
 
 export const metadata: Metadata = {
-  title: 'Contact Datagami - Mumbai & Bengaluru Offices',
-  description: 'Get in touch with Datagami for education programs, enterprise products, and consulting services. Offices in Mumbai and Bengaluru. Response within 24 hours.',
+  title: 'Contact Datagami - Mumbai Office',
+  description: 'Get in touch with Datagami for education programs, enterprise products, and consulting services. Office in Mumbai. Response within 24 hours.',
   alternates: {
     canonical: 'https://datagami.in/contact',
   },
   openGraph: {
-    title: 'Contact Datagami - Mumbai & Bengaluru Offices',
-    description: 'Get in touch with Datagami for education programs, enterprise products, and consulting services. Offices in Mumbai and Bengaluru. Response within 24 hours.',
+    title: 'Contact Datagami - Mumbai Office',
+    description: 'Get in touch with Datagami for education programs, enterprise products, and consulting services. Office in Mumbai. Response within 24 hours.',
     images: ['/images/hero/hero-students-collaborating.png'],
   },
 }
@@ -52,7 +52,7 @@ const processSteps = [
 const contactFaqs = [
   {
     question: "How can I contact Datagami?",
-    answer: "You can email us at query@datagami.in, call +91 97029 34397 or +91 77381 70621 (Monday to Friday, 9 AM – 6 PM IST), or visit our offices in Mumbai or Bengaluru.",
+    answer: "You can email us at query@datagami.in, call +91 97029 34397 or +91 77381 70621 (Monday to Friday, 9 AM – 6 PM IST), or visit our office in Mumbai.",
   },
   {
     question: "What is the response time for inquiries?",

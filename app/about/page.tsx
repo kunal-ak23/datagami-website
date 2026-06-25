@@ -13,13 +13,13 @@ import { allPartners } from "@/lib/data/partners"
 
 export const metadata: Metadata = {
   title: 'About Datagami - EdTech Company Transforming Higher Education Since 2019',
-  description: 'Datagami Technology Services — pioneering B2B education technology company with offices in Mumbai and Bengaluru. 50+ partner universities, 10K+ students impacted.',
+  description: 'Datagami Technology Services — pioneering B2B education technology company based in Mumbai. 50+ partner universities, 10K+ students impacted.',
   alternates: {
     canonical: 'https://datagami.in/about',
   },
   openGraph: {
     title: 'About Datagami - EdTech Company Transforming Higher Education Since 2019',
-    description: 'Datagami Technology Services — pioneering B2B education technology company with offices in Mumbai and Bengaluru. 50+ partner universities, 10K+ students impacted.',
+    description: 'Datagami Technology Services — pioneering B2B education technology company based in Mumbai. 50+ partner universities, 10K+ students impacted.',
     images: ['/images/hero/hero-about.png'],
   },
 }
@@ -49,7 +49,7 @@ const aboutFaqs = [
   },
   {
     question: "Where are Datagami's offices located?",
-    answer: "Datagami has offices in Mumbai (309, Crescent Business Square, Saki Naka) and Bengaluru (191, Appanna Building, Jakkuru), serving universities and businesses across India.",
+    answer: "Datagami's office is in Mumbai (309, Crescent Business Square, Saki Naka), serving universities and businesses across India.",
   },
   {
     question: "What is Datagami's mission?",

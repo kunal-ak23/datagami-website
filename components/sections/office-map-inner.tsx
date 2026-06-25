@@ -11,14 +11,9 @@ const offices = [
     position: [19.076, 72.8777] as [number, number],
     address: '309, Crescent Business Square, Khairani Rd, Saki Naka, Mumbai 400072',
   },
-  {
-    name: 'Bengaluru Office',
-    position: [13.065, 77.597] as [number, number],
-    address: '191, 2nd Floor, Appanna Building, Jakkuru, Bengaluru 560064',
-  },
 ]
 
-const center: [number, number] = [16.07, 75.23]
+const center: [number, number] = [19.076, 72.8777]
 
 export default function OfficeMapInner() {
   useEffect(() => {
@@ -33,7 +28,7 @@ export default function OfficeMapInner() {
   return (
     <MapContainer
       center={center}
-      zoom={5}
+      zoom={11}
       className="h-80 rounded-xl z-0"
       scrollWheelZoom={false}
     >
