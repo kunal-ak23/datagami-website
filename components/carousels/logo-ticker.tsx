@@ -14,7 +14,7 @@ export function LogoTicker({ logos }: LogoTickerProps) {
         {allLogos.map((logo, i) => (
           <div
             key={i}
-            className="flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300"
+            className="flex-shrink-0 transition-all duration-300"
           >
             {logo.src ? (
               <div className="glass-card dark:liquid-glass rounded-xl p-4 min-w-[140px] flex flex-col items-center justify-center gap-2 hover:shadow-md transition-shadow">

@@ -12,7 +12,6 @@ import { FAQSection } from "@/components/sections/faq-section"
 import { ProgramCard } from "@/components/cards/program-card"
 import { LogoTicker } from "@/components/carousels/logo-ticker"
 import { IndustriesGrid } from "@/components/sections/industries-grid"
-import { TestimonialCarousel } from "@/components/sections/testimonial-carousel"
 import { Counter } from "@/components/motion/counter"
 
 import { company } from "@/lib/data/company"
@@ -21,8 +20,6 @@ import { websiteSchema } from "@/lib/schemas/website"
 
 import { FadeIn } from "@/components/motion/fade-in"
 import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
-
-export const dynamic = "force-dynamic"
 
 export const metadata: Metadata = {
   title: "Datagami - Education Programs, Learning Platform, Talent & Enterprise Software",
@@ -446,10 +443,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 9. Testimonials */}
-      <TestimonialCarousel />
-
-      {/* 10. FAQs */}
+      {/* 9. FAQs */}
       <FadeIn>
         <FAQSection faqs={homeFaqs} />
       </FadeIn>
