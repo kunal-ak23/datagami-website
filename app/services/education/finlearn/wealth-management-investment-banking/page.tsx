@@ -170,7 +170,7 @@ export default function WealthManagementIBPage() {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
-            <SectionHeader title="What you'll master" description="Four pillars spanning advisory, markets, portfolios and the regulatory discipline behind professional finance." />
+            <SectionHeader title="What students will master" description="Four pillars spanning advisory, markets, portfolios and the regulatory discipline behind professional finance." />
           </FadeIn>
           <StaggerChildren className="grid sm:grid-cols-2 gap-6">
             {focusAreas.map((f) => (
@@ -299,7 +299,7 @@ export default function WealthManagementIBPage() {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
-            <SectionHeader title="Your career path" description="Where this program can take you over the years — from your first analyst role to senior and leadership positions." />
+            <SectionHeader title="Career path" description="Where this program can take students over the years — from their first analyst role to senior and leadership positions." />
           </FadeIn>
           <StaggerChildren className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {careerPath.map((s, i) => (
