@@ -289,7 +289,7 @@ export default function FinLEARNPage() {
           </FadeIn>
           <StaggerChildren className="grid md:grid-cols-3 gap-8">
             <StaggerItem>
-              <div className="glass-card dark:liquid-glass rounded-xl p-8 hover:shadow-brand-md transition-all text-center">
+              <div className="glass-card dark:liquid-glass rounded-xl p-8 hover:shadow-brand-md transition-all text-center h-full">
                 <div className="w-14 h-14 rounded-xl bg-brand/10 flex items-center justify-center mx-auto mb-4">
                   <GraduationCap className="size-7 text-brand" />
                 </div>
@@ -301,7 +301,7 @@ export default function FinLEARNPage() {
               </div>
             </StaggerItem>
             <StaggerItem>
-              <div className="glass-card dark:liquid-glass rounded-xl p-8 hover:shadow-brand-md transition-all text-center">
+              <div className="glass-card dark:liquid-glass rounded-xl p-8 hover:shadow-brand-md transition-all text-center h-full">
                 <div className="w-14 h-14 rounded-xl bg-brand/10 flex items-center justify-center mx-auto mb-4">
                   <BookOpen className="size-7 text-brand" />
                 </div>
@@ -313,7 +313,7 @@ export default function FinLEARNPage() {
               </div>
             </StaggerItem>
             <StaggerItem>
-              <div className="glass-card dark:liquid-glass rounded-xl p-8 hover:shadow-brand-md transition-all text-center">
+              <div className="glass-card dark:liquid-glass rounded-xl p-8 hover:shadow-brand-md transition-all text-center h-full">
                 <div className="w-14 h-14 rounded-xl bg-brand/10 flex items-center justify-center mx-auto mb-4">
                   <Award className="size-7 text-brand" />
                 </div>
