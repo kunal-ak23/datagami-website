@@ -180,7 +180,7 @@ const integratedPrograms = [
     href: "/services/education/finlearn/wealth-management-investment-banking",
     description:
       "A globally benchmarked, outcome-first program for advisory, portfolio management, capital markets and investment-banking roles.",
-    focus: ["11 months · 630+ hours · 2 semesters", "Wealth advisory & private banking", "Portfolio & alternative investments", "Risk, governance & compliance"],
+    focus: ["630+ learning hours", "Wealth advisory & private banking", "Portfolio & alternative investments", "Risk, governance & compliance"],
   },
   {
     icon: <Newspaper className="size-7 text-brand" />,

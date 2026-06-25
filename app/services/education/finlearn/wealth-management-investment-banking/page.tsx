@@ -15,7 +15,7 @@ import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-childr
 export const metadata: Metadata = {
   title: "Wealth Management & Investment Banking | FinLEARN by Datagami",
   description:
-    "An 11-month, industry-integrated postgraduate program in Wealth Management & Investment Banking — 630+ learning hours across advisory, capital markets, portfolio management and deal execution. Integrates into any UG or PG degree, in association with AAFM.",
+    "An industry-integrated postgraduate program in Wealth Management & Investment Banking — 630+ learning hours across advisory, capital markets, portfolio management and deal execution. Integrates into any UG or PG degree, in association with AAFM.",
   alternates: {
     canonical: "https://datagami.in/services/education/finlearn/wealth-management-investment-banking",
   },
@@ -28,10 +28,10 @@ export const metadata: Metadata = {
 }
 
 const heroStats = [
-  { value: "11", label: "Months Program" },
   { value: "630+", label: "Learning Hours" },
-  { value: "2", label: "Semesters" },
+  { value: "14", label: "Modules" },
   { value: "7", label: "In-Demand Roles" },
+  { value: "16+", label: "Hiring Partners" },
 ]
 
 const focusAreas = [
@@ -118,7 +118,7 @@ const recruiters = [
 const courseSchema = generateCourseSchema({
   name: "Wealth Management & Investment Banking — FinLEARN by Datagami",
   description:
-    "An 11-month industry-integrated postgraduate program across wealth advisory, capital markets, portfolio management and deal execution, embeddable into any UG or PG degree, in association with AAFM.",
+    "An industry-integrated postgraduate program across wealth advisory, capital markets, portfolio management and deal execution, embeddable into any UG or PG degree, in association with AAFM.",
   url: "/services/education/finlearn/wealth-management-investment-banking",
 })
 
@@ -198,14 +198,14 @@ export default function WealthManagementIBPage() {
       <section className="py-16 bg-gray-50 dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
-            <SectionHeader title="Program curriculum" description="Two semesters combining core knowledge, applied labs, simulations and industry projects." />
+            <SectionHeader title="Program curriculum" description="Combining core knowledge, applied labs, simulations and industry projects across foundation and advanced study." />
           </FadeIn>
           <div className="grid md:grid-cols-2 gap-6">
             <FadeIn>
               <div className="glass-card dark:liquid-glass rounded-2xl p-7 h-full">
                 <div className="flex items-center gap-2 mb-5">
                   <Layers className="size-5 text-brand" />
-                  <span className="text-sm font-bold text-brand uppercase tracking-wider">Semester 1 · Foundations of Wealth & Markets</span>
+                  <span className="text-sm font-bold text-brand uppercase tracking-wider">Foundations of Wealth &amp; Markets</span>
                 </div>
                 <ul className="space-y-2.5">
                   {semester1.map((m) => (
@@ -221,7 +221,7 @@ export default function WealthManagementIBPage() {
               <div className="glass-card dark:liquid-glass rounded-2xl p-7 h-full">
                 <div className="flex items-center gap-2 mb-5">
                   <Layers className="size-5 text-brand" />
-                  <span className="text-sm font-bold text-brand uppercase tracking-wider">Semester 2 · Advanced Strategies & Deals</span>
+                  <span className="text-sm font-bold text-brand uppercase tracking-wider">Advanced Strategies &amp; Deals</span>
                 </div>
                 <ul className="space-y-2.5">
                   {semester2.map((m) => (
