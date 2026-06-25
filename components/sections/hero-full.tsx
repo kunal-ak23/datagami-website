@@ -38,16 +38,16 @@ export function HeroFull({
           className="absolute inset-0 h-full w-full object-cover opacity-60"
         />
       )}
-      <div className="relative py-24 md:py-32">
+      <div className="relative py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
             <h1
-              className={`text-4xl sm:text-5xl md:text-6xl font-bold leading-tight ${textColor} mb-6`}
+              className={`text-3xl sm:text-4xl md:text-5xl font-bold leading-tight ${textColor} mb-5`}
             >
               {heading}
             </h1>
             {subtitle && (
-              <p className={`text-lg md:text-xl leading-relaxed ${subtitleColor} mb-8`}>
+              <p className={`text-base md:text-lg leading-relaxed ${subtitleColor} mb-8`}>
                 {subtitle}
               </p>
             )}

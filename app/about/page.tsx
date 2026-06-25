@@ -74,16 +74,16 @@ export default function AboutPage() {
         />
 
         {/* ── Mission & Vision ── */}
-        <section className="py-16">
+        <section className="py-12">
           <StaggerChildren className="grid gap-8 md:grid-cols-2">
             {/* Mission */}
             <StaggerItem>
-              <div className="rounded-2xl glass-card dark:liquid-glass p-8">
+              <div className="rounded-2xl glass-card dark:liquid-glass p-6">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="flex items-center justify-center size-12 rounded-full bg-brand/20">
-                    <Target className="size-6 text-dark" />
+                  <div className="flex items-center justify-center size-11 rounded-full bg-brand/20">
+                    <Target className="size-5 text-dark" />
                   </div>
-                  <h2 className="text-2xl font-bold text-dark">Our Mission</h2>
+                  <h2 className="text-lg font-bold text-dark">Our Mission</h2>
                 </div>
                 <p className="text-body leading-relaxed">{company.mission}</p>
               </div>
@@ -91,12 +91,12 @@ export default function AboutPage() {
 
             {/* Vision */}
             <StaggerItem>
-              <div className="rounded-2xl glass-card dark:liquid-glass p-8">
+              <div className="rounded-2xl glass-card dark:liquid-glass p-6">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="flex items-center justify-center size-12 rounded-full bg-brand/20">
-                    <Eye className="size-6 text-dark" />
+                  <div className="flex items-center justify-center size-11 rounded-full bg-brand/20">
+                    <Eye className="size-5 text-dark" />
                   </div>
-                  <h2 className="text-2xl font-bold text-dark">Our Vision</h2>
+                  <h2 className="text-lg font-bold text-dark">Our Vision</h2>
                 </div>
                 <p className="text-body leading-relaxed">{company.vision}</p>
               </div>
@@ -105,9 +105,9 @@ export default function AboutPage() {
         </section>
 
         {/* ── Our Story ── */}
-        <section className="py-16 border-t border-border-custom">
+        <section className="py-12 border-t border-border-custom">
           <FadeIn>
-            <h2 className="text-3xl font-bold text-dark mb-8 text-center">Our Story</h2>
+            <h2 className="text-2xl font-bold text-dark mb-8 text-center">Our Story</h2>
           </FadeIn>
           <FadeIn>
             <div className="max-w-3xl mx-auto space-y-4">
@@ -119,15 +119,15 @@ export default function AboutPage() {
         </section>
 
         {/* ── Core Values ── */}
-        <section className="py-16 border-t border-border-custom">
+        <section className="py-12 border-t border-border-custom">
           <FadeIn>
-            <h2 className="text-3xl font-bold text-dark mb-10 text-center">Our Core Values</h2>
+            <h2 className="text-2xl font-bold text-dark mb-10 text-center">Our Core Values</h2>
           </FadeIn>
           <StaggerChildren className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {company.coreValues.map((value) => (
               <StaggerItem key={value.title}>
-                <div className="glass-card dark:liquid-glass rounded-xl p-6 hover:shadow-brand-md transition-all h-full">
-                  <h3 className="text-lg font-bold text-dark mb-2">{value.title}</h3>
+                <div className="glass-card dark:liquid-glass rounded-xl p-5 hover:shadow-brand-md transition-all h-full">
+                  <h3 className="text-base font-bold text-dark mb-2">{value.title}</h3>
                   <p className="text-sm text-muted-brand">{value.description}</p>
                 </div>
               </StaggerItem>
@@ -136,15 +136,15 @@ export default function AboutPage() {
         </section>
 
         {/* ── Company Timeline ── */}
-        <section className="py-16 border-t border-border-custom">
+        <section className="py-12 border-t border-border-custom">
           <FadeIn>
-            <h2 className="text-3xl font-bold text-dark mb-12 text-center">Our Journey</h2>
+            <h2 className="text-2xl font-bold text-dark mb-12 text-center">Our Journey</h2>
           </FadeIn>
           <div className="relative">
             {/* Vertical line */}
             <div className="absolute left-4 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-0.5 bg-brand/30" />
 
-            <StaggerChildren className="space-y-12">
+            <StaggerChildren className="space-y-10">
               {milestones.map((milestone, i) => {
                 const isLeft = i % 2 === 0
                 return (
@@ -166,7 +166,7 @@ export default function AboutPage() {
                         <span className="inline-block text-sm font-bold text-brand bg-brand/10 px-3 py-1 rounded-full mb-2">
                           {milestone.year}
                         </span>
-                        <h3 className="text-xl font-bold text-dark mb-1">{milestone.title}</h3>
+                        <h3 className="text-lg font-bold text-dark mb-1">{milestone.title}</h3>
                         <p className="text-body leading-relaxed">{milestone.description}</p>
                       </div>
                     </div>
@@ -178,9 +178,9 @@ export default function AboutPage() {
         </section>
 
         {/* ── Team Section ── */}
-        <section className="py-16 border-t border-border-custom">
+        <section className="py-12 border-t border-border-custom">
           <FadeIn>
-            <h2 className="text-3xl font-bold text-dark mb-10 text-center">Our Leadership Team</h2>
+            <h2 className="text-2xl font-bold text-dark mb-10 text-center">Our Leadership Team</h2>
           </FadeIn>
           <StaggerChildren className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {team.map((member) => (
@@ -189,12 +189,12 @@ export default function AboutPage() {
                   <img
                     src={member.image}
                     alt={member.name}
-                    width={112}
-                    height={112}
+                    width={96}
+                    height={96}
                     loading="lazy"
-                    className="mx-auto mb-4 size-28 rounded-full object-cover"
+                    className="mx-auto mb-4 size-24 rounded-full object-cover"
                   />
-                  <h3 className="text-lg font-bold text-dark">{member.name}</h3>
+                  <h3 className="text-base font-bold text-dark">{member.name}</h3>
                   <p className="text-sm text-body">{member.title}</p>
                   {'subtitle' in member && member.subtitle && (
                     <p className="text-xs text-muted-brand mt-1">{member.subtitle}</p>
@@ -206,9 +206,9 @@ export default function AboutPage() {
         </section>
 
         {/* ── Partners & Clients ── */}
-        <section className="py-16 border-t border-border-custom">
+        <section className="py-12 border-t border-border-custom">
           <FadeIn>
-            <h2 className="text-3xl font-bold text-dark mb-10 text-center">Our Partners & Collaborations</h2>
+            <h2 className="text-2xl font-bold text-dark mb-10 text-center">Our Partners & Collaborations</h2>
           </FadeIn>
           <FadeIn delay={0.2}>
             <LogoTicker
@@ -218,21 +218,21 @@ export default function AboutPage() {
         </section>
 
         {/* ── Office Locations ── */}
-        <section className="py-16 border-t border-border-custom">
+        <section className="py-12 border-t border-border-custom">
           <FadeIn>
-            <h2 className="text-3xl font-bold text-dark mb-10 text-center">Our Offices</h2>
+            <h2 className="text-2xl font-bold text-dark mb-10 text-center">Our Offices</h2>
           </FadeIn>
           <StaggerChildren className="grid gap-8 md:grid-cols-2">
             {company.offices.map((office) => (
               <StaggerItem key={office.city}>
                 <div
-                  className="rounded-2xl glass-card dark:liquid-glass p-8"
+                  className="rounded-2xl glass-card dark:liquid-glass p-6"
                 >
                   <div className="flex items-center gap-3 mb-4">
                     <div className="flex items-center justify-center size-10 rounded-full bg-brand/20">
                       <MapPin className="size-5 text-dark" />
                     </div>
-                    <h3 className="text-xl font-bold text-dark">{office.city}</h3>
+                    <h3 className="text-lg font-bold text-dark">{office.city}</h3>
                   </div>
                   <p className="text-body leading-relaxed">{office.address}</p>
                 </div>
