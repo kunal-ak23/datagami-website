@@ -54,19 +54,19 @@ const industries = [
 
 export function IndustriesGrid() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
       {industries.map((industry) => {
         const Icon = industry.icon
         return (
           <div
             key={industry.name}
-            className="glass-card dark:liquid-glass rounded-xl p-6 hover:-translate-y-1 hover:shadow-brand-md transition-all duration-300"
+            className="glass-card dark:liquid-glass rounded-xl p-4 sm:p-5 hover:-translate-y-1 hover:shadow-brand-md transition-all duration-300"
           >
-            <div className="flex items-center justify-center bg-brand/10 text-brand rounded-xl w-14 h-14 mb-4">
-              <Icon className="size-7" />
+            <div className="flex items-center justify-center bg-brand/10 text-brand rounded-lg w-10 h-10 mb-3">
+              <Icon className="size-5" />
             </div>
-            <h3 className="font-semibold text-dark mb-1">{industry.name}</h3>
-            <p className="text-sm text-muted-brand">{industry.description}</p>
+            <h3 className="text-sm sm:text-base font-semibold text-dark mb-1 leading-snug">{industry.name}</h3>
+            <p className="text-xs text-muted-brand leading-relaxed">{industry.description}</p>
           </div>
         )
       })}
