@@ -29,8 +29,18 @@ export const metadata: Metadata = {
 
 const heroStats = [
   { value: "60", label: "Credits" },
+  { value: "18", label: "Modules" },
   { value: "900+", label: "Learning Hours" },
   { value: "7", label: "In-Demand Roles" },
+]
+
+// Target recruiters / hiring partners across banking, broking, wealth and FinTech —
+// drawn from the program brochure's in-demand-roles and hiring-partner pages.
+const recruiters = [
+  "JPMorgan", "Morgan Stanley", "HSBC", "ICICI Securities",
+  "ICICI Bank", "Kotak", "HDFC Securities", "Axis Bank",
+  "Nuvama", "Motilal Oswal", "Aditya Birla Capital", "Angel One",
+  "Edelweiss", "PhonePe", "Paytm", "PolicyBazaar",
 ]
 
 const focusAreas = [
@@ -267,8 +277,31 @@ export default function FinTechInvestmentBankingPage() {
         </div>
       </section>
 
-      {/* Career path */}
+      {/* Where graduates get placed */}
       <section className="py-16 bg-gray-50 dark:bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <SectionHeader title="Where graduates get placed" description="Target recruiters and hiring partners across banking, broking, wealth management and FinTech — the institutions actively hiring for these roles." />
+          </FadeIn>
+          <StaggerChildren className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+            {recruiters.map((name) => (
+              <StaggerItem key={name}>
+                <div className="flex items-center justify-center text-center glass-card dark:liquid-glass rounded-xl px-4 py-5 hover:shadow-brand-md transition-all h-full">
+                  <span className="text-sm font-semibold text-dark">{name}</span>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerChildren>
+          <FadeIn>
+            <p className="text-center text-xs text-muted-brand mt-6 max-w-3xl mx-auto">
+              Representative recruiters and hiring partners — actual placements vary by cohort, performance and market conditions.
+            </p>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Career path */}
+      <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <SectionHeader title="Your career path" description="Where this program can take you over the years — from your first analyst role to senior and leadership positions." />
