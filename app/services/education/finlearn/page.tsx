@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Link from "next/link"
 import Breadcrumbs from "@/components/layout/breadcrumbs"
 import { HeroDark } from "@/components/sections/hero-dark"
 import { SectionHeader } from "@/components/sections/section-header"
@@ -9,8 +10,9 @@ import { finlearn } from "@/lib/data/programs"
 import { alumniCompanies } from "@/lib/data/partners"
 import { generateCourseSchema } from "@/lib/schemas/course"
 import {
-  GraduationCap, Award, BookOpen, Users, Clock,
-  CheckCircle, Briefcase, TrendingUp, Shield, Lightbulb, Heart,
+  GraduationCap, Award, BookOpen, Clock,
+  CheckCircle, Briefcase, TrendingUp, Lightbulb, Heart,
+  Cpu, Coins, Newspaper, ArrowRight,
 } from "lucide-react"
 
 import { FadeIn } from "@/components/motion/fade-in"
@@ -19,14 +21,14 @@ import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-childr
 export const metadata: Metadata = {
   title: 'FinLEARN by Datagami - BFSI & Finance Programs | 95% Placement Rate',
   description:
-    'Comprehensive BFSI education with 18 program tracks, 500+ graduates, and 95% placement rate. UG, PG, and short-term certification programs in banking and finance.',
+    'Industry-integrated finance programs — FinTech & Investment Banking, Wealth Management & Investment Banking, and Business & Finance Journalism — that embed into any UG or PG degree, plus short-term BFSI certifications. In association with AAFM. 500+ graduates, 95% placement rate.',
   alternates: {
     canonical: 'https://datagami.in/services/education/finlearn',
   },
   openGraph: {
     title: 'FinLEARN by Datagami - BFSI & Finance Programs | 95% Placement Rate',
     description:
-      'Comprehensive BFSI education with 18 program tracks, 500+ graduates, and 95% placement rate. UG, PG, and short-term certification programs in banking and finance.',
+      'Industry-integrated finance programs in FinTech & Investment Banking, Wealth Management, and Business & Finance Journalism — embed into any UG or PG degree, plus short-term BFSI certifications. In association with AAFM.',
     images: ['/images/hero/hero-finlearn.png'],
   },
 }
@@ -67,7 +69,7 @@ const programOutcomes = [
     icon: <TrendingUp className="size-8 text-brand" />,
     title: "Finance & Data Competence",
     description: "Learners develop proficiency in financial tools, data interpretation, analytical techniques, and decision-making methods essential for modern financial environments.",
-    impact: "Strengthens analytical capability and enhances students\u2019 ability to contribute effectively in data-driven finance roles.",
+    impact: "Strengthens analytical capability and enhances students’ ability to contribute effectively in data-driven finance roles.",
   },
   {
     icon: <CheckCircle className="size-8 text-brand" />,
@@ -99,17 +101,17 @@ const successStories = [
   {
     name: "Mrunali Patil",
     title: "Seamless Transition to Industry-Ready Skills",
-    description: "We\u2019re proud to share that Mrunali Patil, a FinLEARN by Datagami student, has been successfully placed with Axis Bank. Her achievement reflects the program\u2019s focus on practical learning and career readiness.",
+    description: "We’re proud to share that Mrunali Patil, a FinLEARN by Datagami student, has been successfully placed with Axis Bank. Her achievement reflects the program’s focus on practical learning and career readiness.",
   },
   {
     name: "Janhavi Makwana",
     title: "Seamless Transition to Industry-Ready Skills",
-    description: "We\u2019re delighted to announce that Janhavi Makwana, a FinLEARN by Datagami student, has been placed with Axis Bank. Her success highlights our focus on applied learning and industry-linked outcomes.",
+    description: "We’re delighted to announce that Janhavi Makwana, a FinLEARN by Datagami student, has been placed with Axis Bank. Her success highlights our focus on applied learning and industry-linked outcomes.",
   },
   {
     name: "Rahul Gupta",
     title: "Seamless Transition to Industry-Ready Skills",
-    description: "We\u2019re proud to share that Rahul Gupta, a FinLEARN by Datagami student, has been placed with Muthoot Finance as a Junior Relationship Executive. His achievement reflects the program\u2019s strong emphasis on practical training and industry readiness.",
+    description: "We’re proud to share that Rahul Gupta, a FinLEARN by Datagami student, has been placed with Muthoot Finance as a Junior Relationship Executive. His achievement reflects the program’s strong emphasis on practical training and industry readiness.",
   },
 ]
 
@@ -121,7 +123,7 @@ const certifications = [
     image: "/images/certificates/cp-bfsi-ssc.png",
   },
   {
-    name: "Certificate of Completion \u2013 CP BFSI",
+    name: "Certificate of Completion – CP BFSI",
     issuer: "by Datagami Technology Services Pvt. Ltd.",
     description: "A completion credential awarded for fulfilling all academic and practical requirements of the CP BFSI program. It demonstrates mastery of core BFSI principles, financial operations, and industry-ready professional competencies.",
     image: "/images/certificates/cp-bfsi-datagami.png",
@@ -161,8 +163,36 @@ const instructors = [
   },
 ]
 
-const ugTracks = finlearn.tracks.filter((t) => t.level === "UG")
-const pgTracks = finlearn.tracks.filter((t) => t.level === "PG")
+const integratedPrograms = [
+  {
+    icon: <Cpu className="size-7 text-brand" />,
+    name: "FinTech & Investment Banking",
+    accent: "FinTech + IB",
+    href: "/services/education/finlearn/fintech-investment-banking",
+    description:
+      "An industry-integrated program fusing finance, technology and analytics — across investment banking, FinTech, capital markets, wealth and digital finance.",
+    focus: ["60 credits · 900+ learning hours", "FinTech & digital finance", "Investment banking & capital markets", "Financial analytics & Python"],
+  },
+  {
+    icon: <Coins className="size-7 text-brand" />,
+    name: "Wealth Management & Investment Banking",
+    accent: "Wealth + IB",
+    href: "/services/education/finlearn/wealth-management-investment-banking",
+    description:
+      "A globally benchmarked, outcome-first program for advisory, portfolio management, capital markets and investment-banking roles.",
+    focus: ["630+ learning hours", "Wealth advisory & private banking", "Portfolio & alternative investments", "Risk, governance & compliance"],
+  },
+  {
+    icon: <Newspaper className="size-7 text-brand" />,
+    name: "Business & Finance Journalism",
+    accent: "Media + Finance",
+    href: "/services/education/finlearn/business-finance-journalism",
+    description:
+      "A practice-led, newsroom-applied program building finance-literate, data-driven, digital-first business journalists. In association with AAFM India & Amar Ujala.",
+    focus: ["42 credits · 630 learning hours", "Finance-literate reporting", "Data & visual storytelling", "Multimedia & digital journalism"],
+  },
+]
+
 const certTracks = finlearn.tracks.filter((t) => t.level === "Certificate")
 
 const courseSchema = generateCourseSchema({
@@ -203,7 +233,7 @@ export default function FinLEARNPage() {
         backgroundImage="/images/hero/hero-finlearn.png"
       />
 
-      {/* Program Overview */}
+      {/* 1 — Program Overview: what FinLEARN is */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
@@ -248,36 +278,42 @@ export default function FinLEARNPage() {
         </div>
       </section>
 
-      {/* Program Categories Overview */}
-      <section className="py-16">
+      {/* 2 — Program Categories: what's on offer at a glance (lead-in to the detailed programs) */}
+      <section className="py-16 bg-gray-50 dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <SectionHeader
+              title="What We Offer"
+              description="Two ways to learn with FinLEARN — full degree-integrated programs, or focused short-term certifications."
+            />
+          </FadeIn>
           <StaggerChildren className="grid md:grid-cols-3 gap-8">
             <StaggerItem>
-              <div className="glass-card dark:liquid-glass rounded-xl p-8 hover:shadow-brand-md transition-all text-center">
+              <div className="glass-card dark:liquid-glass rounded-xl p-8 hover:shadow-brand-md transition-all text-center h-full">
                 <div className="w-14 h-14 rounded-xl bg-brand/10 flex items-center justify-center mx-auto mb-4">
                   <GraduationCap className="size-7 text-brand" />
                 </div>
-                <span className="text-xs font-semibold uppercase tracking-wider text-brand">Apprenticeship-Embedded</span>
-                <h3 className="text-xl font-bold text-dark mt-2 mb-3">Undergraduate Programs</h3>
+                <span className="text-xs font-semibold uppercase tracking-wider text-brand">Degree-Integrated</span>
+                <h3 className="text-xl font-bold text-dark mt-2 mb-3">Integrated Degree Programs</h3>
                 <p className="text-sm text-muted-brand">
-                  Industry-integrated degree programs that blend academic learning with real-world BFSI experience through structured apprenticeships and practical finance exposure. Ideal for building strong foundational skills in banking, financial services, and compliance.
+                  Industry-integrated programs in FinTech & Investment Banking, Wealth Management, and Business & Finance Journalism that embed into any undergraduate or postgraduate degree. Built with hands-on labs, internships and capstones — in association with AAFM.
                 </p>
               </div>
             </StaggerItem>
             <StaggerItem>
-              <div className="glass-card dark:liquid-glass rounded-xl p-8 hover:shadow-brand-md transition-all text-center">
+              <div className="glass-card dark:liquid-glass rounded-xl p-8 hover:shadow-brand-md transition-all text-center h-full">
                 <div className="w-14 h-14 rounded-xl bg-brand/10 flex items-center justify-center mx-auto mb-4">
                   <BookOpen className="size-7 text-brand" />
                 </div>
-                <span className="text-xs font-semibold uppercase tracking-wider text-brand">Specialized PG Tracks</span>
-                <h3 className="text-xl font-bold text-dark mt-2 mb-3">Postgraduate Programs</h3>
+                <span className="text-xs font-semibold uppercase tracking-wider text-brand">UG or PG</span>
+                <h3 className="text-xl font-bold text-dark mt-2 mb-3">Flexible Integration</h3>
                 <p className="text-sm text-muted-brand">
-                  Advanced programs including MBA in BFSI, Postgraduate Investment Banking, and Chartered Wealth Management, designed to develop deep domain expertise, analytical capability, and leadership readiness for high-growth financial careers.
+                  Each integrated program can sit inside an undergraduate or postgraduate degree — such as BBA, B.Com, BMS, MBA or M.Com — or run standalone. Universities choose the level and we tailor the curriculum, labs and certifications to fit.
                 </p>
               </div>
             </StaggerItem>
             <StaggerItem>
-              <div className="glass-card dark:liquid-glass rounded-xl p-8 hover:shadow-brand-md transition-all text-center">
+              <div className="glass-card dark:liquid-glass rounded-xl p-8 hover:shadow-brand-md transition-all text-center h-full">
                 <div className="w-14 h-14 rounded-xl bg-brand/10 flex items-center justify-center mx-auto mb-4">
                   <Award className="size-7 text-brand" />
                 </div>
@@ -292,122 +328,7 @@ export default function FinLEARNPage() {
         </div>
       </section>
 
-      {/* Why Choose FinLEARN */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn>
-            <SectionHeader
-              title="Why Choose FinLEARN?"
-              description="Industry-aligned education that prepares you for real-world finance careers."
-            />
-          </FadeIn>
-          <StaggerChildren className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
-            {whyChooseItems.map((item) => (
-              <StaggerItem key={item}>
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="size-5 text-brand shrink-0" />
-                  <span className="text-sm font-medium text-dark">{item}</span>
-                </div>
-              </StaggerItem>
-            ))}
-          </StaggerChildren>
-        </div>
-      </section>
-
-      {/* Program Outcomes */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn>
-            <SectionHeader
-              title="Program Outcomes"
-              description="Skills and competencies you'll gain through our comprehensive FinLEARN program."
-            />
-          </FadeIn>
-          <StaggerChildren className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {programOutcomes.map((outcome) => (
-              <StaggerItem key={outcome.title}>
-                <div className="glass-card dark:liquid-glass rounded-xl p-6 hover:shadow-brand-md transition-all h-full">
-                  <div className="w-14 h-14 rounded-xl bg-brand/10 flex items-center justify-center mb-4">
-                    {outcome.icon}
-                  </div>
-                  <h3 className="text-lg font-semibold text-dark mb-2">{outcome.title}</h3>
-                  <p className="text-sm text-muted-brand mb-3">{outcome.description}</p>
-                  <p className="text-xs text-brand/80 italic">{outcome.impact}</p>
-                </div>
-              </StaggerItem>
-            ))}
-          </StaggerChildren>
-        </div>
-      </section>
-
-      {/* Success Stories */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn>
-            <SectionHeader
-              title="Success Stories"
-              description="Hear from our graduates who have transformed their careers through FinLEARN."
-            />
-          </FadeIn>
-          <StaggerChildren className="grid md:grid-cols-3 gap-6">
-            {successStories.map((story) => (
-              <StaggerItem key={story.name}>
-                <div className="glass-card dark:liquid-glass rounded-xl p-6 hover:shadow-brand-md transition-all h-full">
-                  <div className="w-16 h-16 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center mx-auto mb-4">
-                    <span className="text-lg font-semibold text-muted-brand">
-                      {story.name.split(' ').map((n) => n[0]).join('').slice(0, 2)}
-                    </span>
-                  </div>
-                  <h3 className="text-base font-semibold text-dark text-center">{story.name}</h3>
-                  <p className="text-sm text-brand font-medium text-center mt-1 mb-3">{story.title}</p>
-                  <p className="text-sm text-muted-brand">{story.description}</p>
-                </div>
-              </StaggerItem>
-            ))}
-          </StaggerChildren>
-        </div>
-      </section>
-
-      {/* Where Our Alumni Work */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn>
-            <SectionHeader
-              title="Where Our Alumni Work"
-              description="Our graduates have secured positions at leading companies across the financial services industry, demonstrating the real-world value of our training programs."
-            />
-          </FadeIn>
-          <StaggerChildren className="grid grid-cols-2 sm:grid-cols-4 gap-6">
-            {alumniCompanies.map((company) => (
-              <StaggerItem key={company.name}>
-                <div className="glass-card dark:liquid-glass rounded-xl p-4 flex flex-col items-center justify-center gap-2 hover:shadow-md transition-shadow">
-                  {company.logo ? (
-                    <img
-                      src={company.logo}
-                      alt={company.name}
-                      className="h-10 w-auto object-contain"
-                    />
-                  ) : (
-                    <div className="h-10 flex items-center justify-center">
-                      <span className="text-sm text-muted-brand font-medium">{company.name}</span>
-                    </div>
-                  )}
-                  <span className="text-xs text-muted-brand font-medium text-center">
-                    {company.name}
-                  </span>
-                </div>
-              </StaggerItem>
-            ))}
-          </StaggerChildren>
-        </div>
-      </section>
-
-      {/* Stats Bar */}
-      <FadeIn>
-        <StatsBar stats={bottomStats} variant="dark" />
-      </FadeIn>
-
-      {/* Programs Offered — Detailed */}
+      {/* 3 — Programs Offered (the core): detailed integrated programs + short-term courses */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
@@ -417,71 +338,57 @@ export default function FinLEARNPage() {
             />
           </FadeIn>
 
-          {/* Undergraduate Programs */}
-          {ugTracks.length > 0 && (
-            <div className="mb-16">
-              <FadeIn>
-                <h3 className="text-2xl font-bold text-dark mb-2">Undergraduate Programs</h3>
-                <p className="text-muted-brand mb-8">Foundation programs that integrate academic learning with practical BFSI experience through structured apprenticeships.</p>
-              </FadeIn>
-              <StaggerChildren className="grid md:grid-cols-2 gap-6">
-                {ugTracks.map((track) => (
-                  <StaggerItem key={track.name}>
-                    <div className="glass-card dark:liquid-glass rounded-xl p-6 hover:shadow-lg transition-shadow h-full">
-                      <div className="flex items-center gap-2 mb-3">
-                        <Clock className="size-4 text-brand" />
-                        <span className="text-sm font-semibold text-brand">{track.duration}</span>
+          {/* Integrated Degree Programs */}
+          <div className="mb-16">
+            <FadeIn>
+              <h3 className="text-2xl font-bold text-dark mb-2">Integrated Degree Programs</h3>
+              <p className="text-muted-brand mb-8">Industry-integrated finance programs — each can be embedded into an undergraduate or postgraduate degree, or run standalone. Explore a program for its full curriculum, structure and career outcomes.</p>
+            </FadeIn>
+            <StaggerChildren className="grid md:grid-cols-3 gap-6">
+              {integratedPrograms.map((p) => (
+                <StaggerItem key={p.name}>
+                  <Link
+                    href={p.href}
+                    className="group flex flex-col h-full glass-card dark:liquid-glass rounded-2xl p-7 border border-transparent hover:border-brand/30 hover:shadow-brand-md transition-all"
+                  >
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="w-14 h-14 rounded-xl bg-brand/10 flex items-center justify-center">
+                        {p.icon}
                       </div>
-                      <h4 className="text-lg font-semibold text-dark mb-3">{track.name}</h4>
-                      <p className="text-sm text-muted-brand mb-4">{track.description}</p>
-                      {track.skills && (
-                        <div className="flex flex-wrap gap-2">
-                          {track.skills.map((skill) => (
-                            <span key={skill} className="text-xs bg-brand/10 text-brand px-3 py-1 rounded-full font-medium">
-                              {skill}
-                            </span>
-                          ))}
-                        </div>
-                      )}
+                      <span className="text-xs font-semibold uppercase tracking-wider text-brand bg-brand/10 px-3 py-1 rounded-full">
+                        {p.accent}
+                      </span>
                     </div>
-                  </StaggerItem>
-                ))}
-              </StaggerChildren>
-            </div>
-          )}
+                    <h4 className="text-lg font-bold text-dark mb-2">{p.name}</h4>
+                    <p className="text-sm text-muted-brand mb-4">{p.description}</p>
+                    <ul className="space-y-2 mb-5">
+                      {p.focus.map((f) => (
+                        <li key={f} className="flex items-start gap-2">
+                          <CheckCircle className="size-4 text-brand shrink-0 mt-0.5" />
+                          <span className="text-sm text-dark">{f}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <span className="mt-auto inline-flex items-center gap-1.5 text-brand font-medium text-sm group-hover:gap-2.5 transition-all">
+                      Explore program <ArrowRight className="size-4" />
+                    </span>
+                  </Link>
+                </StaggerItem>
+              ))}
+            </StaggerChildren>
 
-          {/* Postgraduate Programs */}
-          {pgTracks.length > 0 && (
-            <div className="mb-16">
-              <FadeIn>
-                <h3 className="text-2xl font-bold text-dark mb-2">Postgraduate Programs</h3>
-                <p className="text-muted-brand mb-8">Advanced programs designed to develop deep domain expertise and leadership readiness for high-growth financial careers.</p>
-              </FadeIn>
-              <StaggerChildren className="grid md:grid-cols-2 gap-6">
-                {pgTracks.map((track) => (
-                  <StaggerItem key={track.name}>
-                    <div className="glass-card dark:liquid-glass rounded-xl p-6 hover:shadow-lg transition-shadow h-full">
-                      <div className="flex items-center gap-2 mb-3">
-                        <Clock className="size-4 text-brand" />
-                        <span className="text-sm font-semibold text-brand">{track.duration}</span>
-                      </div>
-                      <h4 className="text-lg font-semibold text-dark mb-3">{track.name}</h4>
-                      <p className="text-sm text-muted-brand mb-4">{track.description}</p>
-                      {track.skills && (
-                        <div className="flex flex-wrap gap-2">
-                          {track.skills.map((skill) => (
-                            <span key={skill} className="text-xs bg-brand/10 text-brand px-3 py-1 rounded-full font-medium">
-                              {skill}
-                            </span>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  </StaggerItem>
-                ))}
-              </StaggerChildren>
-            </div>
-          )}
+            {/* AAFM association — light credit */}
+            <FadeIn>
+              <div className="mt-8 glass-card dark:liquid-glass rounded-2xl p-5 flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left max-w-3xl">
+                <div className="bg-white rounded-xl p-2.5 shrink-0">
+                  <img src="/images/finlearn/aafm.jpg" alt="American Academy of Financial Management (AAFM)" className="h-10 w-auto object-contain" />
+                </div>
+                <p className="text-sm text-muted-brand">
+                  Integrated degree programs are offered <span className="font-medium text-dark">in association with AAFM</span> (American Academy of Financial Management), bringing globally benchmarked standards in financial education.
+                </p>
+              </div>
+            </FadeIn>
+          </div>
 
           {/* Short-Term Certification Programs */}
           {certTracks.length > 0 && (
@@ -518,7 +425,7 @@ export default function FinLEARNPage() {
         </div>
       </section>
 
-      {/* CTA — Mid-page */}
+      {/* 4 — Mid CTA: convert interest right after the programs */}
       <FadeIn>
         <CTASection
           title="Ready to Start Your Finance Journey?"
@@ -529,7 +436,55 @@ export default function FinLEARNPage() {
         />
       </FadeIn>
 
-      {/* Expert Instructors */}
+      {/* 5 — Why Choose FinLEARN: the value proposition */}
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <SectionHeader
+              title="Why Choose FinLEARN?"
+              description="Industry-aligned education that prepares you for real-world finance careers."
+            />
+          </FadeIn>
+          <StaggerChildren className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
+            {whyChooseItems.map((item) => (
+              <StaggerItem key={item}>
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="size-5 text-brand shrink-0" />
+                  <span className="text-sm font-medium text-dark">{item}</span>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerChildren>
+        </div>
+      </section>
+
+      {/* 6 — Program Outcomes: what students gain */}
+      <section className="py-16 bg-gray-50 dark:bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <SectionHeader
+              title="Program Outcomes"
+              description="Skills and competencies you'll gain through our comprehensive FinLEARN program."
+            />
+          </FadeIn>
+          <StaggerChildren className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {programOutcomes.map((outcome) => (
+              <StaggerItem key={outcome.title}>
+                <div className="glass-card dark:liquid-glass rounded-xl p-6 hover:shadow-brand-md transition-all h-full">
+                  <div className="w-14 h-14 rounded-xl bg-brand/10 flex items-center justify-center mb-4">
+                    {outcome.icon}
+                  </div>
+                  <h3 className="text-lg font-semibold text-dark mb-2">{outcome.title}</h3>
+                  <p className="text-sm text-muted-brand mb-3">{outcome.description}</p>
+                  <p className="text-xs text-brand/80 italic">{outcome.impact}</p>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerChildren>
+        </div>
+      </section>
+
+      {/* 7 — Expert Instructors: credibility */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
@@ -557,8 +512,8 @@ export default function FinLEARNPage() {
         </div>
       </section>
 
-      {/* Industry-Recognized Certifications */}
-      <section className="py-16">
+      {/* 8 — Industry-Recognized Certifications: credibility */}
+      <section className="py-16 bg-gray-50 dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <SectionHeader
@@ -587,12 +542,79 @@ export default function FinLEARNPage() {
         </div>
       </section>
 
-      {/* FAQs */}
+      {/* 9 — Success Stories: proof */}
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <SectionHeader
+              title="Success Stories"
+              description="Hear from our graduates who have transformed their careers through FinLEARN."
+            />
+          </FadeIn>
+          <StaggerChildren className="grid md:grid-cols-3 gap-6">
+            {successStories.map((story) => (
+              <StaggerItem key={story.name}>
+                <div className="glass-card dark:liquid-glass rounded-xl p-6 hover:shadow-brand-md transition-all h-full">
+                  <div className="w-16 h-16 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center mx-auto mb-4">
+                    <span className="text-lg font-semibold text-muted-brand">
+                      {story.name.split(' ').map((n) => n[0]).join('').slice(0, 2)}
+                    </span>
+                  </div>
+                  <h3 className="text-base font-semibold text-dark text-center">{story.name}</h3>
+                  <p className="text-sm text-brand font-medium text-center mt-1 mb-3">{story.title}</p>
+                  <p className="text-sm text-muted-brand">{story.description}</p>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerChildren>
+        </div>
+      </section>
+
+      {/* 10 — Where Our Alumni Work: proof */}
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <SectionHeader
+              title="Where Our Alumni Work"
+              description="Our graduates have secured positions at leading companies across the financial services industry, demonstrating the real-world value of our training programs."
+            />
+          </FadeIn>
+          <StaggerChildren className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+            {alumniCompanies.map((company) => (
+              <StaggerItem key={company.name}>
+                <div className="glass-card dark:liquid-glass rounded-xl p-4 flex flex-col items-center justify-center gap-2 hover:shadow-md transition-shadow">
+                  {company.logo ? (
+                    <img
+                      src={company.logo}
+                      alt={company.name}
+                      className="h-10 w-auto object-contain"
+                    />
+                  ) : (
+                    <div className="h-10 flex items-center justify-center">
+                      <span className="text-sm text-muted-brand font-medium">{company.name}</span>
+                    </div>
+                  )}
+                  <span className="text-xs text-muted-brand font-medium text-center">
+                    {company.name}
+                  </span>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerChildren>
+        </div>
+      </section>
+
+      {/* 11 — Stats Bar: proof band closing out the page body */}
+      <FadeIn>
+        <StatsBar stats={bottomStats} variant="dark" />
+      </FadeIn>
+
+      {/* 12 — FAQs */}
       <FadeIn>
         <FAQSection faqs={finlearn.faqs} />
       </FadeIn>
 
-      {/* Final CTA */}
+      {/* 13 — Final CTA */}
       <FadeIn>
         <CTASection
           title="Ready to Launch Your Finance Career?"

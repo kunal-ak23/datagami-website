@@ -35,6 +35,31 @@ export const universityPartners: Partner[] = [
   { name: 'Medicaps University', logo: '/images/logos/universities/medicaps.png', website: 'https://www.medicaps.ac.in/' },
 ]
 
+// AAFM hiring-partner network — shared across all FinLEARN integrated programs.
+export const placementPartners: Partner[] = [
+  { name: 'Aditya Birla', logo: '/images/recruiters/aditya-birla.jpeg' },
+  { name: 'Motilal Oswal', logo: '/images/recruiters/motilal-oswal.jpeg' },
+  { name: 'Angel Broking', logo: '/images/recruiters/angel-broking.jpeg' },
+  { name: 'Edelweiss', logo: '/images/recruiters/edelweiss.jpeg' },
+  { name: 'Indiabulls', logo: '/images/recruiters/indiabulls.jpeg' },
+  { name: 'Karvy', logo: '/images/recruiters/karvy.jpeg' },
+  { name: 'Anand Rathi', logo: '/images/recruiters/anand-rathi.jpeg' },
+  { name: 'Bonanza', logo: '/images/recruiters/bonanza.jpeg' },
+  { name: 'ASK', logo: '/images/recruiters/ask.jpeg' },
+  { name: 'Ambit', logo: '/images/recruiters/ambit.jpeg' },
+  { name: 'Bharti AXA', logo: '/images/recruiters/bharti-axa.jpeg' },
+  { name: 'Principal PNB', logo: '/images/recruiters/principal-pnb.jpeg' },
+  { name: 'deVere Group', logo: '/images/recruiters/devere-group.jpeg' },
+  { name: 'NJ Group', logo: '/images/recruiters/nj-group.jpeg' },
+  { name: 'iFAST', logo: '/images/recruiters/ifast.jpeg' },
+  { name: 'IFAN', logo: '/images/recruiters/ifan.jpeg' },
+  { name: 'L&T', logo: '/images/recruiters/lt.jpeg' },
+  { name: 'Alpha Capital', logo: '/images/recruiters/alpha-capital.jpeg' },
+  { name: 'Asit C Mehta', logo: '/images/recruiters/asit-c-mehta.jpeg' },
+  { name: 'Latin Manharlal', logo: '/images/recruiters/latin-manharlal.jpeg' },
+  { name: 'Brokers Forum', logo: '/images/recruiters/brokers-forum.jpeg' },
+]
+
 export const collaborators: Partner[] = [
   { name: 'NSDC', logo: '/images/logos/collaborators/nsdc.png' },
   { name: 'BFSI SSC', logo: '/images/logos/collaborators/bfsi-ssc.png' },
