@@ -12,24 +12,27 @@ import { LogoTicker } from "@/components/carousels/logo-ticker"
 import { allPartners } from "@/lib/data/partners"
 
 export const metadata: Metadata = {
-  title: 'About Datagami - EdTech Company Transforming Higher Education Since 2018',
+  title: 'About Datagami - EdTech Company Transforming Higher Education Since 2019',
   description: 'Datagami Technology Services — pioneering B2B education technology company with offices in Mumbai and Bengaluru. 50+ partner universities, 10K+ students impacted.',
   alternates: {
     canonical: 'https://datagami.in/about',
   },
   openGraph: {
-    title: 'About Datagami - EdTech Company Transforming Higher Education Since 2018',
+    title: 'About Datagami - EdTech Company Transforming Higher Education Since 2019',
     description: 'Datagami Technology Services — pioneering B2B education technology company with offices in Mumbai and Bengaluru. 50+ partner universities, 10K+ students impacted.',
     images: ['/images/hero/hero-about.png'],
   },
 }
 
 const milestones = [
-  { year: "2018", title: "Founded", description: "Datagami Technology Services established in Mumbai with a vision to bridge academia and industry." },
-  { year: "2019", title: "First University Partnership", description: "Signed our first university partnership, launching industry-aligned programs for undergraduate students." },
-  { year: "2021", title: "1,000th Student Enrolled", description: "Crossed the milestone of 1,000 students trained across finance, technology, and clinical research programs." },
-  { year: "2023", title: "Bengaluru Office", description: "Expanded operations with a second office in Bengaluru to serve South India's growing education ecosystem." },
-  { year: "2025", title: "10,000+ Students Impacted", description: "Reached over 10,000 students impacted across 50+ partner universities and 200+ programs delivered." },
+  { year: "2019", title: "Company Established", description: "Set up a 2,000 sq ft office with state-of-the-art classrooms and datacentres and a 25-member team — partnering with IBM, SAS and EC-Council." },
+  { year: "2020", title: "Pivot to a B2B Model", description: "Moved from a B2C to a B2B model, onboarded our first 4 universities, and signed a system-integration contract with SBI Mutual Fund (SBIMF)." },
+  { year: "2021", title: "Universities & Enterprise Contracts", description: "Added 2 more universities, signed an SI contract with BDO, and won an Oracle Retail migration contract for a Dubai-based company." },
+  { year: "2022", title: "FinLEARN Launched", description: "Launched our own banking & finance program, FinLEARN, re-entered the B2C model, and onboarded 3 more universities." },
+  { year: "2023", title: "EduDron LMS & Technology Courses", description: "Built EduDron LMS — a student-centric learning portal — launched technology courses, and signed our first 2 FinLEARN universities and 2 IBM ICE universities." },
+  { year: "2024", title: "Clinomic Partnership", description: "Partnered with Clinomic and onboarded 7 universities for the IBM ICE technology program." },
+  { year: "2025", title: "Building Our Own Courses", description: "Added 5 more universities for IBM ICE and began developing our own proprietary courses." },
+  { year: "2026", title: "Degree-Integrated Specialisations", description: "Launched our own skill-based short-term courses plus BCA and MCA degree-integrated specialisations with placement assistance, and MBA placement-assistance programs at universities across India." },
 ]
 
 const team = company.leadership.map((m) => ({
@@ -42,7 +45,7 @@ const team = company.leadership.map((m) => ({
 const aboutFaqs = [
   {
     question: "When was Datagami founded?",
-    answer: "Datagami Technology Services was founded in 2018 in Mumbai with a vision to bridge the gap between academia and industry through technology-driven education solutions.",
+    answer: "Datagami Technology Services was established in 2019 in Mumbai with a vision to bridge the gap between academia and industry through technology-driven education solutions.",
   },
   {
     question: "Where are Datagami's offices located?",
