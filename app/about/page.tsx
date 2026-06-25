@@ -12,25 +12,38 @@ import { LogoTicker } from "@/components/carousels/logo-ticker"
 import { allPartners } from "@/lib/data/partners"
 
 export const metadata: Metadata = {
-  title: 'About Datagami - EdTech Company Transforming Higher Education Since 2018',
-  description: 'Datagami Technology Services — pioneering B2B education technology company with offices in Mumbai and Bengaluru. 50+ partner universities, 10K+ students impacted.',
+  title: 'About Datagami - EdTech Company Transforming Higher Education Since 2019',
+  description: 'Datagami Technology Services — pioneering B2B education technology company based in Mumbai. 50+ partner universities, 10K+ students impacted.',
   alternates: {
     canonical: 'https://datagami.in/about',
   },
   openGraph: {
-    title: 'About Datagami - EdTech Company Transforming Higher Education Since 2018',
-    description: 'Datagami Technology Services — pioneering B2B education technology company with offices in Mumbai and Bengaluru. 50+ partner universities, 10K+ students impacted.',
+    title: 'About Datagami - EdTech Company Transforming Higher Education Since 2019',
+    description: 'Datagami Technology Services — pioneering B2B education technology company based in Mumbai. 50+ partner universities, 10K+ students impacted.',
     images: ['/images/hero/hero-about.png'],
   },
 }
 
 const milestones = [
-  { year: "2018", title: "Founded", description: "Datagami Technology Services established in Mumbai with a vision to bridge academia and industry." },
-  { year: "2019", title: "First University Partnership", description: "Signed our first university partnership, launching industry-aligned programs for undergraduate students." },
-  { year: "2021", title: "1,000th Student Enrolled", description: "Crossed the milestone of 1,000 students trained across finance, technology, and clinical research programs." },
-  { year: "2023", title: "Bengaluru Office", description: "Expanded operations with a second office in Bengaluru to serve South India's growing education ecosystem." },
-  { year: "2025", title: "10,000+ Students Impacted", description: "Reached over 10,000 students impacted across 50+ partner universities and 200+ programs delivered." },
+  { year: "2019", title: "Company Established", description: "Founded in Mumbai with a 25-member team; partnered with IBM, SAS and EC-Council." },
+  { year: "2020", title: "Pivot to B2B", description: "Moved to a B2B model, signed our first 4 universities and an SI contract with SBI Mutual Fund." },
+  { year: "2021", title: "Universities & Contracts", description: "Two more universities, an SI contract with BDO, and a Dubai Oracle Retail migration." },
+  { year: "2022", title: "FinLEARN Launched", description: "Launched FinLEARN, re-entered B2C, and onboarded 3 more universities." },
+  { year: "2023", title: "EduDron LMS Launched", description: "Built EduDron LMS and technology courses; first FinLEARN and IBM ICE universities." },
+  { year: "2024", title: "Clinomic Partnership", description: "Partnered with Clinomic and onboarded 7 universities for IBM ICE." },
+  { year: "2025", title: "Building Our Courses", description: "Five more IBM ICE universities; began building our own courses." },
+  { year: "2026", title: "Degree Specialisations", description: "Skill-based short-term courses, BCA/MCA degree-integrated specialisations, and MBA placement programs pan-India." },
 ]
+
+function JourneyCard({ m }: { m: { year: string; title: string; description: string } }) {
+  return (
+    <div className="glass-card dark:liquid-glass rounded-xl p-4 text-center w-full hover:shadow-brand-md transition-all">
+      <span className="text-lg font-bold text-brand">{m.year}</span>
+      <h3 className="text-sm font-bold text-dark mt-0.5 mb-1 leading-snug">{m.title}</h3>
+      <p className="text-[11px] leading-relaxed text-muted-brand">{m.description}</p>
+    </div>
+  )
+}
 
 const team = company.leadership.map((m) => ({
   name: m.name,
@@ -42,11 +55,11 @@ const team = company.leadership.map((m) => ({
 const aboutFaqs = [
   {
     question: "When was Datagami founded?",
-    answer: "Datagami Technology Services was founded in 2018 in Mumbai with a vision to bridge the gap between academia and industry through technology-driven education solutions.",
+    answer: "Datagami Technology Services was established in 2019 in Mumbai with a vision to bridge the gap between academia and industry through technology-driven education solutions.",
   },
   {
     question: "Where are Datagami's offices located?",
-    answer: "Datagami has offices in Mumbai (309, Crescent Business Square, Saki Naka) and Bengaluru (191, Appanna Building, Jakkuru), serving universities and businesses across India.",
+    answer: "Datagami's office is in Mumbai (309, Crescent Business Square, Saki Naka), serving universities and businesses across India.",
   },
   {
     question: "What is Datagami's mission?",
@@ -74,16 +87,16 @@ export default function AboutPage() {
         />
 
         {/* ── Mission & Vision ── */}
-        <section className="py-16">
+        <section className="py-12">
           <StaggerChildren className="grid gap-8 md:grid-cols-2">
             {/* Mission */}
             <StaggerItem>
-              <div className="rounded-2xl glass-card dark:liquid-glass p-8">
+              <div className="rounded-2xl glass-card dark:liquid-glass p-6">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="flex items-center justify-center size-12 rounded-full bg-brand/20">
-                    <Target className="size-6 text-dark" />
+                  <div className="flex items-center justify-center size-11 rounded-full bg-brand/20">
+                    <Target className="size-5 text-dark" />
                   </div>
-                  <h2 className="text-2xl font-bold text-dark">Our Mission</h2>
+                  <h2 className="text-lg font-bold text-dark">Our Mission</h2>
                 </div>
                 <p className="text-body leading-relaxed">{company.mission}</p>
               </div>
@@ -91,12 +104,12 @@ export default function AboutPage() {
 
             {/* Vision */}
             <StaggerItem>
-              <div className="rounded-2xl glass-card dark:liquid-glass p-8">
+              <div className="rounded-2xl glass-card dark:liquid-glass p-6">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="flex items-center justify-center size-12 rounded-full bg-brand/20">
-                    <Eye className="size-6 text-dark" />
+                  <div className="flex items-center justify-center size-11 rounded-full bg-brand/20">
+                    <Eye className="size-5 text-dark" />
                   </div>
-                  <h2 className="text-2xl font-bold text-dark">Our Vision</h2>
+                  <h2 className="text-lg font-bold text-dark">Our Vision</h2>
                 </div>
                 <p className="text-body leading-relaxed">{company.vision}</p>
               </div>
@@ -105,9 +118,9 @@ export default function AboutPage() {
         </section>
 
         {/* ── Our Story ── */}
-        <section className="py-16 border-t border-border-custom">
+        <section className="py-12 border-t border-border-custom">
           <FadeIn>
-            <h2 className="text-3xl font-bold text-dark mb-8 text-center">Our Story</h2>
+            <h2 className="text-2xl font-bold text-dark mb-8 text-center">Our Story</h2>
           </FadeIn>
           <FadeIn>
             <div className="max-w-3xl mx-auto space-y-4">
@@ -119,15 +132,15 @@ export default function AboutPage() {
         </section>
 
         {/* ── Core Values ── */}
-        <section className="py-16 border-t border-border-custom">
+        <section className="py-12 border-t border-border-custom">
           <FadeIn>
-            <h2 className="text-3xl font-bold text-dark mb-10 text-center">Our Core Values</h2>
+            <h2 className="text-2xl font-bold text-dark mb-10 text-center">Our Core Values</h2>
           </FadeIn>
           <StaggerChildren className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {company.coreValues.map((value) => (
               <StaggerItem key={value.title}>
-                <div className="glass-card dark:liquid-glass rounded-xl p-6 hover:shadow-brand-md transition-all h-full">
-                  <h3 className="text-lg font-bold text-dark mb-2">{value.title}</h3>
+                <div className="glass-card dark:liquid-glass rounded-xl p-5 hover:shadow-brand-md transition-all h-full">
+                  <h3 className="text-base font-bold text-dark mb-2">{value.title}</h3>
                   <p className="text-sm text-muted-brand">{value.description}</p>
                 </div>
               </StaggerItem>
@@ -136,68 +149,65 @@ export default function AboutPage() {
         </section>
 
         {/* ── Company Timeline ── */}
-        <section className="py-16 border-t border-border-custom">
+        <section className="py-12 border-t border-border-custom">
           <FadeIn>
-            <h2 className="text-3xl font-bold text-dark mb-12 text-center">Our Journey</h2>
+            <h2 className="text-2xl font-bold text-dark mb-10 text-center">Our Journey</h2>
           </FadeIn>
-          <div className="relative">
-            {/* Vertical line */}
-            <div className="absolute left-4 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-0.5 bg-brand/30" />
-
-            <StaggerChildren className="space-y-12">
-              {milestones.map((milestone, i) => {
-                const isLeft = i % 2 === 0
-                return (
-                  <StaggerItem key={milestone.year}>
-                    <div
-                      className={`relative flex items-start gap-6 md:gap-0 ${
-                        isLeft ? "md:flex-row" : "md:flex-row-reverse"
-                      }`}
-                    >
-                      {/* Dot */}
-                      <div className="absolute left-4 md:left-1/2 -translate-x-1/2 size-4 rounded-full bg-brand border-4 border-white dark:border-gray-950 ring-2 ring-brand/30 z-10" />
-
-                      {/* Content */}
-                      <div
-                        className={`ml-12 md:ml-0 md:w-1/2 ${
-                          isLeft ? "md:pr-12 md:text-right" : "md:pl-12"
-                        }`}
-                      >
-                        <span className="inline-block text-sm font-bold text-brand bg-brand/10 px-3 py-1 rounded-full mb-2">
-                          {milestone.year}
-                        </span>
-                        <h3 className="text-xl font-bold text-dark mb-1">{milestone.title}</h3>
-                        <p className="text-body leading-relaxed">{milestone.description}</p>
-                      </div>
+          {/* Desktop: horizontal timeline with alternating cards */}
+          <FadeIn>
+            <div className="hidden lg:block relative">
+              <div className="absolute left-[6%] right-[6%] top-1/2 -translate-y-1/2 h-0.5 bg-gradient-to-r from-brand/20 via-brand/50 to-brand/20" />
+              <div className="relative flex justify-between gap-4">
+                {milestones.map((milestone, i) => (
+                  <div key={milestone.year} className="flex-1 grid grid-rows-[1fr_auto_1fr] min-h-[300px]">
+                    <div className="flex items-end justify-center pb-4">
+                      {i % 2 === 0 && <JourneyCard m={milestone} />}
                     </div>
-                  </StaggerItem>
-                )
-              })}
-            </StaggerChildren>
-          </div>
+                    <div className="flex items-center justify-center">
+                      <div className="size-3.5 rounded-full bg-brand ring-4 ring-brand/20" />
+                    </div>
+                    <div className="flex items-start justify-center pt-4">
+                      {i % 2 === 1 && <JourneyCard m={milestone} />}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </FadeIn>
+
+          {/* Mobile / tablet: compact stacked grid */}
+          <StaggerChildren className="lg:hidden grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {milestones.map((milestone) => (
+              <StaggerItem key={milestone.year}>
+                <JourneyCard m={milestone} />
+              </StaggerItem>
+            ))}
+          </StaggerChildren>
         </section>
 
         {/* ── Team Section ── */}
-        <section className="py-16 border-t border-border-custom">
+        <section className="py-12 border-t border-border-custom">
           <FadeIn>
-            <h2 className="text-3xl font-bold text-dark mb-10 text-center">Our Leadership Team</h2>
+            <h2 className="text-2xl font-bold text-dark mb-10 text-center">Our Leadership Team</h2>
           </FadeIn>
-          <StaggerChildren className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <StaggerChildren className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {team.map((member) => (
               <StaggerItem key={member.name}>
-                <div className="text-center">
+                <div className="glass-card dark:liquid-glass rounded-2xl p-6 text-center h-full flex flex-col items-center hover:-translate-y-1 hover:shadow-brand-md transition-all">
                   <img
                     src={member.image}
                     alt={member.name}
-                    width={112}
-                    height={112}
+                    width={96}
+                    height={96}
                     loading="lazy"
-                    className="mx-auto mb-4 size-28 rounded-full object-cover"
+                    className="mb-4 size-24 rounded-full object-cover ring-2 ring-brand/20 ring-offset-2 ring-offset-transparent"
                   />
-                  <h3 className="text-lg font-bold text-dark">{member.name}</h3>
-                  <p className="text-sm text-body">{member.title}</p>
+                  <h3 className="text-base font-bold text-dark">{member.name}</h3>
+                  <p className="text-sm font-medium text-brand mt-1 mb-3 min-h-[2.5rem] flex items-center justify-center">
+                    {member.title}
+                  </p>
                   {'subtitle' in member && member.subtitle && (
-                    <p className="text-xs text-muted-brand mt-1">{member.subtitle}</p>
+                    <p className="text-xs text-muted-brand leading-relaxed line-clamp-4">{member.subtitle}</p>
                   )}
                 </div>
               </StaggerItem>
@@ -206,9 +216,9 @@ export default function AboutPage() {
         </section>
 
         {/* ── Partners & Clients ── */}
-        <section className="py-16 border-t border-border-custom">
+        <section className="py-12 border-t border-border-custom">
           <FadeIn>
-            <h2 className="text-3xl font-bold text-dark mb-10 text-center">Our Partners & Collaborations</h2>
+            <h2 className="text-2xl font-bold text-dark mb-10 text-center">Our Partners & Collaborations</h2>
           </FadeIn>
           <FadeIn delay={0.2}>
             <LogoTicker
@@ -218,21 +228,21 @@ export default function AboutPage() {
         </section>
 
         {/* ── Office Locations ── */}
-        <section className="py-16 border-t border-border-custom">
+        <section className="py-12 border-t border-border-custom">
           <FadeIn>
-            <h2 className="text-3xl font-bold text-dark mb-10 text-center">Our Offices</h2>
+            <h2 className="text-2xl font-bold text-dark mb-10 text-center">Our Offices</h2>
           </FadeIn>
           <StaggerChildren className="grid gap-8 md:grid-cols-2">
             {company.offices.map((office) => (
               <StaggerItem key={office.city}>
                 <div
-                  className="rounded-2xl glass-card dark:liquid-glass p-8"
+                  className="rounded-2xl glass-card dark:liquid-glass p-6"
                 >
                   <div className="flex items-center gap-3 mb-4">
                     <div className="flex items-center justify-center size-10 rounded-full bg-brand/20">
                       <MapPin className="size-5 text-dark" />
                     </div>
-                    <h3 className="text-xl font-bold text-dark">{office.city}</h3>
+                    <h3 className="text-lg font-bold text-dark">{office.city}</h3>
                   </div>
                   <p className="text-body leading-relaxed">{office.address}</p>
                 </div>

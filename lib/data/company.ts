@@ -57,11 +57,6 @@ export const company: CompanyData = {
       address:
         '309, Crescent Business Square, Khairani Rd, Saki Naka, Mumbai, Maharashtra 400072',
     },
-    {
-      city: 'Bengaluru',
-      address:
-        '191, 2nd Floor, Appanna Building, K V Byregowda Circle, Jakkuru, Bengaluru, Karnataka 560064',
-    },
   ],
   stats: {
     partnerUniversities: '50+',
@@ -106,14 +101,8 @@ export const company: CompanyData = {
     {
       name: 'Dhaval Shah',
       title: 'Founder & Chief Executive Officer',
-      bio: 'A forward-focused multi-faceted professional with over 25 years of experience in developing and reviewing the business development division\'s strategy across domains and ensuring the strategic objectives are well understood and executed by the team to achieve strategic goals as alliance and practice head.',
+      bio: 'Forward-focused leader with 25+ years of experience driving business development strategy across domains and aligning teams to deliver on strategic goals, as alliance and practice head.',
       image: '/images/team/dhaval-shah.png',
-    },
-    {
-      name: 'Prof. Dr. Joseph David Ponmany',
-      title: 'Dean \u2013 Financial Programs & Business Head',
-      bio: 'Academic leader with deep expertise in financial education and program development, ensuring our offerings meet the highest standards for universities.',
-      image: '/images/instructors/dr-joseph-ponmany.png',
     },
     {
       name: 'Dr Sanjay Daga',
@@ -126,6 +115,12 @@ export const company: CompanyData = {
       title: 'Partner & Advisor',
       bio: 'Senior advisor with extensive experience in education consulting and strategic guidance, providing invaluable insights for our institutional clients.',
       image: '/images/team/anoop-swaroep.jpeg',
+    },
+    {
+      name: 'Prof. Dr. Joseph David Ponmany',
+      title: 'Dean \u2013 Financial Programs & Business Head',
+      bio: 'Academic leader with deep expertise in financial education and program development, ensuring our offerings meet the highest standards for universities.',
+      image: '/images/instructors/dr-joseph-ponmany.png',
     },
   ],
   whyChooseUs: [
