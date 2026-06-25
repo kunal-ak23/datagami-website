@@ -57,40 +57,6 @@ export const finlearn: FinLEARNProgram = {
   href: '/services/education/finlearn',
   cardImage: '/images/cards/finlearn-card.png',
   tracks: [
-    // Undergraduate Programs
-    {
-      name: 'CP-BFSI Integrated Undergraduate Program with Apprenticeship',
-      level: 'UG',
-      duration: '3 Years',
-      description:
-        'A structured BFSI-focused undergraduate pathway covering capital markets, wealth management, retail banking, banking operations, corporate readiness, and interview preparation. Designed to integrate academic learning with applied finance skills and hands-on assessments across 6 semesters.',
-      skills: ['Paid Apprenticeship', 'Industry Mentorship', 'Practical Training', 'Placement Assistance'],
-    },
-    {
-      name: 'IBOP Integrated Undergraduate Program with Apprenticeship',
-      level: 'UG',
-      duration: '3 Years',
-      description:
-        'A focused undergraduate program combining core business fundamentals with specialized training in BFSI and Investment Banking Operations (IBOP), preparing students with practical finance skills and strong placement readiness.',
-      skills: ['Applied BFSI & IBOP Training', 'Industry-Aligned Curriculum', 'Skill Development', 'Placement Assistance'],
-    },
-    // Postgraduate Programs
-    {
-      name: 'MBA in Investment Banking Operations (IBOP)',
-      level: 'PG',
-      duration: '2 Years',
-      description:
-        'A specialized postgraduate program designed to build advanced capabilities in Investment Banking Operations. Delivered through a blend of offline foundation modules, online IBOP training levels, NISM certifications, and paid on-the-job training (OJT) that leads to full-time roles in leading financial organizations.',
-      skills: ['Advanced IBOP', 'Paid OJT', 'NISM Certifications', 'Market Skills', 'Operational Expertise', 'Placement Assistance'],
-    },
-    {
-      name: 'MBA in Wealth Management',
-      level: 'PG',
-      duration: '2 Years',
-      description:
-        'A specialized postgraduate program designed to build advanced expertise in Wealth Management, Capital Markets, Insurance Planning, and Financial Advisory. Delivered through a blended model with WM Level-1 & Level-2 modules, CP-BFSI training, NISM certifications, and paid OJT opportunities that lead to full-time roles in the finance sector.',
-      skills: ['Advanced Training', 'Wealth Expertise', 'Paid OJT', 'NISM Certified', 'Career Progression', 'Placement Assistance'],
-    },
     // Short-Term Certification Programs
     {
       name: 'Retail Banking Fundamentals',
@@ -200,7 +166,7 @@ export const finlearn: FinLEARNProgram = {
   faqs: [
     {
       question: 'Who is eligible for FinLEARN programs?',
-      answer: 'FinLEARN offers programs for undergraduate (UG) and postgraduate (PG) students as well as working professionals. UG programs like CP-BFSI and IBOP are open to students who have completed 12th grade or equivalent. PG programs require a bachelor\'s degree, preferably in finance, economics, or business — though graduates from diverse fields are encouraged to apply.',
+      answer: 'FinLEARN offers integrated degree programs that universities can embed into undergraduate or postgraduate finance and business courses (such as BBA, B.Com, BMS, MBA or M.Com), plus short-term certifications for students and working professionals. The integrated programs — MBA in FinTech & Investment Banking, Wealth Management & Investment Banking, and Business & Finance Journalism — are delivered in association with AAFM; short-term certifications are open to learners looking to upskill quickly.',
     },
     {
       question: 'What certifications do FinLEARN graduates receive?',
