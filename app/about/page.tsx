@@ -141,43 +141,19 @@ export default function AboutPage() {
         {/* ── Company Timeline ── */}
         <section className="py-12 border-t border-border-custom">
           <FadeIn>
-            <h2 className="text-2xl font-bold text-dark mb-12 text-center">Our Journey</h2>
+            <h2 className="text-2xl font-bold text-dark mb-10 text-center">Our Journey</h2>
           </FadeIn>
-          <div className="relative">
-            {/* Vertical line */}
-            <div className="absolute left-4 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-0.5 bg-brand/30" />
-
-            <StaggerChildren className="space-y-10">
-              {milestones.map((milestone, i) => {
-                const isLeft = i % 2 === 0
-                return (
-                  <StaggerItem key={milestone.year}>
-                    <div
-                      className={`relative flex items-start gap-6 md:gap-0 ${
-                        isLeft ? "md:flex-row" : "md:flex-row-reverse"
-                      }`}
-                    >
-                      {/* Dot */}
-                      <div className="absolute left-4 md:left-1/2 -translate-x-1/2 size-4 rounded-full bg-brand border-4 border-white dark:border-gray-950 ring-2 ring-brand/30 z-10" />
-
-                      {/* Content */}
-                      <div
-                        className={`ml-12 md:ml-0 md:w-1/2 ${
-                          isLeft ? "md:pr-12 md:text-right" : "md:pl-12"
-                        }`}
-                      >
-                        <span className="inline-block text-sm font-bold text-brand bg-brand/10 px-3 py-1 rounded-full mb-2">
-                          {milestone.year}
-                        </span>
-                        <h3 className="text-lg font-bold text-dark mb-1">{milestone.title}</h3>
-                        <p className="text-body leading-relaxed">{milestone.description}</p>
-                      </div>
-                    </div>
-                  </StaggerItem>
-                )
-              })}
-            </StaggerChildren>
-          </div>
+          <StaggerChildren className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {milestones.map((milestone) => (
+              <StaggerItem key={milestone.year}>
+                <div className="glass-card dark:liquid-glass rounded-xl p-5 h-full hover:-translate-y-1 hover:shadow-brand-md transition-all">
+                  <span className="text-2xl font-bold text-brand">{milestone.year}</span>
+                  <h3 className="text-base font-bold text-dark mt-1 mb-1.5">{milestone.title}</h3>
+                  <p className="text-xs text-muted-brand leading-relaxed">{milestone.description}</p>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerChildren>
         </section>
 
         {/* ── Team Section ── */}
