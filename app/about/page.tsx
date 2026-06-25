@@ -25,15 +25,25 @@ export const metadata: Metadata = {
 }
 
 const milestones = [
-  { year: "2019", title: "Company Established", description: "Set up a 2,000 sq ft office with state-of-the-art classrooms and datacentres and a 25-member team — partnering with IBM, SAS and EC-Council." },
-  { year: "2020", title: "Pivot to a B2B Model", description: "Moved from a B2C to a B2B model, onboarded our first 4 universities, and signed a system-integration contract with SBI Mutual Fund (SBIMF)." },
-  { year: "2021", title: "Universities & Enterprise Contracts", description: "Added 2 more universities, signed an SI contract with BDO, and won an Oracle Retail migration contract for a Dubai-based company." },
-  { year: "2022", title: "FinLEARN Launched", description: "Launched our own banking & finance program, FinLEARN, re-entered the B2C model, and onboarded 3 more universities." },
-  { year: "2023", title: "EduDron LMS & Technology Courses", description: "Built EduDron LMS — a student-centric learning portal — launched technology courses, and signed our first 2 FinLEARN universities and 2 IBM ICE universities." },
-  { year: "2024", title: "Clinomic Partnership", description: "Partnered with Clinomic and onboarded 7 universities for the IBM ICE technology program." },
-  { year: "2025", title: "Building Our Own Courses", description: "Added 5 more universities for IBM ICE and began developing our own proprietary courses." },
-  { year: "2026", title: "Degree-Integrated Specialisations", description: "Launched our own skill-based short-term courses plus BCA and MCA degree-integrated specialisations with placement assistance, and MBA placement-assistance programs at universities across India." },
+  { year: "2019", title: "Company Established", description: "Founded in Mumbai with a 25-member team; partnered with IBM, SAS and EC-Council." },
+  { year: "2020", title: "Pivot to B2B", description: "Moved to a B2B model, signed our first 4 universities and an SI contract with SBI Mutual Fund." },
+  { year: "2021", title: "Universities & Contracts", description: "Two more universities, an SI contract with BDO, and a Dubai Oracle Retail migration." },
+  { year: "2022", title: "FinLEARN Launched", description: "Launched FinLEARN, re-entered B2C, and onboarded 3 more universities." },
+  { year: "2023", title: "EduDron LMS Launched", description: "Built EduDron LMS and technology courses; first FinLEARN and IBM ICE universities." },
+  { year: "2024", title: "Clinomic Partnership", description: "Partnered with Clinomic and onboarded 7 universities for IBM ICE." },
+  { year: "2025", title: "Building Our Courses", description: "Five more IBM ICE universities; began building our own courses." },
+  { year: "2026", title: "Degree Specialisations", description: "Skill-based short-term courses, BCA/MCA degree-integrated specialisations, and MBA placement programs pan-India." },
 ]
+
+function JourneyCard({ m }: { m: { year: string; title: string; description: string } }) {
+  return (
+    <div className="glass-card dark:liquid-glass rounded-xl p-4 text-center w-full hover:shadow-brand-md transition-all">
+      <span className="text-lg font-bold text-brand">{m.year}</span>
+      <h3 className="text-sm font-bold text-dark mt-0.5 mb-1 leading-snug">{m.title}</h3>
+      <p className="text-[11px] leading-relaxed text-muted-brand">{m.description}</p>
+    </div>
+  )
+}
 
 const team = company.leadership.map((m) => ({
   name: m.name,
@@ -143,14 +153,33 @@ export default function AboutPage() {
           <FadeIn>
             <h2 className="text-2xl font-bold text-dark mb-10 text-center">Our Journey</h2>
           </FadeIn>
-          <StaggerChildren className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {/* Desktop: horizontal timeline with alternating cards */}
+          <FadeIn>
+            <div className="hidden lg:block relative">
+              <div className="absolute left-[6%] right-[6%] top-1/2 -translate-y-1/2 h-0.5 bg-gradient-to-r from-brand/20 via-brand/50 to-brand/20" />
+              <div className="relative flex justify-between gap-4">
+                {milestones.map((milestone, i) => (
+                  <div key={milestone.year} className="flex-1 grid grid-rows-[1fr_auto_1fr] min-h-[300px]">
+                    <div className="flex items-end justify-center pb-4">
+                      {i % 2 === 0 && <JourneyCard m={milestone} />}
+                    </div>
+                    <div className="flex items-center justify-center">
+                      <div className="size-3.5 rounded-full bg-brand ring-4 ring-brand/20" />
+                    </div>
+                    <div className="flex items-start justify-center pt-4">
+                      {i % 2 === 1 && <JourneyCard m={milestone} />}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </FadeIn>
+
+          {/* Mobile / tablet: compact stacked grid */}
+          <StaggerChildren className="lg:hidden grid grid-cols-1 sm:grid-cols-2 gap-4">
             {milestones.map((milestone) => (
               <StaggerItem key={milestone.year}>
-                <div className="glass-card dark:liquid-glass rounded-xl p-5 h-full hover:-translate-y-1 hover:shadow-brand-md transition-all">
-                  <span className="text-2xl font-bold text-brand">{milestone.year}</span>
-                  <h3 className="text-base font-bold text-dark mt-1 mb-1.5">{milestone.title}</h3>
-                  <p className="text-xs text-muted-brand leading-relaxed">{milestone.description}</p>
-                </div>
+                <JourneyCard m={milestone} />
               </StaggerItem>
             ))}
           </StaggerChildren>
