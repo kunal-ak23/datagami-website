@@ -106,6 +106,15 @@ const careerPath = [
   { stage: "Leadership · 8+ yrs", roles: ["Head – Private Banking / Wealth", "Portfolio Manager", "Director – Investment Banking", "Chief Risk / Compliance Officer"] },
 ]
 
+// Target recruiters / hiring partners across banking, broking, wealth and asset
+// management — drawn from the program brochure's roles and hiring-partner pages.
+const recruiters = [
+  "ICICI Bank", "Kotak", "Axis Bank", "HDFC Securities",
+  "Nuvama", "Motilal Oswal", "Aditya Birla Capital", "Angel One",
+  "Edelweiss", "ICICI Securities", "UTI Mutual Fund", "Karvy",
+  "Indiabulls", "SMC", "JPMorgan", "Morgan Stanley",
+]
+
 const courseSchema = generateCourseSchema({
   name: "Wealth Management & Investment Banking — FinLEARN by Datagami",
   description:
@@ -263,8 +272,31 @@ export default function WealthManagementIBPage() {
         </div>
       </section>
 
-      {/* Career path */}
+      {/* Where graduates get placed */}
       <section className="py-16 bg-gray-50 dark:bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <SectionHeader title="Where graduates get placed" description="Target recruiters and hiring partners across banking, broking, wealth management and asset management — the institutions actively hiring for these roles." />
+          </FadeIn>
+          <StaggerChildren className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+            {recruiters.map((name) => (
+              <StaggerItem key={name}>
+                <div className="flex items-center justify-center text-center glass-card dark:liquid-glass rounded-xl px-4 py-5 hover:shadow-brand-md transition-all h-full">
+                  <span className="text-sm font-semibold text-dark">{name}</span>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerChildren>
+          <FadeIn>
+            <p className="text-center text-xs text-muted-brand mt-6 max-w-3xl mx-auto">
+              Representative recruiters and hiring partners — actual placements vary by cohort, performance and market conditions.
+            </p>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Career path */}
+      <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <SectionHeader title="Your career path" description="Where this program can take you over the years — from your first analyst role to senior and leadership positions." />

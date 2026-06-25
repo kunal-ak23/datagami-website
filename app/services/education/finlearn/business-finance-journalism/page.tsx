@@ -107,6 +107,14 @@ const careerPath = [
   { stage: "Leadership · 8+ yrs", roles: ["Business Editor", "Editorial Head", "Founder – Media Venture", "Editor-in-Chief (track)"] },
 ]
 
+// Target newsrooms and business-media houses for business & finance journalists —
+// led by the program's media partner (Amar Ujala / BONUS) plus leading business media.
+const recruiters = [
+  "Amar Ujala", "BONUS", "The Economic Times", "Mint",
+  "Moneycontrol", "Business Standard", "CNBC-TV18", "NDTV Profit",
+  "Financial Express", "ET Now", "Forbes India", "Zee Business",
+]
+
 const courseSchema = generateCourseSchema({
   name: "Business & Finance Journalism — FinLEARN by Datagami",
   description:
@@ -264,8 +272,31 @@ export default function BusinessFinanceJournalismPage() {
         </div>
       </section>
 
-      {/* Career path */}
+      {/* Where graduates get placed */}
       <section className="py-16 bg-gray-50 dark:bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <SectionHeader title="Where graduates get placed" description="Target newsrooms and business-media houses across print, digital and broadcast — led by the program's media partner, Amar Ujala, alongside leading business and finance media." />
+          </FadeIn>
+          <StaggerChildren className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+            {recruiters.map((name) => (
+              <StaggerItem key={name}>
+                <div className="flex items-center justify-center text-center glass-card dark:liquid-glass rounded-xl px-4 py-5 hover:shadow-brand-md transition-all h-full">
+                  <span className="text-sm font-semibold text-dark">{name}</span>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerChildren>
+          <FadeIn>
+            <p className="text-center text-xs text-muted-brand mt-6 max-w-3xl mx-auto">
+              Representative newsrooms and media houses — actual placements vary by cohort, portfolio and market conditions.
+            </p>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Career path */}
+      <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <SectionHeader title="Your career path" description="Where this program can take you over the years — from your first reporting role to senior editorial and leadership positions." />
