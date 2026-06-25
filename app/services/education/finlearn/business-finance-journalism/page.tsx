@@ -15,7 +15,7 @@ import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-childr
 export const metadata: Metadata = {
   title: "Business & Finance Journalism | FinLEARN by Datagami",
   description:
-    "An 11-month, practice-led postgraduate program in Business & Finance Journalism — 630 hours, 42 credits, newsroom-applied and portfolio-driven. Integrates into any UG or PG degree, in association with AAFM India & Amar Ujala.",
+    "A practice-led postgraduate program in Business & Finance Journalism — 630 learning hours, 42 credits, newsroom-applied and portfolio-driven. Integrates into any UG or PG degree, in association with AAFM India & Amar Ujala.",
   alternates: {
     canonical: "https://datagami.in/services/education/finlearn/business-finance-journalism",
   },
@@ -28,8 +28,8 @@ export const metadata: Metadata = {
 }
 
 const heroStats = [
-  { value: "11", label: "Months Program" },
   { value: "42", label: "Credits" },
+  { value: "15", label: "Modules" },
   { value: "630", label: "Learning Hours" },
   { value: "8", label: "In-Demand Roles" },
 ]
@@ -79,12 +79,12 @@ const semester2 = [
   "BFJ205 · Wealth, Personal Finance & Investor Journalism",
   "BFJ206 · Digital Media, Video & Broadcast Journalism",
   "BFJ207 · Newsroom Lab II – Investigations & Long-form Reporting",
-  "BFJ208 · Internship, Capstone Story & Viva",
+  "BFJ208 · Internship, Capstone Project & Viva",
 ]
 
 const culmination = [
   { num: "01", title: "Industry Internship", description: "Work in real or simulated newsrooms and financial-content platforms." },
-  { num: "02", title: "Capstone Story", description: "Produce a major investigative or analytical business journalism piece." },
+  { num: "02", title: "Capstone Project", description: "Produce a major investigative or analytical business journalism piece." },
   { num: "03", title: "Editorial Defence", description: "Defend your work before an academic–industry panel with a publication-ready portfolio." },
 ]
 
@@ -118,7 +118,7 @@ const recruiters = [
 const courseSchema = generateCourseSchema({
   name: "Business & Finance Journalism — FinLEARN by Datagami",
   description:
-    "An 11-month practice-led postgraduate program in Business & Finance Journalism — newsroom-applied and portfolio-driven, embeddable into any UG or PG degree, in association with AAFM India & Amar Ujala.",
+    "A practice-led postgraduate program in Business & Finance Journalism — newsroom-applied and portfolio-driven, embeddable into any UG or PG degree, in association with AAFM India & Amar Ujala.",
   url: "/services/education/finlearn/business-finance-journalism",
 })
 
@@ -198,14 +198,14 @@ export default function BusinessFinanceJournalismPage() {
       <section className="py-16 bg-gray-50 dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
-            <SectionHeader title="Program curriculum" description="Two semesters built around newsroom labs, real-world reporting and a publication-ready portfolio." />
+            <SectionHeader title="Program curriculum" description="Built around newsroom labs, real-world reporting and a publication-ready portfolio." />
           </FadeIn>
           <div className="grid md:grid-cols-2 gap-6">
             <FadeIn>
               <div className="glass-card dark:liquid-glass rounded-2xl p-7 h-full">
                 <div className="flex items-center gap-2 mb-5">
                   <Layers className="size-5 text-brand" />
-                  <span className="text-sm font-bold text-brand uppercase tracking-wider">Semester 1 · Foundations & Craft</span>
+                  <span className="text-sm font-bold text-brand uppercase tracking-wider">Foundations &amp; Craft</span>
                 </div>
                 <ul className="space-y-2.5">
                   {semester1.map((m) => (
@@ -221,7 +221,7 @@ export default function BusinessFinanceJournalismPage() {
               <div className="glass-card dark:liquid-glass rounded-2xl p-7 h-full">
                 <div className="flex items-center gap-2 mb-5">
                   <Layers className="size-5 text-brand" />
-                  <span className="text-sm font-bold text-brand uppercase tracking-wider">Semester 2 · Advanced & Multimedia</span>
+                  <span className="text-sm font-bold text-brand uppercase tracking-wider">Advanced &amp; Multimedia</span>
                 </div>
                 <ul className="space-y-2.5">
                   {semester2.map((m) => (

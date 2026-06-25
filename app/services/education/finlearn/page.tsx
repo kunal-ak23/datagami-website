@@ -189,7 +189,7 @@ const integratedPrograms = [
     href: "/services/education/finlearn/business-finance-journalism",
     description:
       "A practice-led, newsroom-applied program building finance-literate, data-driven, digital-first business journalists. In association with AAFM India & Amar Ujala.",
-    focus: ["11 months · 42 credits · 630 hours", "Finance-literate reporting", "Data & visual storytelling", "Multimedia & digital journalism"],
+    focus: ["42 credits · 630 learning hours", "Finance-literate reporting", "Data & visual storytelling", "Multimedia & digital journalism"],
   },
 ]
 
