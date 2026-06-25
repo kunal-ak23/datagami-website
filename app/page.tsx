@@ -220,7 +220,7 @@ export default function Home() {
       />
 
       {/* 1. Hero */}
-      <section className="relative bg-[#1A1A1A] overflow-hidden bg-pattern">
+      <section className="relative bg-[#1A1A1A] overflow-hidden bg-pattern flex items-center min-h-[calc(100svh-4rem)]">
         <img
           src="/images/hero/hero-students-collaborating.png"
           alt=""
@@ -228,31 +228,31 @@ export default function Home() {
           className="absolute inset-0 w-full h-full object-cover opacity-10"
           loading="lazy"
         />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="max-w-3xl">
-            <div className="mb-6 inline-block bg-white rounded-2xl p-3 shadow-lg">
-              <img src="/images/logo/datagami-logo.webp" alt="Datagami logo" className="h-10 w-auto block" />
+            <div className="mb-5 inline-block bg-white rounded-xl p-2 shadow-lg">
+              <img src="/images/logo/datagami-logo.webp" alt="Datagami logo" className="h-8 w-auto block" />
             </div>
-            <span className="block text-brand text-sm font-semibold uppercase tracking-wider mb-4">
+            <span className="block text-brand text-xs sm:text-sm font-semibold uppercase tracking-wider mb-3">
               Education · Platform · Talent · Software
             </span>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-white mb-6">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-white mb-4">
               Bridging academia and industry — with programs, platforms and people
             </h1>
-            <p className="text-lg md:text-xl leading-relaxed text-white/70 mb-8">
+            <p className="text-base md:text-lg leading-relaxed text-white/70 mb-6 max-w-2xl">
               Datagami helps universities and businesses close the gap between learning and the real world — through degree-integrated programs, an AI-powered learning platform, recruitment &amp; staffing, and custom enterprise software.
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-3">
               <Link
                 href="#pillars"
-                className="inline-flex items-center gap-2 bg-brand text-[#1A1A1A] px-8 py-3 rounded-full font-semibold hover:bg-brand/90 transition-colors"
+                className="inline-flex items-center gap-2 bg-brand text-[#1A1A1A] px-7 py-2.5 rounded-full font-semibold hover:bg-brand/90 transition-colors"
               >
                 Explore Solutions
                 <ArrowRight className="size-5" />
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 border border-white/30 text-white px-8 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors"
+                className="inline-flex items-center gap-2 border border-white/30 text-white px-7 py-2.5 rounded-full font-semibold hover:bg-white/10 transition-colors"
               >
                 Partner with Us
               </Link>
@@ -260,12 +260,12 @@ export default function Home() {
           </div>
 
           {/* Hero stats */}
-          <div className="mt-16 pt-8 border-t border-white/10">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="mt-8 pt-6 border-t border-white/10">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {heroStats.map((stat) => (
                 <div key={stat.label}>
-                  <Counter target={stat.target} className="text-3xl md:text-4xl font-bold text-brand" />
-                  <p className="text-sm text-white/60 mt-1">{stat.label}</p>
+                  <Counter target={stat.target} className="text-2xl md:text-3xl font-bold text-brand" />
+                  <p className="text-xs sm:text-sm text-white/60 mt-1">{stat.label}</p>
                 </div>
               ))}
             </div>
@@ -355,7 +355,7 @@ export default function Home() {
                   <img
                     src={row.image}
                     alt={row.imageAlt}
-                    className="rounded-2xl shadow-lg w-full object-cover aspect-[4/3]"
+                    className="rounded-2xl shadow-lg w-full object-cover aspect-[16/10] max-h-[380px]"
                   />
                 </FadeIn>
 
