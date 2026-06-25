@@ -145,7 +145,7 @@ export default function BusinessFinanceJournalismPage() {
         accentColor="text-brand"
         badgeText="Integrated Degree Program · Media + Finance"
         stats={heroStats}
-        ctaText="Talk to Us"
+        ctaText="Partner with Us"
         ctaHref="/contact"
         backgroundImage="/images/hero/hero-finlearn.png"
       />
@@ -349,7 +349,7 @@ export default function BusinessFinanceJournalismPage() {
         <CTASection
           title="Bring this program to your institution"
           description="We'll tailor the business-journalism curriculum, newsroom labs and capstone to integrate with your degree structure."
-          buttonText="Talk to Us"
+          buttonText="Partner with Us"
           buttonHref="/contact"
           variant="primary"
         />

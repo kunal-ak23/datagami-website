@@ -145,7 +145,7 @@ export default function WealthManagementIBPage() {
         accentColor="text-brand"
         badgeText="Integrated Degree Program · Wealth + IB"
         stats={heroStats}
-        ctaText="Talk to Us"
+        ctaText="Partner with Us"
         ctaHref="/contact"
         backgroundImage="/images/hero/hero-finlearn.png"
       />
@@ -355,7 +355,7 @@ export default function WealthManagementIBPage() {
         <CTASection
           title="Bring this program to your institution"
           description="We'll tailor the wealth and investment-banking curriculum, labs and projects to integrate with your degree structure."
-          buttonText="Talk to Us"
+          buttonText="Partner with Us"
           buttonHref="/contact"
           variant="primary"
         />
