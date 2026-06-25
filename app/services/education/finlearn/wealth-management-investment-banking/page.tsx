@@ -4,6 +4,7 @@ import { HeroDark } from "@/components/sections/hero-dark"
 import { SectionHeader } from "@/components/sections/section-header"
 import { CTASection } from "@/components/sections/cta-section"
 import { generateCourseSchema } from "@/lib/schemas/course"
+import { placementPartners } from "@/lib/data/partners"
 import {
   GraduationCap, CheckCircle, Coins, Building2, PieChart, ShieldCheck,
   TrendingUp, Banknote, LineChart, Users, FileCheck, Layers,
@@ -31,7 +32,7 @@ const heroStats = [
   { value: "630+", label: "Learning Hours" },
   { value: "14", label: "Modules" },
   { value: "7", label: "In-Demand Roles" },
-  { value: "16+", label: "Hiring Partners" },
+  { value: "20+", label: "Hiring Partners" },
 ]
 
 const focusAreas = [
@@ -104,15 +105,6 @@ const careerPath = [
   { stage: "Growing · 2–4 yrs", roles: ["Relationship Manager – Wealth", "Research / IB Associate", "Portfolio Analyst", "Securities Ops Specialist"] },
   { stage: "Senior · 5–8 yrs", roles: ["Senior Wealth / Private Banker", "Portfolio Manager (track)", "VP – Investment Banking (track)", "Risk & Compliance Manager"] },
   { stage: "Leadership · 8+ yrs", roles: ["Head – Private Banking / Wealth", "Portfolio Manager", "Director – Investment Banking", "Chief Risk / Compliance Officer"] },
-]
-
-// Target recruiters / hiring partners across banking, broking, wealth and asset
-// management — drawn from the program brochure's roles and hiring-partner pages.
-const recruiters = [
-  "ICICI Bank", "Kotak", "Axis Bank", "HDFC Securities",
-  "Nuvama", "Motilal Oswal", "Aditya Birla Capital", "Angel One",
-  "Edelweiss", "ICICI Securities", "UTI Mutual Fund", "Karvy",
-  "Indiabulls", "SMC", "JPMorgan", "Morgan Stanley",
 ]
 
 const courseSchema = generateCourseSchema({
@@ -276,13 +268,13 @@ export default function WealthManagementIBPage() {
       <section className="py-16 bg-gray-50 dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
-            <SectionHeader title="Where graduates get placed" description="Target recruiters and hiring partners across banking, broking, wealth management and asset management — the institutions actively hiring for these roles." />
+            <SectionHeader title="Where graduates get placed" description="Graduates are placed across a network of leading banks, broking houses, and wealth & asset-management firms." />
           </FadeIn>
-          <StaggerChildren className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-            {recruiters.map((name) => (
-              <StaggerItem key={name}>
-                <div className="flex items-center justify-center text-center glass-card dark:liquid-glass rounded-xl px-4 py-5 hover:shadow-brand-md transition-all h-full">
-                  <span className="text-sm font-semibold text-dark">{name}</span>
+          <StaggerChildren className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-3">
+            {placementPartners.map((c) => (
+              <StaggerItem key={c.name}>
+                <div className="bg-white rounded-xl p-3 flex items-center justify-center h-20 hover:shadow-brand-md transition-all">
+                  <img src={c.logo} alt={c.name} className="max-h-12 w-auto object-contain" />
                 </div>
               </StaggerItem>
             ))}
