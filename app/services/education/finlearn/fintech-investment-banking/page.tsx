@@ -342,15 +342,9 @@ export default function FinTechInvestmentBankingPage() {
               <div className="bg-white rounded-xl p-3 shrink-0">
                 <img src="/images/finlearn/aafm.jpg" alt="American Academy of Financial Management (AAFM)" className="h-12 w-auto object-contain" />
               </div>
-              <div className="text-sm text-muted-brand">
-                <p>
-                  Offered <span className="font-medium text-dark">in association with AAFM</span> (American Academy of Financial Management) — bringing globally benchmarked standards in wealth management, financial planning and advisory education.
-                </p>
-                <p className="mt-3 flex items-center justify-center sm:justify-start gap-2 font-semibold text-dark">
-                  <CheckCircle className="size-4 text-brand shrink-0" />
-                  Includes 2 free attempts at the CWM® (Chartered Wealth Manager) certification exam.
-                </p>
-              </div>
+              <p className="text-sm text-muted-brand">
+                Offered <span className="font-medium text-dark">in association with AAFM</span> (American Academy of Financial Management) — bringing globally benchmarked standards in wealth management, financial planning and advisory education.
+              </p>
             </div>
           </FadeIn>
         </div>
