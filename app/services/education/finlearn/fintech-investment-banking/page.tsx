@@ -335,7 +335,7 @@ export default function FinTechInvestmentBankingPage() {
       </section>
 
       {/* AAFM association */}
-      <section className="py-12">
+      <section className="pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <div className="glass-card dark:liquid-glass rounded-2xl p-6 flex flex-col sm:flex-row items-center gap-5 text-center sm:text-left">
