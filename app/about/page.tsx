@@ -185,22 +185,24 @@ export default function AboutPage() {
           <FadeIn>
             <h2 className="text-2xl font-bold text-dark mb-10 text-center">Our Leadership Team</h2>
           </FadeIn>
-          <StaggerChildren className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <StaggerChildren className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {team.map((member) => (
               <StaggerItem key={member.name}>
-                <div className="text-center">
+                <div className="glass-card dark:liquid-glass rounded-2xl p-6 text-center h-full flex flex-col items-center hover:-translate-y-1 hover:shadow-brand-md transition-all">
                   <img
                     src={member.image}
                     alt={member.name}
                     width={96}
                     height={96}
                     loading="lazy"
-                    className="mx-auto mb-4 size-24 rounded-full object-cover"
+                    className="mb-4 size-24 rounded-full object-cover ring-2 ring-brand/20 ring-offset-2 ring-offset-transparent"
                   />
                   <h3 className="text-base font-bold text-dark">{member.name}</h3>
-                  <p className="text-sm text-body">{member.title}</p>
+                  <p className="text-sm font-medium text-brand mt-1 mb-3 min-h-[2.5rem] flex items-center justify-center">
+                    {member.title}
+                  </p>
                   {'subtitle' in member && member.subtitle && (
-                    <p className="text-xs text-muted-brand mt-1">{member.subtitle}</p>
+                    <p className="text-xs text-muted-brand leading-relaxed line-clamp-4">{member.subtitle}</p>
                   )}
                 </div>
               </StaggerItem>
