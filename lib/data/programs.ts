@@ -166,7 +166,7 @@ export const finlearn: FinLEARNProgram = {
   faqs: [
     {
       question: 'Who is eligible for FinLEARN programs?',
-      answer: 'FinLEARN offers integrated degree programs that universities can embed into undergraduate or postgraduate finance and business courses (such as BBA, B.Com, BMS, MBA or M.Com), plus short-term certifications for students and working professionals. The integrated programs — MBA in FinTech & Investment Banking, Wealth Management & Investment Banking, and Business & Finance Journalism — are delivered in association with AAFM; short-term certifications are open to learners looking to upskill quickly.',
+      answer: 'FinLEARN offers integrated degree programs that universities can embed into undergraduate or postgraduate finance and business courses (such as BBA, B.Com, BMS, MBA or M.Com), plus short-term certifications for students and working professionals. The integrated programs — FinTech & Investment Banking, Wealth Management & Investment Banking, and Business & Finance Journalism — are delivered in association with AAFM; short-term certifications are open to learners looking to upskill quickly.',
     },
     {
       question: 'What certifications do FinLEARN graduates receive?',

@@ -13,22 +13,21 @@ import { FadeIn } from "@/components/motion/fade-in"
 import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
 
 export const metadata: Metadata = {
-  title: "MBA in FinTech & Investment Banking | FinLEARN by Datagami",
+  title: "FinTech & Investment Banking | FinLEARN by Datagami",
   description:
-    "An industry-integrated MBA in FinTech & Investment Banking — 24 months, 60 credits, 900+ learning hours across finance, technology, capital markets, wealth and digital finance. Integrates into any UG or PG degree, in association with AAFM.",
+    "An industry-integrated program in FinTech & Investment Banking — 60 credits, 900+ learning hours across finance, technology, capital markets, wealth and digital finance. Integrates into any UG or PG degree, in association with AAFM.",
   alternates: {
-    canonical: "https://datagami.in/services/education/finlearn/mba-fintech",
+    canonical: "https://datagami.in/services/education/finlearn/fintech-investment-banking",
   },
   openGraph: {
-    title: "MBA in FinTech & Investment Banking | FinLEARN by Datagami",
+    title: "FinTech & Investment Banking | FinLEARN by Datagami",
     description:
-      "Industry-integrated MBA across FinTech, Investment Banking, capital markets and digital finance — embeds into any UG or PG degree.",
+      "Industry-integrated program across FinTech, Investment Banking, capital markets and digital finance — embeds into any UG or PG degree.",
     images: ["/images/hero/hero-finlearn.png"],
   },
 }
 
 const heroStats = [
-  { value: "24", label: "Months Program" },
   { value: "60", label: "Credits" },
   { value: "900+", label: "Learning Hours" },
   { value: "7", label: "In-Demand Roles" },
@@ -61,7 +60,7 @@ const focusAreas = [
   },
 ]
 
-const semester1 = [
+const foundations = [
   "Introduction to FinTech & Financial Services Ecosystem",
   "Python for Financial Analytics & Automation Lab",
   "Business Analytics & Data Visualization for Decision Making",
@@ -74,7 +73,7 @@ const semester1 = [
   "Financial Modelling & Valuation Lab",
 ]
 
-const semester2 = [
+const advanced = [
   "Blockchain Strategy, Crypto Assets & Global Securities Operations",
   "Equity Research, Valuation & Coverage Analysis",
   "Alternative Investments, AIFs, SIFs & Private Capital Structures",
@@ -112,13 +111,13 @@ const careerPath = [
 ]
 
 const courseSchema = generateCourseSchema({
-  name: "MBA in FinTech & Investment Banking — FinLEARN by Datagami",
+  name: "FinTech & Investment Banking — FinLEARN by Datagami",
   description:
-    "An industry-integrated MBA in FinTech & Investment Banking across finance, technology, capital markets, wealth and digital finance, embeddable into any UG or PG degree, in association with AAFM.",
-  url: "/services/education/finlearn/mba-fintech",
+    "An industry-integrated program in FinTech & Investment Banking across finance, technology, capital markets, wealth and digital finance, embeddable into any UG or PG degree, in association with AAFM.",
+  url: "/services/education/finlearn/fintech-investment-banking",
 })
 
-export default function MBAFinTechPage() {
+export default function FinTechInvestmentBankingPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(courseSchema) }} />
@@ -130,13 +129,13 @@ export default function MBAFinTechPage() {
             { label: "Services", href: "/services" },
             { label: "Education", href: "/services#education" },
             { label: "FinLEARN", href: "/services/education/finlearn" },
-            { label: "MBA in FinTech & Investment Banking" },
+            { label: "FinTech & Investment Banking" },
           ]}
         />
       </div>
 
       <HeroDark
-        heading="MBA in FinTech & Investment Banking"
+        heading="FinTech & Investment Banking"
         subtitle="An industry-integrated program that fuses finance, technology and analytics — preparing industry-ready professionals for the AI-driven financial economy across investment banking, FinTech, capital markets and wealth."
         accentColor="text-brand"
         badgeText="Integrated Degree Program · FinTech + IB"
@@ -155,7 +154,7 @@ export default function MBAFinTechPage() {
                 <GraduationCap className="size-7 text-brand" />
               </div>
               <p className="text-muted-brand">
-                <span className="font-semibold text-dark">Integrates into UG or PG.</span> Embed this program as a credit-aligned specialisation within an <span className="font-medium text-dark">undergraduate or postgraduate</span> finance or business degree — such as BBA, B.Com, BMS, MBA or M.Com — or run it standalone.
+                <span className="font-semibold text-dark">Integrates into any degree.</span> Embed this program as a credit-aligned specialisation within any <span className="font-medium text-dark">undergraduate or postgraduate</span> finance or business degree — such as BBA, B.Com, BMS or M.Com — or run it standalone.
               </p>
             </div>
           </FadeIn>
@@ -194,17 +193,17 @@ export default function MBAFinTechPage() {
       <section className="py-16 bg-gray-50 dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
-            <SectionHeader title="Program curriculum" description="Delivered over four semesters — two of structured coursework, followed by industry internship and capstone." />
+            <SectionHeader title="Program curriculum" description="Structured across foundation and advanced coursework, followed by industry application through internship and capstone." />
           </FadeIn>
           <div className="grid md:grid-cols-2 gap-6">
             <FadeIn>
               <div className="glass-card dark:liquid-glass rounded-2xl p-7 h-full">
                 <div className="flex items-center gap-2 mb-5">
                   <Layers className="size-5 text-brand" />
-                  <span className="text-sm font-bold text-brand uppercase tracking-wider">Semester 1 · Foundations</span>
+                  <span className="text-sm font-bold text-brand uppercase tracking-wider">Foundations</span>
                 </div>
                 <ul className="space-y-2.5">
-                  {semester1.map((m) => (
+                  {foundations.map((m) => (
                     <li key={m} className="flex items-start gap-2">
                       <CheckCircle className="size-4 text-brand shrink-0 mt-0.5" />
                       <span className="text-sm text-dark">{m}</span>
@@ -217,10 +216,10 @@ export default function MBAFinTechPage() {
               <div className="glass-card dark:liquid-glass rounded-2xl p-7 h-full">
                 <div className="flex items-center gap-2 mb-5">
                   <Layers className="size-5 text-brand" />
-                  <span className="text-sm font-bold text-brand uppercase tracking-wider">Semester 2 · Advanced & Applied</span>
+                  <span className="text-sm font-bold text-brand uppercase tracking-wider">Advanced &amp; Applied</span>
                 </div>
                 <ul className="space-y-2.5">
-                  {semester2.map((m) => (
+                  {advanced.map((m) => (
                     <li key={m} className="flex items-start gap-2">
                       <CheckCircle className="size-4 text-brand shrink-0 mt-0.5" />
                       <span className="text-sm text-dark">{m}</span>
@@ -233,7 +232,7 @@ export default function MBAFinTechPage() {
 
           {/* Culmination */}
           <FadeIn>
-            <h3 className="text-lg font-bold text-dark mt-12 mb-6 text-center">Semesters 3 & 4 — Industry application</h3>
+            <h3 className="text-lg font-bold text-dark mt-12 mb-6 text-center">Industry Application</h3>
           </FadeIn>
           <StaggerChildren className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {culmination.map((c) => (

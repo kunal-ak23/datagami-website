@@ -21,7 +21,7 @@ import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-childr
 export const metadata: Metadata = {
   title: 'FinLEARN by Datagami - BFSI & Finance Programs | 95% Placement Rate',
   description:
-    'Industry-integrated finance programs — MBA in FinTech & Investment Banking, Wealth Management & Investment Banking, and Business & Finance Journalism — that embed into any UG or PG degree, plus short-term BFSI certifications. In association with AAFM. 500+ graduates, 95% placement rate.',
+    'Industry-integrated finance programs — FinTech & Investment Banking, Wealth Management & Investment Banking, and Business & Finance Journalism — that embed into any UG or PG degree, plus short-term BFSI certifications. In association with AAFM. 500+ graduates, 95% placement rate.',
   alternates: {
     canonical: 'https://datagami.in/services/education/finlearn',
   },
@@ -166,12 +166,12 @@ const instructors = [
 const integratedPrograms = [
   {
     icon: <Cpu className="size-7 text-brand" />,
-    name: "MBA in FinTech & Investment Banking",
+    name: "FinTech & Investment Banking",
     accent: "FinTech + IB",
-    href: "/services/education/finlearn/mba-fintech",
+    href: "/services/education/finlearn/fintech-investment-banking",
     description:
-      "An industry-integrated MBA fusing finance, technology and analytics — across investment banking, FinTech, capital markets, wealth and digital finance.",
-    focus: ["24 months · 60 credits · 900+ hours", "FinTech & digital finance", "Investment banking & capital markets", "Financial analytics & Python"],
+      "An industry-integrated program fusing finance, technology and analytics — across investment banking, FinTech, capital markets, wealth and digital finance.",
+    focus: ["60 credits · 900+ learning hours", "FinTech & digital finance", "Investment banking & capital markets", "Financial analytics & Python"],
   },
   {
     icon: <Coins className="size-7 text-brand" />,
