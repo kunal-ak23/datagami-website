@@ -278,8 +278,8 @@ export default function FinTechInvestmentBankingPage() {
           <StaggerChildren className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-3">
             {placementPartners.map((c) => (
               <StaggerItem key={c.name}>
-                <div className="bg-white rounded-xl p-3 flex items-center justify-center h-20 hover:shadow-brand-md transition-all">
-                  <img src={c.logo} alt={c.name} className="max-h-12 w-auto object-contain" />
+                <div className="bg-white rounded-xl p-2 flex items-center justify-center h-24 hover:shadow-brand-md transition-all">
+                  <img src={c.logo} alt={c.name} className="w-full h-full object-contain" />
                 </div>
               </StaggerItem>
             ))}
