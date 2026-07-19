@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   description:
     "An AI-integrated specialisation across Cloud Computing, Cyber Security and AI — multi-cloud, DevSecOps, ethical hacking, SOC, MLOps and AI-driven security. Embeds into any IT degree, with 15+ stacked certifications.",
   alternates: {
-    canonical: "https://datagami.in/services/education/techlearn/cloud-cybersecurity",
+    canonical: "https://www.datagami.in/services/education/techlearn/cloud-cybersecurity",
   },
   openGraph: {
     title: "Cloud Computing & Cyber Security (AI-Integrated) | TechLEARN by Datagami",

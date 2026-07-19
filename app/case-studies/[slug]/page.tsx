@@ -23,6 +23,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: cs.title,
     description: cs.summary,
+    alternates: {
+      canonical: `https://www.datagami.in/case-studies/${slug}`,
+    },
   }
 }
 

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   title: 'About Datagami - EdTech Company Transforming Higher Education Since 2019',
   description: 'Datagami Technology Services — pioneering B2B education technology company based in Mumbai. 50+ partner universities, 10K+ students impacted.',
   alternates: {
-    canonical: 'https://datagami.in/about',
+    canonical: 'https://www.datagami.in/about',
   },
   openGraph: {
     title: 'About Datagami - EdTech Company Transforming Higher Education Since 2019',

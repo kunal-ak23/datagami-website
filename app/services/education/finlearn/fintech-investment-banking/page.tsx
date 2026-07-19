@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   description:
     "An industry-integrated program in FinTech & Investment Banking — 60 credits, 900+ learning hours across finance, technology, capital markets, wealth and digital finance. Integrates into any UG or PG degree, in association with AAFM.",
   alternates: {
-    canonical: "https://datagami.in/services/education/finlearn/fintech-investment-banking",
+    canonical: "https://www.datagami.in/services/education/finlearn/fintech-investment-banking",
   },
   openGraph: {
     title: "FinTech & Investment Banking | FinLEARN by Datagami",

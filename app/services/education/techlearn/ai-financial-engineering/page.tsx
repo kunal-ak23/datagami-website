@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   description:
     "An AI + Finance fusion specialisation for Quant, FinTech and Risk careers — machine learning through GenAI paired with markets, derivatives, risk and valuation. Embeds into any IT degree, with a clear fresher-to-leadership career path.",
   alternates: {
-    canonical: "https://datagami.in/services/education/techlearn/ai-financial-engineering",
+    canonical: "https://www.datagami.in/services/education/techlearn/ai-financial-engineering",
   },
   openGraph: {
     title: "AI & Financial Engineering | TechLEARN by Datagami",

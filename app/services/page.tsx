@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   title: 'Services - Education Programs, Enterprise Products & Consulting',
   description: "Explore Datagami's comprehensive solutions: FinLEARN BFSI programs, TechLEARN tech training, IBM ICE certifications, EduDron LMS, Total ERP, and professional services.",
   alternates: {
-    canonical: 'https://datagami.in/services',
+    canonical: 'https://www.datagami.in/services',
   },
   openGraph: {
     title: 'Services - Education Programs, Enterprise Products & Consulting',

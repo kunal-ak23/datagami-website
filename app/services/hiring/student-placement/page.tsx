@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   description:
     "Comprehensive placement support with 10K+ students placed across 200+ universities. Resume building, interview prep, industry networking, and job matching services.",
   alternates: {
-    canonical: "https://datagami.in/services/hiring/student-placement",
+    canonical: "https://www.datagami.in/services/hiring/student-placement",
   },
   openGraph: {
     title: "Student Placement Services - 10K+ Students Placed Across India",

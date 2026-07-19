@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   description:
     'Industry-integrated finance programs — FinTech & Investment Banking, Wealth Management & Investment Banking, and Business & Finance Journalism — that embed into any UG or PG degree, plus short-term BFSI certifications. In association with AAFM. 500+ graduates, 95% placement rate.',
   alternates: {
-    canonical: 'https://datagami.in/services/education/finlearn',
+    canonical: 'https://www.datagami.in/services/education/finlearn',
   },
   openGraph: {
     title: 'FinLEARN by Datagami - BFSI & Finance Programs | 95% Placement Rate',

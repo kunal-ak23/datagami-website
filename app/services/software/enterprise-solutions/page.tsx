@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   description:
     "Custom software engineering, AI-enabled platforms, and enterprise infrastructure for institutions that demand control. NOC/SOC, multi-tenant SaaS, and AI integration across BFSI, higher education and regulated enterprises.",
   alternates: {
-    canonical: "https://datagami.in/services/software/enterprise-solutions",
+    canonical: "https://www.datagami.in/services/software/enterprise-solutions",
   },
   openGraph: {
     title: "Enterprise Software & Digital Solutions | Datagami LLP",
@@ -221,7 +221,7 @@ const serviceSchema = {
   "serviceType": "Custom software engineering, enterprise infrastructure and AI solutions",
   "description":
     "Custom software engineering, AI-enabled platforms, NOC/SOC enterprise infrastructure, and multi-tenant SaaS for regulated, scale-sensitive institutions.",
-  "provider": { "@type": "Organization", "name": "Datagami LLP", "url": "https://datagami.in" },
+  "provider": { "@type": "Organization", "name": "Datagami LLP", "url": "https://www.datagami.in" },
   "areaServed": ["IN", "AE", "ZA"],
 }
 

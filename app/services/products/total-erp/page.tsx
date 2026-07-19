@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   description:
     "Comprehensive ERP for higher education — admissions, academics, examinations, finance, HRMS, payroll, budgeting, and library management in one secure platform.",
   alternates: {
-    canonical: "https://datagami.in/services/products/total-erp",
+    canonical: "https://www.datagami.in/services/products/total-erp",
   },
   openGraph: {
     title: "Total ERP - Complete University Management System",

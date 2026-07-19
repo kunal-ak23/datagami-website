@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   description:
     "Datagami helps universities and businesses bridge academia and industry — degree-integrated programs (FinLEARN, TechLEARN, IBM ICE), skill-based short-term courses, the EduDron AI learning platform, recruitment & staffing, and custom enterprise software. 50+ universities, 10K+ students.",
   alternates: {
-    canonical: "https://datagami.in",
+    canonical: "https://www.datagami.in",
   },
   openGraph: {
     title: "Datagami - Education Programs, Learning Platform, Talent & Enterprise Software",

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   description:
     'Industry-aligned short-term certification programs for UG & PG students. 10+ domains, 45-hour structured learning, 3-stage assessment, Train-the-Trainer model, and verifiable, NEP 2020-aligned credentials.',
   alternates: {
-    canonical: 'https://datagami.in/services/education/short-term-courses',
+    canonical: 'https://www.datagami.in/services/education/short-term-courses',
   },
   openGraph: {
     title: 'Skill-Based Short-Term Courses by Datagami | UGC & NEP 2020 Aligned',

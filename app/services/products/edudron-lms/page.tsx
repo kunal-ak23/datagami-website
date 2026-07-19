@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   description:
     "EduDron is a white-label LMS covering the entire learner journey: AI course authoring, proctored exams with instructor or AI evaluation, reports & analytics, verified credentials, business simulations, career mapping, and an integrated jobs portal.",
   alternates: {
-    canonical: "https://datagami.in/services/products/edudron-lms",
+    canonical: "https://www.datagami.in/services/products/edudron-lms",
   },
   openGraph: {
     title: "EduDron LMS - Multi-Tenant Learning, Assessment & Placement Platform",

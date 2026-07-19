@@ -17,6 +17,9 @@ const track = techlearn.tracks.find((t) => t.accentColor === "cloud")!
 export const metadata: Metadata = {
   title: `${track.name} - TechLEARN`,
   description: track.description,
+  alternates: {
+    canonical: "https://www.datagami.in/services/education/techlearn/cloud-computing",
+  },
 }
 
 const courseSchema = generateCourseSchema({

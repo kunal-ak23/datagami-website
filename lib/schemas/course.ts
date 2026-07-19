@@ -13,9 +13,9 @@ export function generateCourseSchema(course: {
     provider: {
       '@type': 'Organization',
       name: course.provider || 'Datagami Technology Services',
-      url: 'https://datagami.in',
+      url: 'https://www.datagami.in',
     },
     ...(course.duration && { timeRequired: course.duration }),
-    url: `https://datagami.in${course.url}`,
+    url: `https://www.datagami.in${course.url}`,
   }
 }
