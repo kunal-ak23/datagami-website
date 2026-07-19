@@ -43,3 +43,6 @@ next-env.d.ts
 
 /lib/generated/prisma
 .env*.local
+
+# Claude Code local settings (personal; may contain secrets like DB URLs)
+.claude/settings.local.json

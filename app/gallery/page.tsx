@@ -24,8 +24,6 @@ export const metadata: Metadata = {
   },
 }
 
-const categories = ["All", "Events", "Campus", "Workshops"] as const
-
 // Static fallback data used when no gallery items exist in the database
 const staticGalleryItems = [
   { title: "Annual Tech Summit 2025", category: "Events", aspect: "4/3", image: "/images/gallery/event-conference.png" },
@@ -79,6 +77,10 @@ export default async function GalleryPage({ searchParams }: PageProps) {
         aspect: item.aspect,
       }))
 
+  // Build the filter list dynamically from the categories that actually exist,
+  // so the buttons always match the real data (DB or static fallback).
+  const categories = ["All", ...Array.from(new Set(allItems.map((i) => i.category)))]
+
   // Filter by category if not "All"
   const items =
     activeCategory === "All"
@@ -107,7 +109,7 @@ export default async function GalleryPage({ searchParams }: PageProps) {
               {categories.map((cat) => (
                 <Link
                   key={cat}
-                  href={cat === "All" ? "/gallery" : `/gallery?category=${cat}`}
+                  href={cat === "All" ? "/gallery" : `/gallery?category=${encodeURIComponent(cat)}`}
                   className={`px-5 py-2 rounded-full text-sm font-medium transition-colors ${
                     cat === activeCategory
                       ? "bg-brand text-dark"
