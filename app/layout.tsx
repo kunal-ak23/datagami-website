@@ -2,6 +2,7 @@ import { plusJakartaSans, playfairDisplay } from '@/lib/fonts'
 import type { Metadata } from 'next'
 import './globals.css'
 import { organizationSchema, localBusinessSchemas } from '@/lib/schemas/organization'
+import { websiteSchema } from '@/lib/schemas/website'
 import { Navbar } from '@/components/layout/navbar'
 import { Footer } from '@/components/layout/footer'
 
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
     template: '%s | Datagami',
   },
   description: 'Empowering Institutions, Universities & Businesses Through Technology, Partnerships & Innovation. 50+ Partner Universities, 10K+ Students Impacted.',
-  metadataBase: new URL('https://datagami.in'),
+  metadataBase: new URL('https://www.datagami.in'),
   openGraph: {
     type: 'website',
     locale: 'en_IN',
@@ -45,6 +46,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
         {localBusinessSchemas.map((schema, i) => (
           <script

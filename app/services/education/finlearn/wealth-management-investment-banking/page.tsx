@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   description:
     "An industry-integrated postgraduate program in Wealth Management & Investment Banking — 630+ learning hours across advisory, capital markets, portfolio management and deal execution. Integrates into any UG or PG degree, in association with AAFM.",
   alternates: {
-    canonical: "https://datagami.in/services/education/finlearn/wealth-management-investment-banking",
+    canonical: "https://www.datagami.in/services/education/finlearn/wealth-management-investment-banking",
   },
   openGraph: {
     title: "Wealth Management & Investment Banking | FinLEARN by Datagami",

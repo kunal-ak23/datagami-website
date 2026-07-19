@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   description:
     "Expert advisory services with 100+ projects delivered and 95% client satisfaction. Insight-driven strategies for institutional transformation and operational excellence.",
   alternates: {
-    canonical: "https://datagami.in/services/hiring/consulting",
+    canonical: "https://www.datagami.in/services/hiring/consulting",
   },
   openGraph: {
     title: "Strategic Consulting for Education & Enterprise Growth",

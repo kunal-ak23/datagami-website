@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   description:
     "A practitioner specialisation from Python and SQL through AI, Generative AI and data science to production-grade MLOps — with BI, cloud and ethical-hacking foundations. Embeds into any IT degree, cert-benchmarked to CCNA, AWS, Azure, CEH and PL-300.",
   alternates: {
-    canonical: "https://datagami.in/services/education/techlearn/ai-data-science",
+    canonical: "https://www.datagami.in/services/education/techlearn/ai-data-science",
   },
   openGraph: {
     title: "AI & Data Science (GenAI + MLOps) | TechLEARN by Datagami",

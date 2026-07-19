@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   title: 'Contact Datagami - Mumbai Office',
   description: 'Get in touch with Datagami for education programs, enterprise products, and consulting services. Office in Mumbai. Response within 24 hours.',
   alternates: {
-    canonical: 'https://datagami.in/contact',
+    canonical: 'https://www.datagami.in/contact',
   },
   openGraph: {
     title: 'Contact Datagami - Mumbai Office',

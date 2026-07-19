@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   description:
     "Stay informed with expert insights on education technology, policy implementation, industry collaboration, and career readiness strategies for higher education.",
   alternates: {
-    canonical: "https://datagami.in/blog",
+    canonical: "https://www.datagami.in/blog",
   },
   openGraph: {
     title: "Blog - Insights on EdTech, Policy & Industry Collaboration",

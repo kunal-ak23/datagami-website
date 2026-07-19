@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description:
     "Real results from real partnerships. See how Datagami helped universities achieve 85% employment increase, 200+ industry partnerships, and 50% faster policy implementation.",
   alternates: {
-    canonical: "https://datagami.in/case-studies",
+    canonical: "https://www.datagami.in/case-studies",
   },
   openGraph: {
     title: "Case Studies - 85% Employment Increase & 200+ Industry Partnerships",

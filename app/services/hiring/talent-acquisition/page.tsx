@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   description:
     "Recruitment & Staffing as a service — connecting organisations with high-caliber professionals across IT, life sciences, engineering, finance and more. Permanent, contract, project-based and executive hiring, sourcing to onboarding.",
   alternates: {
-    canonical: "https://datagami.in/services/hiring/talent-acquisition",
+    canonical: "https://www.datagami.in/services/hiring/talent-acquisition",
   },
   openGraph: {
     title: "Recruitment & Staffing Services (RaaS) | Datagami",
@@ -148,7 +148,7 @@ const serviceSchema = {
   "serviceType": "Recruitment as a Service (RaaS)",
   "description":
     "Recruitment & staffing as a service — permanent, contract, project-based and executive hiring across technology, life sciences, engineering, finance and more, from sourcing to onboarding.",
-  "provider": { "@type": "Organization", "name": "Datagami Technology Services", "url": "https://datagami.in" },
+  "provider": { "@type": "Organization", "name": "Datagami Technology Services", "url": "https://www.datagami.in" },
   "areaServed": "IN",
 }
 

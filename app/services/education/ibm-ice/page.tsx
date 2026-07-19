@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   description:
     "IBM Innovation Centre for Education (ICE) embeds IBM-certified, industry-aligned technology specialisations into degree programs (B.Tech, MCA, MBA, BCA & more) through Project-Based Learning, IBM digital badges and strong placements. 30+ universities, 10,000+ students.",
   alternates: {
-    canonical: "https://datagami.in/services/education/ibm-ice",
+    canonical: "https://www.datagami.in/services/education/ibm-ice",
   },
   openGraph: {
     title: "IBM ICE - Innovation Centre for Education",

@@ -22,6 +22,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: post.metaTitle || post.title,
     description: post.metaDescription || post.excerpt || undefined,
+    alternates: {
+      canonical: `https://www.datagami.in/blog/${slug}`,
+    },
     openGraph: {
       images: post.ogImage ? [post.ogImage] : post.featuredImage ? [post.featuredImage] : [],
     },

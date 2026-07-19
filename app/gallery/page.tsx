@@ -3,9 +3,9 @@ import Link from "next/link"
 import { HeroMinimal } from "@/components/sections/hero-minimal"
 import Breadcrumbs from "@/components/layout/breadcrumbs"
 import { prisma } from "@/lib/db"
+import { GalleryLightbox, type GalleryMediaItem } from "@/components/gallery/gallery-lightbox"
 
 import { FadeIn } from "@/components/motion/fade-in"
-import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
 
 export const dynamic = "force-dynamic"
 
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   description:
     "Explore photos and videos from Datagami's university partnerships, IBM ICE collaborations, student events, corporate training sessions, and industry celebrations.",
   alternates: {
-    canonical: "https://datagami.in/gallery",
+    canonical: "https://www.datagami.in/gallery",
   },
   openGraph: {
     title: "Gallery - Events, Partnerships & Campus Life at Datagami",
@@ -56,16 +56,34 @@ export default async function GalleryPage({ searchParams }: PageProps) {
 
   const hasDbItems = dbItems.length > 0
 
-  // Filter by category if not "All"
-  const filteredDbItems =
-    activeCategory === "All"
-      ? dbItems
-      : dbItems.filter((item) => item.category === activeCategory)
+  // Normalize DB and static items into a single shape the viewer understands
+  const allItems: GalleryMediaItem[] = hasDbItems
+    ? dbItems.map((item) => ({
+        id: item.id,
+        title: item.title,
+        category: item.category,
+        mediaType: item.mediaType,
+        src: item.mediaUrl,
+        thumbnail: item.thumbnailUrl || item.mediaUrl,
+        alt: item.altText || item.title,
+        aspect: "4/3",
+      }))
+    : staticGalleryItems.map((item, i) => ({
+        id: `static-${i}`,
+        title: item.title,
+        category: item.category,
+        mediaType: "IMAGE" as const,
+        src: item.image,
+        thumbnail: item.image,
+        alt: item.title,
+        aspect: item.aspect,
+      }))
 
-  const filteredStaticItems =
+  // Filter by category if not "All"
+  const items =
     activeCategory === "All"
-      ? staticGalleryItems
-      : staticGalleryItems.filter((item) => item.category === activeCategory)
+      ? allItems
+      : allItems.filter((item) => item.category === activeCategory)
 
   return (
     <>
@@ -105,94 +123,15 @@ export default async function GalleryPage({ searchParams }: PageProps) {
 
         {/* Gallery Grid */}
         <section className="pb-16">
-          <StaggerChildren className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {hasDbItems
-              ? filteredDbItems.map((item) => (
-                  <StaggerItem key={item.id}>
-                    <div
-                      className="relative rounded-xl overflow-hidden border border-border-custom group"
-                    >
-                      {item.mediaType === "VIDEO" ? (
-                        <a
-                          href={item.mediaUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="block relative"
-                        >
-                          <img
-                            src={item.thumbnailUrl || item.mediaUrl}
-                            alt={item.altText || item.title}
-                            width={600}
-                            height={400}
-                            loading="lazy"
-                            className="w-full object-cover"
-                            style={{ aspectRatio: "4/3" }}
-                          />
-                          {/* Play button overlay */}
-                          <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-colors">
-                            <div className="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center shadow-lg">
-                              <svg
-                                className="w-6 h-6 text-dark ml-0.5"
-                                fill="currentColor"
-                                viewBox="0 0 24 24"
-                              >
-                                <path d="M8 5v14l11-7z" />
-                              </svg>
-                            </div>
-                          </div>
-                        </a>
-                      ) : (
-                        <img
-                          src={item.mediaUrl}
-                          alt={item.altText || item.title}
-                          width={600}
-                          height={400}
-                          loading="lazy"
-                          className="w-full object-cover"
-                          style={{ aspectRatio: "4/3" }}
-                        />
-                      )}
-
-                      {/* Category badge overlay */}
-                      <span className="absolute top-3 left-3 inline-flex px-3 py-1 rounded-full bg-white/90 text-xs font-medium text-dark shadow-sm">
-                        {item.category}
-                      </span>
-
-                      {/* Title overlay */}
-                      <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/60 to-transparent p-4">
-                        <p className="text-sm font-medium text-white">{item.title}</p>
-                      </div>
-                    </div>
-                  </StaggerItem>
-                ))
-              : filteredStaticItems.map((item, i) => (
-                  <StaggerItem key={i}>
-                    <div
-                      className="relative rounded-xl overflow-hidden border border-border-custom group"
-                    >
-                      <img
-                        src={item.image}
-                        alt={item.title}
-                        width={600}
-                        height={400}
-                        loading="lazy"
-                        className="w-full object-cover"
-                        style={{ aspectRatio: item.aspect }}
-                      />
-
-                      {/* Category badge overlay */}
-                      <span className="absolute top-3 left-3 inline-flex px-3 py-1 rounded-full bg-white/90 text-xs font-medium text-dark shadow-sm">
-                        {item.category}
-                      </span>
-
-                      {/* Title overlay */}
-                      <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/60 to-transparent p-4">
-                        <p className="text-sm font-medium text-white">{item.title}</p>
-                      </div>
-                    </div>
-                  </StaggerItem>
-                ))}
-          </StaggerChildren>
+          {items.length > 0 ? (
+            <GalleryLightbox items={items} />
+          ) : (
+            <FadeIn>
+              <p className="text-center text-muted-brand py-16">
+                No items in this category yet. Check back soon.
+              </p>
+            </FadeIn>
+          )}
         </section>
       </div>
     </>

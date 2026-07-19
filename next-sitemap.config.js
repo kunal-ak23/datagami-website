@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://datagami.in',
+  siteUrl: 'https://www.datagami.in',
   generateRobotsTxt: false,
   generateIndexSitemap: false,
   additionalPaths: async () => [

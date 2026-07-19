@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   description:
     '6-month clinical research education program with 95% placement rate and 500+ placements. Covers GCP, data management, regulatory affairs, and pharmacovigilance.',
   alternates: {
-    canonical: 'https://datagami.in/services/education/clinomic',
+    canonical: 'https://www.datagami.in/services/education/clinomic',
   },
   openGraph: {
     title: 'Clinomic - Clinical Research & Regulatory Affairs Training | 6 Months',

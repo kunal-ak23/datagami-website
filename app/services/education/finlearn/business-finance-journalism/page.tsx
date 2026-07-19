@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   description:
     "A practice-led postgraduate program in Business & Finance Journalism — 630 learning hours, 42 credits, newsroom-applied and portfolio-driven. Integrates into any UG or PG degree, in association with AAFM India & Amar Ujala.",
   alternates: {
-    canonical: "https://datagami.in/services/education/finlearn/business-finance-journalism",
+    canonical: "https://www.datagami.in/services/education/finlearn/business-finance-journalism",
   },
   openGraph: {
     title: "Business & Finance Journalism | FinLEARN by Datagami",

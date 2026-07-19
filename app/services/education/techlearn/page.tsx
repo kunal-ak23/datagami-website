@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   description:
     'Industry-aligned technology specialisations — Cloud Computing & Cyber Security (AI-Integrated), AI & Financial Engineering, and AI & Data Science — that embed into any IT degree (BSc, BCA, B.Tech, MCA). Plus short-term courses, stacked certifications and hands-on training.',
   alternates: {
-    canonical: 'https://datagami.in/services/education/techlearn',
+    canonical: 'https://www.datagami.in/services/education/techlearn',
   },
   openGraph: {
     title: 'TechLEARN - Integrated Tech Specialisations for Any IT Degree',

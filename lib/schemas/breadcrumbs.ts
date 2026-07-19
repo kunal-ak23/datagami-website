@@ -6,7 +6,7 @@ export function generateBreadcrumbSchema(items: Array<{ label: string; href: str
       '@type': 'ListItem',
       position: i + 1,
       name: item.label,
-      item: `https://datagami.in${item.href}`,
+      item: `https://www.datagami.in${item.href}`,
     })),
   }
 }
