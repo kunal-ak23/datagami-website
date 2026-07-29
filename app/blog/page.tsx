@@ -11,7 +11,7 @@ import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-childr
 export const dynamic = "force-dynamic"
 
 export const metadata: Metadata = {
-  title: "Blog - Insights on EdTech, Policy & Industry Collaboration",
+  title: "Higher Education & EdTech Insights",
   description:
     "Stay informed with expert insights on education technology, policy implementation, industry collaboration, and career readiness strategies for higher education.",
   alternates: {

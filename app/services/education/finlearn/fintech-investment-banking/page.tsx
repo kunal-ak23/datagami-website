@@ -14,9 +14,9 @@ import { FadeIn } from "@/components/motion/fade-in"
 import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
 
 export const metadata: Metadata = {
-  title: "FinTech & Investment Banking | FinLEARN by Datagami",
+  title: "FinTech & Investment Banking Program | FinLEARN",
   description:
-    "An industry-integrated program in FinTech & Investment Banking — 60 credits, 900+ learning hours across finance, technology, capital markets, wealth and digital finance. Integrates into any UG or PG degree, in association with AAFM.",
+    "A 60-credit FinTech and investment banking program covering capital markets, digital finance, financial analytics and career readiness.",
   alternates: {
     canonical: "https://www.datagami.in/services/education/finlearn/fintech-investment-banking",
   },

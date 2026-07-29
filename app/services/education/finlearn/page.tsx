@@ -19,9 +19,9 @@ import { FadeIn } from "@/components/motion/fade-in"
 import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
 
 export const metadata: Metadata = {
-  title: 'FinLEARN by Datagami - BFSI & Finance Programs | 95% Placement Rate',
+  title: 'BFSI Degree Programs for Universities | FinLEARN',
   description:
-    'Industry-integrated finance programs — FinTech & Investment Banking, Wealth Management & Investment Banking, and Business & Finance Journalism — that embed into any UG or PG degree, plus short-term BFSI certifications. In association with AAFM. 500+ graduates, 95% placement rate.',
+    'Industry-integrated FinTech, investment banking, wealth management and finance journalism programs for UG and PG degrees, in association with AAFM.',
   alternates: {
     canonical: 'https://www.datagami.in/services/education/finlearn',
   },

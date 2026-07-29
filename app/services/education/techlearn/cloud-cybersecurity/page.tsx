@@ -13,9 +13,9 @@ import { FadeIn } from "@/components/motion/fade-in"
 import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
 
 export const metadata: Metadata = {
-  title: "Cloud Computing & Cyber Security (AI-Integrated) | TechLEARN by Datagami",
+  title: "Cloud & Cyber Security Degree Program | TechLEARN",
   description:
-    "An AI-integrated specialisation across Cloud Computing, Cyber Security and AI — multi-cloud, DevSecOps, ethical hacking, SOC, MLOps and AI-driven security. Embeds into any IT degree, with 15+ stacked certifications.",
+    "An AI-integrated cloud and cybersecurity degree program covering multi-cloud, DevSecOps, ethical hacking, SOC and 15+ certifications.",
   alternates: {
     canonical: "https://www.datagami.in/services/education/techlearn/cloud-cybersecurity",
   },

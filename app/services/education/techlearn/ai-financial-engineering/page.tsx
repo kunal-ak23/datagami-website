@@ -13,9 +13,9 @@ import { FadeIn } from "@/components/motion/fade-in"
 import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
 
 export const metadata: Metadata = {
-  title: "AI & Financial Engineering | TechLEARN by Datagami",
+  title: "AI & Financial Engineering Degree | TechLEARN",
   description:
-    "An AI + Finance fusion specialisation for Quant, FinTech and Risk careers — machine learning through GenAI paired with markets, derivatives, risk and valuation. Embeds into any IT degree, with a clear fresher-to-leadership career path.",
+    "An AI and finance degree specialisation for quant, FinTech and risk careers, covering machine learning, markets, derivatives and valuation.",
   alternates: {
     canonical: "https://www.datagami.in/services/education/techlearn/ai-financial-engineering",
   },

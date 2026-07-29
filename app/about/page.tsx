@@ -12,7 +12,7 @@ import { LogoTicker } from "@/components/carousels/logo-ticker"
 import { allPartners } from "@/lib/data/partners"
 
 export const metadata: Metadata = {
-  title: 'About Datagami - EdTech Company Transforming Higher Education Since 2019',
+  title: 'About Our Education Technology Company',
   description: 'Datagami Technology Services — pioneering B2B education technology company based in Mumbai. 50+ partner universities, 10K+ students impacted.',
   alternates: {
     canonical: 'https://www.datagami.in/about',

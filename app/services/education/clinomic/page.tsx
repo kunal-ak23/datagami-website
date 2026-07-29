@@ -24,7 +24,7 @@ import { FadeIn } from "@/components/motion/fade-in"
 import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
 
 export const metadata: Metadata = {
-  title: 'Clinomic - Clinical Research & Regulatory Affairs Training | 6 Months',
+  title: 'Clinomic Centre for Clinical Research',
   description:
     '6-month clinical research education program with 95% placement rate and 500+ placements. Covers GCP, data management, regulatory affairs, and pharmacovigilance.',
   alternates: {
@@ -128,7 +128,7 @@ export default function ClinomicPage() {
       {/* Hero */}
       <HeroDark
         heading="Clinomic"
-        subtitle="Clinical Research Education Centre"
+        subtitle="Centre for Clinical Research Education"
         accentColor="text-brand"
         badgeText="6-Month Program"
         stats={stats}
@@ -140,9 +140,10 @@ export default function ClinomicPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <p className="text-lg text-muted-brand max-w-3xl mx-auto text-center leading-relaxed">
-              Clinomic is Datagami&apos;s dedicated clinical research education
-              centre, offering a comprehensive 6-month program that prepares
-              graduates for rewarding careers in the clinical research industry.
+              The Clinomic Centre for Clinical Research Education is
+              Datagami&apos;s dedicated clinical research training centre,
+              offering a comprehensive 6-month program that prepares graduates
+              for rewarding careers in the clinical research industry.
               With a strong focus on practical training and industry readiness,
               Clinomic has placed over 500 professionals across leading CROs and
               pharmaceutical companies.

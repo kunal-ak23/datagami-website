@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect, useCallback } from "react"
+import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Menu, ChevronDown } from "lucide-react"
@@ -93,11 +94,12 @@ export function Navbar() {
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
         <Link href="/" className="cursor-pointer shrink-0">
-          <img
+          <Image
             src="/images/logo/datagami-logo.webp"
             alt="Datagami - Lead Digital Technology"
-            width="60"
-            height="40"
+            width={60}
+            height={40}
+            priority
           />
         </Link>
 
@@ -200,11 +202,11 @@ export function Navbar() {
             <SheetHeader className="border-b border-border-custom px-4 py-3">
               <div className="flex items-center justify-between">
                 <SheetTitle>
-                  <img
+                  <Image
                     src="/images/logo/datagami-logo.webp"
                     alt="Datagami"
-                    width="50"
-                    height="33"
+                    width={50}
+                    height={33}
                   />
                 </SheetTitle>
                 <ThemeToggle />

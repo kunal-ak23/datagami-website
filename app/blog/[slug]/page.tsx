@@ -13,20 +13,40 @@ interface PageProps {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params
-  const post = await prisma.blogPost.findUnique({ where: { slug } })
+  const post = await prisma.blogPost.findUnique({
+    where: { slug },
+    include: { author: { select: { name: true } } },
+  })
 
   if (!post || post.status !== "PUBLISHED") {
     return { title: "Post Not Found" }
   }
 
+  const url = `https://www.datagami.in/blog/${slug}`
+  const description = post.metaDescription || post.excerpt || undefined
+  const image = post.ogImage || post.featuredImage || "/images/hero/hero-students-collaborating.png"
+
   return {
     title: post.metaTitle || post.title,
-    description: post.metaDescription || post.excerpt || undefined,
+    description,
     alternates: {
-      canonical: `https://www.datagami.in/blog/${slug}`,
+      canonical: url,
     },
     openGraph: {
-      images: post.ogImage ? [post.ogImage] : post.featuredImage ? [post.featuredImage] : [],
+      type: "article",
+      title: post.metaTitle || post.title,
+      description,
+      url,
+      publishedTime: post.publishedAt?.toISOString(),
+      modifiedTime: post.updatedAt.toISOString(),
+      authors: [post.author.name],
+      images: [image],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.metaTitle || post.title,
+      description,
+      images: [image],
     },
   }
 }
@@ -55,7 +75,13 @@ export default async function BlogPostPage({ params }: PageProps) {
     "@type": post.schemaType || "Article",
     headline: post.title,
     description: post.metaDescription || post.excerpt,
-    image: post.featuredImage || post.ogImage,
+    image: post.ogImage || post.featuredImage
+      ? new URL(post.ogImage || post.featuredImage!, "https://www.datagami.in").toString()
+      : "https://www.datagami.in/images/hero/hero-students-collaborating.png",
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://www.datagami.in/blog/${slug}`,
+    },
     author: {
       "@type": "Person",
       name: post.author.name,
@@ -64,7 +90,12 @@ export default async function BlogPostPage({ params }: PageProps) {
     dateModified: post.updatedAt.toISOString(),
     publisher: {
       "@type": "Organization",
-      name: "Datagami",
+      "@id": "https://www.datagami.in/#organization",
+      name: "Datagami Technology Services Private Limited",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.datagami.in/images/logo/datagami-logo.webp",
+      },
     },
   }
 

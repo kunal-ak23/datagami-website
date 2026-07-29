@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { ArrowRight } from "lucide-react"
 import { AuroraBackground } from "@/components/sections/aurora-background"
 
@@ -34,9 +35,12 @@ export function HeroSplit({
         <AuroraBackground className="bg-brand flex flex-col justify-center px-6 py-16 sm:px-10 lg:px-16 xl:px-20">
           <div className="max-w-xl">
             {showLogo && (
-              <img
+              <Image
                 src="/images/logo/datagami-logo.webp"
                 alt="Datagami logo"
+                width={128}
+                height={80}
+                priority
                 className="mb-8 h-10 w-auto brightness-0 opacity-80"
               />
             )}
@@ -58,9 +62,13 @@ export function HeroSplit({
 
         {/* Right panel */}
         <div className="relative min-h-[300px] lg:min-h-0">
-          <img
+          <Image
             src={imageSrc}
             alt={imageAlt}
+            fill
+            priority
+            quality={75}
+            sizes="(min-width: 1024px) 50vw, 100vw"
             className="absolute inset-0 h-full w-full object-cover"
           />
 

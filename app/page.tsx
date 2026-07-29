@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import Link from "next/link"
 import {
   GraduationCap, Code, Award, BookOpen, Monitor, Users, Server,
@@ -12,26 +13,21 @@ import { FAQSection } from "@/components/sections/faq-section"
 import { ProgramCard } from "@/components/cards/program-card"
 import { LogoTicker } from "@/components/carousels/logo-ticker"
 import { IndustriesGrid } from "@/components/sections/industries-grid"
-import { Counter } from "@/components/motion/counter"
 
 import { company } from "@/lib/data/company"
 import { allPartners } from "@/lib/data/partners"
-import { websiteSchema } from "@/lib/schemas/website"
-
-import { FadeIn } from "@/components/motion/fade-in"
-import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
 
 export const metadata: Metadata = {
-  title: "Datagami - Education Programs, Learning Platform, Talent & Enterprise Software",
+  title: "Education Technology & Enterprise Solutions",
   description:
-    "Datagami helps universities and businesses bridge academia and industry — degree-integrated programs (FinLEARN, TechLEARN, IBM ICE), skill-based short-term courses, the EduDron AI learning platform, recruitment & staffing, and custom enterprise software. 50+ universities, 10K+ students.",
+    "Industry-aligned degree programs, AI-powered learning technology, recruitment and enterprise software for universities and businesses across India.",
   alternates: {
     canonical: "https://www.datagami.in",
   },
   openGraph: {
-    title: "Datagami - Education Programs, Learning Platform, Talent & Enterprise Software",
+    title: "Datagami - Education Technology & Enterprise Solutions",
     description:
-      "Bridging academia and industry — degree-integrated programs, an AI learning platform, recruitment & staffing, and custom enterprise software for universities and businesses.",
+      "Industry-aligned degree programs, AI-powered learning technology, recruitment and enterprise software for universities and businesses across India.",
     images: ["/images/hero/hero-students-collaborating.png"],
   },
 }
@@ -211,24 +207,19 @@ const homeFaqs = [
 export default function Home() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-      />
-
       {/* 1. Hero */}
       <section className="relative bg-[#1A1A1A] overflow-hidden bg-pattern flex items-center min-h-[calc(100svh-4rem)]">
-        <img
-          src="/images/hero/hero-students-collaborating.png"
-          alt=""
-          aria-hidden="true"
-          className="absolute inset-0 w-full h-full object-cover opacity-10"
-          loading="lazy"
-        />
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="max-w-3xl">
             <div className="mb-5 inline-block bg-white rounded-xl p-2 shadow-lg">
-              <img src="/images/logo/datagami-logo.webp" alt="Datagami logo" className="h-8 w-auto block" />
+              <Image
+                src="/images/logo/datagami-logo.webp"
+                alt="Datagami"
+                width={128}
+                height={80}
+                priority
+                className="h-8 w-auto block"
+              />
             </div>
             <span className="block text-brand text-xs sm:text-sm font-semibold uppercase tracking-wider mb-3">
               Education · Platform · Talent · Software
@@ -261,7 +252,7 @@ export default function Home() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {heroStats.map((stat) => (
                 <div key={stat.label}>
-                  <Counter target={stat.target} className="text-2xl md:text-3xl font-bold text-brand" />
+                  <span className="text-2xl md:text-3xl font-bold text-brand">{stat.target}</span>
                   <p className="text-xs sm:text-sm text-white/60 mt-1">{stat.label}</p>
                 </div>
               ))}
@@ -277,24 +268,20 @@ export default function Home() {
             Trusted by leading universities &amp; institutions
           </p>
         </div>
-        <FadeIn>
-          <LogoTicker logos={allPartners.map((p) => ({ name: p.name, src: p.logo }))} />
-        </FadeIn>
+        <LogoTicker logos={allPartners.map((p) => ({ name: p.name, src: p.logo }))} />
       </section>
 
       {/* 3. Four pillars */}
       <section id="pillars" className="py-16 md:py-20 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn>
-            <SectionHeader
-              title="Four ways we partner with you"
-              description="One company across the full arc — from designing programs to placing graduates and building the systems that run it all."
-              gradient
-            />
-          </FadeIn>
-          <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <SectionHeader
+            title="Four ways we partner with you"
+            description="One company across the full arc — from designing programs to placing graduates and building the systems that run it all."
+            gradient
+          />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {pillars.map((p) => (
-              <StaggerItem key={p.title}>
+              <div key={p.title}>
                 <Link
                   href={p.href}
                   className="group flex flex-col h-full glass-card dark:liquid-glass rounded-2xl p-7 border border-transparent hover:border-brand/30 hover:-translate-y-1 hover:shadow-brand-md transition-all"
@@ -308,25 +295,23 @@ export default function Home() {
                     Learn more <ArrowRight className="size-4" />
                   </span>
                 </Link>
-              </StaggerItem>
+              </div>
             ))}
-          </StaggerChildren>
+          </div>
         </div>
       </section>
 
       {/* 4. Education programs */}
       <section id="education" className="py-16 md:py-20 bg-gray-50 dark:bg-gray-900 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn>
-            <SectionHeader
-              title="Education programs that embed into your degrees"
-              description="Industry-aligned programs and skill-based courses universities plug into any curriculum — with certifications, hands-on projects and placement support."
-              gradient
-            />
-          </FadeIn>
-          <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <SectionHeader
+            title="Education programs that embed into your degrees"
+            description="Industry-aligned programs and skill-based courses universities plug into any curriculum — with certifications, hands-on projects and placement support."
+            gradient
+          />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {educationPrograms.map((p) => (
-              <StaggerItem key={p.title}>
+              <div key={p.title}>
                 <ProgramCard
                   title={p.title}
                   description={p.description}
@@ -334,9 +319,9 @@ export default function Home() {
                   icon={p.icon}
                   backgroundImage={p.image}
                 />
-              </StaggerItem>
+              </div>
             ))}
-          </StaggerChildren>
+          </div>
         </div>
       </section>
 
@@ -348,16 +333,19 @@ export default function Home() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 {/* Image */}
-                <FadeIn direction={imageFirst ? "left" : "right"} className={imageFirst ? "lg:order-1" : "lg:order-2"}>
-                  <img
+                <div className={imageFirst ? "lg:order-1" : "lg:order-2"}>
+                  <Image
                     src={row.image}
                     alt={row.imageAlt}
+                    width={768}
+                    height={480}
+                    sizes="(min-width: 1024px) 50vw, 100vw"
                     className="rounded-2xl shadow-lg w-full object-cover aspect-[16/10] max-h-[380px]"
                   />
-                </FadeIn>
+                </div>
 
                 {/* Text */}
-                <FadeIn direction={imageFirst ? "right" : "left"} className={imageFirst ? "lg:order-2" : "lg:order-1"}>
+                <div className={imageFirst ? "lg:order-2" : "lg:order-1"}>
                   <div>
                     <span className="block text-brand text-sm font-semibold uppercase tracking-wider mb-3">
                       {row.eyebrow}
@@ -391,7 +379,7 @@ export default function Home() {
                       <ArrowRight className="size-5" />
                     </Link>
                   </div>
-                </FadeIn>
+                </div>
               </div>
             </div>
           </section>
@@ -399,64 +387,50 @@ export default function Home() {
       })}
 
       {/* 6. Mid CTA */}
-      <FadeIn>
-        <CTASection
-          title="Ready to transform your institution or business?"
-          description="Tell us your goals — we'll tailor the programs, platform, talent or software to fit."
-          buttonText="Partner with Datagami"
-          buttonHref="/contact"
-          variant="primary"
-        />
-      </FadeIn>
+      <CTASection
+        title="Ready to transform your institution or business?"
+        description="Tell us your goals — we'll tailor the programs, platform, talent or software to fit."
+        buttonText="Partner with Datagami"
+        buttonHref="/contact"
+        variant="primary"
+      />
 
       {/* 7. Why partner with Datagami */}
       <section className="py-16 md:py-20 bg-pattern">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn>
-            <SectionHeader title="Why partner with Datagami" gradient />
-          </FadeIn>
-          <FadeIn delay={0.2}>
-            <FeatureGrid
-              features={company.whyChooseUs.map((item, index) => ({
-                icon: whyChooseIcons[index],
-                title: item.title,
-                description: item.description,
-              }))}
-            />
-          </FadeIn>
+          <SectionHeader title="Why partner with Datagami" gradient />
+          <FeatureGrid
+            features={company.whyChooseUs.map((item, index) => ({
+              icon: whyChooseIcons[index],
+              title: item.title,
+              description: item.description,
+            }))}
+          />
         </div>
       </section>
 
       {/* 8. Industries we serve */}
       <section className="py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn>
-            <SectionHeader
-              title="Industries we serve"
-              description="Powering future-ready skills and digital transformation across sectors."
-              gradient
-            />
-          </FadeIn>
-          <FadeIn delay={0.2}>
-            <IndustriesGrid />
-          </FadeIn>
+          <SectionHeader
+            title="Industries we serve"
+            description="Powering future-ready skills and digital transformation across sectors."
+            gradient
+          />
+          <IndustriesGrid />
         </div>
       </section>
 
       {/* 9. FAQs */}
-      <FadeIn>
-        <FAQSection faqs={homeFaqs} />
-      </FadeIn>
+      <FAQSection faqs={homeFaqs} />
 
       {/* 11. Final CTA */}
-      <FadeIn>
-        <CTASection
-          title="Let's build the future together"
-          buttonText="Start the Conversation"
-          buttonHref="/contact"
-          variant="dark"
-        />
-      </FadeIn>
+      <CTASection
+        title="Let's build the future together"
+        buttonText="Start the Conversation"
+        buttonHref="/contact"
+        variant="dark"
+      />
     </>
   )
 }

@@ -1,6 +1,7 @@
 export const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
+  '@id': 'https://www.datagami.in/#organization',
   name: 'Datagami Technology Services Private Limited',
   alternateName: 'Datagami',
   url: 'https://www.datagami.in',

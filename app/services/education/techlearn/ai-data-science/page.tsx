@@ -14,9 +14,9 @@ import { FadeIn } from "@/components/motion/fade-in"
 import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
 
 export const metadata: Metadata = {
-  title: "AI & Data Science (GenAI + MLOps) | TechLEARN by Datagami",
+  title: "AI & Data Science Degree Specialisation | TechLEARN",
   description:
-    "A practitioner specialisation from Python and SQL through AI, Generative AI and data science to production-grade MLOps — with BI, cloud and ethical-hacking foundations. Embeds into any IT degree, cert-benchmarked to CCNA, AWS, Azure, CEH and PL-300.",
+    "An applied AI and data science degree specialisation covering Python, SQL, GenAI, BI, cloud and production MLOps.",
   alternates: {
     canonical: "https://www.datagami.in/services/education/techlearn/ai-data-science",
   },

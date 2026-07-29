@@ -16,9 +16,9 @@ import { FadeIn } from "@/components/motion/fade-in"
 import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
 
 export const metadata: Metadata = {
-  title: 'TechLEARN - Integrated Tech Specialisations for Any IT Degree',
+  title: 'Technology Degree Programs for Universities | TechLEARN',
   description:
-    'Industry-aligned technology specialisations — Cloud Computing & Cyber Security (AI-Integrated), AI & Financial Engineering, and AI & Data Science — that embed into any IT degree (BSc, BCA, B.Tech, MCA). Plus short-term courses, stacked certifications and hands-on training.',
+    'Embed cloud, cybersecurity, AI, data science and financial engineering specialisations into BSc, BCA, B.Tech or MCA degrees.',
   alternates: {
     canonical: 'https://www.datagami.in/services/education/techlearn',
   },

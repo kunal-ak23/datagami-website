@@ -14,9 +14,9 @@ import { FadeIn } from "@/components/motion/fade-in"
 import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
 
 export const metadata: Metadata = {
-  title: "Business & Finance Journalism | FinLEARN by Datagami",
+  title: "Business & Finance Journalism Program | FinLEARN",
   description:
-    "A practice-led postgraduate program in Business & Finance Journalism — 630 learning hours, 42 credits, newsroom-applied and portfolio-driven. Integrates into any UG or PG degree, in association with AAFM India & Amar Ujala.",
+    "A 42-credit, practice-led business and finance journalism program with newsroom projects, data storytelling and a publication-ready portfolio.",
   alternates: {
     canonical: "https://www.datagami.in/services/education/finlearn/business-finance-journalism",
   },

@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Check } from "lucide-react"
 
 interface ProductCardProps {
@@ -24,9 +25,11 @@ export function ProductCard({
       >
         {/* Image header */}
         <div className="relative aspect-[16/9] overflow-hidden">
-          <img
+          <Image
             src={backgroundImage}
             alt={title}
+            fill
+            sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />

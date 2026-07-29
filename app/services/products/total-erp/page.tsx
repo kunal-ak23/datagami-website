@@ -19,7 +19,7 @@ import { FadeIn } from "@/components/motion/fade-in"
 import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
 
 export const metadata: Metadata = {
-  title: "Total ERP - Complete University Management System",
+  title: "University ERP Software for Higher Education | Total ERP",
   description:
     "Comprehensive ERP for higher education — admissions, academics, examinations, finance, HRMS, payroll, budgeting, and library management in one secure platform.",
   alternates: {
