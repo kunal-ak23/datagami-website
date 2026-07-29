@@ -16,9 +16,9 @@ import { FadeIn } from "@/components/motion/fade-in"
 import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
 
 export const metadata: Metadata = {
-  title: "Enterprise Software & Digital Solutions | Datagami LLP",
+  title: "Custom Enterprise Software Development",
   description:
-    "Custom software engineering, AI-enabled platforms, and enterprise infrastructure for institutions that demand control. NOC/SOC, multi-tenant SaaS, and AI integration across BFSI, higher education and regulated enterprises.",
+    "Custom software, AI platforms, multi-tenant SaaS and managed infrastructure for BFSI, higher education and regulated enterprises.",
   alternates: {
     canonical: "https://www.datagami.in/services/software/enterprise-solutions",
   },

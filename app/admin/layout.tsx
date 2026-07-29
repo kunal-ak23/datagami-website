@@ -4,6 +4,11 @@ import { AdminSidebar } from '@/components/admin/admin-sidebar'
 
 export const metadata = {
   title: 'Admin Panel | Datagami',
+  robots: {
+    index: false,
+    follow: false,
+    noarchive: true,
+  },
 }
 
 export default async function AdminLayout({

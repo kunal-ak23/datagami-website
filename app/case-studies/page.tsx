@@ -7,9 +7,9 @@ import { caseStudies } from "@/lib/data/case-studies"
 import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
 
 export const metadata: Metadata = {
-  title: "Case Studies - 85% Employment Increase & 200+ Industry Partnerships",
+  title: "Higher Education Transformation Case Studies",
   description:
-    "Real results from real partnerships. See how Datagami helped universities achieve 85% employment increase, 200+ industry partnerships, and 50% faster policy implementation.",
+    "See how Datagami approaches university transformation, industry partnerships, employability and education policy implementation.",
   alternates: {
     canonical: "https://www.datagami.in/case-studies",
   },

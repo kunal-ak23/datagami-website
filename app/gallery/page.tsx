@@ -10,9 +10,9 @@ import { FadeIn } from "@/components/motion/fade-in"
 export const dynamic = "force-dynamic"
 
 export const metadata: Metadata = {
-  title: "Gallery - Events, Partnerships & Campus Life at Datagami",
+  title: "University Partnerships, Events & Campus Gallery",
   description:
-    "Explore photos and videos from Datagami's university partnerships, IBM ICE collaborations, student events, corporate training sessions, and industry celebrations.",
+    "See Datagami's university partnerships, IBM ICE collaborations, student events, corporate training sessions and industry celebrations.",
   alternates: {
     canonical: "https://www.datagami.in/gallery",
   },

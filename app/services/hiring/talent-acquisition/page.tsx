@@ -16,9 +16,9 @@ import { FadeIn } from "@/components/motion/fade-in"
 import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
 
 export const metadata: Metadata = {
-  title: "Recruitment & Staffing Services (RaaS) | Datagami",
+  title: "Recruitment & Staffing Services in India",
   description:
-    "Recruitment & Staffing as a service — connecting organisations with high-caliber professionals across IT, life sciences, engineering, finance and more. Permanent, contract, project-based and executive hiring, sourcing to onboarding.",
+    "Permanent, contract, project-based and executive hiring across IT, life sciences, engineering and finance, from sourcing through onboarding.",
   alternates: {
     canonical: "https://www.datagami.in/services/hiring/talent-acquisition",
   },

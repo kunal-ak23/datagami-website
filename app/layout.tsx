@@ -11,15 +11,45 @@ export const metadata: Metadata = {
     default: 'Datagami - Lead Digital Technology',
     template: '%s | Datagami',
   },
-  description: 'Empowering Institutions, Universities & Businesses Through Technology, Partnerships & Innovation. 50+ Partner Universities, 10K+ Students Impacted.',
+  applicationName: 'Datagami',
+  description: 'Industry-aligned education programs, AI-powered learning technology, recruitment and enterprise software for universities and businesses across India.',
   metadataBase: new URL('https://www.datagami.in'),
+  authors: [{ name: 'Datagami Technology Services Private Limited', url: 'https://www.datagami.in/about' }],
+  creator: 'Datagami Technology Services Private Limited',
+  publisher: 'Datagami Technology Services Private Limited',
+  category: 'Education Technology',
   openGraph: {
     type: 'website',
     locale: 'en_IN',
     siteName: 'Datagami',
+    title: 'Datagami - Education Technology & Enterprise Solutions',
+    description: 'Industry-aligned programs, AI-powered learning technology, recruitment and enterprise software for universities and businesses.',
+    url: 'https://www.datagami.in',
+    images: [
+      {
+        url: '/images/hero/hero-students-collaborating.png',
+        width: 768,
+        height: 576,
+        alt: 'Datagami education technology and enterprise solutions',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
+    title: 'Datagami - Education Technology & Enterprise Solutions',
+    description: 'Industry-aligned programs, AI learning technology, recruitment and enterprise software.',
+    images: ['/images/hero/hero-students-collaborating.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
   },
   icons: {
     icon: '/favicon.ico',
@@ -32,7 +62,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${plusJakartaSans.variable} ${playfairDisplay.variable} scroll-smooth`} suppressHydrationWarning>
+    <html lang="en-IN" className={`${plusJakartaSans.variable} ${playfairDisplay.variable} scroll-smooth`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: `
           try {

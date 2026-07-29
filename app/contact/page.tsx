@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import {
   Mail,
   Phone,
@@ -69,12 +70,15 @@ export default function ContactPage() {
     <>
       {/* Hero */}
       <div className="relative overflow-hidden">
-        <img
+        <Image
           src="/images/hero/hero-contact.png"
           alt=""
           aria-hidden="true"
+          fill
+          priority
+          quality={65}
+          sizes="100vw"
           className="absolute inset-0 w-full h-full object-cover opacity-10"
-          loading="lazy"
         />
         <div className="relative z-10">
           <HeroMinimal
@@ -100,7 +104,12 @@ export default function ContactPage() {
             <FadeIn direction="left">
               <div>
                 <h2 className="text-2xl font-bold text-dark mb-6">Send Us a Message</h2>
-                <form className="space-y-5">
+                <form
+                  action="mailto:query@datagami.in?subject=Website%20enquiry"
+                  method="post"
+                  encType="text/plain"
+                  className="space-y-5"
+                >
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-dark mb-1">
                       Name
@@ -171,6 +180,13 @@ export default function ContactPage() {
                     Send Message
                     <ArrowRight className="size-5" />
                   </button>
+                  <p className="text-xs text-muted-brand">
+                    This opens your email app with the enquiry details. You can also email{" "}
+                    <a href="mailto:query@datagami.in" className="text-brand hover:underline">
+                      query@datagami.in
+                    </a>
+                    .
+                  </p>
                 </form>
               </div>
             </FadeIn>

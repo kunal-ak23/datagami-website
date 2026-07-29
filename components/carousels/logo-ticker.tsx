@@ -1,4 +1,4 @@
-'use client'
+import Image from "next/image"
 
 interface LogoTickerProps {
   logos: Array<{ name: string; src?: string }>
@@ -18,9 +18,12 @@ export function LogoTicker({ logos }: LogoTickerProps) {
           >
             {logo.src ? (
               <div className="glass-card dark:liquid-glass rounded-xl p-4 min-w-[140px] flex flex-col items-center justify-center gap-2 hover:shadow-md transition-shadow">
-                <img
+                <Image
                   src={logo.src}
                   alt={logo.name}
+                  width={120}
+                  height={40}
+                  sizes="120px"
                   className="h-10 w-auto object-contain"
                 />
                 <span className="text-xs text-muted-brand font-medium text-center whitespace-nowrap">

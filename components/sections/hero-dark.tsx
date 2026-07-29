@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { ArrowRight } from "lucide-react"
 
 interface HeroDarkProps {
@@ -32,12 +33,15 @@ export function HeroDark({
   return (
     <section className="relative bg-[#1A1A1A] overflow-hidden bg-pattern">
       {backgroundImage && (
-        <img
+        <Image
           src={backgroundImage}
           alt=""
           aria-hidden="true"
+          fill
+          priority
+          quality={70}
+          sizes="100vw"
           className="absolute inset-0 w-full h-full object-cover opacity-10"
-          loading="lazy"
         />
       )}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
@@ -45,9 +49,12 @@ export function HeroDark({
           {logoSrc && (
             <div className={`mb-6 ${centered ? "flex justify-center" : ""}`}>
               <div className="inline-block bg-white rounded-2xl p-3 shadow-lg">
-                <img
+                <Image
                   src={logoSrc}
                   alt={logoAlt || ""}
+                  width={256}
+                  height={159}
+                  priority
                   className="h-16 w-auto block"
                 />
               </div>

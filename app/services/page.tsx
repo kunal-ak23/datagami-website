@@ -25,8 +25,8 @@ import { FadeIn } from "@/components/motion/fade-in"
 import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
 
 export const metadata: Metadata = {
-  title: 'Services - Education Programs, Enterprise Products & Consulting',
-  description: "Explore Datagami's comprehensive solutions: FinLEARN BFSI programs, TechLEARN tech training, IBM ICE certifications, EduDron LMS, Total ERP, and professional services.",
+  title: 'Education, LMS, Hiring & Software Solutions',
+  description: "Explore Datagami's university programs, EduDron LMS, Total ERP, recruitment, staffing and custom enterprise software solutions.",
   alternates: {
     canonical: 'https://www.datagami.in/services',
   },

@@ -18,9 +18,9 @@ import { FadeIn } from "@/components/motion/fade-in"
 import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
 
 export const metadata: Metadata = {
-  title: "IBM ICE - Innovation Centre for Education | Industry-Aligned Degree Specialisations",
+  title: "IBM ICE: Innovation Centre for Education",
   description:
-    "IBM Innovation Centre for Education (ICE) embeds IBM-certified, industry-aligned technology specialisations into degree programs (B.Tech, MCA, MBA, BCA & more) through Project-Based Learning, IBM digital badges and strong placements. 30+ universities, 10,000+ students.",
+    "Embed IBM-certified, industry-aligned technology specialisations into B.Tech, BCA, MCA and MBA degrees with project-based learning and digital badges.",
   alternates: {
     canonical: "https://www.datagami.in/services/education/ibm-ice",
   },

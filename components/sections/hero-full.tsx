@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { ArrowRight } from "lucide-react"
 
 interface HeroFullProps {
@@ -31,10 +32,14 @@ export function HeroFull({
       className={`relative ${!backgroundImage ? backgroundColor : "bg-[#1A1A1A]"}`}
     >
       {backgroundImage && (
-        <img
+        <Image
           src={backgroundImage}
           alt=""
           aria-hidden="true"
+          fill
+          priority
+          quality={75}
+          sizes="100vw"
           className="absolute inset-0 h-full w-full object-cover opacity-60"
         />
       )}

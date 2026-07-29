@@ -1,8 +1,9 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { Linkedin, Twitter, Youtube } from 'lucide-react'
+import { Linkedin } from 'lucide-react'
 
 const quickLinks = [
   { label: 'Home', href: '/' },
@@ -22,9 +23,7 @@ const programs = [
 ]
 
 const socialLinks = [
-  { icon: Linkedin, href: '#', label: 'LinkedIn' },
-  { icon: Twitter, href: '#', label: 'Twitter' },
-  { icon: Youtube, href: '#', label: 'YouTube' },
+  { icon: Linkedin, href: 'https://www.linkedin.com/company/datagami', label: 'Datagami on LinkedIn' },
 ]
 
 export function Footer() {
@@ -39,11 +38,11 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Column 1: Brand */}
           <div>
-            <img
+            <Image
               src="/images/logo/datagami-logo.webp"
               alt="Datagami"
-              width="50"
-              height="35"
+              width={50}
+              height={35}
             />
             <p className="mt-3 font-semibold text-white">Lead Digital Technology</p>
             <p className="mt-2 text-sm text-gray-300">
@@ -131,17 +130,8 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 border-t border-gray-700 pt-8 flex flex-col sm:flex-row items-center justify-between text-sm text-gray-300">
+        <div className="mt-12 border-t border-gray-700 pt-8 text-center text-sm text-gray-300 sm:text-left">
           <p>&copy; 2026 Datagami Technology Services Private Limited. All rights reserved.</p>
-          <div className="mt-4 sm:mt-0 flex space-x-4">
-            <a href="#" className="hover:text-brand transition-colors">
-              Privacy Policy
-            </a>
-            <span>|</span>
-            <a href="#" className="hover:text-brand transition-colors">
-              Terms of Service
-            </a>
-          </div>
         </div>
       </div>
     </footer>

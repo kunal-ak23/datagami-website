@@ -14,9 +14,9 @@ import { FadeIn } from "@/components/motion/fade-in"
 import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
 
 export const metadata: Metadata = {
-  title: "Wealth Management & Investment Banking | FinLEARN by Datagami",
+  title: "Wealth & Investment Banking Program | FinLEARN",
   description:
-    "An industry-integrated postgraduate program in Wealth Management & Investment Banking — 630+ learning hours across advisory, capital markets, portfolio management and deal execution. Integrates into any UG or PG degree, in association with AAFM.",
+    "A 630-hour program in wealth advisory, private banking, capital markets, portfolio management, risk, compliance and deal execution.",
   alternates: {
     canonical: "https://www.datagami.in/services/education/finlearn/wealth-management-investment-banking",
   },

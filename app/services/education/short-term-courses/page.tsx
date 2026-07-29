@@ -16,9 +16,9 @@ import { FadeIn } from "@/components/motion/fade-in"
 import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
 
 export const metadata: Metadata = {
-  title: 'Skill-Based Short-Term Courses by Datagami | UGC & NEP 2020 Aligned',
+  title: 'Skill-Based Courses for University Students',
   description:
-    'Industry-aligned short-term certification programs for UG & PG students. 10+ domains, 45-hour structured learning, 3-stage assessment, Train-the-Trainer model, and verifiable, NEP 2020-aligned credentials.',
+    'NEP 2020-aligned, 45-hour skill courses for UG and PG students across 10+ in-demand domains, with assessment and verifiable credentials.',
   alternates: {
     canonical: 'https://www.datagami.in/services/education/short-term-courses',
   },

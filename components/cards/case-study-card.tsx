@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 
 interface CaseStudyCardProps {
   title: string
@@ -21,12 +22,12 @@ export function CaseStudyCard({
       className="block glass-card dark:liquid-glass rounded-xl overflow-hidden hover:-translate-y-1 hover:shadow-brand-lg transition-all duration-300 cursor-pointer"
     >
       {imageSrc && (
-        <img
+        <Image
           src={imageSrc}
           alt={title}
           width={640}
           height={192}
-          loading="lazy"
+          sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
           className="w-full h-48 object-cover"
         />
       )}

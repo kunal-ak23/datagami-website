@@ -20,9 +20,9 @@ import { FadeIn } from "@/components/motion/fade-in"
 import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
 
 export const metadata: Metadata = {
-  title: "EduDron LMS - Multi-Tenant Learning, Assessment & Placement Platform",
+  title: "AI-Powered LMS for Universities | EduDron",
   description:
-    "EduDron is a white-label LMS covering the entire learner journey: AI course authoring, proctored exams with instructor or AI evaluation, reports & analytics, verified credentials, business simulations, career mapping, and an integrated jobs portal.",
+    "A white-label university LMS with AI course authoring, proctored exams, analytics, digital credentials, career mapping and an integrated jobs portal.",
   alternates: {
     canonical: "https://www.datagami.in/services/products/edudron-lms",
   },
@@ -237,6 +237,10 @@ const edudronFaqs = [
   {
     question: "What is EduDron LMS?",
     answer: "EduDron is a multi-tenant, white-label learning platform that covers the entire learner journey from one product — AI-assisted course authoring, proctored exams with instructor or AI evaluation, reports & analytics, verified digital credentials, business simulations, psychometric career mapping, and an integrated jobs portal. It replaces three to five legacy tools with a single branded experience.",
+  },
+  {
+    question: "Has EduDron replaced Sineapp LMS?",
+    answer: "Yes. EduDron is Datagami's current LMS offering and replaces the former Sineapp platform. Existing Sineapp enquiries and legacy links now lead to EduDron.",
   },
   {
     question: "What kind of exams and evaluation does it support?",
