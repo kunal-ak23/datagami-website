@@ -18,7 +18,7 @@ import { company } from "@/lib/data/company"
 import { allPartners } from "@/lib/data/partners"
 
 export const metadata: Metadata = {
-  title: "Education Technology & Enterprise Solutions",
+  title: "Education Technology & Enterprise Solutions | Datagami",
   description:
     "Industry-aligned degree programs, AI-powered learning technology, recruitment and enterprise software for universities and businesses across India.",
   alternates: {
