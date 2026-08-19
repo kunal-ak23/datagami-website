@@ -4,6 +4,7 @@ import { HeroDark } from "@/components/sections/hero-dark"
 import { SectionHeader } from "@/components/sections/section-header"
 import { StatsBar } from "@/components/sections/stats-bar"
 import { CTASection } from "@/components/sections/cta-section"
+import { FAQSection } from "@/components/sections/faq-section"
 import { generateCourseSchema } from "@/lib/schemas/course"
 import {
   Layers, Plus, Equal, Target, BookOpen, Users, Briefcase, Award,
@@ -16,9 +17,9 @@ import { FadeIn } from "@/components/motion/fade-in"
 import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
 
 export const metadata: Metadata = {
-  title: 'Skill-Based Courses for University Students',
+  title: 'Skill-Based Short-Term Programs for Universities',
   description:
-    'NEP 2020-aligned, 45-hour skill courses for UG and PG students across 10+ in-demand domains, with assessment and verifiable credentials.',
+    'NEP 2020-aligned short-term skill programs for UG and PG students: 45 hours, 10+ in-demand domains, mentored projects and verifiable credentials.',
   alternates: {
     canonical: 'https://www.datagami.in/services/education/short-term-courses',
   },
@@ -29,6 +30,29 @@ export const metadata: Metadata = {
     images: ['/images/short-term-courses/program-in-action.png'],
   },
 }
+
+const shortTermCourseFaqs = [
+  {
+    question: "What is a skill-based short-term program?",
+    answer: "A skill-based short-term program is a focused, practical course that helps university students build job-ready capabilities alongside their degree. Datagami programs combine structured learning, hands-on labs, assessment, an industry project and a verifiable credential.",
+  },
+  {
+    question: "Who can take these short-term skill courses?",
+    answer: "The programs are designed for undergraduate and postgraduate students. Universities can select courses by department, semester and student cohort, then integrate them into the academic calendar or offer them as value-added certification programs.",
+  },
+  {
+    question: "How long is each university skill program?",
+    answer: "Each program is structured around 45 learning hours, including conceptual instruction, practical training, assessments and a mentored industry project. Delivery can be scheduled around the institution's academic calendar.",
+  },
+  {
+    question: "Which skill domains are available?",
+    answer: "Universities can choose from more than ten in-demand domains, including artificial intelligence, machine learning, data science, cybersecurity, cloud computing, software development and other technology and business skills.",
+  },
+  {
+    question: "Are the programs aligned with NEP 2020?",
+    answer: "Yes. The programs are designed as credit-linked, skill-based learning components that can support a university's NEP 2020 implementation, subject to the institution's own academic and regulatory approval process.",
+  },
+]
 
 const heroStats = [
   { value: "10+", label: "In-Demand Domains" },
@@ -765,6 +789,11 @@ export default function ShortTermCoursesPage() {
           </StaggerChildren>
         </div>
       </section>
+
+      <FAQSection
+        faqs={shortTermCourseFaqs}
+        title="Skill-Based Short-Term Program FAQs"
+      />
 
       {/* Final CTA */}
       <FadeIn>

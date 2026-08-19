@@ -24,9 +24,9 @@ import { FadeIn } from "@/components/motion/fade-in"
 import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
 
 export const metadata: Metadata = {
-  title: 'Clinomic Centre for Clinical Research',
+  title: 'Clinical Research Training & Placement | Clinomic',
   description:
-    '6-month clinical research education program with 95% placement rate and 500+ placements. Covers GCP, data management, regulatory affairs, and pharmacovigilance.',
+    'Clinomic is a 6-month clinical research training program with placement assistance, covering GCP, data management, regulatory affairs and pharmacovigilance.',
   alternates: {
     canonical: 'https://www.datagami.in/services/education/clinomic',
   },

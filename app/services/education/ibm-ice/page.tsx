@@ -18,16 +18,16 @@ import { FadeIn } from "@/components/motion/fade-in"
 import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
 
 export const metadata: Metadata = {
-  title: "IBM ICE: Innovation Centre for Education",
+  title: "IBM ICE Program for Universities",
   description:
-    "Embed IBM-certified, industry-aligned technology specialisations into B.Tech, BCA, MCA and MBA degrees with project-based learning and digital badges.",
+    "IBM Innovation Centre for Education (IBM ICE) embeds certified technology specialisations, project-based learning and digital badges into university degrees.",
   alternates: {
     canonical: "https://www.datagami.in/services/education/ibm-ice",
   },
   openGraph: {
-    title: "IBM ICE - Innovation Centre for Education",
+    title: "IBM ICE Program for Universities | Datagami",
     description:
-      "IBM-certified, industry-aligned technology specialisations embedded into degree programs through Project-Based Learning, with IBM digital badges and strong placements.",
+      "Discover how the IBM Innovation Centre for Education brings certified technology tracks, project-based learning and digital badges into university degrees.",
     images: ["/images/ibm-ice/logo.jpg"],
   },
 }
@@ -112,7 +112,11 @@ const hiringPartners = [
 const ibmIceFaqs = [
   {
     question: "What is IBM ICE?",
-    answer: "IBM ICE (Innovation Centre for Education) is a university partnership program that embeds IBM-certified, industry-aligned technology specialisations into degree programs — B.Tech, M.Tech, MCA, MBA, BCA, BSc IT and B.Pharm — built on a Project-Based Learning framework, with IBM digital badges.",
+    answer: "IBM ICE stands for IBM Innovation Centre for Education. It is a university partnership program that embeds IBM-certified, industry-aligned technology specialisations into B.Tech, M.Tech, MCA, MBA, BCA, BSc IT and B.Pharm degrees through project-based learning and IBM digital badges.",
+  },
+  {
+    question: "What does the IBM ICE program include?",
+    answer: "The IBM ICE program includes curriculum mapping, faculty Teach-the-Trainer workshops, online and physical learning content, industry guest lectures, mentored projects, national hackathons and IBM digital badges across technology and industry-focused tracks.",
   },
   {
     question: "Which specialisations are available?",
