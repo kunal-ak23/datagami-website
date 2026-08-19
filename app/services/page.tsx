@@ -5,7 +5,6 @@ import {
   Award,
   FlaskConical,
   Server,
-  LayoutDashboard,
   Users,
   Briefcase,
   MessageSquare,
@@ -25,7 +24,7 @@ import { FadeIn } from "@/components/motion/fade-in"
 import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
 
 export const metadata: Metadata = {
-  title: 'Education, LMS, Hiring & Software Solutions',
+  title: 'Education Technology, LMS & Staffing Solutions',
   description: "Explore Datagami's university programs, EduDron LMS, Total ERP, recruitment, staffing and custom enterprise software solutions.",
   alternates: {
     canonical: 'https://www.datagami.in/services',

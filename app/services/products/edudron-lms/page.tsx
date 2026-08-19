@@ -20,9 +20,9 @@ import { FadeIn } from "@/components/motion/fade-in"
 import { StaggerChildren, StaggerItem } from "@/components/motion/stagger-children"
 
 export const metadata: Metadata = {
-  title: "AI-Powered LMS for Universities | EduDron",
+  title: "Secure AI-Powered LMS for Universities | EduDron",
   description:
-    "A white-label university LMS with AI course authoring, proctored exams, analytics, digital credentials, career mapping and an integrated jobs portal.",
+    "A secure, white-label university LMS with AI course authoring, proctored exams, analytics, digital credentials, career mapping and an integrated jobs portal.",
   alternates: {
     canonical: "https://www.datagami.in/services/products/edudron-lms",
   },
@@ -257,6 +257,10 @@ const edudronFaqs = [
   {
     question: "Can EduDron scale across multiple campuses and stay secure?",
     answer: "Yes. The cloud-native platform handles tens of thousands of learners per tenant and thousands of concurrent exam takers, with strict tenant isolation, role-based access, MFA for administrators, full audit logging, and encryption in transit and at rest.",
+  },
+  {
+    question: "Is EduDron a secure LMS for universities?",
+    answer: "Yes. EduDron protects institutional data with strict tenant isolation, role-based access controls, administrator MFA, short-lived authentication tokens, full audit logging, HTTPS in transit, encryption at rest and point-in-time backups.",
   },
 ]
 
